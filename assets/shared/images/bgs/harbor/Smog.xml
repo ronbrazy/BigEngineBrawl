@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Smog.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Symbol 30000" x="0" y="0" width="1081" height="209" frameX="-4" frameY="-10" frameWidth="1085" frameHeight="219"/>
+	<SubTexture name="Symbol 30001" x="1081" y="0" width="733" height="209" frameX="0" frameY="0" frameWidth="1085" frameHeight="219"/>
+	<SubTexture name="Symbol 30002" x="0" y="209" width="386" height="76" frameX="-88" frameY="-121" frameWidth="1085" frameHeight="219"/>
+	<SubTexture name="Symbol 30003" x="386" y="209" width="386" height="172" frameX="-57" frameY="-45" frameWidth="1085" frameHeight="219"/>
+	<SubTexture name="Symbol 30004" x="772" y="209" width="496" height="68" frameX="-69" frameY="-100" frameWidth="1085" frameHeight="219"/>
+</TextureAtlas>
