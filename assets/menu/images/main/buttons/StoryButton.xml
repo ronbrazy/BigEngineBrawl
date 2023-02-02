@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="StoryMode.png">
+	<!-- Created with Adobe Animate version 23.0.0.407 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="StoryButton0000" x="0" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButton0001" x="778" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButton0002" x="1556" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButton0003" x="2334" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButton0004" x="3112" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButton0005" x="0" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0006" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0007" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0008" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0009" x="1556" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0010" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0011" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0012" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0013" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0014" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0015" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0016" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0017" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0018" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0019" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0020" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0021" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0022" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0023" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0024" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0025" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButton0026" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0000" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0001" x="1556" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0002" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0003" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0004" x="778" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0005" x="2334" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0006" x="3112" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0007" x="3112" y="448" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0008" x="1556" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0009" x="0" y="896" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0010" x="0" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0011" x="0" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0012" x="0" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0013" x="0" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0014" x="0" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0015" x="0" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0016" x="0" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0017" x="0" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0018" x="0" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0019" x="0" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0020" x="0" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0021" x="0" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0022" x="0" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0023" x="0" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0024" x="0" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0025" x="0" y="0" width="778" height="448"/>
+	<SubTexture name="StoryButtonUn0026" x="0" y="0" width="778" height="448"/>
+</TextureAtlas>
