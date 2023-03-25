@@ -1,36 +1,75 @@
-<?xml version='1.0' encoding='utf-8'?>
-<TextureAtlas imagePath="Henry.png"><SubTexture name="Henry idle0000" x="0" y="2240" width="642" height="555" frameX="-20" frameY="-88" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry idle0001" x="0" y="2240" width="642" height="555" frameX="-20" frameY="-88" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry idle0002" x="2545" y="558" width="638" height="557" frameX="-22" frameY="-86" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry idle0003" x="2545" y="558" width="638" height="557" frameX="-22" frameY="-86" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry idle0004" x="2545" y="0" width="638" height="558" frameX="-22" frameY="-85" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry idle0005" x="2545" y="0" width="638" height="558" frameX="-22" frameY="-85" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry idle0006" x="0" y="0" width="636" height="560" frameX="-23" frameY="-83" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry idle0007" x="0" y="0" width="636" height="560" frameX="-23" frameY="-83" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry idle0008" x="0" y="0" width="636" height="560" frameX="-23" frameY="-83" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry idle0009" x="0" y="0" width="636" height="560" frameX="-23" frameY="-83" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry down0000" x="636" y="0" width="636" height="560" frameX="-19" frameY="-86" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry down0001" x="636" y="0" width="636" height="560" frameX="-19" frameY="-86" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry down0002" x="0" y="560" width="636" height="560" frameX="-15" frameY="-90" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry down0003" x="0" y="560" width="636" height="560" frameX="-15" frameY="-90" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry down0004" x="1909" y="560" width="636" height="559" frameX="-17" frameY="-89" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry down0005" x="1909" y="560" width="636" height="559" frameX="-17" frameY="-89" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry left0000" x="1272" y="0" width="637" height="560" frameX="-22" frameY="-83" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry left0001" x="1272" y="0" width="637" height="560" frameX="-22" frameY="-83" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry left0002" x="1272" y="560" width="635" height="560" frameX="-22" frameY="-83" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry left0003" x="1272" y="560" width="635" height="560" frameX="-22" frameY="-83" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry left0004" x="636" y="560" width="635" height="560" frameX="-22" frameY="-83" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry left0005" x="636" y="560" width="635" height="560" frameX="-22" frameY="-83" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry up0000" x="0" y="1120" width="637" height="560" frameX="-26" frameY="-81" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry up0001" x="0" y="1120" width="637" height="560" frameX="-26" frameY="-81" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry up0002" x="637" y="1120" width="637" height="560" frameX="-31" frameY="-78" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry up0003" x="637" y="1120" width="637" height="560" frameX="-31" frameY="-78" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry up0004" x="1909" y="0" width="636" height="560" frameX="-29" frameY="-79" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry up0005" x="1909" y="0" width="636" height="560" frameX="-29" frameY="-79" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry right0000" x="0" y="1680" width="640" height="560" frameX="-21" frameY="-83" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry right0001" x="0" y="1680" width="640" height="560" frameX="-21" frameY="-83" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry right0002" x="640" y="1680" width="644" height="560" frameX="-22" frameY="-83" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry right0003" x="640" y="1680" width="644" height="560" frameX="-22" frameY="-83" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry right0004" x="1284" y="1680" width="640" height="560" frameX="-24" frameY="-83" frameWidth="700" frameHeight="700" />
-<SubTexture name="Henry right0005" x="1284" y="1680" width="640" height="560" frameX="-24" frameY="-83" frameWidth="700" frameHeight="700" />
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="henry.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="hendown0000" x="0" y="0" width="759" height="588" frameX="0" frameY="-5" frameWidth="759" frameHeight="593"/>
+	<SubTexture name="hendown0001" x="0" y="0" width="759" height="588" frameX="0" frameY="-5" frameWidth="759" frameHeight="593"/>
+	<SubTexture name="hendown0002" x="759" y="0" width="759" height="593"/>
+	<SubTexture name="hendown0003" x="759" y="0" width="759" height="593"/>
+	<SubTexture name="hendown0004" x="759" y="0" width="759" height="593"/>
+	<SubTexture name="hendown0005" x="759" y="0" width="759" height="593"/>
+	<SubTexture name="hendown0006" x="759" y="0" width="759" height="593"/>
+	<SubTexture name="hendown0007" x="759" y="0" width="759" height="593"/>
+	<SubTexture name="hendown0008" x="759" y="0" width="759" height="593"/>
+	<SubTexture name="hendown0009" x="759" y="0" width="759" height="593"/>
+	<SubTexture name="hendown0010" x="759" y="0" width="759" height="593"/>
+	<SubTexture name="hendown0011" x="759" y="0" width="759" height="593"/>
+	<SubTexture name="hendown0012" x="759" y="0" width="759" height="593"/>
+	<SubTexture name="hendown0013" x="759" y="0" width="759" height="593"/>
+	<SubTexture name="henidle0000" x="1518" y="0" width="763" height="591" frameX="0" frameY="-5" frameWidth="764" frameHeight="596"/>
+	<SubTexture name="henidle0001" x="1518" y="0" width="763" height="591" frameX="0" frameY="-5" frameWidth="764" frameHeight="596"/>
+	<SubTexture name="henidle0002" x="2281" y="0" width="764" height="589" frameX="0" frameY="-7" frameWidth="764" frameHeight="596"/>
+	<SubTexture name="henidle0003" x="2281" y="0" width="764" height="589" frameX="0" frameY="-7" frameWidth="764" frameHeight="596"/>
+	<SubTexture name="henidle0004" x="3045" y="0" width="759" height="595" frameX="0" frameY="-1" frameWidth="764" frameHeight="596"/>
+	<SubTexture name="henidle0005" x="3045" y="0" width="759" height="595" frameX="0" frameY="-1" frameWidth="764" frameHeight="596"/>
+	<SubTexture name="henidle0006" x="0" y="595" width="758" height="596" frameX="0" frameY="0" frameWidth="764" frameHeight="596"/>
+	<SubTexture name="henidle0007" x="0" y="595" width="758" height="596" frameX="0" frameY="0" frameWidth="764" frameHeight="596"/>
+	<SubTexture name="henidle0008" x="758" y="595" width="758" height="596" frameX="0" frameY="0" frameWidth="764" frameHeight="596"/>
+	<SubTexture name="henidle0009" x="758" y="595" width="758" height="596" frameX="0" frameY="0" frameWidth="764" frameHeight="596"/>
+	<SubTexture name="henidle0010" x="758" y="595" width="758" height="596" frameX="0" frameY="0" frameWidth="764" frameHeight="596"/>
+	<SubTexture name="henidle0011" x="758" y="595" width="758" height="596" frameX="0" frameY="0" frameWidth="764" frameHeight="596"/>
+	<SubTexture name="henidle0012" x="758" y="595" width="758" height="596" frameX="0" frameY="0" frameWidth="764" frameHeight="596"/>
+	<SubTexture name="henidle0013" x="758" y="595" width="758" height="596" frameX="0" frameY="0" frameWidth="764" frameHeight="596"/>
+	<SubTexture name="henleft0000" x="1516" y="595" width="754" height="588" frameX="0" frameY="-1" frameWidth="761" frameHeight="589"/>
+	<SubTexture name="henleft0001" x="1516" y="595" width="754" height="588" frameX="0" frameY="-1" frameWidth="761" frameHeight="589"/>
+	<SubTexture name="henleft0002" x="2270" y="595" width="758" height="589" frameX="-3" frameY="0" frameWidth="761" frameHeight="589"/>
+	<SubTexture name="henleft0003" x="2270" y="595" width="758" height="589" frameX="-3" frameY="0" frameWidth="761" frameHeight="589"/>
+	<SubTexture name="henleft0004" x="2270" y="595" width="758" height="589" frameX="-3" frameY="0" frameWidth="761" frameHeight="589"/>
+	<SubTexture name="henleft0005" x="2270" y="595" width="758" height="589" frameX="-3" frameY="0" frameWidth="761" frameHeight="589"/>
+	<SubTexture name="henleft0006" x="2270" y="595" width="758" height="589" frameX="-3" frameY="0" frameWidth="761" frameHeight="589"/>
+	<SubTexture name="henleft0007" x="2270" y="595" width="758" height="589" frameX="-3" frameY="0" frameWidth="761" frameHeight="589"/>
+	<SubTexture name="henleft0008" x="2270" y="595" width="758" height="589" frameX="-3" frameY="0" frameWidth="761" frameHeight="589"/>
+	<SubTexture name="henleft0009" x="2270" y="595" width="758" height="589" frameX="-3" frameY="0" frameWidth="761" frameHeight="589"/>
+	<SubTexture name="henleft0010" x="2270" y="595" width="758" height="589" frameX="-3" frameY="0" frameWidth="761" frameHeight="589"/>
+	<SubTexture name="henleft0011" x="2270" y="595" width="758" height="589" frameX="-3" frameY="0" frameWidth="761" frameHeight="589"/>
+	<SubTexture name="henleft0012" x="2270" y="595" width="758" height="589" frameX="-3" frameY="0" frameWidth="761" frameHeight="589"/>
+	<SubTexture name="henleft0013" x="2270" y="595" width="758" height="589" frameX="-3" frameY="0" frameWidth="761" frameHeight="589"/>
+	<SubTexture name="henright0000" x="3028" y="595" width="767" height="594" frameX="-1" frameY="-2" frameWidth="768" frameHeight="596"/>
+	<SubTexture name="henright0001" x="3028" y="595" width="767" height="594" frameX="-1" frameY="-2" frameWidth="768" frameHeight="596"/>
+	<SubTexture name="henright0002" x="0" y="1191" width="763" height="596" frameX="0" frameY="0" frameWidth="768" frameHeight="596"/>
+	<SubTexture name="henright0003" x="0" y="1191" width="763" height="596" frameX="0" frameY="0" frameWidth="768" frameHeight="596"/>
+	<SubTexture name="henright0004" x="0" y="1191" width="763" height="596" frameX="0" frameY="0" frameWidth="768" frameHeight="596"/>
+	<SubTexture name="henright0005" x="0" y="1191" width="763" height="596" frameX="0" frameY="0" frameWidth="768" frameHeight="596"/>
+	<SubTexture name="henright0006" x="0" y="1191" width="763" height="596" frameX="0" frameY="0" frameWidth="768" frameHeight="596"/>
+	<SubTexture name="henright0007" x="0" y="1191" width="763" height="596" frameX="0" frameY="0" frameWidth="768" frameHeight="596"/>
+	<SubTexture name="henright0008" x="0" y="1191" width="763" height="596" frameX="0" frameY="0" frameWidth="768" frameHeight="596"/>
+	<SubTexture name="henright0009" x="0" y="1191" width="763" height="596" frameX="0" frameY="0" frameWidth="768" frameHeight="596"/>
+	<SubTexture name="henright0010" x="0" y="1191" width="763" height="596" frameX="0" frameY="0" frameWidth="768" frameHeight="596"/>
+	<SubTexture name="henright0011" x="0" y="1191" width="763" height="596" frameX="0" frameY="0" frameWidth="768" frameHeight="596"/>
+	<SubTexture name="henright0012" x="0" y="1191" width="763" height="596" frameX="0" frameY="0" frameWidth="768" frameHeight="596"/>
+	<SubTexture name="henright0013" x="0" y="1191" width="763" height="596" frameX="0" frameY="0" frameWidth="768" frameHeight="596"/>
+	<SubTexture name="henup0000" x="763" y="1191" width="759" height="600"/>
+	<SubTexture name="henup0001" x="763" y="1191" width="759" height="600"/>
+	<SubTexture name="henup0002" x="1522" y="1191" width="759" height="594" frameX="0" frameY="-6" frameWidth="759" frameHeight="600"/>
+	<SubTexture name="henup0003" x="1522" y="1191" width="759" height="594" frameX="0" frameY="-6" frameWidth="759" frameHeight="600"/>
+	<SubTexture name="henup0004" x="1522" y="1191" width="759" height="594" frameX="0" frameY="-6" frameWidth="759" frameHeight="600"/>
+	<SubTexture name="henup0005" x="1522" y="1191" width="759" height="594" frameX="0" frameY="-6" frameWidth="759" frameHeight="600"/>
+	<SubTexture name="henup0006" x="1522" y="1191" width="759" height="594" frameX="0" frameY="-6" frameWidth="759" frameHeight="600"/>
+	<SubTexture name="henup0007" x="1522" y="1191" width="759" height="594" frameX="0" frameY="-6" frameWidth="759" frameHeight="600"/>
+	<SubTexture name="henup0008" x="1522" y="1191" width="759" height="594" frameX="0" frameY="-6" frameWidth="759" frameHeight="600"/>
+	<SubTexture name="henup0009" x="1522" y="1191" width="759" height="594" frameX="0" frameY="-6" frameWidth="759" frameHeight="600"/>
+	<SubTexture name="henup0010" x="1522" y="1191" width="759" height="594" frameX="0" frameY="-6" frameWidth="759" frameHeight="600"/>
+	<SubTexture name="henup0011" x="1522" y="1191" width="759" height="594" frameX="0" frameY="-6" frameWidth="759" frameHeight="600"/>
+	<SubTexture name="henup0012" x="1522" y="1191" width="759" height="594" frameX="0" frameY="-6" frameWidth="759" frameHeight="600"/>
+	<SubTexture name="henup0013" x="1522" y="1191" width="759" height="594" frameX="0" frameY="-6" frameWidth="759" frameHeight="600"/>
 </TextureAtlas>

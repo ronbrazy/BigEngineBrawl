@@ -1,0 +1,67 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-30,
+				-120
+			],
+			"anim": "danceLeft",
+			"fps": 24,
+			"name": "left_beat_gf0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				18,
+				-120
+			],
+			"anim": "danceLeft-alt",
+			"fps": 24,
+			"name": "left_beat_gf_snap",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-30,
+				-120
+			],
+			"anim": "danceRight",
+			"fps": 24,
+			"name": "right_beat_gf0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				18,
+				-120
+			],
+			"anim": "danceRight-alt",
+			"fps": 24,
+			"name": "right_beat_gf_snap",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/beb_gf",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "gf",
+	"flip_x": false,
+	"healthbar_colors": [
+		161,
+		161,
+		161
+	],
+	"camera_position": [
+		-300,
+		140
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}

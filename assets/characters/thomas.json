@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				176,
+				-126
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Thomas idle"
+		},
+		{
+			"offsets": [
+				174,
+				-131
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Thomas down"
+		},
+		{
+			"offsets": [
+				207,
+				-123
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Thomas left"
+		},
+		{
+			"offsets": [
+				177,
+				-125
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Thomas up"
+		},
+		{
+			"offsets": [
+				168,
+				-130
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Thomas right"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/thomas",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "thomas",
+	"flip_x": false,
+	"healthbar_colors": [
+		7,
+		149,
+		233
+	],
+	"camera_position": [
+		-20,
+		-130
+	],
+	"sing_duration": 6.1,
+	"scale": 1.6
+}

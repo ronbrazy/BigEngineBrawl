@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Thomas_beb.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Thomas down0000" x="0" y="0" width="789" height="571" frameX="0" frameY="-3" frameWidth="789" frameHeight="574"/>
+	<SubTexture name="Thomas down0001" x="0" y="0" width="789" height="571" frameX="0" frameY="-3" frameWidth="789" frameHeight="574"/>
+	<SubTexture name="Thomas down0002" x="789" y="0" width="789" height="574"/>
+	<SubTexture name="Thomas down0003" x="789" y="0" width="789" height="574"/>
+	<SubTexture name="Thomas down0004" x="789" y="0" width="789" height="574"/>
+	<SubTexture name="Thomas down0005" x="789" y="0" width="789" height="574"/>
+	<SubTexture name="Thomas down0006" x="789" y="0" width="789" height="574"/>
+	<SubTexture name="Thomas down0007" x="789" y="0" width="789" height="574"/>
+	<SubTexture name="Thomas down0008" x="789" y="0" width="789" height="574"/>
+	<SubTexture name="Thomas down0009" x="789" y="0" width="789" height="574"/>
+	<SubTexture name="Thomas down0010" x="789" y="0" width="789" height="574"/>
+	<SubTexture name="Thomas down0011" x="789" y="0" width="789" height="574"/>
+	<SubTexture name="Thomas down0012" x="789" y="0" width="789" height="574"/>
+	<SubTexture name="Thomas down0013" x="789" y="0" width="789" height="574"/>
+	<SubTexture name="Thomas idle0000" x="1578" y="0" width="789" height="568" frameX="0" frameY="-9" frameWidth="790" frameHeight="577"/>
+	<SubTexture name="Thomas idle0001" x="1578" y="0" width="789" height="568" frameX="0" frameY="-9" frameWidth="790" frameHeight="577"/>
+	<SubTexture name="Thomas idle0002" x="2367" y="0" width="789" height="570" frameX="0" frameY="-7" frameWidth="790" frameHeight="577"/>
+	<SubTexture name="Thomas idle0003" x="2367" y="0" width="789" height="570" frameX="0" frameY="-7" frameWidth="790" frameHeight="577"/>
+	<SubTexture name="Thomas idle0004" x="3156" y="0" width="789" height="575" frameX="0" frameY="-2" frameWidth="790" frameHeight="577"/>
+	<SubTexture name="Thomas idle0005" x="3156" y="0" width="789" height="575" frameX="0" frameY="-2" frameWidth="790" frameHeight="577"/>
+	<SubTexture name="Thomas idle0006" x="0" y="575" width="789" height="577" frameX="0" frameY="0" frameWidth="790" frameHeight="577"/>
+	<SubTexture name="Thomas idle0007" x="0" y="575" width="789" height="577" frameX="0" frameY="0" frameWidth="790" frameHeight="577"/>
+	<SubTexture name="Thomas idle0008" x="789" y="575" width="790" height="576" frameX="0" frameY="-1" frameWidth="790" frameHeight="577"/>
+	<SubTexture name="Thomas idle0009" x="789" y="575" width="790" height="576" frameX="0" frameY="-1" frameWidth="790" frameHeight="577"/>
+	<SubTexture name="Thomas idle0010" x="789" y="575" width="790" height="576" frameX="0" frameY="-1" frameWidth="790" frameHeight="577"/>
+	<SubTexture name="Thomas idle0011" x="789" y="575" width="790" height="576" frameX="0" frameY="-1" frameWidth="790" frameHeight="577"/>
+	<SubTexture name="Thomas idle0012" x="789" y="575" width="790" height="576" frameX="0" frameY="-1" frameWidth="790" frameHeight="577"/>
+	<SubTexture name="Thomas idle0013" x="789" y="575" width="790" height="576" frameX="0" frameY="-1" frameWidth="790" frameHeight="577"/>
+	<SubTexture name="Thomas left0000" x="1579" y="575" width="790" height="576" frameX="0" frameY="0" frameWidth="793" frameHeight="576"/>
+	<SubTexture name="Thomas left0001" x="1579" y="575" width="790" height="576" frameX="0" frameY="0" frameWidth="793" frameHeight="576"/>
+	<SubTexture name="Thomas left0002" x="2369" y="575" width="790" height="576" frameX="-3" frameY="0" frameWidth="793" frameHeight="576"/>
+	<SubTexture name="Thomas left0003" x="2369" y="575" width="790" height="576" frameX="-3" frameY="0" frameWidth="793" frameHeight="576"/>
+	<SubTexture name="Thomas left0004" x="2369" y="575" width="790" height="576" frameX="-3" frameY="0" frameWidth="793" frameHeight="576"/>
+	<SubTexture name="Thomas left0005" x="2369" y="575" width="790" height="576" frameX="-3" frameY="0" frameWidth="793" frameHeight="576"/>
+	<SubTexture name="Thomas left0006" x="2369" y="575" width="790" height="576" frameX="-3" frameY="0" frameWidth="793" frameHeight="576"/>
+	<SubTexture name="Thomas left0007" x="2369" y="575" width="790" height="576" frameX="-3" frameY="0" frameWidth="793" frameHeight="576"/>
+	<SubTexture name="Thomas left0008" x="2369" y="575" width="790" height="576" frameX="-3" frameY="0" frameWidth="793" frameHeight="576"/>
+	<SubTexture name="Thomas left0009" x="2369" y="575" width="790" height="576" frameX="-3" frameY="0" frameWidth="793" frameHeight="576"/>
+	<SubTexture name="Thomas left0010" x="2369" y="575" width="790" height="576" frameX="-3" frameY="0" frameWidth="793" frameHeight="576"/>
+	<SubTexture name="Thomas left0011" x="2369" y="575" width="790" height="576" frameX="-3" frameY="0" frameWidth="793" frameHeight="576"/>
+	<SubTexture name="Thomas left0012" x="2369" y="575" width="790" height="576" frameX="-3" frameY="0" frameWidth="793" frameHeight="576"/>
+	<SubTexture name="Thomas left0013" x="2369" y="575" width="790" height="576" frameX="-3" frameY="0" frameWidth="793" frameHeight="576"/>
+	<SubTexture name="Thomas right0000" x="3159" y="575" width="791" height="578" frameX="-5" frameY="0" frameWidth="796" frameHeight="578"/>
+	<SubTexture name="Thomas right0001" x="3159" y="575" width="791" height="578" frameX="-5" frameY="0" frameWidth="796" frameHeight="578"/>
+	<SubTexture name="Thomas right0002" x="0" y="1153" width="791" height="577" frameX="0" frameY="0" frameWidth="796" frameHeight="578"/>
+	<SubTexture name="Thomas right0003" x="0" y="1153" width="791" height="577" frameX="0" frameY="0" frameWidth="796" frameHeight="578"/>
+	<SubTexture name="Thomas right0004" x="0" y="1153" width="791" height="577" frameX="0" frameY="0" frameWidth="796" frameHeight="578"/>
+	<SubTexture name="Thomas right0005" x="0" y="1153" width="791" height="577" frameX="0" frameY="0" frameWidth="796" frameHeight="578"/>
+	<SubTexture name="Thomas right0006" x="0" y="1153" width="791" height="577" frameX="0" frameY="0" frameWidth="796" frameHeight="578"/>
+	<SubTexture name="Thomas right0007" x="0" y="1153" width="791" height="577" frameX="0" frameY="0" frameWidth="796" frameHeight="578"/>
+	<SubTexture name="Thomas right0008" x="0" y="1153" width="791" height="577" frameX="0" frameY="0" frameWidth="796" frameHeight="578"/>
+	<SubTexture name="Thomas right0009" x="0" y="1153" width="791" height="577" frameX="0" frameY="0" frameWidth="796" frameHeight="578"/>
+	<SubTexture name="Thomas right0010" x="0" y="1153" width="791" height="577" frameX="0" frameY="0" frameWidth="796" frameHeight="578"/>
+	<SubTexture name="Thomas right0011" x="0" y="1153" width="791" height="577" frameX="0" frameY="0" frameWidth="796" frameHeight="578"/>
+	<SubTexture name="Thomas right0012" x="0" y="1153" width="791" height="577" frameX="0" frameY="0" frameWidth="796" frameHeight="578"/>
+	<SubTexture name="Thomas right0013" x="0" y="1153" width="791" height="577" frameX="0" frameY="0" frameWidth="796" frameHeight="578"/>
+	<SubTexture name="Thomas up0000" x="791" y="1153" width="790" height="578"/>
+	<SubTexture name="Thomas up0001" x="791" y="1153" width="790" height="578"/>
+	<SubTexture name="Thomas up0002" x="1581" y="1153" width="790" height="575" frameX="0" frameY="-3" frameWidth="790" frameHeight="578"/>
+	<SubTexture name="Thomas up0003" x="1581" y="1153" width="790" height="575" frameX="0" frameY="-3" frameWidth="790" frameHeight="578"/>
+	<SubTexture name="Thomas up0004" x="1581" y="1153" width="790" height="575" frameX="0" frameY="-3" frameWidth="790" frameHeight="578"/>
+	<SubTexture name="Thomas up0005" x="1581" y="1153" width="790" height="575" frameX="0" frameY="-3" frameWidth="790" frameHeight="578"/>
+	<SubTexture name="Thomas up0006" x="1581" y="1153" width="790" height="575" frameX="0" frameY="-3" frameWidth="790" frameHeight="578"/>
+	<SubTexture name="Thomas up0007" x="1581" y="1153" width="790" height="575" frameX="0" frameY="-3" frameWidth="790" frameHeight="578"/>
+	<SubTexture name="Thomas up0008" x="1581" y="1153" width="790" height="575" frameX="0" frameY="-3" frameWidth="790" frameHeight="578"/>
+	<SubTexture name="Thomas up0009" x="1581" y="1153" width="790" height="575" frameX="0" frameY="-3" frameWidth="790" frameHeight="578"/>
+	<SubTexture name="Thomas up0010" x="1581" y="1153" width="790" height="575" frameX="0" frameY="-3" frameWidth="790" frameHeight="578"/>
+	<SubTexture name="Thomas up0011" x="1581" y="1153" width="790" height="575" frameX="0" frameY="-3" frameWidth="790" frameHeight="578"/>
+	<SubTexture name="Thomas up0012" x="1581" y="1153" width="790" height="575" frameX="0" frameY="-3" frameWidth="790" frameHeight="578"/>
+	<SubTexture name="Thomas up0013" x="1581" y="1153" width="790" height="575" frameX="0" frameY="-3" frameWidth="790" frameHeight="578"/>
+</TextureAtlas>
