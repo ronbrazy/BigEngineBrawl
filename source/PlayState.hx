@@ -638,7 +638,23 @@ class PlayState extends MusicBeatState
 					{
 						add(i);
 					}
+			case 'indignation':
+				ob1 = new FlxSprite(-1075,-739).loadGraphic(Paths.image('bgs/indignation/bg'));
+				ob1.antialiasing = ClientPrefs.globalAntialiasing;
+				ob1.setGraphicSize(3865);
+				ob1.updateHitbox();
+				add(ob1);
 				
+				ob2 = new FlxSprite().loadGraphic(Paths.image('bgs/indignation/indig_sheddoor'));
+				ob2.antialiasing = ClientPrefs.globalAntialiasing;
+				//add(ob2);
+
+				ob3 = new FlxSprite().loadGraphic(Paths.image('bgs/indignation/indig_sheddoor2'));
+				ob3.antialiasing = ClientPrefs.globalAntialiasing;
+				//add(ob3);
+
+				editable = true;
+				editbleSprite = ob1;
 		}       
 
 		if(isPixelStage) {
