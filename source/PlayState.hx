@@ -513,6 +513,36 @@ class PlayState extends MusicBeatState
 				ob4.updateHitbox();
 				add(ob4);
 
+				ob5 = new FlxSprite(-1254,-912).loadGraphic(Paths.image('bgs/harbor/night_overlay'));
+				ob5.antialiasing = ClientPrefs.globalAntialiasing;
+				ob5.setGraphicSize(3500);
+				ob5.updateHitbox();
+				ob5.alpha = 0.30;
+				overlaySprs.push(ob5);
+				add(gfGroup);
+				add(dadGroup);
+				add(boyfriendGroup);
+
+				for (i in overlaySprs)
+					{
+						add(i);
+					}
+
+				ob6 = new FlxSprite(-1254,-912).loadGraphic(Paths.image('bgs/harbor/fog'));
+				ob6.antialiasing = ClientPrefs.globalAntialiasing;
+				ob6.setGraphicSize(3500);
+				ob6.updateHitbox();
+				ob6.alpha = 0.18;
+				overlaySprs.push(ob6);
+				add(gfGroup);
+				add(dadGroup);
+				add(boyfriendGroup);
+
+				for (i in overlaySprs)
+					{
+						add(i);
+					}	
+
 				//editable = true;
 				//editbleSprite = ob5;
 			case 'splendid':
@@ -584,9 +614,32 @@ class PlayState extends MusicBeatState
 				ob5.updateHitbox();
 				add(ob5);
 
-				editable = true;
-				editbleSprite = ob1;
-		}
+				//editable = true;
+				//editbleSprite = ob1;
+
+			case 'endlessremix':
+			    ob1 = new FlxSprite(-701,-488).loadGraphic(Paths.image('bgs/endlessremix/station'));
+			    ob1.antialiasing = ClientPrefs.globalAntialiasing;
+			    ob1.setGraphicSize(2700);
+			    ob1.updateHitbox();
+			    add(ob1);
+			
+				ob2 = new FlxSprite(-701,-488).loadGraphic(Paths.image('bgs/endlessremix/nighttime_overlay'));
+				ob2.antialiasing = ClientPrefs.globalAntialiasing;
+			    ob2.setGraphicSize(2700);
+			    ob2.updateHitbox();
+				ob2.alpha = 0.60;
+				overlaySprs.push(ob2);
+				add(gfGroup);
+				add(dadGroup);
+				add(boyfriendGroup);
+
+				for (i in overlaySprs)
+					{
+						add(i);
+					}
+				
+		}       
 
 		if(isPixelStage) {
 			introSoundsSuffix = '-pixel';

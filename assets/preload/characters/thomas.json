@@ -1,59 +1,59 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				176,
 				-126
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "Thomas idle"
+			"fps": 24,
+			"name": "Thomas idle",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				174,
 				-131
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "Thomas down"
+			"fps": 24,
+			"name": "Thomas down",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				207,
 				-123
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singLEFT",
-			"indices": [],
-			"name": "Thomas left"
+			"fps": 24,
+			"name": "Thomas left",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				177,
 				-125
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singUP",
-			"indices": [],
-			"name": "Thomas up"
+			"fps": 24,
+			"name": "Thomas up",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				168,
 				-130
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "Thomas right"
+			"fps": 24,
+			"name": "Thomas right",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
@@ -70,8 +70,8 @@
 		233
 	],
 	"camera_position": [
-		-20,
-		-130
+		-60,
+		-30
 	],
 	"sing_duration": 6.1,
 	"scale": 1.6
