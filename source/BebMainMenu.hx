@@ -12,7 +12,7 @@ class BebMainMenu extends MusicBeatState
         'henry',
         'james',
         'thomas',
-        'thomas'
+        'thomas',
     ];
     var btns:Array<String> = [
         'StoryButton',
@@ -49,7 +49,7 @@ class BebMainMenu extends MusicBeatState
         tankEngine.updateHitbox();
         add(tankEngine);
 
-        var poleAndBtnsOffset:Array<Float> = [10,110];
+        var poleAndBtnsOffset:Array<Float> = [10,0];
 
         var pole:FlxSprite = new FlxSprite(poleAndBtnsOffset[0],poleAndBtnsOffset[1]).loadGraphic(Paths.image('main/pole', 'menu'));
         pole.antialiasing = ClientPrefs.globalAntialiasing;
