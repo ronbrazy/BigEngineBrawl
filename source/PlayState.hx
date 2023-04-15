@@ -641,20 +641,31 @@ class PlayState extends MusicBeatState
 			case 'indignation':
 				ob1 = new FlxSprite(-1075,-739).loadGraphic(Paths.image('bgs/indignation/bg'));
 				ob1.antialiasing = ClientPrefs.globalAntialiasing;
+				
 				ob1.setGraphicSize(3865);
 				ob1.updateHitbox();
 				add(ob1);
 				
-				ob2 = new FlxSprite().loadGraphic(Paths.image('bgs/indignation/indig_sheddoor'));
+				ob2 = new FlxSprite(-912,-187);
 				ob2.antialiasing = ClientPrefs.globalAntialiasing;
-				//add(ob2);
+				ob2.frames = Paths.getSparrowAtlas('bgs/indignation/indig_sheddoor');
+				ob2.animation.addByPrefix('indig_shed doorcloseidle','indig_shed doorcloseidle',24,true);
+				ob2.animation.play('indig_shed doorcloseidle');
+				ob2.setGraphicSize(975);
+				ob2.updateHitbox();
+				add(ob2);
 
-				ob3 = new FlxSprite().loadGraphic(Paths.image('bgs/indignation/indig_sheddoor2'));
+				ob3 = new FlxSprite(1656,-187);
 				ob3.antialiasing = ClientPrefs.globalAntialiasing;
-				//add(ob3);
+				ob3.frames = Paths.getSparrowAtlas('bgs/indignation/indig_sheddoor');
+				ob3.animation.addByPrefix('indig_shed doorcloseidle','indig_shed doorcloseidle',24,true);
+				ob3.animation.play('indig_shed doorcloseidle');
+				ob3.setGraphicSize(975);
+				ob3.updateHitbox();
+				add(ob3);
 
-				editable = true;
-				editbleSprite = ob1;
+				//editable = true;
+				//editbleSprite = ob1;
 		}       
 
 		if(isPixelStage) {
