@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				176,
+				-126
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "sadstory henry idle"
+		},
+		{
+			"offsets": [
+				174,
+				-130
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "sadstory henry down"
+		},
+		{
+			"offsets": [
+				170,
+				-128
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "sadstory henry left"
+		},
+		{
+			"offsets": [
+				169,
+				-123
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "sadstory henry up"
+		},
+		{
+			"offsets": [
+				167,
+				-129
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "sadstory henry right"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/sadstory_henry",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "henry",
+	"flip_x": false,
+	"healthbar_colors": [
+		0,
+		153,
+		0
+	],
+	"camera_position": [
+		-100,
+		-130
+	],
+	"sing_duration": 6.1,
+	"scale": 4
+}

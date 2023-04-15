@@ -552,6 +552,40 @@ class PlayState extends MusicBeatState
 
 				//editable = true;
 				//editbleSprite = ob1;
+			case 'sadstory':
+				ob1 = new FlxSprite(-2350,-1600).loadGraphic(Paths.image('bgs/sadstory/ground'));
+				ob1.antialiasing = ClientPrefs.globalAntialiasing;
+				ob1.setGraphicSize(8315);
+				ob1.updateHitbox();
+				add(ob1);
+
+				ob2 = new FlxSprite(-2250,-1650).loadGraphic(Paths.image('bgs/sadstory/insidetunnel'));
+				ob2.antialiasing = ClientPrefs.globalAntialiasing;
+				ob2.setGraphicSize(8315);
+				ob2.updateHitbox();
+				add(ob2);
+				add(dadGroup); 
+
+				ob3 = new FlxSprite(-2350,-1545).loadGraphic(Paths.image('bgs/sadstory/brickwall'));
+				ob3.antialiasing = ClientPrefs.globalAntialiasing;
+				ob3.setGraphicSize(8315);
+				ob3.updateHitbox();
+				add(ob3);
+
+				ob4 = new FlxSprite(-2350,-1600).loadGraphic(Paths.image('bgs/sadstory/foliage'));
+				ob4.antialiasing = ClientPrefs.globalAntialiasing;
+				ob4.setGraphicSize(8315);
+				ob4.updateHitbox();
+				add(ob4);
+
+				ob5 = new FlxSprite(-2350,-1600).loadGraphic(Paths.image('bgs/sadstory/rails'));
+				ob5.antialiasing = ClientPrefs.globalAntialiasing;
+				ob5.setGraphicSize(8315);
+				ob5.updateHitbox();
+				add(ob5);
+
+				editable = true;
+				editbleSprite = ob1;
 		}
 
 		if(isPixelStage) {
