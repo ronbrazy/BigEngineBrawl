@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="james phase2 chasis.png"><SubTexture name="james phase2 chasis idle0000" x="0" y="0" width="1298" height="611" frameX="0" frameY="0" frameWidth="1298" frameHeight="611" />
+<SubTexture name="james phase2 chasis idle0001" x="0" y="0" width="1298" height="611" frameX="0" frameY="0" frameWidth="1298" frameHeight="611" />
+<SubTexture name="james phase2 chasis idle0002" x="0" y="611" width="1298" height="611" frameX="0" frameY="0" frameWidth="1298" frameHeight="611" />
+<SubTexture name="james phase2 chasis idle0003" x="0" y="611" width="1298" height="611" frameX="0" frameY="0" frameWidth="1298" frameHeight="611" />
+<SubTexture name="james phase2 chasis idle0004" x="1298" y="0" width="1298" height="611" frameX="0" frameY="0" frameWidth="1298" frameHeight="611" />
+<SubTexture name="james phase2 chasis idle0005" x="1298" y="0" width="1298" height="611" frameX="0" frameY="0" frameWidth="1298" frameHeight="611" />
+<SubTexture name="james phase2 chasis idle0006" x="1298" y="611" width="1298" height="611" frameX="0" frameY="0" frameWidth="1298" frameHeight="611" />
+<SubTexture name="james phase2 chasis idle0007" x="1298" y="611" width="1298" height="611" frameX="0" frameY="0" frameWidth="1298" frameHeight="611" />
+<SubTexture name="james phase2 chasis idle0008" x="0" y="1222" width="1298" height="611" frameX="0" frameY="0" frameWidth="1298" frameHeight="611" />
+</TextureAtlas>

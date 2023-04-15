@@ -515,6 +515,43 @@ class PlayState extends MusicBeatState
 
 				//editable = true;
 				//editbleSprite = ob5;
+			case 'splendid':
+				ob1 = new FlxSprite(-350,-500).loadGraphic(Paths.image('bgs/splendid/jamesbg_skyloop'));
+				ob1.antialiasing = ClientPrefs.globalAntialiasing;
+				ob1.setGraphicSize(3840);
+				ob1.updateHitbox();
+				add(ob1);
+
+				ob2 = new FlxSprite(-323,-349);
+				ob2.antialiasing = ClientPrefs.globalAntialiasing;
+				ob2.frames = Paths.getSparrowAtlas('bgs/splendid/jamesbg_hills');
+				ob2.animation.addByPrefix('jamesbg hills idle','jamesbg hills idle',24,true);
+				ob2.animation.play('jamesbg hills idle');
+				ob2.setGraphicSize(3280);
+				ob2.updateHitbox();
+				add(ob2);
+
+				ob3 = new FlxSprite(191,86);
+				ob3.antialiasing = ClientPrefs.globalAntialiasing;
+				ob3.frames = Paths.getSparrowAtlas('bgs/splendid/james_chasis');
+				ob3.animation.addByPrefix('james chasis idle','james chasis idle',24,true);
+				ob3.animation.play('james chasis idle');
+				ob3.setGraphicSize(2680);
+				ob3.updateHitbox();
+				add(ob3);
+
+				ob4 = new FlxSprite(191,86);
+				ob4.antialiasing = ClientPrefs.globalAntialiasing;
+				ob4.frames = Paths.getSparrowAtlas('bgs/splendid/james_phase2_chasis');
+				ob4.animation.addByPrefix('james phase2 chasis idle','james phase2 chasis idle',24,true);
+				ob4.animation.play('james phase2 chasis idle');
+				ob4.alpha = 0.00001;
+				ob4.setGraphicSize(2680);
+				ob4.updateHitbox();
+				add(ob4);
+
+				//editable = true;
+				//editbleSprite = ob1;
 		}
 
 		if(isPixelStage) {
