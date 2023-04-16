@@ -519,30 +519,14 @@ class PlayState extends MusicBeatState
 				ob5.updateHitbox();
 				ob5.alpha = 0.30;
 				overlaySprs.push(ob5);
-				add(gfGroup);
-				add(dadGroup);
-				add(boyfriendGroup);
-
-				for (i in overlaySprs)
-					{
-						add(i);
-					}
-
+				
 				ob6 = new FlxSprite(-1254,-912).loadGraphic(Paths.image('bgs/harbor/fog'));
 				ob6.antialiasing = ClientPrefs.globalAntialiasing;
 				ob6.setGraphicSize(3500);
 				ob6.updateHitbox();
 				ob6.alpha = 0.18;
 				overlaySprs.push(ob6);
-				add(gfGroup);
-				add(dadGroup);
-				add(boyfriendGroup);
-
-				for (i in overlaySprs)
-					{
-						add(i);
-					}	
-
+				
 				//editable = true;
 				//editbleSprite = ob5;
 			case 'splendid':
@@ -630,14 +614,7 @@ class PlayState extends MusicBeatState
 			    ob2.updateHitbox();
 				ob2.alpha = 0.60;
 				overlaySprs.push(ob2);
-				add(gfGroup);
-				add(dadGroup);
-				add(boyfriendGroup);
 
-				for (i in overlaySprs)
-					{
-						add(i);
-					}
 			case 'indignation':
 				ob1 = new FlxSprite(-1075,-739).loadGraphic(Paths.image('bgs/indignation/bg'));
 				ob1.antialiasing = ClientPrefs.globalAntialiasing;
@@ -664,8 +641,18 @@ class PlayState extends MusicBeatState
 				ob3.updateHitbox();
 				add(ob3);
 
-				//editable = true;
-				//editbleSprite = ob1;
+				ob4 = new FlxSprite(378,-187);
+				ob4.antialiasing = ClientPrefs.globalAntialiasing;
+				ob4.frames = Paths.getSparrowAtlas('bgs/indignation/indig_sheddoor');
+				ob4.animation.addByPrefix('indig_shed dooropenidle','indig_shed dooropenidle',24,true);
+				ob4.animation.play('indig_shed dooropenidle');
+				ob4.setGraphicSize(975);
+				ob4.updateHitbox();
+				overDad.push(ob4);
+				
+
+				editable = true;
+				editbleSprite = ob1;
 			case 'godraysremix':
 				ob1 = new FlxSprite(-1075,-739).loadGraphic(Paths.image('bgs/indignation/bg'));
 				ob1.antialiasing = ClientPrefs.globalAntialiasing;
@@ -692,20 +679,21 @@ class PlayState extends MusicBeatState
 				ob3.updateHitbox();
 				add(ob3);
 
-				ob4 = new FlxSprite(-1075,-739).loadGraphic(Paths.image('bgs/indignation/night_overlay'));
+				ob4 = new FlxSprite(378,-187);
 				ob4.antialiasing = ClientPrefs.globalAntialiasing;
-				ob4.setGraphicSize(3865);
+				ob4.frames = Paths.getSparrowAtlas('bgs/indignation/indig_sheddoor');
+				ob4.animation.addByPrefix('indig_shed dooropenidle','indig_shed dooropenidle',24,true);
+				ob4.animation.play('indig_shed dooropenidle');
+				ob4.setGraphicSize(975);
 				ob4.updateHitbox();
-				ob4.alpha = 0.60;
-				overlaySprs.push(ob4);
-				add(gfGroup);
-				add(dadGroup);
-				add(boyfriendGroup);
+				overDad.push(ob4);
 
-				for (i in overlaySprs)
-					{
-						add(i);
-					}
+				ob5 = new FlxSprite(-1075,-739).loadGraphic(Paths.image('bgs/indignation/night_overlay'));
+				ob5.antialiasing = ClientPrefs.globalAntialiasing;
+				ob5.setGraphicSize(3865);
+				ob5.updateHitbox();
+				ob5.alpha = 0.60;
+				overlaySprs.push(ob5);
 			
 		}       
 

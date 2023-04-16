@@ -54,6 +54,28 @@
 			"fps": 24,
 			"name": "indig_gordon right",
 			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				180,
+				440
+			],
+			"anim": "callforbackup",
+			"fps": 24,
+			"name": "indig_gordon callforbackup",
+			"indices": []
+		},
+		{
+			"offsets": [
+				180,
+				-113
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "speech",
+			"loop": false,
+			"name": "indig_gordon speech"
 		}
 	],
 	"no_antialiasing": false,
