@@ -1,59 +1,59 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				176,
 				-126
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "idle",
-			"loop": false,
-			"name": "indig_gordon idle"
+			"fps": 24,
+			"name": "indig_gordon idle",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				173,
 				-121
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singDOWN",
-			"loop": false,
-			"name": "indig_gordon down"
+			"fps": 24,
+			"name": "indig_gordon down",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				179,
 				-125
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singLEFT",
-			"loop": false,
-			"name": "indig_gordon left"
+			"fps": 24,
+			"name": "indig_gordon left",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				172,
 				-110
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singUP",
-			"loop": false,
-			"name": "indig_gordon up"
+			"fps": 24,
+			"name": "indig_gordon up",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				170,
 				-122
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singRIGHT",
-			"loop": false,
-			"name": "indig_gordon right"
+			"fps": 24,
+			"name": "indig_gordon right",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
@@ -62,7 +62,7 @@
 		0,
 		0
 	],
-	"healthicon": "thomas",
+	"healthicon": "gordon",
 	"flip_x": false,
 	"healthbar_colors": [
 		7,

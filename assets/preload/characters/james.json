@@ -1,59 +1,59 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				176,
 				-126
 			],
-			"anim": "idle",
+			"loop": false,
 			"fps": 24,
-			"name": "james idle",
-			"indices": []
+			"anim": "idle",
+			"indices": [],
+			"name": "james idle"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				179,
 				-124
 			],
-			"anim": "singDOWN",
+			"loop": false,
 			"fps": 24,
-			"name": "james down",
-			"indices": []
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "james down"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				175,
 				-123
 			],
-			"anim": "singLEFT",
+			"loop": false,
 			"fps": 24,
-			"name": "james left",
-			"indices": []
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "james left"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				170,
 				-120
 			],
-			"anim": "singUP",
+			"loop": false,
 			"fps": 24,
-			"name": "james up",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "james up"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				172,
 				-125
 			],
-			"anim": "singRIGHT",
+			"loop": false,
 			"fps": 24,
-			"name": "james right",
-			"indices": []
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "james right"
 		}
 	],
 	"no_antialiasing": false,
@@ -62,12 +62,12 @@
 		0,
 		0
 	],
-	"healthicon": "thomas",
+	"healthicon": "james",
 	"flip_x": false,
 	"healthbar_colors": [
-		7,
-		149,
-		233
+		238,
+		15,
+		52
 	],
 	"camera_position": [
 		-900,
