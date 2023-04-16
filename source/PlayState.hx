@@ -666,6 +666,47 @@ class PlayState extends MusicBeatState
 
 				//editable = true;
 				//editbleSprite = ob1;
+			case 'godraysremix':
+				ob1 = new FlxSprite(-1075,-739).loadGraphic(Paths.image('bgs/indignation/bg'));
+				ob1.antialiasing = ClientPrefs.globalAntialiasing;
+			
+				ob1.setGraphicSize(3865);
+				ob1.updateHitbox();
+				add(ob1);
+			
+				ob2 = new FlxSprite(-912,-187);
+				ob2.antialiasing = ClientPrefs.globalAntialiasing;
+				ob2.frames = Paths.getSparrowAtlas('bgs/indignation/indig_sheddoor');
+				ob2.animation.addByPrefix('indig_shed doorcloseidle','indig_shed doorcloseidle',24,true);
+				ob2.animation.play('indig_shed doorcloseidle');
+				ob2.setGraphicSize(975);
+				ob2.updateHitbox();
+				add(ob2);
+
+				ob3 = new FlxSprite(1656,-187);
+				ob3.antialiasing = ClientPrefs.globalAntialiasing;
+				ob3.frames = Paths.getSparrowAtlas('bgs/indignation/indig_sheddoor');
+				ob3.animation.addByPrefix('indig_shed doorcloseidle','indig_shed doorcloseidle',24,true);
+				ob3.animation.play('indig_shed doorcloseidle');
+				ob3.setGraphicSize(975);
+				ob3.updateHitbox();
+				add(ob3);
+
+				ob4 = new FlxSprite(-1075,-739).loadGraphic(Paths.image('bgs/indignation/night_overlay'));
+				ob4.antialiasing = ClientPrefs.globalAntialiasing;
+				ob4.setGraphicSize(3865);
+				ob4.updateHitbox();
+				ob4.alpha = 0.60;
+				overlaySprs.push(ob4);
+				add(gfGroup);
+				add(dadGroup);
+				add(boyfriendGroup);
+
+				for (i in overlaySprs)
+					{
+						add(i);
+					}
+			
 		}       
 
 		if(isPixelStage) {
