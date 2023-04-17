@@ -5797,10 +5797,10 @@
 				"mustHitSection": true
 			}
 		],
-		"player2": "thomas",
+		"player2": "james",
 		"player3": null,
 		"song": "Splendid",
-		"stage": "puffball",
+		"stage": "splendid",
 		"needsVoices": true,
 		"validScore": true,
 		"bpm": 178,

@@ -1,7 +1,7 @@
 {
 	"song": {
 		"player1": "bf",
-		"player2": "thomas",
+		"player2": "james",
 		"notes": [
 			{
 				"lengthInSteps": 16,
@@ -4037,7 +4037,7 @@
 		"song": "Splendid",
 		"validScore": true,
 		"needsVoices": true,
-		"stage": "puffball",
+		"stage": "splendid",
 		"speed": 2.6,
 		"bpm": 178
 	}

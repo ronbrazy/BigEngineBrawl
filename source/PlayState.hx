@@ -651,8 +651,8 @@ class PlayState extends MusicBeatState
 				overDad.push(ob4);
 				
 
-				editable = true;
-				editbleSprite = ob1;
+				//editable = true;
+				//editbleSprite = ob1;
 			case 'godraysremix':
 				ob1 = new FlxSprite(-1075,-739).loadGraphic(Paths.image('bgs/indignation/bg'));
 				ob1.antialiasing = ClientPrefs.globalAntialiasing;
