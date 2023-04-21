@@ -35,8 +35,11 @@ class BebMainMenu extends MusicBeatState
         bg.updateHitbox();
         add(bg);
 
-        if (!ClientPrefs.firstTime)
-            curTrain = trains[FlxG.random.int(0,trains.length)];
+        if (!ClientPrefs.firstTime){
+            var shit = FlxG.random.int(0, trains.length - 1);
+            curTrain = trains[shit];
+            trace(shit);
+        }
         else
         {
             ClientPrefs.firstTime = false;
@@ -98,9 +101,11 @@ class BebMainMenu extends MusicBeatState
                     case 'FreePlayButton':
                         MusicBeatState.switchState(new FreeplayState());
                     case 'AwardsButton':
+                        //yeah
                     case 'OptionsButton':
-                        MusicBeatState.switchState(new options.OptionsState());
+                        openSubState(new BebOptionsSubstate());
                     case 'CreditsButton':
+                        //yeah
                 }
             }
         super.update(elapsed);
