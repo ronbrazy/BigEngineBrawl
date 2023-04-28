@@ -1,48 +1,26 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
-				-30,
-				-120
+				0,
+				0
 			],
+			"indices": [],
+			"fps": 24,
 			"anim": "danceLeft",
-			"fps": 24,
-			"name": "left_beat_gf0",
-			"indices": []
+			"loop": false,
+			"name": "gf danceleft"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				18,
-				-120
+				0,
+				0
 			],
-			"anim": "danceLeft-alt",
+			"indices": [],
 			"fps": 24,
-			"name": "left_beat_gf_snap",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-30,
-				-120
-			],
 			"anim": "danceRight",
-			"fps": 24,
-			"name": "right_beat_gf0",
-			"indices": []
-		},
-		{
 			"loop": false,
-			"offsets": [
-				18,
-				-120
-			],
-			"anim": "danceRight-alt",
-			"fps": 24,
-			"name": "right_beat_gf_snap",
-			"indices": []
+			"name": "gf danceright"
 		}
 	],
 	"no_antialiasing": false,
@@ -63,5 +41,5 @@
 		140
 	],
 	"sing_duration": 6.1,
-	"scale": 1
+	"scale": 0.8
 }
