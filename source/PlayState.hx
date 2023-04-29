@@ -13,6 +13,7 @@ import flixel.FlxG;
 import flixel.FlxGame;
 import flixel.FlxObject;
 import flixel.FlxSprite;
+import flixel.addons.display.FlxBackdrop;
 import flixel.FlxState;
 import flixel.FlxSubState;
 import flixel.addons.display.FlxGridOverlay;
@@ -289,6 +290,7 @@ class PlayState extends MusicBeatState
 	var ob14:FlxSprite;
 	var ob15:FlxSprite;
 	var ob16:FlxSprite;
+	var jamessky:FlxBackdrop;
 	var mech1:FlxSprite;
     var editable:Bool = false; // DEBUG THING
     var editbleSprite:FlxSprite;
@@ -530,11 +532,9 @@ class PlayState extends MusicBeatState
 				//editable = true;
 				//editbleSprite = ob5;
 			case 'splendid':
-				ob1 = new FlxSprite(-350,-500).loadGraphic(Paths.image('bgs/splendid/jamesbg_skyloop'));
-				ob1.antialiasing = ClientPrefs.globalAntialiasing;
-				ob1.setGraphicSize(3840);
-				ob1.updateHitbox();
-				add(ob1);
+				jamessky = new FlxBackdrop(Paths.image('bgs/splendid/jamesbg_skyloop'),X);
+				jamessky.y = -500;
+				add(jamessky);
 
 				ob2 = new FlxSprite(-323,-349);
 				ob2.antialiasing = ClientPrefs.globalAntialiasing;
@@ -2203,6 +2203,7 @@ class PlayState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
+
 		if (FlxG.keys.pressed.SHIFT && editable)
 			{
 				editbleSprite.x = FlxG.mouse.screenX;
@@ -2296,6 +2297,8 @@ class PlayState extends MusicBeatState
 
 		switch (curStage)
 		{
+			case 'splendid':
+				jamessky.x += elapsed*200;
 			case 'schoolEvil':
 				if(!ClientPrefs.lowQuality && bgGhouls.animation.curAnim.finished) {
 					bgGhouls.visible = false;
