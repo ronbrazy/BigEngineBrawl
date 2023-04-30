@@ -91,6 +91,8 @@ class BebOptionsSubstate extends MusicBeatSubstate
         super.create();
     }
 
+    var targetY:Float = 0;
+
     override function update(elapsed:Float){
 
         if (controls.BACK) {
@@ -117,6 +119,7 @@ class BebOptionsSubstate extends MusicBeatSubstate
                 openSelectedSubstate(options[curSelected]);
 		}
 
+        grpOptions.y = FlxMath.lerp(grpOptions.y, targetY, CoolUtil.boundTo(elapsed * 7.5, 0, 1));
         grpOptions.forEach(function(spr:FlxSprite){
             if(allowedToChange){
                 if(spr.active)
@@ -144,10 +147,12 @@ class BebOptionsSubstate extends MusicBeatSubstate
                 spr.alpha = 0.5;
                 spr.active = false;
                 if(spr.ID == curSelected){
+                    targetY = (spr.ID * -172) + 15;
                     spr.alpha = 1;
                     spr.active = true;
                 }
             });
+            trace(targetY);
         }    
     }
 }
