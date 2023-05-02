@@ -297,6 +297,16 @@ class PlayState extends MusicBeatState
 	var curEditSprite:Int = 0;
 	var lpo:Int = 700;
 
+	var charToNoteSkin = [
+		"bf" => "NOTE_assets",
+		"henry" => "HenryNote",
+		"james" => "jameNote",
+		"sadbf" => "NOTE_assets",
+		"sadhenry" => "HenryNote",
+		"thomas" => "thomasNote"
+	];
+
+
 	override public function create()
 	{
 		Paths.clearStoredMemory();
@@ -1674,7 +1684,7 @@ class PlayState extends MusicBeatState
 								countdownGo.destroy();
 							}
 						});
-						FlxG.sound.play(Paths.sound('countdown/BEB_GO_henry'), 0.6);
+						FlxG.sound.play(Paths.sound('countdown/BEB_GO_${dad.curCharacter.toLowerCase()}'), 0.6);
 					case 4:
 				}
 
@@ -1886,6 +1896,11 @@ class PlayState extends MusicBeatState
 				swagNote.noteType = songNotes[3];
 				if(!Std.isOfType(songNotes[3], String)) swagNote.noteType = editors.ChartingState.noteTypeList[songNotes[3]]; //Backward compatibility + compatibility with Week 7 charts
 				
+				swagNote.texture = 'NOTE_assets';
+				if(!swagNote.mustPress)
+					swagNote.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter)}';
+
+				
 				swagNote.scrollFactor.set();
 
 				var susLength:Float = swagNote.sustainLength;
@@ -1904,6 +1919,9 @@ class PlayState extends MusicBeatState
 						sustainNote.gfNote = (section.gfSection && (songNotes[1]<4));
 						sustainNote.noteType = swagNote.noteType;
 						sustainNote.scrollFactor.set();
+						sustainNote.texture = 'NOTE_assets';
+						if(!sustainNote.mustPress)
+							sustainNote.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter)}';
 						unspawnNotes.push(sustainNote);
 
 						if (sustainNote.mustPress)
@@ -2039,6 +2057,7 @@ class PlayState extends MusicBeatState
 			if (player == 1)
 			{
 				playerStrums.add(babyArrow);
+				babyArrow.texture = 'NOTE_assets';
 			}
 			else
 			{
@@ -2050,6 +2069,7 @@ class PlayState extends MusicBeatState
 					}
 				}
 				opponentStrums.add(babyArrow);
+				babyArrow.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter)}';
 			}
 
 			strumLineNotes.add(babyArrow);
