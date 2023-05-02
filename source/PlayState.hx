@@ -297,13 +297,16 @@ class PlayState extends MusicBeatState
 	var curEditSprite:Int = 0;
 	var lpo:Int = 700;
 
+
 	var charToNoteSkin = [
 		"bf" => "NOTE_assets",
 		"henry" => "HenryNote",
 		"james" => "jameNote",
+		"ughjames" => "jameNote"
 		"sadbf" => "NOTE_assets",
 		"sadhenry" => "HenryNote",
-		"thomas" => "thomasNote"
+		"thomas" => "thomasNote",
+		"gordon" => "gordonNote"
 	];
 
 
@@ -558,7 +561,7 @@ class PlayState extends MusicBeatState
 				ob3 = new FlxSprite(191,86);
 				ob3.antialiasing = ClientPrefs.globalAntialiasing;
 				ob3.frames = Paths.getSparrowAtlas('bgs/splendid/james_chasis');
-				ob3.animation.addByPrefix('james chasis idle','james chasis idle',24,true);
+				ob3.animation.addByPrefix('james chasis idle','james chasis idle',34,true);
 				ob3.animation.play('james chasis idle');
 				ob3.setGraphicSize(2680);
 				ob3.updateHitbox();
@@ -574,8 +577,49 @@ class PlayState extends MusicBeatState
 				ob4.updateHitbox();
 				add(ob4);
 
+				add(boyfriendGroup);
+				add(dadGroup);
+
 				//editable = true;
 				//editbleSprite = ob1;
+
+			case 'ugh':
+				jamessky = new FlxBackdrop(Paths.image('bgs/splendid/jamesskyugh'),X);
+				jamessky.y = -500;
+				add(jamessky);
+	
+				ob2 = new FlxSprite(-323,-349);
+				ob2.antialiasing = ClientPrefs.globalAntialiasing;
+				ob2.frames = Paths.getSparrowAtlas('bgs/splendid/jamesbg_hills');
+				ob2.animation.addByPrefix('jamesbg hills idle','jamesbg hills idle',24,true);
+				ob2.animation.play('jamesbg hills idle');
+				ob2.setGraphicSize(3280);
+				ob2.updateHitbox();
+				add(ob2);
+	
+				ob3 = new FlxSprite(191,86);
+				ob3.antialiasing = ClientPrefs.globalAntialiasing;
+				ob3.frames = Paths.getSparrowAtlas('bgs/splendid/james_ugh_chasis');
+				ob3.animation.addByPrefix('james ugh chasis idle','james ugh chasis idle',34,true);
+				ob3.animation.play('james ugh chasis idle');
+				ob3.setGraphicSize(2680);
+				ob3.updateHitbox();
+				add(ob3);
+	
+				add(boyfriendGroup);
+				add(dadGroup);
+
+				ob4 = new FlxSprite(-200,-300).loadGraphic(Paths.image('bgs/splendid/ughoverlay'));
+				ob4.antialiasing = ClientPrefs.globalAntialiasing;
+				ob4.setGraphicSize(5000);
+				ob4.updateHitbox();
+				ob4.alpha = 0.15;
+				overlaySprs.push(ob4);
+
+	
+				//editable = true;
+				//editbleSprite = ob1;	
+
 			case 'sadstory':
 				ob1 = new FlxSprite(-2350,-1600).loadGraphic(Paths.image('bgs/sadstory/ground'));
 				ob1.antialiasing = ClientPrefs.globalAntialiasing;
@@ -2322,6 +2366,8 @@ class PlayState extends MusicBeatState
 		{
 			case 'splendid':
 				jamessky.x += elapsed*200;
+			case 'ugh':
+				jamessky.x += elapsed*200;		
 			case 'schoolEvil':
 				if(!ClientPrefs.lowQuality && bgGhouls.animation.curAnim.finished) {
 					bgGhouls.visible = false;
@@ -2851,6 +2897,7 @@ class PlayState extends MusicBeatState
 		//trace('Control result: ' + pressed);
 		return pressed;
 	}
+	
 
 	public function triggerEventNote(eventName:String, value1:String, value2:String) {
 		switch(eventName) {
@@ -3022,6 +3069,11 @@ class PlayState extends MusicBeatState
 					camHUD.zoom += hudZoom;
 				}
 
+			case 'Set Cam Zoom':
+				camZooming = false;
+				defaultCamZoom = Std.parseFloat(value1);
+				camZooming = true;	
+
 			case 'Trigger BG Ghouls':
 				if(curStage == 'schoolEvil' && !ClientPrefs.lowQuality) {
 					bgGhouls.dance(true);
@@ -3067,7 +3119,7 @@ class PlayState extends MusicBeatState
 
 			case 'Alt Idle Animation':
 				var char:Character = dad;
-				switch(value1.toLowerCase()) {
+				switch(value1.toLowerCase().trim()) {
 					case 'gf' | 'girlfriend':
 						char = gf;
 					case 'boyfriend' | 'bf':
@@ -3087,6 +3139,9 @@ class PlayState extends MusicBeatState
 					char.idleSuffix = value2;
 					char.recalculateDanceIdle();
 				}
+			case 'White Flash':
+				if (ClientPrefs.flashing)
+				FlxG.camera.flash(FlxColor.WHITE,Std.parseFloat(value1));
 
 			case 'Screen Shake':
 				var valuesArray:Array<String> = [value1, value2];

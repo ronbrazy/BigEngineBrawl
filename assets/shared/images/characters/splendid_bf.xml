@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="splendid bf.png"><SubTexture name="splendid bf left0000" x="964" y="1370" width="241" height="270" frameX="0" frameY="-1" frameWidth="242" frameHeight="271" />
+<SubTexture name="splendid bf left0001" x="1205" y="1370" width="241" height="270" frameX="0" frameY="-1" frameWidth="242" frameHeight="271" />
+<SubTexture name="splendid bf left0002" x="482" y="827" width="242" height="271" frameX="0" frameY="0" frameWidth="242" frameHeight="271" />
+<SubTexture name="splendid bf left0003" x="724" y="827" width="242" height="271" frameX="0" frameY="0" frameWidth="242" frameHeight="271" />
+<SubTexture name="splendid bf left0004" x="1172" y="0" width="241" height="271" frameX="-1" frameY="0" frameWidth="242" frameHeight="271" />
+<SubTexture name="splendid bf left0005" x="1172" y="271" width="241" height="271" frameX="-1" frameY="0" frameWidth="242" frameHeight="271" />
+<SubTexture name="splendid bf left0006" x="1172" y="542" width="241" height="271" frameX="-1" frameY="0" frameWidth="242" frameHeight="271" />
+<SubTexture name="splendid bf left0007" x="1172" y="813" width="241" height="271" frameX="-1" frameY="0" frameWidth="242" frameHeight="271" />
+<SubTexture name="splendid bf miss left0000" x="0" y="1099" width="241" height="271" frameX="-34" frameY="-1" frameWidth="275" frameHeight="272" />
+<SubTexture name="splendid bf miss left0001" x="241" y="1099" width="240" height="271" frameX="-32" frameY="-1" frameWidth="275" frameHeight="272" />
+<SubTexture name="splendid bf miss left0002" x="241" y="1099" width="240" height="271" frameX="-32" frameY="-1" frameWidth="275" frameHeight="272" />
+<SubTexture name="splendid bf miss left0003" x="474" y="553" width="242" height="272" frameX="-33" frameY="0" frameWidth="275" frameHeight="272" />
+<SubTexture name="splendid bf miss left0004" x="474" y="553" width="242" height="272" frameX="-33" frameY="0" frameWidth="275" frameHeight="272" />
+<SubTexture name="splendid bf miss left0005" x="930" y="0" width="242" height="272" frameX="-33" frameY="0" frameWidth="275" frameHeight="272" />
+<SubTexture name="splendid bf miss left0006" x="930" y="0" width="242" height="272" frameX="-33" frameY="0" frameWidth="275" frameHeight="272" />
+<SubTexture name="splendid bf miss left0007" x="474" y="553" width="242" height="272" frameX="-33" frameY="0" frameWidth="275" frameHeight="272" />
+<SubTexture name="splendid bf miss left0008" x="474" y="553" width="242" height="272" frameX="-33" frameY="0" frameWidth="275" frameHeight="272" />
+<SubTexture name="splendid bf miss left0009" x="930" y="0" width="242" height="272" frameX="-33" frameY="0" frameWidth="275" frameHeight="272" />
+<SubTexture name="splendid bf up0000" x="462" y="0" width="235" height="276" frameX="-3" frameY="0" frameWidth="241" frameHeight="276" />
+<SubTexture name="splendid bf up0001" x="0" y="277" width="235" height="276" frameX="-3" frameY="0" frameWidth="241" frameHeight="276" />
+<SubTexture name="splendid bf up0002" x="0" y="553" width="237" height="274" frameX="-2" frameY="-2" frameWidth="241" frameHeight="276" />
+<SubTexture name="splendid bf up0003" x="237" y="553" width="237" height="274" frameX="-2" frameY="-2" frameWidth="241" frameHeight="276" />
+<SubTexture name="splendid bf up0004" x="930" y="272" width="241" height="272" frameX="0" frameY="-4" frameWidth="241" frameHeight="276" />
+<SubTexture name="splendid bf up0005" x="930" y="544" width="241" height="272" frameX="0" frameY="-4" frameWidth="241" frameHeight="276" />
+<SubTexture name="splendid bf up0006" x="0" y="827" width="241" height="272" frameX="0" frameY="-4" frameWidth="241" frameHeight="276" />
+<SubTexture name="splendid bf up0007" x="241" y="827" width="241" height="272" frameX="0" frameY="-4" frameWidth="241" frameHeight="276" />
+<SubTexture name="splendid bf miss up0000" x="0" y="0" width="233" height="277" frameX="0" frameY="0" frameWidth="233" frameHeight="277" />
+<SubTexture name="splendid bf miss up0001" x="233" y="0" width="229" height="277" frameX="-2" frameY="0" frameWidth="233" frameHeight="277" />
+<SubTexture name="splendid bf miss up0002" x="233" y="0" width="229" height="277" frameX="-2" frameY="0" frameWidth="233" frameHeight="277" />
+<SubTexture name="splendid bf miss up0003" x="235" y="277" width="233" height="276" frameX="0" frameY="-1" frameWidth="233" frameHeight="277" />
+<SubTexture name="splendid bf miss up0004" x="235" y="277" width="233" height="276" frameX="0" frameY="-1" frameWidth="233" frameHeight="277" />
+<SubTexture name="splendid bf miss up0005" x="697" y="0" width="233" height="276" frameX="0" frameY="-1" frameWidth="233" frameHeight="277" />
+<SubTexture name="splendid bf miss up0006" x="697" y="0" width="233" height="276" frameX="0" frameY="-1" frameWidth="233" frameHeight="277" />
+<SubTexture name="splendid bf miss up0007" x="235" y="277" width="233" height="276" frameX="0" frameY="-1" frameWidth="233" frameHeight="277" />
+<SubTexture name="splendid bf miss up0008" x="235" y="277" width="233" height="276" frameX="0" frameY="-1" frameWidth="233" frameHeight="277" />
+<SubTexture name="splendid bf miss up0009" x="697" y="0" width="233" height="276" frameX="0" frameY="-1" frameWidth="233" frameHeight="277" />
+<SubTexture name="splendid bf right0000" x="1653" y="1080" width="243" height="268" frameX="-2" frameY="-3" frameWidth="245" frameHeight="271" />
+<SubTexture name="splendid bf right0001" x="1653" y="1348" width="243" height="268" frameX="-2" frameY="-3" frameWidth="245" frameHeight="271" />
+<SubTexture name="splendid bf right0002" x="1653" y="0" width="243" height="270" frameX="0" frameY="-1" frameWidth="245" frameHeight="271" />
+<SubTexture name="splendid bf right0003" x="1653" y="270" width="243" height="270" frameX="0" frameY="-1" frameWidth="245" frameHeight="271" />
+<SubTexture name="splendid bf right0004" x="481" y="1099" width="240" height="271" frameX="0" frameY="0" frameWidth="245" frameHeight="271" />
+<SubTexture name="splendid bf right0005" x="721" y="1099" width="240" height="271" frameX="0" frameY="0" frameWidth="245" frameHeight="271" />
+<SubTexture name="splendid bf right0006" x="961" y="1099" width="240" height="271" frameX="0" frameY="0" frameWidth="245" frameHeight="271" />
+<SubTexture name="splendid bf right0007" x="1413" y="0" width="240" height="271" frameX="0" frameY="0" frameWidth="245" frameHeight="271" />
+<SubTexture name="splendid bf miss right0000" x="1896" y="0" width="243" height="268" frameX="0" frameY="0" frameWidth="248" frameHeight="268" />
+<SubTexture name="splendid bf miss right0001" x="0" y="1641" width="246" height="268" frameX="-2" frameY="0" frameWidth="248" frameHeight="268" />
+<SubTexture name="splendid bf miss right0002" x="0" y="1641" width="246" height="268" frameX="-2" frameY="0" frameWidth="248" frameHeight="268" />
+<SubTexture name="splendid bf miss right0003" x="1896" y="268" width="243" height="268" frameX="0" frameY="0" frameWidth="248" frameHeight="268" />
+<SubTexture name="splendid bf miss right0004" x="1896" y="268" width="243" height="268" frameX="0" frameY="0" frameWidth="248" frameHeight="268" />
+<SubTexture name="splendid bf miss right0005" x="1896" y="536" width="243" height="268" frameX="0" frameY="0" frameWidth="248" frameHeight="268" />
+<SubTexture name="splendid bf miss right0006" x="1896" y="536" width="243" height="268" frameX="0" frameY="0" frameWidth="248" frameHeight="268" />
+<SubTexture name="splendid bf miss right0007" x="1896" y="268" width="243" height="268" frameX="0" frameY="0" frameWidth="248" frameHeight="268" />
+<SubTexture name="splendid bf miss right0008" x="1896" y="268" width="243" height="268" frameX="0" frameY="0" frameWidth="248" frameHeight="268" />
+<SubTexture name="splendid bf miss right0009" x="1896" y="536" width="243" height="268" frameX="0" frameY="0" frameWidth="248" frameHeight="268" />
+<SubTexture name="splendid bf down0000" x="734" y="1641" width="245" height="266" frameX="0" frameY="-5" frameWidth="245" frameHeight="271" />
+<SubTexture name="splendid bf down0001" x="979" y="1641" width="245" height="266" frameX="0" frameY="-5" frameWidth="245" frameHeight="271" />
+<SubTexture name="splendid bf down0002" x="246" y="1641" width="244" height="268" frameX="-1" frameY="-3" frameWidth="245" frameHeight="271" />
+<SubTexture name="splendid bf down0003" x="490" y="1641" width="244" height="268" frameX="-1" frameY="-3" frameWidth="245" frameHeight="271" />
+<SubTexture name="splendid bf down0004" x="0" y="1370" width="241" height="271" frameX="-3" frameY="0" frameWidth="245" frameHeight="271" />
+<SubTexture name="splendid bf down0005" x="241" y="1370" width="241" height="271" frameX="-3" frameY="0" frameWidth="245" frameHeight="271" />
+<SubTexture name="splendid bf down0006" x="482" y="1370" width="241" height="271" frameX="-3" frameY="0" frameWidth="245" frameHeight="271" />
+<SubTexture name="splendid bf down0007" x="723" y="1370" width="241" height="271" frameX="-3" frameY="0" frameWidth="245" frameHeight="271" />
+<SubTexture name="splendid bf miss down0000" x="1224" y="1641" width="246" height="266" frameX="-3" frameY="0" frameWidth="252" frameHeight="266" />
+<SubTexture name="splendid bf miss down0001" x="2139" y="0" width="252" height="262" frameX="0" frameY="-4" frameWidth="252" frameHeight="266" />
+<SubTexture name="splendid bf miss down0002" x="2139" y="0" width="252" height="262" frameX="0" frameY="-4" frameWidth="252" frameHeight="266" />
+<SubTexture name="splendid bf miss down0003" x="1470" y="1641" width="246" height="266" frameX="-3" frameY="0" frameWidth="252" frameHeight="266" />
+<SubTexture name="splendid bf miss down0004" x="1716" y="1641" width="246" height="266" frameX="-3" frameY="0" frameWidth="252" frameHeight="266" />
+<SubTexture name="splendid bf miss down0005" x="1716" y="1641" width="246" height="266" frameX="-3" frameY="0" frameWidth="252" frameHeight="266" />
+<SubTexture name="splendid bf miss down0006" x="1470" y="1641" width="246" height="266" frameX="-3" frameY="0" frameWidth="252" frameHeight="266" />
+<SubTexture name="splendid bf miss down0007" x="1470" y="1641" width="246" height="266" frameX="-3" frameY="0" frameWidth="252" frameHeight="266" />
+<SubTexture name="splendid bf miss down0008" x="1716" y="1641" width="246" height="266" frameX="-3" frameY="0" frameWidth="252" frameHeight="266" />
+<SubTexture name="splendid bf miss down0009" x="1716" y="1641" width="246" height="266" frameX="-3" frameY="0" frameWidth="252" frameHeight="266" />
+<SubTexture name="splendid bf idle0000" x="2139" y="778" width="248" height="254" frameX="0" frameY="-25" frameWidth="248" frameHeight="279" />
+<SubTexture name="splendid bf idle0001" x="2139" y="1032" width="248" height="254" frameX="0" frameY="-25" frameWidth="248" frameHeight="279" />
+<SubTexture name="splendid bf idle0002" x="2139" y="262" width="240" height="258" frameX="-3" frameY="-18" frameWidth="248" frameHeight="279" />
+<SubTexture name="splendid bf idle0003" x="2139" y="520" width="240" height="258" frameX="-3" frameY="-18" frameWidth="248" frameHeight="279" />
+<SubTexture name="splendid bf idle0004" x="1896" y="1338" width="233" height="264" frameX="-6" frameY="-7" frameWidth="248" frameHeight="279" />
+<SubTexture name="splendid bf idle0005" x="697" y="276" width="233" height="264" frameX="-6" frameY="-7" frameWidth="248" frameHeight="279" />
+<SubTexture name="splendid bf idle0006" x="1896" y="804" width="232" height="267" frameX="-6" frameY="-4" frameWidth="248" frameHeight="279" />
+<SubTexture name="splendid bf idle0007" x="1896" y="1071" width="232" height="267" frameX="-6" frameY="-4" frameWidth="248" frameHeight="279" />
+<SubTexture name="splendid bf idle0008" x="1653" y="540" width="230" height="270" frameX="-6" frameY="-1" frameWidth="248" frameHeight="279" />
+<SubTexture name="splendid bf idle0009" x="1653" y="810" width="230" height="270" frameX="-6" frameY="-1" frameWidth="248" frameHeight="279" />
+<SubTexture name="splendid bf idle0010" x="1413" y="271" width="229" height="271" frameX="-6" frameY="0" frameWidth="248" frameHeight="279" />
+<SubTexture name="splendid bf idle0011" x="1413" y="542" width="229" height="271" frameX="-6" frameY="0" frameWidth="248" frameHeight="279" />
+<SubTexture name="splendid bf idle0012" x="1413" y="813" width="229" height="271" frameX="-6" frameY="0" frameWidth="248" frameHeight="279" />
+<SubTexture name="splendid bf idle0013" x="1413" y="1084" width="229" height="271" frameX="-6" frameY="0" frameWidth="248" frameHeight="279" />
+<SubTexture name="splendid bf idle0014" x="1413" y="271" width="229" height="271" frameX="-6" frameY="0" frameWidth="248" frameHeight="279" />
+</TextureAtlas>
