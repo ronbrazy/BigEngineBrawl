@@ -302,7 +302,7 @@ class PlayState extends MusicBeatState
 		"bf" => "NOTE_assets",
 		"henry" => "HenryNote",
 		"james" => "jameNote",
-		"ughjames" => "jameNote"
+		"ughjames" => "jameNote",
 		"sadbf" => "NOTE_assets",
 		"sadhenry" => "HenryNote",
 		"thomas" => "thomasNote",
