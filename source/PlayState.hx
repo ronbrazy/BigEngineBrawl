@@ -1898,7 +1898,7 @@ class PlayState extends MusicBeatState
 				
 				swagNote.texture = 'NOTE_assets';
 				if(!swagNote.mustPress)
-					swagNote.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter)}';
+					swagNote.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter.toLowerCase())}';
 
 				
 				swagNote.scrollFactor.set();
@@ -1921,7 +1921,7 @@ class PlayState extends MusicBeatState
 						sustainNote.scrollFactor.set();
 						sustainNote.texture = 'NOTE_assets';
 						if(!sustainNote.mustPress)
-							sustainNote.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter)}';
+							sustainNote.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter.toLowerCase())}';
 						unspawnNotes.push(sustainNote);
 
 						if (sustainNote.mustPress)
@@ -2069,7 +2069,10 @@ class PlayState extends MusicBeatState
 					}
 				}
 				opponentStrums.add(babyArrow);
-				babyArrow.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter)}';
+				babyArrow.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter.toLowerCase())}';
+				// trace('noteskins/${charToNoteSkin.get(dad.curCharacter.toLowerCase())}');
+				// trace('noteskins/${dad.curCharacter}')
+
 			}
 
 			strumLineNotes.add(babyArrow);
