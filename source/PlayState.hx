@@ -152,6 +152,7 @@ class PlayState extends MusicBeatState
 
 	private var healthBarBG:AttachedSprite;
 	public var healthBar:FlxBar;
+	public var healthBarOverlay:FlxSprite;
 	var songPercent:Float = 0;
 
 	private var timeBarBG:AttachedSprite;
@@ -1066,21 +1067,17 @@ class PlayState extends MusicBeatState
 		FlxG.fixedTimestep = false;
 		moveCameraSection(0);
 
-		healthBarBG = new AttachedSprite('healthBar');
-		healthBarBG.loadGraphic(Paths.image('healthBarW'));
-		healthBarBG.loadGraphic(Paths.image('healthBarL'));
-		healthBarBG.loadGraphic(Paths.image('healthBar'));
-		healthBarBG.frameStr = 'healthBar';
+		healthBarBG = new AttachedSprite('healthbar/healthbar_white');
 		healthBarBG.y = FlxG.height * 0.89;
 		healthBarBG.screenCenter(X);
 		healthBarBG.scrollFactor.set();
 		healthBarBG.visible = !ClientPrefs.hideHud;
 		healthBarBG.xAdd = -4;
-		healthBarBG.yAdd = -79;
+		healthBarBG.yAdd = -4;
 		add(healthBarBG);
-		if(ClientPrefs.downScroll) healthBarBG.y = 0.11 * FlxG.height; //773 787
+		if(ClientPrefs.downScroll) healthBarBG.y = 0.11 * FlxG.height;
 
-		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y - 20, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 10), Std.int(healthBarBG.height - 86), this,
+		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
 			'health', 0, 2);
 		healthBar.scrollFactor.set();
 		// healthBar
@@ -1088,6 +1085,19 @@ class PlayState extends MusicBeatState
 		healthBar.alpha = ClientPrefs.healthBarAlpha;
 		add(healthBar);
 		healthBarBG.sprTracker = healthBar;
+
+		var shitfuckfart:FlxSprite = new FlxSprite().loadGraphic(Paths.image("healthbar/yea"));
+		shitfuckfart.cameras = [camHUD];
+		shitfuckfart.setPosition(healthBarBG.x + 1, healthBarBG.y);
+		add(shitfuckfart);
+
+		healthBarOverlay = new FlxSprite();
+		healthBarOverlay.loadGraphic(Paths.image("healthbar/track_overlay_winning"));
+		healthBarOverlay.loadGraphic(Paths.image("healthbar/track_overlay_losing"));
+		healthBarOverlay.loadGraphic(Paths.image("healthbar/track_overlay_normal"));
+		healthBarOverlay.setPosition(healthBarBG.x, healthBarBG.y - (65 + 8));
+		healthBarOverlay.cameras = [camHUD];
+		add(healthBarOverlay);
 
 		iconP1 = new HealthIcon(boyfriend.healthIcon, true);
 		iconP1.y = healthBar.y - 75;
@@ -2569,18 +2579,19 @@ class PlayState extends MusicBeatState
 
 		if (iconP1.animation.curAnim.curFrame == 1 && healthBarBG.frameStr != 'healthBarL')
 			{
-				healthBarBG.frameStr = 'healthBarL';
-				healthBarBG.loadGraphic(Paths.image('healthBarL'));
+				healthBarOverlay.loadGraphic(Paths.image('healthbar/track_overlay_losing'));
+				healthBarOverlay.setPosition(healthBarBG.x + 4, healthBarBG.y - (65 + 6));
 			}
 		else if (iconP2.animation.curAnim.curFrame == 1 && healthBarBG.frameStr != 'healthBarW')
 			{
-				healthBarBG.frameStr = 'healthBarW';
-				healthBarBG.loadGraphic(Paths.image('healthBarW'));
+				healthBarOverlay.loadGraphic(Paths.image('healthbar/track_overlay_winning'));
+				healthBarOverlay.setPosition(healthBarBG.x + 7, healthBarBG.y - (65 + 6));
 			}
 		else if (iconP1.animation.curAnim.curFrame == 0 && iconP2.animation.curAnim.curFrame == 0 && healthBarBG.frameStr != 'healthBar')
 			{
-				healthBarBG.frameStr = 'healthBar';
-				healthBarBG.loadGraphic(Paths.image('healthBar'));
+				healthBarOverlay.loadGraphic(Paths.image('healthbar/track_overlay_normal'));
+				healthBarOverlay.setPosition(healthBarBG.x + 13, healthBarBG.y - (65 + 6));
+
 			}
 			
 		if (FlxG.keys.anyJustPressed(debugKeysCharacter) && !endingSong && !inCutscene) {
