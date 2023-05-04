@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="fp cloud.png"><SubTexture name="fp cloud intro0000" x="3359" y="545" width="21" height="17" frameX="-823" frameY="-332" frameWidth="1646" frameHeight="376" />
+<SubTexture name="fp cloud intro0001" x="3359" y="545" width="21" height="17" frameX="-823" frameY="-332" frameWidth="1646" frameHeight="376" />
+<SubTexture name="fp cloud intro0002" x="3308" y="545" width="51" height="40" frameX="-807" frameY="-298" frameWidth="1646" frameHeight="376" />
+<SubTexture name="fp cloud intro0003" x="3308" y="545" width="51" height="40" frameX="-807" frameY="-298" frameWidth="1646" frameHeight="376" />
+<SubTexture name="fp cloud intro0004" x="3308" y="475" width="83" height="70" frameX="-790" frameY="-266" frameWidth="1646" frameHeight="376" />
+<SubTexture name="fp cloud intro0005" x="407" y="2431" width="243" height="139" frameX="-712" frameY="-210" frameWidth="1646" frameHeight="376" />
+<SubTexture name="fp cloud intro0006" x="407" y="2431" width="243" height="139" frameX="-712" frameY="-210" frameWidth="1646" frameHeight="376" />
+<SubTexture name="fp cloud intro0007" x="0" y="2431" width="407" height="183" frameX="-630" frameY="-150" frameWidth="1646" frameHeight="376" />
+<SubTexture name="fp cloud intro0008" x="2757" y="1694" width="623" height="280" frameX="-522" frameY="-79" frameWidth="1646" frameHeight="376" />
+<SubTexture name="fp cloud intro0009" x="2757" y="1694" width="623" height="280" frameX="-522" frameY="-79" frameWidth="1646" frameHeight="376" />
+<SubTexture name="fp cloud intro0010" x="1649" y="1694" width="1108" height="368" frameX="-334" frameY="0" frameWidth="1646" frameHeight="376" />
+<SubTexture name="fp cloud intro0011" x="1649" y="1694" width="1108" height="368" frameX="-334" frameY="0" frameWidth="1646" frameHeight="376" />
+<SubTexture name="fp cloud intro0012" x="0" y="2064" width="1646" height="367" frameX="0" frameY="-9" frameWidth="1646" frameHeight="376" />
+<SubTexture name="fp cloud intro0013" x="0" y="2064" width="1646" height="367" frameX="0" frameY="-9" frameWidth="1646" frameHeight="376" />
+<SubTexture name="fp cloud loop0000" x="0" y="932" width="1643" height="385" frameX="0" frameY="-1" frameWidth="1656" frameHeight="386" />
+<SubTexture name="fp cloud loop0001" x="0" y="932" width="1643" height="385" frameX="0" frameY="-1" frameWidth="1656" frameHeight="386" />
+<SubTexture name="fp cloud loop0002" x="0" y="932" width="1643" height="385" frameX="0" frameY="-1" frameWidth="1656" frameHeight="386" />
+<SubTexture name="fp cloud loop0003" x="0" y="1317" width="1641" height="377" frameX="-5" frameY="-1" frameWidth="1656" frameHeight="386" />
+<SubTexture name="fp cloud loop0004" x="0" y="1317" width="1641" height="377" frameX="-5" frameY="-1" frameWidth="1656" frameHeight="386" />
+<SubTexture name="fp cloud loop0005" x="0" y="1317" width="1641" height="377" frameX="-5" frameY="-1" frameWidth="1656" frameHeight="386" />
+<SubTexture name="fp cloud loop0006" x="1643" y="932" width="1642" height="382" frameX="-8" frameY="-1" frameWidth="1656" frameHeight="386" />
+<SubTexture name="fp cloud loop0007" x="1643" y="932" width="1642" height="382" frameX="-8" frameY="-1" frameWidth="1656" frameHeight="386" />
+<SubTexture name="fp cloud loop0008" x="1643" y="932" width="1642" height="382" frameX="-8" frameY="-1" frameWidth="1656" frameHeight="386" />
+<SubTexture name="fp cloud loop0009" x="1641" y="1317" width="1639" height="376" frameX="-8" frameY="0" frameWidth="1656" frameHeight="386" />
+<SubTexture name="fp cloud loop0010" x="1641" y="1317" width="1639" height="376" frameX="-8" frameY="0" frameWidth="1656" frameHeight="386" />
+<SubTexture name="fp cloud loop0011" x="1641" y="1317" width="1639" height="376" frameX="-8" frameY="0" frameWidth="1656" frameHeight="386" />
+<SubTexture name="fp cloud loop0012" x="0" y="1694" width="1649" height="370" frameX="-7" frameY="0" frameWidth="1656" frameHeight="386" />
+<SubTexture name="fp cloud loop0013" x="0" y="1694" width="1649" height="370" frameX="-7" frameY="0" frameWidth="1656" frameHeight="386" />
+<SubTexture name="fp cloud loop0014" x="0" y="1694" width="1649" height="370" frameX="-7" frameY="0" frameWidth="1656" frameHeight="386" />
+<SubTexture name="fp cloud close0000" x="1646" y="2064" width="1649" height="366" frameX="-28" frameY="-11" frameWidth="1711" frameHeight="475" />
+<SubTexture name="fp cloud close0001" x="0" y="0" width="1685" height="475" frameX="-26" frameY="0" frameWidth="1711" frameHeight="475" />
+<SubTexture name="fp cloud close0002" x="0" y="0" width="1685" height="475" frameX="-26" frameY="0" frameWidth="1711" frameHeight="475" />
+<SubTexture name="fp cloud close0003" x="0" y="475" width="1692" height="457" frameX="0" frameY="-10" frameWidth="1711" frameHeight="475" />
+<SubTexture name="fp cloud close0004" x="0" y="475" width="1692" height="457" frameX="0" frameY="-10" frameWidth="1711" frameHeight="475" />
+<SubTexture name="fp cloud close0005" x="1692" y="475" width="1616" height="426" frameX="-62" frameY="-14" frameWidth="1711" frameHeight="475" />
+<SubTexture name="fp cloud close0006" x="1692" y="475" width="1616" height="426" frameX="-62" frameY="-14" frameWidth="1711" frameHeight="475" />
+<SubTexture name="fp cloud close0007" x="1685" y="0" width="1711" height="475" frameX="0" frameY="0" frameWidth="1711" frameHeight="475" />
+<SubTexture name="fp cloud close0008" x="1685" y="0" width="1711" height="475" frameX="0" frameY="0" frameWidth="1711" frameHeight="475" />
+</TextureAtlas>

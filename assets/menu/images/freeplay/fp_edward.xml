@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="fp edward.png"><SubTexture name="fp edward select0000" x="1223" y="0" width="392" height="668" frameX="-112" frameY="-131" frameWidth="600" frameHeight="820" />
+<SubTexture name="fp edward select0001" x="1223" y="0" width="392" height="668" frameX="-112" frameY="-131" frameWidth="600" frameHeight="820" />
+<SubTexture name="fp edward select0002" x="0" y="688" width="394" height="665" frameX="-111" frameY="-135" frameWidth="600" frameHeight="820" />
+<SubTexture name="fp edward select0003" x="789" y="688" width="400" height="658" frameX="-108" frameY="-142" frameWidth="600" frameHeight="820" />
+<SubTexture name="fp edward select0004" x="0" y="0" width="413" height="688" frameX="-101" frameY="-121" frameWidth="600" frameHeight="820" />
+<SubTexture name="fp edward select0005" x="0" y="0" width="413" height="688" frameX="-101" frameY="-121" frameWidth="600" frameHeight="820" />
+<SubTexture name="fp edward select0006" x="413" y="0" width="408" height="679" frameX="-104" frameY="-125" frameWidth="600" frameHeight="820" />
+<SubTexture name="fp edward select0007" x="413" y="0" width="408" height="679" frameX="-104" frameY="-125" frameWidth="600" frameHeight="820" />
+<SubTexture name="fp edward select0008" x="821" y="0" width="402" height="670" frameX="-107" frameY="-130" frameWidth="600" frameHeight="820" />
+<SubTexture name="fp edward select0009" x="821" y="0" width="402" height="670" frameX="-107" frameY="-130" frameWidth="600" frameHeight="820" />
+<SubTexture name="fp edward select0010" x="394" y="688" width="395" height="663" frameX="-110" frameY="-136" frameWidth="600" frameHeight="820" />
+<SubTexture name="fp edward select0011" x="394" y="688" width="395" height="663" frameX="-110" frameY="-136" frameWidth="600" frameHeight="820" />
+<SubTexture name="fp edward select0012" x="394" y="688" width="395" height="663" frameX="-110" frameY="-136" frameWidth="600" frameHeight="820" />
+<SubTexture name="fp edward select0013" x="394" y="688" width="395" height="663" frameX="-110" frameY="-136" frameWidth="600" frameHeight="820" />
+<SubTexture name="fp edward select0014" x="394" y="688" width="395" height="663" frameX="-110" frameY="-136" frameWidth="600" frameHeight="820" />
+</TextureAtlas>

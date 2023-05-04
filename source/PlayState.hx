@@ -1075,7 +1075,7 @@ class PlayState extends MusicBeatState
 		healthBarBG.xAdd = -4;
 		healthBarBG.yAdd = -4;
 		add(healthBarBG);
-		if(ClientPrefs.downScroll) healthBarBG.y = 0.11 * FlxG.height;
+		if(ClientPrefs.downScroll) healthBarBG.y = 0.17 * FlxG.height;
 
 		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
 			'health', 0, 2);
@@ -1088,7 +1088,9 @@ class PlayState extends MusicBeatState
 
 		var shitfuckfart:FlxSprite = new FlxSprite().loadGraphic(Paths.image("healthbar/yea"));
 		shitfuckfart.cameras = [camHUD];
-		shitfuckfart.setPosition(healthBarBG.x + 1, healthBarBG.y);
+		shitfuckfart.visible = !ClientPrefs.hideHud;
+		shitfuckfart.alpha = ClientPrefs.healthBarAlpha;
+		shitfuckfart.setPosition(healthBarBG.x - 0, healthBarBG.y);
 		add(shitfuckfart);
 
 		healthBarOverlay = new FlxSprite();
@@ -1096,17 +1098,19 @@ class PlayState extends MusicBeatState
 		healthBarOverlay.loadGraphic(Paths.image("healthbar/track_overlay_losing"));
 		healthBarOverlay.loadGraphic(Paths.image("healthbar/track_overlay_normal"));
 		healthBarOverlay.setPosition(healthBarBG.x, healthBarBG.y - (65 + 8));
+		healthBarOverlay.visible = !ClientPrefs.hideHud;
+		healthBarOverlay.alpha = ClientPrefs.healthBarAlpha;
 		healthBarOverlay.cameras = [camHUD];
 		add(healthBarOverlay);
 
 		iconP1 = new HealthIcon(boyfriend.healthIcon, true);
-		iconP1.y = healthBar.y - 75;
+		iconP1.y = healthBar.y - 130;
 		iconP1.visible = !ClientPrefs.hideHud;
 		iconP1.alpha = ClientPrefs.healthBarAlpha;
 		add(iconP1);
 
 		iconP2 = new HealthIcon(dad.healthIcon, false);
-		iconP2.y = healthBar.y - 75;
+		iconP2.y = healthBar.y - 130;
 		iconP2.visible = !ClientPrefs.hideHud;
 		iconP2.alpha = ClientPrefs.healthBarAlpha;
 		add(iconP2);

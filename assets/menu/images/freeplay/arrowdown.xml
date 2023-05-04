@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="arrowdown.png">
+	<!-- Created with Adobe Animate version 23.0.0.407 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="arrow down0000" x="0" y="0" width="183" height="94" frameX="0" frameY="0" frameWidth="183" frameHeight="119"/>
+	<SubTexture name="arrow down0001" x="183" y="0" width="181" height="94" frameX="-1" frameY="-2" frameWidth="183" frameHeight="119"/>
+	<SubTexture name="arrow down0002" x="0" y="94" width="175" height="89" frameX="-4" frameY="-11" frameWidth="183" frameHeight="119"/>
+	<SubTexture name="arrow down0003" x="175" y="94" width="161" height="84" frameX="-11" frameY="-24" frameWidth="183" frameHeight="119"/>
+	<SubTexture name="arrow down0004" x="336" y="94" width="145" height="75" frameX="-19" frameY="-44" frameWidth="183" frameHeight="119"/>
+	<SubTexture name="arrow down0005" x="0" y="183" width="155" height="80" frameX="-14" frameY="-32" frameWidth="183" frameHeight="119"/>
+	<SubTexture name="arrow down0006" x="155" y="183" width="163" height="85" frameX="-10" frameY="-22" frameWidth="183" frameHeight="119"/>
+	<SubTexture name="arrow down0007" x="318" y="183" width="171" height="88" frameX="-6" frameY="-14" frameWidth="183" frameHeight="119"/>
+	<SubTexture name="arrow down0008" x="0" y="271" width="177" height="91" frameX="-3" frameY="-8" frameWidth="183" frameHeight="119"/>
+	<SubTexture name="arrow down0009" x="177" y="271" width="181" height="93" frameX="-1" frameY="-3" frameWidth="183" frameHeight="119"/>
+	<SubTexture name="arrow down0010" x="0" y="364" width="183" height="95" frameX="0" frameY="0" frameWidth="183" frameHeight="119"/>
+	<SubTexture name="arrow down0011" x="0" y="0" width="183" height="94" frameX="0" frameY="0" frameWidth="183" frameHeight="119"/>
+</TextureAtlas>
