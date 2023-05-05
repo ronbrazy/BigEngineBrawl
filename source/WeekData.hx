@@ -8,9 +8,6 @@ import lime.utils.Assets;
 import openfl.utils.Assets as OpenFlAssets;
 import haxe.Json;
 import haxe.format.JsonParser;
-#if sys
-import sys.io.File;
-#end
 
 using StringTools;
 
@@ -93,7 +90,6 @@ class WeekData {
 		weeksList = [];
 		weeksLoaded.clear();
 
-		// FUCVK SHADOWNMARIO!!!!!1DSJNUFNFUDSFYUADSFCUDSAQ
 		var myassFile:WeekFile = {
 			songs: Weeks.weeks,
 			weekCharacters: ['bret', 'bf', 'gf'],

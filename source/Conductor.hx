@@ -33,22 +33,18 @@ class Conductor
 	{
 	}
 
-	public static function judgeNote(note:Note, diff:Float=0) //STOLEN FROM KADE ENGINE (bbpanzu) - I had to rewrite it later anyway after i added the custom hit windows lmao (Shadow Mario)
+	public static function judgeNote(note:Note, diff:Float=0):Rating // die
+	{
+		var data:Array<Rating> = PlayState.instance.ratingsData; //shortening cuz fuck u
+		for(i in 0...data.length-1) //skips last window (Shit)
 		{
-			//tryna do MS based judgment due to popular demand
-			var timingWindows:Array<Int> = [ClientPrefs.sickWindow, ClientPrefs.goodWindow, ClientPrefs.badWindow];
-			var windowNames:Array<String> = ['sick', 'good', 'bad'];
-	
-			// var diff = Math.abs(note.strumTime - Conductor.songPosition) / (PlayState.songMultiplier >= 1 ? PlayState.songMultiplier : 1);
-			for(i in 0...timingWindows.length) // based on 4 timing windows, will break with anything else
+			if (diff <= data[i].hitWindow)
 			{
-				if (diff <= timingWindows[Math.round(Math.min(i, timingWindows.length - 1))])
-				{
-					return windowNames[i];
-				}
+				return data[i];
 			}
-			return 'shit';
 		}
+		return data[data.length - 1];
+	}
 
 	public static function getCrotchetAtTime(time:Float){
 		var lastChange = getBPMFromSeconds(time);

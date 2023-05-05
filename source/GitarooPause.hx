@@ -59,7 +59,7 @@ class GitarooPause extends MusicBeatState
 		{
 			if (replaySelect)
 			{
-				MusicBeatState.switchState(new DebugPlaystate());
+				MusicBeatState.switchState(new PlayState());
 			}
 			else
 			{
@@ -68,8 +68,8 @@ class GitarooPause extends MusicBeatState
 				PlayState.seenCutscene = false;
 				PlayState.deathCounter = 0;
 				PlayState.cpuControlled = false;
-				MusicBeatState.switchState(new BebMainMenu());
-				FlxG.sound.playMusic(Paths.music('bebmenu'));
+				MusicBeatState.switchState(new MainMenuState());
+				FlxG.sound.playMusic(Paths.music('freakyMenu'));
 			}
 		}
 
