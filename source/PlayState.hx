@@ -345,6 +345,7 @@ class PlayState extends MusicBeatState
     var editbleSprite:FlxSprite;
 	var curEditSprite:Int = 0;
 	var lpo:Int = 700;
+	var signalTween:FlxTween;
 
 	var charToNoteSkin = [
 		"bf" => "NOTE_assets",
@@ -1371,6 +1372,20 @@ class PlayState extends MusicBeatState
 				mech1.updateHitbox();
 				mech1.cameras = [camHUD];
 				mech1.alpha = 0.00001;
+				if (!ClientPrefs.downScroll)
+					{
+						mech1.x = 734;
+						mech1.y = -265;
+					}
+				else
+					{
+						mech1.x = 734;
+						mech1.y = 265;
+					}
+				if (ClientPrefs.middleScroll)
+					{
+						mech1.x = 418;
+					}
 				add(mech1);
 		}
 
@@ -2499,9 +2514,12 @@ class PlayState extends MusicBeatState
 				swagNote.noteType = songNotes[3];
 				if(!Std.isOfType(songNotes[3], String)) swagNote.noteType = editors.ChartingState.noteTypeList[songNotes[3]]; //Backward compatibility + compatibility with Week 7 charts
 
-				swagNote.texture = 'NOTE_assets';
-				if(!swagNote.mustPress)
-					swagNote.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter.toLowerCase())}';
+				if (swagNote.noteType == '')
+				{
+					swagNote.texture = 'NOTE_assets';
+					if(!swagNote.mustPress)
+						swagNote.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter.toLowerCase())}';
+				}
 
 				swagNote.scrollFactor.set();
 
@@ -2521,9 +2539,12 @@ class PlayState extends MusicBeatState
 						sustainNote.gfNote = (section.gfSection && (songNotes[1]<4));
 						sustainNote.noteType = swagNote.noteType;
 						sustainNote.scrollFactor.set();
-						sustainNote.texture = 'NOTE_assets';
-						if(!sustainNote.mustPress)
-							sustainNote.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter.toLowerCase())}';
+						if (sustainNote.noteType == '')
+							{
+								sustainNote.texture = 'NOTE_assets';
+								if(!sustainNote.mustPress)
+									sustainNote.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter.toLowerCase())}';
+							}
 						swagNote.tail.push(sustainNote);
 						sustainNote.parent = swagNote;
 						unspawnNotes.push(sustainNote);
@@ -2741,6 +2762,9 @@ class PlayState extends MusicBeatState
 				vocals.pause();
 			}
 
+			if(signalTween != null)
+				signalTween.active = false;
+
 			if (startTimer != null && !startTimer.finished)
 				startTimer.active = false;
 			if (finishTimer != null && !finishTimer.finished)
@@ -2776,6 +2800,9 @@ class PlayState extends MusicBeatState
 			{
 				resyncVocals();
 			}
+
+			if(signalTween != null)
+				signalTween.active = true;
 
 			if (startTimer != null && !startTimer.finished)
 				startTimer.active = true;
@@ -4668,11 +4695,14 @@ class PlayState extends MusicBeatState
 		switch (daNote.noteType)
 		{
 			case 'Signal Note':
-				FlxG.sound.play(Paths.sound('SignalNote'));
-				mech1.animation.play('move');
-				FlxTween.tween(mech1, {alpha: 1}, 0.3, {ease: FlxEase.cubeInOut});
-				blockInput = true;
-				FlxTween.tween(mech1, {alpha: 0.00001}, 0.3, {ease: FlxEase.cubeInOut, startDelay: 5, onComplete: function(twn:FlxTween){blockInput = false;}});
+				if(!blockInput)
+					{
+						FlxG.sound.play(Paths.sound('SignalNote'));
+						mech1.animation.play('move');
+						FlxTween.tween(mech1, {alpha: 1}, 0.3, {ease: FlxEase.cubeInOut});
+						blockInput = true;
+						signalTween = FlxTween.tween(mech1, {alpha: 0.00001}, 0.3, {ease: FlxEase.cubeInOut, startDelay: 5, onComplete: function(twn:FlxTween){blockInput = false; signalTween = null;}});
+					}
 		}
 
 		callOnLuas('noteMiss', [notes.members.indexOf(daNote), daNote.noteData, daNote.noteType, daNote.isSustainNote]);
