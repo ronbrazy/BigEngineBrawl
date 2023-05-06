@@ -88,6 +88,17 @@ class BebMainMenu extends MusicBeatState
     }
     override function update(elapsed:Float)
     {
+        // doesn't work with how the sprites are currently positioned, also keeps triggering over and over again
+        // so it needs a safegaurd for that
+        /*for (i in 0...btns.length)
+        {
+            if (FlxG.mouse.overlaps(buttons[i]))
+                {
+                    curButton = i;
+                    selecting();
+                }
+        }*/
+
         if (controls.UI_UP_P)
             selecting(-1);
         if (controls.UI_DOWN_P)

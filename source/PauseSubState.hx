@@ -17,7 +17,7 @@ import flixel.util.FlxStringUtil;
 
 class PauseSubState extends MusicBeatSubstate
 {
-	var grpMenuShit:FlxTypedGroup<Alphabet>;
+	var grpMenuShit:FlxTypedGroup<AlphaBetter>;
 
 	var menuItems:Array<String> = [];
 	var menuItemsOG:Array<String> = ['Resume', 'Restart Song', 'Change Difficulty', 'Exit to menu'];
@@ -27,7 +27,7 @@ class PauseSubState extends MusicBeatSubstate
 	var pauseMusic:FlxSound;
 	var practiceText:FlxText;
 	var skipTimeText:FlxText;
-	var skipTimeTracker:Alphabet;
+	var skipTimeTracker:AlphaBetter;
 	var curTime:Float = Math.max(0, Conductor.songPosition);
 	//var botplayText:FlxText;
 
@@ -128,7 +128,7 @@ class PauseSubState extends MusicBeatSubstate
 		FlxTween.tween(levelDifficulty, {alpha: 1, y: levelDifficulty.y + 5}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.5});
 		FlxTween.tween(blueballedTxt, {alpha: 1, y: blueballedTxt.y + 5}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.7});
 
-		grpMenuShit = new FlxTypedGroup<Alphabet>();
+		grpMenuShit = new FlxTypedGroup<AlphaBetter>();
 		add(grpMenuShit);
 
 		regenMenu();
@@ -349,7 +349,8 @@ class PauseSubState extends MusicBeatSubstate
 		}
 
 		for (i in 0...menuItems.length) {
-			var item = new Alphabet(90, 320, menuItems[i], true);
+			var item:AlphaBetter = new AlphaBetter(0, 70 * i + 30, 0, menuItems[i], 64, false);
+			item.setFormat(64, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 			item.isMenuItem = true;
 			item.targetY = i;
 			grpMenuShit.add(item);
