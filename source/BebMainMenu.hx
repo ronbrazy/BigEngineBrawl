@@ -23,12 +23,20 @@ class BebMainMenu extends MusicBeatState
     ];
     var buttons:Array<FlxSprite> = [];
     var curButton:Int = 0;
+    var cursorSprite:FlxSprite;
+    var cursorSprite2:FlxSprite;
+    //var selectingCursor:Bool = false;
     override function create()
     {
         if(FlxG.sound.music == null) {
             FlxG.sound.playMusic(Paths.music('bebmenu'), 0);
             FlxG.sound.music.fadeIn(1, 0, 0.7);
         }
+        
+        cursorSprite = new FlxSprite().loadGraphic(Paths.image('ui/cursor'));
+        cursorSprite2 = new FlxSprite().loadGraphic(Paths.image('ui/cursor2'));
+        FlxG.mouse.visible = true;
+
         var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('main/menubackground', 'menu'));
         bg.antialiasing = ClientPrefs.globalAntialiasing;
         bg.setGraphicSize(Std.int(bg.width / 1.5));
@@ -90,6 +98,7 @@ class BebMainMenu extends MusicBeatState
     {
         // doesn't work with how the sprites are currently positioned, also keeps triggering over and over again
         // so it needs a safegaurd for that
+        
         for (i in 0...btns.length)
         {
             if (buttons[i].ID != curButton)
@@ -98,13 +107,22 @@ class BebMainMenu extends MusicBeatState
                         curButton = i;
                         selecting();
                     }
-            else
+            if (FlxG.mouse.overlaps(buttons[curButton]) && FlxG.mouse.y < (buttons[curButton].y + 75))
+            {
+                if (FlxG.mouse.justPressed)
                 {
-                    if (FlxG.mouse.justPressed)
-                        {
-                            selectedSomething();
-                        }
+                    selectedSomething();
                 }
+            }
+            if (FlxG.mouse.overlaps(buttons[i]) && FlxG.mouse.y < (buttons[i].y + 75))
+                {
+                    changeCursor(true);
+                    break;
+                }
+            else
+                changeCursor(false);
+                
+                
         }
 
         if (controls.UI_UP_P)
@@ -144,6 +162,18 @@ class BebMainMenu extends MusicBeatState
                         openSubState(new BebOptionsSubstate());
                     case 'CreditsButton':
                         //yeah
+                }
+        }
+
+    function changeCursor(value:Bool)
+        {
+            if (value)
+                {
+                    FlxG.mouse.load(cursorSprite2.pixels);
+                }
+            if (!value)
+                {
+                    FlxG.mouse.load(cursorSprite.pixels);
                 }
         }
 }

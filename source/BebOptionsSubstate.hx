@@ -39,6 +39,8 @@ class BebOptionsSubstate extends MusicBeatSubstate
     var curSelected:Int = 0;
     var camFollow:FlxObject;
 	var camFollowPos:FlxObject;
+    var cursorSprite:FlxSprite;
+    var cursorSprite2:FlxSprite;
 
     function openSelectedSubstate(label:String) {
 		switch(label) {
@@ -68,6 +70,10 @@ class BebOptionsSubstate extends MusicBeatSubstate
         bg.alpha = 0;
         add(bg);
 
+        cursorSprite = new FlxSprite().loadGraphic(Paths.image('ui/cursor'));
+        cursorSprite2 = new FlxSprite().loadGraphic(Paths.image('ui/cursor2'));
+        FlxG.mouse.visible = true;
+
         grpOptions = new FlxSpriteGroup();
         for(i in 0...options.length){
             var optionBar:FlxSprite = new FlxSprite(1280, 0 + (172 * i)).loadGraphic(Paths.image('options/${options[i]}', 'menu'));
@@ -83,10 +89,12 @@ class BebOptionsSubstate extends MusicBeatSubstate
         FlxTween.tween(bg, {alpha: 0.75}, 0.25, {ease: FlxEase.backInOut, /* goated ease */ onComplete: function(lol:FlxTween){
             allowedToChange = true;
             curSelected = 0;
+            changeSelection();
             for(i in grpOptions){
                 FlxTween.tween(i, {x: 808}, 0.75, {ease: FlxEase.backOut});
             }
         }});
+
 
         super.create();
     }
@@ -107,6 +115,42 @@ class BebOptionsSubstate extends MusicBeatSubstate
             }
 
         }
+
+        for (i in 0...options.length)
+            {
+                if (grpOptions.members[i].ID != curSelected)
+                    if (FlxG.mouse.overlaps(grpOptions.members[i]))
+                        {
+                            if (FlxG.mouse.justPressed)
+                                {
+                                    curSelected = i;
+                                    changeSelection();
+                                }
+                        }
+                else if (FlxG.mouse.overlaps(grpOptions.members[curSelected]))
+                {
+                    if (FlxG.mouse.justPressed)
+                    {
+                        if(allowedToChange)
+                            openSelectedSubstate(options[curSelected]);
+                    }
+                }
+                if (FlxG.mouse.overlaps(grpOptions.members[i]))
+                    {
+                        changeCursor(true);
+                        break;
+                    }
+                else
+                    changeCursor(false);
+                    
+                    
+            }
+
+        if(FlxG.mouse.wheel != 0)
+			{
+				FlxG.sound.play(Paths.sound('scrollMenu'), 0.2);
+				changeSelection(-FlxG.mouse.wheel);
+			}
 
         if (controls.UI_UP_P) {
 			changeSelection(-1);
@@ -147,7 +191,7 @@ class BebOptionsSubstate extends MusicBeatSubstate
                 spr.alpha = 0.5;
                 spr.active = false;
                 if(spr.ID == curSelected){
-                    targetY = (spr.ID * -172) + 15;
+                    targetY = (spr.ID * -172) + 150;
                     spr.alpha = 1;
                     spr.active = true;
                 }
@@ -155,4 +199,16 @@ class BebOptionsSubstate extends MusicBeatSubstate
             trace(targetY);
         }    
     }
+
+    function changeCursor(value:Bool)
+        {
+            if (value)
+                {
+                    FlxG.mouse.load(cursorSprite2.pixels);
+                }
+            if (!value)
+                {
+                    FlxG.mouse.load(cursorSprite.pixels);
+                }
+        }
 }
