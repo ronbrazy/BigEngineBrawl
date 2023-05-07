@@ -90,14 +90,22 @@ class BebMainMenu extends MusicBeatState
     {
         // doesn't work with how the sprites are currently positioned, also keeps triggering over and over again
         // so it needs a safegaurd for that
-        /*for (i in 0...btns.length)
+        for (i in 0...btns.length)
         {
-            if (FlxG.mouse.overlaps(buttons[i]))
+            if (buttons[i].ID != curButton)
+                if (FlxG.mouse.overlaps(buttons[i]) && FlxG.mouse.y < (buttons[i].y + 75))
+                    {
+                        curButton = i;
+                        selecting();
+                    }
+            else
                 {
-                    curButton = i;
-                    selecting();
+                    if (FlxG.mouse.justPressed)
+                        {
+                            selectedSomething();
+                        }
                 }
-        }*/
+        }
 
         if (controls.UI_UP_P)
             selecting(-1);
@@ -105,19 +113,7 @@ class BebMainMenu extends MusicBeatState
             selecting(1);
         if (controls.ACCEPT)
             {
-                FlxG.sound.play(Paths.sound('confirmMenu'));
-                switch(btns[curButton])
-                {
-                    case 'StoryButton':
-                    case 'FreePlayButton':
-                        MusicBeatState.switchState(new FreeplayState());
-                    case 'AwardsButton':
-                        //yeah
-                    case 'OptionsButton':
-                        openSubState(new BebOptionsSubstate());
-                    case 'CreditsButton':
-                        //yeah
-                }
+                selectedSomething();
             }
         super.update(elapsed);
     }
@@ -133,4 +129,21 @@ class BebMainMenu extends MusicBeatState
         if (i.ID == curButton || (i.ID != curButton && i.animation.curAnim.name != 'down'))
         i.animation.play(i.ID == curButton ? 'up' : 'down');
     }
+
+    function selectedSomething()
+        {
+            FlxG.sound.play(Paths.sound('confirmMenu'));
+                switch(btns[curButton])
+                {
+                    case 'StoryButton':
+                    case 'FreePlayButton':
+                        MusicBeatState.switchState(new FreeplayState());
+                    case 'AwardsButton':
+                        //yeah
+                    case 'OptionsButton':
+                        openSubState(new BebOptionsSubstate());
+                    case 'CreditsButton':
+                        //yeah
+                }
+        }
 }
