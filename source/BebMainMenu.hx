@@ -32,7 +32,7 @@ class BebMainMenu extends MusicBeatState
             FlxG.sound.playMusic(Paths.music('bebmenu'), 0);
             FlxG.sound.music.fadeIn(1, 0, 0.7);
         }
-        
+
         cursorSprite = new FlxSprite().loadGraphic(Paths.image('ui/cursor'));
         cursorSprite2 = new FlxSprite().loadGraphic(Paths.image('ui/cursor2'));
         FlxG.mouse.visible = true;
@@ -101,19 +101,20 @@ class BebMainMenu extends MusicBeatState
         
         for (i in 0...btns.length)
         {
+            if (FlxG.mouse.overlaps(buttons[curButton]) && FlxG.mouse.y < (buttons[curButton].y + 75))
+                {
+                    if (FlxG.mouse.justPressed)
+                    {
+                        selectedSomething();
+                        break;
+                    }
+                }
             if (buttons[i].ID != curButton)
                 if (FlxG.mouse.overlaps(buttons[i]) && FlxG.mouse.y < (buttons[i].y + 75))
                     {
                         curButton = i;
                         selecting();
                     }
-            if (FlxG.mouse.overlaps(buttons[curButton]) && FlxG.mouse.y < (buttons[curButton].y + 75))
-            {
-                if (FlxG.mouse.justPressed)
-                {
-                    selectedSomething();
-                }
-            }
             if (FlxG.mouse.overlaps(buttons[i]) && FlxG.mouse.y < (buttons[i].y + 75))
                 {
                     changeCursor(true);

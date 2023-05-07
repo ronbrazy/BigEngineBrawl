@@ -103,7 +103,7 @@ class BebOptionsSubstate extends MusicBeatSubstate
 
     override function update(elapsed:Float){
 
-        if (controls.BACK) {
+        if (controls.BACK || FlxG.mouse.justPressedRight) {
             allowedToChange = false;
 
 			FlxG.sound.play(Paths.sound('cancelMenu'));
@@ -118,23 +118,29 @@ class BebOptionsSubstate extends MusicBeatSubstate
 
         for (i in 0...options.length)
             {
+                if (FlxG.mouse.overlaps(grpOptions.members[curSelected]))
+                    {
+                        if (FlxG.mouse.justPressed)
+                        {
+                            trace('selected');
+                            if(allowedToChange)
+                                {
+                                    openSelectedSubstate(options[curSelected]);
+                                    break;
+                                }
+                        }
+                    }
                 if (grpOptions.members[i].ID != curSelected)
                     if (FlxG.mouse.overlaps(grpOptions.members[i]))
                         {
                             if (FlxG.mouse.justPressed)
                                 {
+                                    trace('changed to ${i}:${options[i]} from ${grpOptions.members[curSelected].ID}:${options[curSelected]}');
                                     curSelected = i;
                                     changeSelection();
                                 }
                         }
-                else if (FlxG.mouse.overlaps(grpOptions.members[curSelected]))
-                {
-                    if (FlxG.mouse.justPressed)
-                    {
-                        if(allowedToChange)
-                            openSelectedSubstate(options[curSelected]);
-                    }
-                }
+                
                 if (FlxG.mouse.overlaps(grpOptions.members[i]))
                     {
                         changeCursor(true);
