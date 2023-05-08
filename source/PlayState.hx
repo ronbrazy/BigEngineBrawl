@@ -637,7 +637,7 @@ class PlayState extends MusicBeatState
 					//editbleSprite = ob5;
 				case 'splendid':
 					jamessky = new FlxBackdrop(Paths.image('bgs/splendid/jamesbg_skyloop'),X);
-					jamessky.scrollFactor.set();
+					//jamessky.scrollFactor.set();
 					jamessky.y = -500;
 					add(jamessky);
 	

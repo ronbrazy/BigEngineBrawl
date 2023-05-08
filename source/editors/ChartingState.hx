@@ -206,8 +206,14 @@ class ChartingState extends MusicBeatState
 	var text:String = "";
 	public static var vortex:Bool = false;
 	public var mouseQuant:Bool = false;
+
+	var cursorSprite:FlxSprite;
+
 	override function create()
 	{
+
+		
+
 		if (PlayState.SONG != null)
 			_song = PlayState.SONG;
 		else
@@ -395,6 +401,8 @@ class ChartingState extends MusicBeatState
 
 		updateGrid();
 		super.create();
+		cursorSprite = new FlxSprite().loadGraphic(Paths.image('ui/cursor3'));
+		FlxG.mouse.load(cursorSprite.pixels);
 	}
 
 	var check_mute_inst:FlxUICheckBox = null;

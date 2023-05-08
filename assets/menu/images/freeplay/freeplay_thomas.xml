@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="freeplay_thomas.png"><SubTexture name="freeplay_thomas idle0000" x="0" y="623" width="410" height="605" frameX="-102" frameY="-194" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0000" x="0" y="623" width="410" height="605" frameX="-102" frameY="-194" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0001" x="410" y="623" width="413" height="602" frameX="-101" frameY="-198" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0002" x="1278" y="0" width="418" height="596" frameX="-98" frameY="-204" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0003" x="0" y="0" width="432" height="623" frameX="-91" frameY="-186" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0004" x="0" y="0" width="432" height="623" frameX="-91" frameY="-186" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0005" x="432" y="0" width="426" height="614" frameX="-94" frameY="-190" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0006" x="432" y="0" width="426" height="614" frameX="-94" frameY="-190" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0007" x="858" y="0" width="420" height="607" frameX="-97" frameY="-193" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0008" x="858" y="0" width="420" height="607" frameX="-97" frameY="-193" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0009" x="823" y="623" width="412" height="601" frameX="-101" frameY="-198" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0010" x="823" y="623" width="412" height="601" frameX="-101" frameY="-198" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0011" x="823" y="623" width="412" height="601" frameX="-101" frameY="-198" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0012" x="823" y="623" width="412" height="601" frameX="-101" frameY="-198" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0013" x="823" y="623" width="412" height="601" frameX="-101" frameY="-198" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0014" x="823" y="623" width="412" height="601" frameX="-101" frameY="-198" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0015" x="823" y="623" width="412" height="601" frameX="-101" frameY="-198" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0016" x="823" y="623" width="412" height="601" frameX="-101" frameY="-198" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0017" x="823" y="623" width="412" height="601" frameX="-101" frameY="-198" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0018" x="823" y="623" width="412" height="601" frameX="-101" frameY="-198" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_thomas select0019" x="823" y="623" width="412" height="601" frameX="-101" frameY="-198" frameWidth="600" frameHeight="820" />
+</TextureAtlas>
