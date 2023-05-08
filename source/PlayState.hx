@@ -1187,7 +1187,7 @@ class PlayState extends MusicBeatState
 		}
 
 		songtitleTxt = new FlxText(0, 0, FlxG.width,"", 20);
-		songtitleTxt.setFormat(Paths.font("vcr.ttf"), 100, FlxColor.YELLOW, CENTER);
+		songtitleTxt.setFormat(Paths.font("vcr.ttf"), 100, 0xFFFF02, CENTER);
 		songtitleTxt.text = SONG.song.toUpperCase();
 		songtitleTxt.screenCenter(X);
 		songtitleTxt.y = FlxG.height - (FlxG.height / 4);
