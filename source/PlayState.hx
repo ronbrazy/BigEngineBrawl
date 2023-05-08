@@ -272,6 +272,7 @@ class PlayState extends MusicBeatState
 	public var songHits:Int = 0;
 	public var songMisses:Int = 0;
 	public var scoreTxt:FlxText;
+	public var songtitleTxt:FlxText;
 	var timeTxt:FlxText;
 	var scoreTxtTween:FlxTween;
 
@@ -1185,6 +1186,14 @@ class PlayState extends MusicBeatState
 			botplayTxt.y = timeBarBG.y - 78;
 		}
 
+		songtitleTxt = new FlxText(0, 0, FlxG.width,"", 20);
+		songtitleTxt.setFormat(Paths.font("vcr.ttf"), 100, FlxColor.YELLOW, CENTER);
+		songtitleTxt.text = SONG.song.toUpperCase();
+		songtitleTxt.screenCenter(X);
+		songtitleTxt.y = FlxG.height - (FlxG.height / 4);
+		songtitleTxt.alpha = 0;
+		add(songtitleTxt);
+
 		strumLineNotes.cameras = [camHUD];
 		grpNoteSplashes.cameras = [camHUD];
 		notes.cameras = [camHUD];
@@ -1193,6 +1202,7 @@ class PlayState extends MusicBeatState
 		iconP1.cameras = [camHUD];
 		iconP2.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
+		songtitleTxt.cameras = [camHUD];
 		botplayTxt.cameras = [camHUD];
 		timeBar.cameras = [camHUD];
 		timeBarBG.cameras = [camHUD];
@@ -2376,6 +2386,10 @@ class PlayState extends MusicBeatState
 	function startSong():Void
 	{
 		startingSong = false;
+
+		FlxTween.tween(songtitleTxt, {alpha: 1}, 3, {ease: FlxEase.quadInOut, onComplete: function(shit:FlxTween){
+			FlxTween.tween(songtitleTxt, {alpha: 0}, 3, {ease: FlxEase.quadInOut});
+		}});
 
 		previousFrameTime = FlxG.game.ticks;
 		lastReportedPlayheadPosition = 0;
