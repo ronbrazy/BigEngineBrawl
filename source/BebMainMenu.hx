@@ -2,6 +2,7 @@ package;
 
 import flixel.FlxSprite;
 import flixel.FlxG;
+import flixel.system.FlxSound;
 
 class BebMainMenu extends MusicBeatState
 {
@@ -21,10 +22,12 @@ class BebMainMenu extends MusicBeatState
         'OptionsButton',
         'CreditsButton'
     ];
+    var tankEngine:FlxSprite;
     var buttons:Array<FlxSprite> = [];
     var curButton:Int = 0;
     var cursorSprite:FlxSprite;
     var cursorSprite2:FlxSprite;
+    var trainWhistle:FlxSound = new FlxSound();
     //var selectingCursor:Bool = false;
     override function create()
     {
@@ -54,7 +57,9 @@ class BebMainMenu extends MusicBeatState
             ClientPrefs.saveSettings();
         }
 
-        var tankEngine:FlxSprite = new FlxSprite().loadGraphic(Paths.image('main/menu$curTrain', 'menu'));
+        trainWhistle = FlxG.sound.load(Paths.sound('${curTrain}Whistle', 'menu'));
+
+        tankEngine = new FlxSprite().loadGraphic(Paths.image('main/menu$curTrain', 'menu'));
         tankEngine.antialiasing = ClientPrefs.globalAntialiasing;
         tankEngine.setGraphicSize(Std.int(tankEngine.width / 1.5));
         tankEngine.updateHitbox();
@@ -96,8 +101,6 @@ class BebMainMenu extends MusicBeatState
     }
     override function update(elapsed:Float)
     {
-        // doesn't work with how the sprites are currently positioned, also keeps triggering over and over again
-        // so it needs a safegaurd for that
         
         for (i in 0...btns.length)
         {
@@ -125,6 +128,20 @@ class BebMainMenu extends MusicBeatState
                 
                 
         }
+
+        if (FlxG.mouse.overlaps(tankEngine) && FlxG.mouse.y > 238 && FlxG.mouse.y < 465 && FlxG.mouse.x > 324 && FlxG.mouse.x < 525)
+            {
+                changeCursor(true);
+                if (FlxG.mouse.justPressed && !trainWhistle.playing)
+                    {
+                        trainWhistle.play();
+                    }
+            }
+        
+        if(FlxG.keys.justPressed.C)
+            {
+                trace('mousepos\nx:${FlxG.mouse.x}\ny:${FlxG.mouse.y}');
+            }
 
         if (controls.UI_UP_P)
             selecting(-1);
