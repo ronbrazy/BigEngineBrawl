@@ -183,6 +183,11 @@ class BebOptionsSubstate extends MusicBeatSubstate
 
     }
 
+    override function closeSubState() {
+		super.closeSubState();
+		ClientPrefs.saveSettings();
+	}
+
     function changeSelection(change:Int = 0) {
         if(allowedToChange){
             curSelected += change;
