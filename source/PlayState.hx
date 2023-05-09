@@ -351,12 +351,15 @@ class PlayState extends MusicBeatState
 	var charToNoteSkin = [
 		"bf" => "NOTE_assets",
 		"henry" => "HenryNote",
+		"indighenry" => "HenryNote",
 		"james" => "jameNote",
 		"ughjames" => "jameNote",
+		"indigjames" => "jameNote",
 		"sadbf" => "NOTE_assets",
 		"sadhenry" => "HenryNote",
 		"thomas" => "thomasNote",
-		"gordon" => "gordonNote"
+		"gordon" => "gordonNote",
+		"edward" => "edwardNote"
 	];
 
 	var precacheList:Map<String, String> = new Map<String, String>();
