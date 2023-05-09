@@ -1,0 +1,100 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "edward idle"
+		},
+		{
+			"offsets": [
+				-8,
+				-1
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "edward down"
+		},
+		{
+			"offsets": [
+				-5,
+				-1
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "edward left"
+		},
+		{
+			"offsets": [
+				-7,
+				-1
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "edward up"
+		},
+		{
+			"offsets": [
+				-8,
+				-3
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "edward right"
+		},
+		{
+			"offsets": [
+				-7,
+				2
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "intro",
+			"loop": false,
+			"name": "edward intro"
+		},
+		{
+			"offsets": [
+				-7,
+				2
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "outro",
+			"loop": false,
+			"name": "edward end"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/edward",
+	"position": [
+		-460,
+		-210
+	],
+	"healthicon": "edward",
+	"flip_x": false,
+	"healthbar_colors": [
+		0,
+		153,
+		0
+	],
+	"camera_position": [
+		-130,
+		-150
+	],
+	"sing_duration": 6.1,
+	"scale": 1.8
+}

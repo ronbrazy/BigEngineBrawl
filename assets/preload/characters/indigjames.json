@@ -1,0 +1,100 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "indig_james idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-6,
+				-2
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "indig_james down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-1,
+				0
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "indig_james left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-6,
+				0
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "indig_james right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-7,
+				13
+			],
+			"anim": "DISGUSTING",
+			"fps": 24,
+			"name": "indig_james disgusting",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-7,
+				5
+			],
+			"anim": "ugh",
+			"fps": 24,
+			"name": "indig_james ugh",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-5,
+				13
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "indig_james indig_james_up"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/indig_james",
+	"position": [
+		-460,
+		-210
+	],
+	"healthicon": "madjames",
+	"flip_x": false,
+	"healthbar_colors": [
+		0,
+		153,
+		0
+	],
+	"camera_position": [
+		-130,
+		-150
+	],
+	"sing_duration": 6.1,
+	"scale": 1.8
+}

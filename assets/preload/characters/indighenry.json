@@ -1,0 +1,111 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "indig_henry idle"
+		},
+		{
+			"offsets": [
+				-6,
+				-2
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "indig_henry down"
+		},
+		{
+			"offsets": [
+				5,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "indig_henry left"
+		},
+		{
+			"offsets": [
+				-6,
+				9
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "indig_henry up"
+		},
+		{
+			"offsets": [
+				-6,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "indig_henry right"
+		},
+		{
+			"offsets": [
+				-6,
+				8
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "HUH",
+			"loop": false,
+			"name": "indig_henry huh"
+		},
+		{
+			"offsets": [
+				-6,
+				3
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "whatever",
+			"loop": false,
+			"name": "indig_henry whatever"
+		},
+		{
+			"offsets": [
+				-7,
+				11
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "DESPICABLE",
+			"loop": false,
+			"name": "indig_henry despicable"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/indig_henry",
+	"position": [
+		-460,
+		-210
+	],
+	"healthicon": "madhenry",
+	"flip_x": false,
+	"healthbar_colors": [
+		0,
+		153,
+		0
+	],
+	"camera_position": [
+		-130,
+		-150
+	],
+	"sing_duration": 6.1,
+	"scale": 1.8
+}
