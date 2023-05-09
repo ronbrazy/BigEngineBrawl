@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TextureAtlas imagePath="gf.png"><SubTexture name="gf danceleft0000" x="2786" y="0" width="563" height="642" frameX="0" frameY="-25" frameWidth="566" frameHeight="671" />
-<SubTexture name="gf danceleft0001" x="2786" y="642" width="561" height="642" frameX="0" frameY="-25" frameWidth="566" frameHeight="671" />
-<SubTexture name="gf danceleft0002" x="557" y="1997" width="557" height="649" frameX="-3" frameY="-18" frameWidth="566" frameHeight="671" />
-<SubTexture name="gf danceleft0003" x="557" y="1997" width="557" height="649" frameX="-3" frameY="-18" frameWidth="566" frameHeight="671" />
-<SubTexture name="gf danceleft0004" x="2232" y="660" width="554" height="659" frameX="-8" frameY="-8" frameWidth="566" frameHeight="671" />
-<SubTexture name="gf danceleft0005" x="2232" y="660" width="554" height="659" frameX="-8" frameY="-8" frameWidth="566" frameHeight="671" />
+<TextureAtlas imagePath="beb_gf.png"><SubTexture name="gf danceleft0000" x="2785" y="0" width="566" height="650" frameX="0" frameY="-17" frameWidth="566" frameHeight="671" />
+<SubTexture name="gf danceleft0001" x="2785" y="650" width="564" height="650" frameX="0" frameY="-17" frameWidth="566" frameHeight="671" />
+<SubTexture name="gf danceleft0002" x="2785" y="1300" width="557" height="649" frameX="-3" frameY="-18" frameWidth="566" frameHeight="671" />
+<SubTexture name="gf danceleft0003" x="2785" y="1300" width="557" height="649" frameX="-3" frameY="-18" frameWidth="566" frameHeight="671" />
+<SubTexture name="gf danceleft0004" x="554" y="1997" width="554" height="659" frameX="-8" frameY="-8" frameWidth="566" frameHeight="671" />
+<SubTexture name="gf danceleft0005" x="554" y="1997" width="554" height="659" frameX="-8" frameY="-8" frameWidth="566" frameHeight="671" />
 <SubTexture name="gf danceleft0006" x="1114" y="1334" width="556" height="662" frameX="-8" frameY="-5" frameWidth="566" frameHeight="671" />
 <SubTexture name="gf danceleft0007" x="1670" y="1334" width="558" height="662" frameX="-8" frameY="-5" frameWidth="566" frameHeight="671" />
 <SubTexture name="gf danceleft0008" x="558" y="667" width="558" height="665" frameX="-8" frameY="-2" frameWidth="566" frameHeight="671" />
@@ -14,12 +14,12 @@
 <SubTexture name="gf danceleft0012" x="558" y="0" width="558" height="667" frameX="-8" frameY="0" frameWidth="566" frameHeight="671" />
 <SubTexture name="gf danceleft0013" x="1116" y="0" width="558" height="667" frameX="-8" frameY="0" frameWidth="566" frameHeight="671" />
 <SubTexture name="gf danceleft0014" x="0" y="667" width="558" height="667" frameX="-8" frameY="0" frameWidth="566" frameHeight="671" />
-<SubTexture name="gf danceright0000" x="1114" y="1997" width="563" height="648" frameX="0" frameY="-19" frameWidth="566" frameHeight="671" />
-<SubTexture name="gf danceright0001" x="1677" y="1997" width="561" height="648" frameX="0" frameY="-19" frameWidth="566" frameHeight="671" />
-<SubTexture name="gf danceright0002" x="0" y="1997" width="557" height="657" frameX="-3" frameY="-10" frameWidth="566" frameHeight="671" />
-<SubTexture name="gf danceright0003" x="0" y="1997" width="557" height="657" frameX="-3" frameY="-10" frameWidth="566" frameHeight="671" />
-<SubTexture name="gf danceright0004" x="2232" y="0" width="554" height="660" frameX="-8" frameY="-7" frameWidth="566" frameHeight="671" />
-<SubTexture name="gf danceright0005" x="2232" y="0" width="554" height="660" frameX="-8" frameY="-7" frameWidth="566" frameHeight="671" />
+<SubTexture name="gf danceright0000" x="1108" y="1997" width="566" height="652" frameX="0" frameY="-15" frameWidth="566" frameHeight="671" />
+<SubTexture name="gf danceright0001" x="1674" y="1997" width="564" height="652" frameX="0" frameY="-15" frameWidth="566" frameHeight="671" />
+<SubTexture name="gf danceright0002" x="2232" y="0" width="553" height="660" frameX="-3" frameY="-7" frameWidth="566" frameHeight="671" />
+<SubTexture name="gf danceright0003" x="2232" y="0" width="553" height="660" frameX="-3" frameY="-7" frameWidth="566" frameHeight="671" />
+<SubTexture name="gf danceright0004" x="0" y="1997" width="554" height="660" frameX="-8" frameY="-7" frameWidth="566" frameHeight="671" />
+<SubTexture name="gf danceright0005" x="0" y="1997" width="554" height="660" frameX="-8" frameY="-7" frameWidth="566" frameHeight="671" />
 <SubTexture name="gf danceright0006" x="0" y="1334" width="556" height="663" frameX="-8" frameY="-4" frameWidth="566" frameHeight="671" />
 <SubTexture name="gf danceright0007" x="556" y="1334" width="558" height="663" frameX="-8" frameY="-4" frameWidth="566" frameHeight="671" />
 <SubTexture name="gf danceright0008" x="1674" y="0" width="558" height="665" frameX="-8" frameY="-2" frameWidth="566" frameHeight="671" />
