@@ -52,24 +52,9 @@
 				"lengthInSteps": 16,
 				"sectionNotes": [
 					[
-						13500,
-						1,
-						0
-					],
-					[
 						13687.5,
 						3,
 						0
-					],
-					[
-						13781.25,
-						1,
-						0
-					],
-					[
-						13875,
-						0,
-						468.75
 					],
 					[
 						14437.5,
@@ -90,6 +75,21 @@
 						14812.5,
 						0,
 						0
+					],
+					[
+						13500,
+						0,
+						0
+					],
+					[
+						13781.25,
+						0,
+						0
+					],
+					[
+						13875,
+						1,
+						468.75
 					]
 				],
 				"mustHitSection": false
@@ -211,24 +211,9 @@
 				"lengthInSteps": 16,
 				"sectionNotes": [
 					[
-						19500,
-						1,
-						0
-					],
-					[
 						19687.5,
 						3,
 						0
-					],
-					[
-						19781.25,
-						1,
-						0
-					],
-					[
-						19875,
-						0,
-						468.75
 					],
 					[
 						20437.5,
@@ -249,6 +234,21 @@
 						20812.5,
 						0,
 						0
+					],
+					[
+						19500,
+						0,
+						0
+					],
+					[
+						19781.25,
+						0,
+						0
+					],
+					[
+						19875,
+						1,
+						468.75
 					]
 				],
 				"mustHitSection": true
@@ -1534,30 +1534,30 @@
 			{
 				"lengthInSteps": 16,
 				"sectionNotes": [],
-				"bpm": 200,
 				"changeBPM": false,
-				"mustHitSection": false
+				"mustHitSection": false,
+				"bpm": 200
 			},
 			{
 				"lengthInSteps": 16,
 				"sectionNotes": [],
-				"bpm": 200,
 				"changeBPM": false,
-				"mustHitSection": false
+				"mustHitSection": false,
+				"bpm": 200
 			},
 			{
 				"lengthInSteps": 16,
 				"sectionNotes": [],
-				"bpm": 200,
 				"changeBPM": false,
-				"mustHitSection": false
+				"mustHitSection": false,
+				"bpm": 200
 			},
 			{
 				"lengthInSteps": 16,
 				"sectionNotes": [],
-				"bpm": 200,
 				"changeBPM": true,
-				"mustHitSection": false
+				"mustHitSection": false,
+				"bpm": 200
 			},
 			{
 				"lengthInSteps": 16,
@@ -7486,27 +7486,9 @@
 				"typeOfSection": 0,
 				"sectionNotes": [
 					[
-						207000,
-						1,
-						0,
-						"Alt Animation"
-					],
-					[
 						207150,
 						3,
 						0,
-						"Alt Animation"
-					],
-					[
-						207300,
-						1,
-						0,
-						"Alt Animation"
-					],
-					[
-						207450,
-						0,
-						225,
 						"Alt Animation"
 					],
 					[
@@ -7529,6 +7511,24 @@
 					],
 					[
 						208050,
+						0,
+						0,
+						"Alt Animation"
+					],
+					[
+						207450,
+						1,
+						225,
+						"Alt Animation"
+					],
+					[
+						207300,
+						0,
+						0,
+						"Alt Animation"
+					],
+					[
+						207000,
 						0,
 						0,
 						"Alt Animation"
@@ -7734,21 +7734,6 @@
 				"typeOfSection": 0,
 				"sectionNotes": [
 					[
-						211800,
-						1,
-						0
-					],
-					[
-						212100,
-						1,
-						0
-					],
-					[
-						212250,
-						0,
-						225
-					],
-					[
 						211950,
 						3,
 						0
@@ -7772,6 +7757,21 @@
 						212850,
 						0,
 						0
+					],
+					[
+						211800,
+						0,
+						0
+					],
+					[
+						212100,
+						0,
+						0
+					],
+					[
+						212250,
+						1,
+						225
 					]
 				],
 				"sectionBeats": 4,
@@ -8508,7 +8508,7 @@
 					],
 					[
 						226050,
-						5,
+						6,
 						0,
 						"Alt Animation"
 					]
@@ -8529,39 +8529,39 @@
 						1125
 					],
 					[
-						226200,
-						0,
-						225,
-						"Alt Animation"
-					],
-					[
-						226500,
-						2,
-						0,
-						"Alt Animation"
-					],
-					[
-						226650,
-						0,
-						225,
-						"Alt Animation"
-					],
-					[
-						226950,
-						1,
-						0,
-						"Alt Animation"
-					],
-					[
 						227025,
 						3,
 						0,
 						"Alt Animation"
 					],
 					[
-						227100,
+						226200,
 						1,
 						225,
+						"Alt Animation"
+					],
+					[
+						226650,
+						1,
+						225,
+						"Alt Animation"
+					],
+					[
+						226950,
+						2,
+						0,
+						"Alt Animation"
+					],
+					[
+						227100,
+						2,
+						225,
+						"Alt Animation"
+					],
+					[
+						226500,
+						0,
+						0,
 						"Alt Animation"
 					]
 				],
@@ -8575,12 +8575,6 @@
 			{
 				"typeOfSection": 0,
 				"sectionNotes": [
-					[
-						227400,
-						2,
-						225,
-						"Alt Animation"
-					],
 					[
 						227700,
 						3,
@@ -8592,6 +8586,12 @@
 						3,
 						225,
 						"Alt Animation"
+					],
+					[
+						227400,
+						1,
+						225,
+						"Alt Animation"
 					]
 				],
 				"sectionBeats": 4,
@@ -8605,39 +8605,27 @@
 				"typeOfSection": 0,
 				"sectionNotes": [
 					[
-						228825,
-						0,
-						0,
-						"Alt Animation"
-					],
-					[
 						228900,
 						2,
 						0,
 						"Alt Animation"
 					],
 					[
-						229050,
-						0,
-						140.625,
-						"Alt Animation"
-					],
-					[
 						228600,
-						0,
+						1,
 						140.625,
 						"Alt Animation"
 					],
 					[
-						229275,
-						0,
+						228825,
+						1,
 						0,
 						"Alt Animation"
 					],
 					[
-						229350,
-						3,
-						0,
+						229050,
+						1,
+						140.625,
 						"Alt Animation"
 					],
 					[
@@ -8647,14 +8635,26 @@
 						"Alt Animation"
 					],
 					[
+						229275,
+						1,
+						0,
+						"Alt Animation"
+					],
+					[
+						229350,
+						0,
+						0,
+						"Alt Animation"
+					],
+					[
 						229500,
-						3,
+						0,
 						0,
 						"Alt Animation"
 					],
 					[
 						229650,
-						1,
+						3,
 						0,
 						"Alt Animation"
 					]
@@ -8671,13 +8671,13 @@
 				"sectionNotes": [
 					[
 						229800,
-						0,
-						937.5,
+						1,
+						928.125,
 						"Alt Animation"
 					],
 					[
 						230850,
-						0,
+						1,
 						0,
 						"Alt Animation"
 					]
@@ -8822,16 +8822,6 @@
 				"typeOfSection": 0,
 				"sectionNotes": [
 					[
-						235500,
-						6,
-						0
-					],
-					[
-						235650,
-						5,
-						0
-					],
-					[
 						234600,
 						1,
 						0,
@@ -8890,6 +8880,16 @@
 						1,
 						0,
 						"Alt Animation"
+					],
+					[
+						235500,
+						7,
+						0
+					],
+					[
+						235650,
+						6,
+						0
 					]
 				],
 				"sectionBeats": 4,
@@ -8903,34 +8903,9 @@
 				"typeOfSection": 0,
 				"sectionNotes": [
 					[
-						235800,
-						0,
-						225
-					],
-					[
-						236100,
-						2,
-						0
-					],
-					[
-						236250,
-						0,
-						225
-					],
-					[
-						236550,
-						1,
-						0
-					],
-					[
 						236625,
 						3,
 						0
-					],
-					[
-						236700,
-						1,
-						225
 					],
 					[
 						235800,
@@ -8973,6 +8948,31 @@
 						4,
 						2250,
 						"Alt Animation"
+					],
+					[
+						235800,
+						1,
+						225
+					],
+					[
+						236250,
+						1,
+						225
+					],
+					[
+						236100,
+						0,
+						0
+					],
+					[
+						236550,
+						2,
+						0
+					],
+					[
+						236700,
+						2,
+						225
 					]
 				],
 				"sectionBeats": 4,
@@ -8985,11 +8985,6 @@
 			{
 				"typeOfSection": 0,
 				"sectionNotes": [
-					[
-						237000,
-						2,
-						225
-					],
 					[
 						237300,
 						3,
@@ -9011,6 +9006,11 @@
 						5,
 						675,
 						"GF Sing"
+					],
+					[
+						237000,
+						1,
+						225
 					]
 				],
 				"sectionBeats": 4,
@@ -9024,48 +9024,13 @@
 				"typeOfSection": 0,
 				"sectionNotes": [
 					[
-						238200,
-						0,
-						131.25
-					],
-					[
-						238425,
-						0,
-						0
-					],
-					[
 						238500,
 						2,
 						0
 					],
 					[
-						238650,
-						0,
-						131.25
-					],
-					[
-						238875,
-						0,
-						0
-					],
-					[
-						238950,
-						3,
-						0
-					],
-					[
 						239025,
 						2,
-						0
-					],
-					[
-						239100,
-						3,
-						0
-					],
-					[
-						239250,
-						1,
 						0
 					],
 					[
@@ -9109,6 +9074,41 @@
 						6,
 						2250,
 						"Alt Animation"
+					],
+					[
+						238200,
+						1,
+						131.25
+					],
+					[
+						238425,
+						1,
+						0
+					],
+					[
+						238650,
+						1,
+						131.25
+					],
+					[
+						238875,
+						1,
+						0
+					],
+					[
+						238950,
+						0,
+						0
+					],
+					[
+						239100,
+						0,
+						0
+					],
+					[
+						239250,
+						3,
+						0
 					]
 				],
 				"sectionBeats": 4,
@@ -9121,16 +9121,6 @@
 			{
 				"typeOfSection": 0,
 				"sectionNotes": [
-					[
-						239400,
-						0,
-						928.125
-					],
-					[
-						240450,
-						0,
-						0
-					],
 					[
 						239400,
 						6,
@@ -9154,6 +9144,16 @@
 						5,
 						196.875,
 						"GF Sing"
+					],
+					[
+						239400,
+						1,
+						928.125
+					],
+					[
+						240450,
+						1,
+						0
 					]
 				],
 				"sectionBeats": 4,
@@ -10011,6 +10011,36 @@
 				"bpm": 160
 			},
 			{
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"sectionBeats": 4,
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 160,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 160
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 160
+			},
+			{
 				"gfSection": false,
 				"altAnim": false,
 				"typeOfSection": 0,
@@ -10022,178 +10052,7 @@
 			}
 		],
 		"gfVersion": "gf",
-		"events": [
-			[
-				0,
-				[
-					[
-						"Set Cam Zoom",
-						"0.65",
-						""
-					]
-				]
-			],
-			[
-				19500,
-				[
-					[
-						"Set Cam Zoom",
-						"1",
-						""
-					]
-				]
-			],
-			[
-				25500,
-				[
-					[
-						"Set Cam Zoom",
-						"0.65",
-						""
-					]
-				]
-			],
-			[
-				31500,
-				[
-					[
-						"Set Cam Zoom",
-						"1",
-						""
-					]
-				]
-			],
-			[
-				37500,
-				[
-					[
-						"Set Cam Zoom",
-						"0.65",
-						""
-					]
-				]
-			],
-			[
-				43500,
-				[
-					[
-						"Set Cam Zoom",
-						"1",
-						""
-					]
-				]
-			],
-			[
-				49500,
-				[
-					[
-						"Set Cam Zoom",
-						"0.65",
-						""
-					]
-				]
-			],
-			[
-				52500,
-				[
-					[
-						"Set Cam Zoom",
-						"1",
-						""
-					]
-				]
-			],
-			[
-				55500,
-				[
-					[
-						"Set Cam Zoom",
-						"0.65",
-						""
-					]
-				]
-			],
-			[
-				60750,
-				[
-					[
-						"Play Animation",
-						"callforbackup",
-						"Dad"
-					]
-				]
-			],
-			[
-				181200,
-				[
-					[
-						"Play Animation",
-						"speech",
-						"Dad"
-					]
-				]
-			],
-			[
-				211800,
-				[
-					[
-						"Set Cam Zoom",
-						"1",
-						""
-					]
-				]
-			],
-			[
-				216600,
-				[
-					[
-						"Set Cam Zoom",
-						"0.6",
-						""
-					]
-				]
-			],
-			[
-				221400,
-				[
-					[
-						"Set Cam Zoom",
-						"1",
-						""
-					]
-				]
-			],
-			[
-				226200,
-				[
-					[
-						"Set Cam Zoom",
-						"0.6",
-						""
-					]
-				]
-			],
-			[
-				235800,
-				[
-					[
-						"Set Cam Zoom",
-						"1",
-						""
-					]
-				]
-			],
-			[
-				245400,
-				[
-					[
-						"Set Cam Zoom",
-						"0.6",
-						""
-					]
-				]
-			]
-		],
+		"events": [],
 		"player3": null,
 		"song": "Indignation",
 		"arrowSkin": "",
