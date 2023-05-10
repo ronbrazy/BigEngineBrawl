@@ -2531,7 +2531,7 @@ class PlayState extends MusicBeatState
 				swagNote.noteType = songNotes[3];
 				if(!Std.isOfType(songNotes[3], String)) swagNote.noteType = editors.ChartingState.noteTypeList[songNotes[3]]; //Backward compatibility + compatibility with Week 7 charts
 
-				if (swagNote.noteType == '')
+				if (swagNote.noteType != 'Whistle Note' || swagNote.noteType != 'Signal Note')
 				{
 					swagNote.texture = 'NOTE_assets';
 					if(!swagNote.mustPress)
@@ -2556,7 +2556,7 @@ class PlayState extends MusicBeatState
 						sustainNote.gfNote = (section.gfSection && (songNotes[1]<4));
 						sustainNote.noteType = swagNote.noteType;
 						sustainNote.scrollFactor.set();
-						if (sustainNote.noteType == '')
+						if (swagNote.noteType != 'Whistle Note' || swagNote.noteType != 'Signal Note')
 							{
 								sustainNote.texture = 'NOTE_assets';
 								if(!sustainNote.mustPress)
