@@ -164,10 +164,10 @@ class FreeplayState extends MusicBeatState
 				var train:FlxSprite = new FlxSprite((i * 220 + i * 30) + 35, 275);
 				train.ID = i;
 				train.frames = Paths.getSparrowAtlas('freeplay/freeplay_${trains[i]}', 'menu');
-				train.animation.addByPrefix('idle', 'freeplay_${trains[i]} idle', 24);
-				train.animation.addByPrefix('select', 'freeplay_${trains[i]} select', 24, false);
-				train.animation.addByPrefix('selected', 'freeplay_${trains[i]} selected', 24);
-				train.animation.addByPrefix('deselect', 'freeplay_${trains[i]} deselect', 24, false);
+				train.animation.addByPrefix('idle', 'freeplay_${trains[i]} idle', 12);
+				train.animation.addByPrefix('select', 'freeplay_${trains[i]} select', 12, false);
+				train.animation.addByPrefix('selected', 'freeplay_${trains[i]} selected', 12);
+				train.animation.addByPrefix('deselect', 'freeplay_${trains[i]} deselect', 12, false);
 				train.animation.play('idle');
 				train.scale.x = 0.35;
 				train.scale.y = 0.35;
