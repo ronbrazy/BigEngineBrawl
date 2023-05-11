@@ -28,13 +28,24 @@ class BebMainMenu extends MusicBeatState
     var cursorSprite:FlxSprite;
     var cursorSprite2:FlxSprite;
     var trainWhistle:FlxSound = new FlxSound();
+
+    public static var previousState:String = '';
     //var selectingCursor:Bool = false;
     override function create()
     {
-        if(FlxG.sound.music == null) {
+        if (previousState == 'awards')
+        {
             FlxG.sound.playMusic(Paths.music('bebmenu'), 0);
             FlxG.sound.music.fadeIn(1, 0, 0.7);
         }
+
+        else if (FlxG.sound.music == null)
+        {
+            FlxG.sound.playMusic(Paths.music('bebmenu'), 0);
+            FlxG.sound.music.fadeIn(1, 0, 0.7);
+        }
+
+        previousState = '';
 
         cursorSprite = new FlxSprite().loadGraphic(Paths.image('ui/cursor'));
         cursorSprite2 = new FlxSprite().loadGraphic(Paths.image('ui/cursor2'));
@@ -175,7 +186,8 @@ class BebMainMenu extends MusicBeatState
                     case 'FreePlayButton':
                         MusicBeatState.switchState(new FreeplayState());
                     case 'AwardsButton':
-                        //yeah
+                        MusicBeatState.switchState(new BebAwardsState());
+                        FlxG.sound.music.fadeOut(1, 0);
                     case 'OptionsButton':
                         openSubState(new BebOptionsSubstate());
                     case 'CreditsButton':

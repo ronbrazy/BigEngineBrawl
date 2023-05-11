@@ -180,10 +180,28 @@ class FreeplayState extends MusicBeatState
 				for (j in 0...loadedTabs[i].songs.length)
 					{
 						trace(loadedTabs[i].songs[j]);
-						var songSprite:FlxSprite = new FlxSprite(-100 + (j * 500), -75).loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[i].songs[j]}','menu'));
+						var songSprite:FlxSprite = new FlxSprite(100 + (j * 500), 100).loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[i].songs[j]}','menu'));
+						if (i == 3 && j == 1)
+							{
+								songSprite.x += 100;
+							}
+						if (i != 3)
+							{
+								songSprite.x += 125;
+							}
+						songSprite.y -= songSprite.height/4;
+						if (loadedTabs[i].songs.length < 3)
+							{
+								songSprite.y += 25;
+							}
+						if (j == 2)
+							{
+								songSprite.x -= 800;
+								songSprite.y += 100;
+							}
 						grpButtons.add(songSprite);
-						songSprite.scale.x = 0.5;
-						songSprite.scale.y = 0.5;
+						songSprite.setGraphicSize(Std.int(songSprite.width * 0.6));
+						songSprite.updateHitbox();
 						songSprite.visible = false;
 						testArray.push(songSprite);
 
@@ -387,7 +405,7 @@ class FreeplayState extends MusicBeatState
 		{
 			for (i in 0...curButtons[curSelected].length)
 				{
-					if (FlxG.mouse.overlaps(curButtons[curSelected][i]) && FlxG.mouse.x > curButtons[curSelected][i].x + 350 && FlxG.mouse.x < curButtons[curSelected][i].x + curButtons[curSelected][i].width - 300 && FlxG.mouse.y > curButtons[curSelected][i].y + 124 && FlxG.mouse.y < curButtons[curSelected][i].y + curButtons[curSelected][i].height - 110)
+					if (FlxG.mouse.overlaps(curButtons[curSelected][i]) && FlxG.mouse.x < curButtons[curSelected][i].x + curButtons[curSelected][i].width/2 && FlxG.mouse.y < curButtons[curSelected][i].y + curButtons[curSelected][i].height/2)
 						{
 							changeCursor(true);
 							curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[curSelected].songs[i]} glow','menu'));

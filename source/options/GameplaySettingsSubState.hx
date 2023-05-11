@@ -38,7 +38,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			'Changes the difficulty.',
 			'difficulty',
 			'int',
-			1);
+			2);
 		option.displayFormat = '%v';
 		option.scrollSpeed = 1;
 		option.minValue = 0;
