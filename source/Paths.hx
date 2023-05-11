@@ -367,7 +367,7 @@ class Paths
 			localTrackedAssets.push(path);
 			return currentTrackedAssets.get(path);
 		}
-		trace('${path} is null!');
+		trace('${library}/${path} is null!');
 		return null;
 	}
 

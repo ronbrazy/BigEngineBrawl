@@ -41,6 +41,7 @@ class BebOptionsSubstate extends MusicBeatSubstate
 	var camFollowPos:FlxObject;
     var cursorSprite:FlxSprite;
     var cursorSprite2:FlxSprite;
+	var backButton:FlxSprite;
 
     function openSelectedSubstate(label:String) {
 		switch(label) {
@@ -73,6 +74,15 @@ class BebOptionsSubstate extends MusicBeatSubstate
         cursorSprite = new FlxSprite().loadGraphic(Paths.image('ui/cursor'));
         cursorSprite2 = new FlxSprite().loadGraphic(Paths.image('ui/cursor2'));
         FlxG.mouse.visible = true;
+
+        backButton = new FlxSprite().loadGraphic(Paths.image('freeplay/back_button',"menu"));
+		backButton.x = 10;
+		backButton.setGraphicSize(Std.int(backButton.width * 0.8));
+		backButton.updateHitbox();
+		backButton.y = FlxG.height - backButton.height - 10;
+        backButton.alpha = 0;
+        FlxTween.tween(backButton, {alpha: 1}, 0.25);
+		add(backButton);
 
         grpOptions = new FlxSpriteGroup();
         for(i in 0...options.length){
@@ -108,6 +118,7 @@ class BebOptionsSubstate extends MusicBeatSubstate
 
 			FlxG.sound.play(Paths.sound('cancelMenu'));
             FlxTween.tween(bg, {alpha: 0}, 0.25);
+            FlxTween.tween(backButton, {alpha: 0}, 0.25);
             for(i in grpOptions){
                 FlxTween.tween(i, {x: 1280}, 0.75, {ease: FlxEase.backIn, onComplete: function(poop:FlxTween){
                     close();
@@ -151,6 +162,30 @@ class BebOptionsSubstate extends MusicBeatSubstate
                     
                     
             }
+
+            if (allowedToChange)
+            {
+            if (FlxG.mouse.overlaps(backButton))
+                {
+                    changeCursor(true);
+                    backButton.loadGraphic(Paths.image('freeplay/back_button_selected', 'menu'));
+                    if (FlxG.mouse.justPressed)
+                        {
+                            allowedToChange = false;
+
+                            FlxG.sound.play(Paths.sound('cancelMenu'));
+                            FlxTween.tween(bg, {alpha: 0}, 0.25);
+                            FlxTween.tween(backButton, {alpha: 0}, 0.25);
+                            for(i in grpOptions){
+                                FlxTween.tween(i, {x: 1280}, 0.75, {ease: FlxEase.backIn, onComplete: function(poop:FlxTween){
+                                    close();
+                                }});
+                            }
+                        }
+                }
+            else
+                backButton.loadGraphic(Paths.image('freeplay/back_button', 'menu'));
+        }
 
         if(FlxG.mouse.wheel != 0)
 			{

@@ -15,9 +15,9 @@
 <SubTexture name="freeplay_james select0012" x="396" y="688" width="396" height="663" frameX="-109" frameY="-136" frameWidth="600" frameHeight="820" />
 <SubTexture name="freeplay_james select0013" x="396" y="688" width="396" height="663" frameX="-109" frameY="-136" frameWidth="600" frameHeight="820" />
 <SubTexture name="freeplay_james select0014" x="396" y="688" width="396" height="663" frameX="-109" frameY="-136" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_james select0015" x="396" y="688" width="396" height="663" frameX="-109" frameY="-136" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_james select0016" x="396" y="688" width="396" height="663" frameX="-109" frameY="-136" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_james select0017" x="396" y="688" width="396" height="663" frameX="-109" frameY="-136" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_james select0018" x="396" y="688" width="396" height="663" frameX="-109" frameY="-136" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_james select0019" x="396" y="688" width="396" height="663" frameX="-109" frameY="-136" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_james selected0000" x="396" y="688" width="396" height="663" frameX="-109" frameY="-136" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_james deselect0000" x="792" y="688" width="402" height="658" frameX="-106" frameY="-142" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_james deselect0001" x="0" y="688" width="396" height="665" frameX="-109" frameY="-135" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_james deselect0002" x="1230" y="0" width="394" height="668" frameX="-110" frameY="-131" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_james deselect0003" x="1230" y="0" width="394" height="668" frameX="-110" frameY="-131" frameWidth="600" frameHeight="820" />
 </TextureAtlas>

@@ -15,9 +15,9 @@
 <SubTexture name="freeplay_gordon select0012" x="956" y="716" width="480" height="690" frameX="-67" frameY="-109" frameWidth="600" frameHeight="820" />
 <SubTexture name="freeplay_gordon select0013" x="956" y="716" width="480" height="690" frameX="-67" frameY="-109" frameWidth="600" frameHeight="820" />
 <SubTexture name="freeplay_gordon select0014" x="956" y="716" width="480" height="690" frameX="-67" frameY="-109" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_gordon select0015" x="956" y="716" width="480" height="690" frameX="-67" frameY="-109" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_gordon select0016" x="956" y="716" width="480" height="690" frameX="-67" frameY="-109" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_gordon select0017" x="956" y="716" width="480" height="690" frameX="-67" frameY="-109" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_gordon select0018" x="956" y="716" width="480" height="690" frameX="-67" frameY="-109" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_gordon select0019" x="956" y="716" width="480" height="690" frameX="-67" frameY="-109" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_gordon selected0000" x="956" y="716" width="480" height="690" frameX="-67" frameY="-109" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_gordon deselect0000" x="1485" y="0" width="486" height="684" frameX="-64" frameY="-116" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_gordon deselect0001" x="476" y="716" width="480" height="691" frameX="-67" frameY="-109" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_gordon deselect0002" x="0" y="716" width="476" height="694" frameX="-69" frameY="-105" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_gordon deselect0003" x="0" y="716" width="476" height="694" frameX="-69" frameY="-105" frameWidth="600" frameHeight="820" />
 </TextureAtlas>

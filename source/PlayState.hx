@@ -379,6 +379,9 @@ class PlayState extends MusicBeatState
 		// for lua
 		instance = this;
 
+		
+        FlxG.mouse.visible = false;
+
 		debugKeysChart = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
 		debugKeysCharacter = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_2'));
 		PauseSubState.songName = null; //Reset to default

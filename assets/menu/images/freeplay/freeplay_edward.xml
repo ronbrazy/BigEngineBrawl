@@ -15,9 +15,9 @@
 <SubTexture name="freeplay_edward select0012" x="394" y="688" width="395" height="663" frameX="-110" frameY="-136" frameWidth="600" frameHeight="820" />
 <SubTexture name="freeplay_edward select0013" x="394" y="688" width="395" height="663" frameX="-110" frameY="-136" frameWidth="600" frameHeight="820" />
 <SubTexture name="freeplay_edward select0014" x="394" y="688" width="395" height="663" frameX="-110" frameY="-136" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_edward select0015" x="394" y="688" width="395" height="663" frameX="-110" frameY="-136" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_edward select0016" x="394" y="688" width="395" height="663" frameX="-110" frameY="-136" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_edward select0017" x="394" y="688" width="395" height="663" frameX="-110" frameY="-136" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_edward select0018" x="394" y="688" width="395" height="663" frameX="-110" frameY="-136" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_edward select0019" x="394" y="688" width="395" height="663" frameX="-110" frameY="-136" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_edward selected0000" x="394" y="688" width="395" height="663" frameX="-110" frameY="-136" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_edward deselect0000" x="789" y="688" width="400" height="658" frameX="-108" frameY="-142" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_edward deselect0001" x="0" y="688" width="394" height="665" frameX="-111" frameY="-135" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_edward deselect0002" x="1223" y="0" width="392" height="668" frameX="-112" frameY="-131" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_edward deselect0003" x="1223" y="0" width="392" height="668" frameX="-112" frameY="-131" frameWidth="600" frameHeight="820" />
 </TextureAtlas>

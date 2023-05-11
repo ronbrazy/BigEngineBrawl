@@ -15,9 +15,9 @@
 <SubTexture name="freeplay_henry select0012" x="956" y="714" width="480" height="688" frameX="-67" frameY="-111" frameWidth="600" frameHeight="820" />
 <SubTexture name="freeplay_henry select0013" x="956" y="714" width="480" height="688" frameX="-67" frameY="-111" frameWidth="600" frameHeight="820" />
 <SubTexture name="freeplay_henry select0014" x="956" y="714" width="480" height="688" frameX="-67" frameY="-111" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_henry select0015" x="956" y="714" width="480" height="688" frameX="-67" frameY="-111" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_henry select0016" x="956" y="714" width="480" height="688" frameX="-67" frameY="-111" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_henry select0017" x="956" y="714" width="480" height="688" frameX="-67" frameY="-111" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_henry select0018" x="956" y="714" width="480" height="688" frameX="-67" frameY="-111" frameWidth="600" frameHeight="820" />
-<SubTexture name="freeplay_henry select0019" x="956" y="714" width="480" height="688" frameX="-67" frameY="-111" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_henry selected0000" x="956" y="714" width="480" height="688" frameX="-67" frameY="-111" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_henry deselect0000" x="1485" y="0" width="486" height="683" frameX="-64" frameY="-117" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_henry deselect0001" x="476" y="714" width="480" height="690" frameX="-67" frameY="-110" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_henry deselect0002" x="0" y="714" width="476" height="693" frameX="-69" frameY="-106" frameWidth="600" frameHeight="820" />
+<SubTexture name="freeplay_henry deselect0003" x="0" y="714" width="476" height="693" frameX="-69" frameY="-106" frameWidth="600" frameHeight="820" />
 </TextureAtlas>
