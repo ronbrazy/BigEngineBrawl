@@ -65,6 +65,21 @@ class BebAwardsState extends MusicBeatState
         'awarduseful'
     ];
 
+    var achieveDescs:Array<Dynamic> = [
+        ['Welcome to Sodor!','(Play Puffball)'],
+        ['Big Engine Brawl!','(Play the Main Week)'],
+        ['Always and always and always.','(Play Sad Story)'],
+        ['Old Tunes, New Twists!','(Play all the Remixes)'],
+        ['It isn\'t wrong, but we just don\'t do it.','(Get a Game Over)'],
+        ['The Stout Gentleman.','(Play Confusion & Delay)'],
+        ['Express Coming Through!','(Full Combo the Main Week)'],
+        ['Hero of Sodor.','(Discover Loathed)'],
+        ['','']
+    ];
+
+    var achieveName:FlxText;
+    var achieveDesc:FlxText;
+
     override function create(){
         #if desktop
 		DiscordClient.changePresence("Options Menu", null);
@@ -149,6 +164,19 @@ class BebAwardsState extends MusicBeatState
         photoZoom.alpha = 0;
         add(photoZoom);
 
+        achieveName = new FlxText(0, 0, 0, '', 46);
+        achieveName.setFormat(Paths.font("vcr.ttf"), 64, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		achieveName.alpha = 0;
+		achieveName.borderSize = 2;
+
+        achieveDesc = new FlxText(0, 0, 0, '', 46);
+        achieveDesc.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		achieveDesc.alpha = 0;
+		achieveDesc.borderSize = 2;
+
+        add(achieveName);
+        add(achieveDesc);
+
         super.create();
     }
 
@@ -178,8 +206,16 @@ class BebAwardsState extends MusicBeatState
                                 photoZoom.loadGraphic(Paths.image('awards/award full imgs/${achieves[i]}','menu'));
                                 photoZoom.setGraphicSize(0, Std.int(FlxG.height));
                                 photoZoom.screenCenter();
+                                achieveName.text = achieveDescs[i][0];
+                                achieveName.x = FlxG.width/2 - achieveName.width /2;
+                                achieveName.y = FlxG.height - achieveName.height - 55;
+                                achieveDesc.text = achieveDescs[i][1];
+                                achieveDesc.x = FlxG.width/2 - achieveDesc.width /2;
+                                achieveDesc.y = FlxG.height - achieveDesc.height - 5;
                                 FlxTween.tween(photoZoom, {alpha: 1}, 0.25);
                                 FlxTween.tween(photoBG, {alpha: 0.75}, 0.25);
+                                FlxTween.tween(achieveName, {alpha: 1}, 0.25);
+                                FlxTween.tween(achieveDesc, {alpha: 1}, 0.25);
                             }
                         }
                     
@@ -232,6 +268,8 @@ class BebAwardsState extends MusicBeatState
                     {
                         FlxTween.tween(photoZoom, {alpha: 0}, 0.25);
                         FlxTween.tween(photoBG, {alpha: 0}, 0.25, {onComplete: function(lol:FlxTween){inPhoto = false; }});
+                        FlxTween.tween(achieveName, {alpha: 0}, 0.25);
+                        FlxTween.tween(achieveDesc, {alpha: 0}, 0.25);
                     }
             }
         
