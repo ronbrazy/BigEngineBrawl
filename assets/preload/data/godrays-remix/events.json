@@ -1,0 +1,18 @@
+{
+	"song": {
+		"events": [
+			[
+				0,
+				[
+					[
+						"Alt Idle Animation",
+						"dad",
+						"-alt"
+					]
+				],
+				null,
+				"Alt Animation"
+			]
+		]
+	}
+}
