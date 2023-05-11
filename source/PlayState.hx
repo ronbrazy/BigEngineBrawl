@@ -3867,6 +3867,10 @@ class PlayState extends MusicBeatState
 				if (ClientPrefs.flashing)
 				FlxG.camera.flash(FlxColor.WHITE,Std.parseFloat(value1));
 
+			case 'HUD Fade':
+				FlxTween.tween(camHUD, {alpha: Std.parseFloat(value2)}, Std.parseFloat(value1), {
+					ease: FlxEase.cubeInOut
+				});	
 
 			case 'Change Character':
 				var charType:Int = 0;
