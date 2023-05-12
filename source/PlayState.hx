@@ -285,7 +285,11 @@ class PlayState extends MusicBeatState
 		'sad story' => 'Jack Orange',
 		'confusion and delay' => 'DPZ',
 		'loathed' => 'DPZ',
-		'old reliable' => 'ronbrazy'
+		'old reliable' => 'ronbrazy',
+		'endless remix' => 'The Old Guards Van',
+		'monochrome remix' => 'The Old Guards Van',
+		'ugh remix' => 'The Old Guards Van',
+		'godrays remix' => 'The Old Guards Van', 
 	];
 
 	public static var campaignScore:Int = 0;
