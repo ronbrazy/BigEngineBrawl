@@ -273,8 +273,20 @@ class PlayState extends MusicBeatState
 	public var songMisses:Int = 0;
 	public var scoreTxt:FlxText;
 	public var songtitleTxt:FlxText;
+	public var composerTxt:FlxText;
 	var timeTxt:FlxText;
 	var scoreTxtTween:FlxTween;
+
+	var songtocomposer:Map<String, String> = [
+		'puffball' => 'DPZ',
+		'flying kipper' => 'Jack Orange',
+		'splendid' => 'ronbrazy',
+		'indignation' => 'DPZ, ronbrazy and Jack Orange',
+		'sad story' => 'Jack Orange',
+		'confusion and delay' => 'DPZ',
+		'loathed' => 'DPZ',
+		'old reliable' => 'ronbrazy'
+	];
 
 	public static var campaignScore:Int = 0;
 	public static var campaignMisses:Int = 0;
@@ -1200,6 +1212,14 @@ class PlayState extends MusicBeatState
 		songtitleTxt.alpha = 0;
 		add(songtitleTxt);
 
+		composerTxt = new FlxText(0, 0, FlxG.width,"", 20);
+		composerTxt.setFormat(Paths.font("vcr.ttf"), 50, 0xFFFF02, CENTER);
+		composerTxt.text = 'Composed by ${songtocomposer.get(SONG.song.toLowerCase())}';
+		composerTxt.screenCenter(X);
+		composerTxt.y = (FlxG.height - (FlxG.height / 4) + (songtitleTxt.height - (composerTxt.height / 2)));
+		composerTxt.alpha = 0;
+		add(composerTxt);
+
 		strumLineNotes.cameras = [camHUD];
 		grpNoteSplashes.cameras = [camHUD];
 		notes.cameras = [camHUD];
@@ -1209,6 +1229,7 @@ class PlayState extends MusicBeatState
 		iconP2.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
 		songtitleTxt.cameras = [camHUD];
+		composerTxt.cameras = [camHUD];
 		botplayTxt.cameras = [camHUD];
 		timeBar.cameras = [camHUD];
 		timeBarBG.cameras = [camHUD];
@@ -2119,6 +2140,7 @@ class PlayState extends MusicBeatState
 
 	public function startCountdown():Void
 	{
+		FlxG.camera.flash(FlxColor.WHITE, 3);
 		if(startedCountdown) {
 			callOnLuas('onStartCountdown', []);
 			return;
@@ -2395,6 +2417,9 @@ class PlayState extends MusicBeatState
 
 		FlxTween.tween(songtitleTxt, {alpha: 1}, 3, {ease: FlxEase.quadInOut, onComplete: function(shit:FlxTween){
 			FlxTween.tween(songtitleTxt, {alpha: 0}, 3, {ease: FlxEase.quadInOut});
+		}});
+		FlxTween.tween(composerTxt, {alpha: 1}, 3, {ease: FlxEase.quadInOut, onComplete: function(shit:FlxTween){
+			FlxTween.tween(composerTxt, {alpha: 0}, 3, {ease: FlxEase.quadInOut});
 		}});
 
 		previousFrameTime = FlxG.game.ticks;
