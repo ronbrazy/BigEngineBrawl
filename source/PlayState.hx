@@ -387,6 +387,8 @@ class PlayState extends MusicBeatState
 
 	
 	public static var oreoWindow:Bool = false;
+	public static var oreoXpos:Int = 0;
+	public static var oreoYpos:Int = 0;
 
 	var precacheList:Map<String, String> = new Map<String, String>();
 	
@@ -5471,6 +5473,8 @@ class PlayState extends MusicBeatState
 	function resizeDaWindow(newWinSizeTarg:Array<Int>)
 		{
 			oreoWindow = true;
+			oreoXpos = lime.app.Application.current.window.x;
+			oreoYpos = lime.app.Application.current.window.y;
 			FlxG.resizeWindow(newWinSizeTarg[0],newWinSizeTarg[1]);
 			FlxG.scaleMode = new RatioScaleMode(true);
 			lime.app.Application.current.window.fullscreen = false;
@@ -5487,8 +5491,8 @@ class PlayState extends MusicBeatState
 			FlxG.resizeWindow(1280,720);
 			FlxG.scaleMode = new RatioScaleMode(false);
 			lime.app.Application.current.window.resizable = true;
-			lime.app.Application.current.window.x = 5;
-			lime.app.Application.current.window.y = 10;
+			lime.app.Application.current.window.x = oreoXpos;
+			lime.app.Application.current.window.y = oreoYpos;
 			oreoWindow = false;
 		}
 
