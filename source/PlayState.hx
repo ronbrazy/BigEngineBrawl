@@ -56,6 +56,9 @@ import flixel.effects.particles.FlxParticle;
 import flixel.util.FlxSave;
 import flixel.animation.FlxAnimationController;
 import animateatlas.AtlasFrameMaker;
+import openfl.filters.ShaderFilter;
+import openfl.system.Capabilities;
+import flixel.system.scaleModes.*;
 import Achievements;
 import StageData;
 import FunkinLua;
@@ -378,6 +381,13 @@ class PlayState extends MusicBeatState
 		"edward" => "edwardNote"
 	];
 
+	public var shaderFilter:ShaderFilter;
+    var screenShader:Screen = new Screen();
+	var shaderTime:Float = 0;
+
+	
+	public static var oreoWindow:Bool = false;
+
 	var precacheList:Map<String, String> = new Map<String, String>();
 	
 	// stores the last judgement object
@@ -416,6 +426,8 @@ class PlayState extends MusicBeatState
 			'NOTE_UP',
 			'NOTE_RIGHT'
 		];
+
+		shaderFilter = new ShaderFilter(screenShader);
 
 		//Ratings
 		ratingsData.push(new Rating('sick')); //default rating
@@ -766,6 +778,12 @@ class PlayState extends MusicBeatState
 					ob5.setGraphicSize(8315);
 					ob5.updateHitbox();
 					add(ob5);
+
+					camGame.setFilters([shaderFilter]);
+					camHUD.setFilters([shaderFilter]);
+
+					screenShader.noiseIntensity.value = [0.75];
+					resizeDaWindow([Std.int(800),Std.int(600)]);
 	
 					//editable = true;
 					//editbleSprite = ob1;
@@ -1028,6 +1046,8 @@ class PlayState extends MusicBeatState
 			case 'schoolEvil':
 				var evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); //nice
 				addBehindDad(evilTrail);
+			case 'sadstory':
+				boyfriend.color = 0xFFB2B2B2;
 		}
 
 		var file:String = Paths.json(songName + '/dialogue'); //Checks for json/Psych Engine dialogue
@@ -2755,6 +2775,8 @@ class PlayState extends MusicBeatState
 	public var skipArrowStartTween:Bool = false; //for lua
 	private function generateStaticArrows(player:Int):Void
 	{
+		if (oreoWindow)
+			STRUM_X = 82;
 		for (i in 0...4)
 		{
 			// FlxG.log.add(i);
@@ -2780,6 +2802,8 @@ class PlayState extends MusicBeatState
 
 			if (player == 1)
 			{
+				if (oreoWindow)
+					babyArrow.x -= 82;
 				playerStrums.add(babyArrow);
 				babyArrow.texture = 'NOTE_assets';
 			}
@@ -3278,6 +3302,10 @@ class PlayState extends MusicBeatState
 		{
 			if (!paused)
 			{
+
+				screenShader.iTime.value = [shaderTime];
+				shaderTime += FlxG.elapsed;
+
 				songTime += FlxG.game.ticks - previousFrameTime;
 				previousFrameTime = FlxG.game.ticks;
 
@@ -5438,6 +5466,31 @@ class PlayState extends MusicBeatState
 			spr.resetAnim = time;
 		}
 	}
+
+	var sizeTarg:Float = 0;
+	function resizeDaWindow(newWinSizeTarg:Array<Int>)
+		{
+			oreoWindow = true;
+			FlxG.resizeWindow(newWinSizeTarg[0],newWinSizeTarg[1]);
+			FlxG.scaleMode = new RatioScaleMode(true);
+			lime.app.Application.current.window.fullscreen = false;
+			lime.app.Application.current.window.resizable = false;
+			//lime.app.Application.current.window.resize(416,384);
+			var targetPos:Array<Float> = [(Capabilities.screenResolutionX/2)-(newWinSizeTarg[0]/2),(Capabilities.screenResolutionY/2)-(newWinSizeTarg[1]/2)];
+			lime.app.Application.current.window.x = Std.int(targetPos[0]);
+			lime.app.Application.current.window.y = Std.int(targetPos[1]);
+			sizeTarg = newWinSizeTarg[0];
+		}
+
+	public static function resetWindow()
+		{
+			FlxG.resizeWindow(1280,720);
+			FlxG.scaleMode = new RatioScaleMode(false);
+			lime.app.Application.current.window.resizable = true;
+			lime.app.Application.current.window.x = 5;
+			lime.app.Application.current.window.y = 10;
+			oreoWindow = false;
+		}
 
 	public var ratingName:String = '?';
 	public var ratingPercent:Float;

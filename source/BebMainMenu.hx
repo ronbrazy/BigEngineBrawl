@@ -78,7 +78,7 @@ class BebMainMenu extends MusicBeatState
 
         var poleAndBtnsOffset:Array<Float> = [10,0];
 
-        var pole:FlxSprite = new FlxSprite(poleAndBtnsOffset[0],poleAndBtnsOffset[1]).loadGraphic(Paths.image('main/pole', 'menu'));
+        var pole:FlxSprite = new FlxSprite(poleAndBtnsOffset[0] + 30,poleAndBtnsOffset[1]).loadGraphic(Paths.image('main/pole', 'menu'));
         pole.antialiasing = ClientPrefs.globalAntialiasing;
         pole.setGraphicSize(Std.int(pole.width / 1.8));
         pole.updateHitbox();

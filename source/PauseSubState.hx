@@ -123,6 +123,15 @@ class PauseSubState extends MusicBeatSubstate
 		levelDifficulty.x = FlxG.width - (levelDifficulty.width + 20);
 		blueballedTxt.x = FlxG.width - (blueballedTxt.width + 20);
 
+		if (PlayState.oreoWindow)
+			{
+				levelInfo.x -= 140;
+				levelDifficulty.x -= 140;
+				blueballedTxt.x -= 140;
+				chartingText.x -= 140;
+				practiceText.x -= 140;
+			}
+
 		FlxTween.tween(bg, {alpha: 0.6}, 0.4, {ease: FlxEase.quartInOut});
 		FlxTween.tween(levelInfo, {alpha: 1, y: 20}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.3});
 		FlxTween.tween(levelDifficulty, {alpha: 1, y: levelDifficulty.y + 5}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.5});
@@ -255,6 +264,9 @@ class PauseSubState extends MusicBeatSubstate
 					PlayState.deathCounter = 0;
 					PlayState.seenCutscene = false;
 
+					if (PlayState.oreoWindow)
+						PlayState.resetWindow();
+
 					WeekData.loadTheFirstEnabledMod();
 					if(PlayState.isStoryMode) {
 						MusicBeatState.switchState(new StoryMenuState());
@@ -354,6 +366,9 @@ class PauseSubState extends MusicBeatSubstate
 			item.isMenuItem = true;
 			item.targetY = i;
 			grpMenuShit.add(item);
+
+			if (PlayState.oreoWindow)
+				item.xAdd = 84;
 
 			if(menuItems[i] == 'Skip Time')
 			{
