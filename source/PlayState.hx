@@ -379,6 +379,8 @@ class PlayState extends MusicBeatState
 	var lpo:Int = 700;
 	var signalTween:FlxTween;
 
+	var doMiddleScroll:Bool = false;
+
 	var charToNoteSkin = [
 		"bf" => "NOTE_assets",
 		"henry" => "HenryNote",
@@ -435,6 +437,8 @@ class PlayState extends MusicBeatState
 			ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_up')),
 			ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_right'))
 		];
+
+		doMiddleScroll = ClientPrefs.middleScroll;
 
 		controlArray = [
 			'NOTE_LEFT',
@@ -905,6 +909,8 @@ class PlayState extends MusicBeatState
 					ob1.screenCenter();
 					add(ob1);
 
+					doMiddleScroll = true;
+
 					ob1.scrollFactor.set();
 
 					var photos = new FlxSpriteGroup();
@@ -1155,7 +1161,7 @@ class PlayState extends MusicBeatState
 
 		Conductor.songPosition = -5000 / Conductor.songPosition;
 
-		strumLine = new FlxSprite(ClientPrefs.middleScroll ? STRUM_X_MIDDLESCROLL : STRUM_X, 50).makeGraphic(FlxG.width, 10);
+		strumLine = new FlxSprite(doMiddleScroll ? STRUM_X_MIDDLESCROLL : STRUM_X, 50).makeGraphic(FlxG.width, 10);
 		if(ClientPrefs.downScroll) strumLine.y = FlxG.height - 150;
 		strumLine.scrollFactor.set();
 
@@ -1529,7 +1535,7 @@ class PlayState extends MusicBeatState
 						mech1.x = 734;
 						mech1.y = 265;
 					}
-				if (ClientPrefs.middleScroll)
+				if (doMiddleScroll)
 					{
 						mech1.x = 418;
 					}
@@ -2271,7 +2277,7 @@ class PlayState extends MusicBeatState
 			for (i in 0...opponentStrums.length) {
 				setOnLuas('defaultOpponentStrumX' + i, opponentStrums.members[i].x);
 				setOnLuas('defaultOpponentStrumY' + i, opponentStrums.members[i].y);
-				//if(ClientPrefs.middleScroll) opponentStrums.members[i].visible = false;
+				//if(doMiddleScroll) opponentStrums.members[i].visible = false;
 			}
 
 			startedCountdown = true;
@@ -2405,7 +2411,7 @@ class PlayState extends MusicBeatState
 					{
 						note.copyAlpha = false;
 						note.alpha = note.multAlpha;
-						if(ClientPrefs.middleScroll && !note.mustPress) {
+						if(doMiddleScroll && !note.mustPress) {
 							note.alpha *= 0.35;
 						}
 					}
@@ -2723,7 +2729,7 @@ class PlayState extends MusicBeatState
 						{
 							sustainNote.x += FlxG.width / 2; // general offset
 						}
-						else if(ClientPrefs.middleScroll)
+						else if(doMiddleScroll)
 						{
 							sustainNote.x += 310;
 							if(daNoteData > 1) //Up and Right
@@ -2738,7 +2744,7 @@ class PlayState extends MusicBeatState
 				{
 					swagNote.x += FlxG.width / 2; // general offset
 				}
-				else if(ClientPrefs.middleScroll)
+				else if(doMiddleScroll)
 				{
 					swagNote.x += 310;
 					if(daNoteData > 1) //Up and Right
@@ -2885,10 +2891,10 @@ class PlayState extends MusicBeatState
 			if (player < 1)
 			{
 				if(!ClientPrefs.opponentStrums) targetAlpha = 0;
-				else if(ClientPrefs.middleScroll) targetAlpha = 0.35;
+				else if(doMiddleScroll) targetAlpha = 0.35;
 			}
 
-			var babyArrow:StrumNote = new StrumNote(ClientPrefs.middleScroll ? STRUM_X_MIDDLESCROLL : STRUM_X, strumLine.y, i, player);
+			var babyArrow:StrumNote = new StrumNote(doMiddleScroll ? STRUM_X_MIDDLESCROLL : STRUM_X, strumLine.y, i, player);
 			babyArrow.downScroll = ClientPrefs.downScroll;
 			if (!isStoryMode && !skipArrowStartTween)
 			{
@@ -2910,7 +2916,7 @@ class PlayState extends MusicBeatState
 			}
 			else
 			{
-				if(ClientPrefs.middleScroll)
+				if(doMiddleScroll)
 				{
 					babyArrow.x += 310;
 					if(i > 1) { //Up and Right
