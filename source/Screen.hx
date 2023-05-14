@@ -14,7 +14,7 @@ class Screen extends FlxShader
         bool scanlinesOn = true;
         bool vignetteMoving = true;
     // uniform sampler2D noiseTex;
-        float glitchModifier = 0;
+        float glitchModifier = 0.0;
         uniform float noiseIntensity;
         uniform float iTime;
 
