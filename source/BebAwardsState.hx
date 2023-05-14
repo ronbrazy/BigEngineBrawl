@@ -26,6 +26,8 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
 import flixel.input.keyboard.FlxKey;
 import flixel.graphics.FlxGraphic;
+import flixel.addons.transition.FlxTransitionableState;
+import flixel.system.FlxSound;
 import Controls;
 
 using StringTools;
@@ -52,6 +54,10 @@ class BebAwardsState extends MusicBeatState
     var photoZoom:FlxSprite;
 
     var tophamState:Int = 0;
+
+    var tophamSound:FlxSound = new FlxSound();
+
+    var music2:FlxSound = new FlxSound();
 
     var achieves:Array<String> = [
         'awardpuffball',
@@ -85,10 +91,16 @@ class BebAwardsState extends MusicBeatState
 		DiscordClient.changePresence("Options Menu", null);
 		#end
 
+        music2 = FlxG.sound.load(Paths.music('beb_awards_angry'), 0);
+        music2.looped = true;
+        music2.play();
         FlxG.sound.playMusic(Paths.music('beb_awards'), 0);
         FlxG.sound.music.fadeIn(1, 0, 0.7);
 
         BebMainMenu.previousState = 'awards';
+
+        
+		CoolUtil.difficulties = CoolUtil.defaultDifficulties.copy();
 		        
         bg = new FlxSprite().loadGraphic(Paths.image('awards/tophamoffice','menu'));
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
@@ -251,13 +263,29 @@ class BebAwardsState extends MusicBeatState
                         {
                             changeCursor(true);
                             
-                            if (FlxG.mouse.justPressed)
+                            if (FlxG.mouse.justPressed && !tophamSound.playing)
                             {
                                 if (tophamState < 3)
                                 {
                                     tophamState++;
                                     topham.loadGraphic(Paths.image('awards/topham${tophamState}', 'menu'));
                                 }
+                                if (tophamState <= 2)
+                                {
+                                    tophamSound = FlxG.sound.load(Paths.sound('fatcontroller_unlock${tophamState}', 'menu'));
+                                    tophamSound.play();
+                                }
+                                if (tophamState == 2)
+                                    {
+                                        music2.fadeIn(1, 0, 0.7);
+                                        FlxG.sound.music.fadeOut(1, 0);
+                                    }
+                                if (tophamState == 3)
+                                    {
+                                        backButton.visible = false;
+                                        FlxG.mouse.visible = false;
+                                        loadSong();
+                                    }
                             }
                         }
         
@@ -289,4 +317,34 @@ class BebAwardsState extends MusicBeatState
                     FlxG.mouse.load(cursorSprite.pixels);
                 }
         }
+
+        function loadSong()
+            {
+                persistentUpdate = false;
+                var songLowercase:String = Paths.formatToSongPath('confusion-and-delay');
+                var poop:String = Highscore.formatSong(songLowercase, ClientPrefs.difficulty);
+                FlxTransitionableState.skipNextTransIn = true;
+			    FlxTransitionableState.skipNextTransOut = true;
+                /*#if MODS_ALLOWED
+                if(!sys.FileSystem.exists(Paths.modsJson(songLowercase + '/' + poop)) && !sys.FileSystem.exists(Paths.json(songLowercase + '/' + poop))) {
+                #else
+                if(!OpenFlAssets.exists(Paths.json(songLowercase + '/' + poop))) {
+                #end
+                    poop = songLowercase;
+                    curDifficulty = 1;
+                    trace('Couldnt find file');
+                }*/
+                trace(poop);
+    
+                PlayState.SONG = Song.loadFromJson(poop, songLowercase);
+                PlayState.isStoryMode = false;
+                PlayState.storyDifficulty = ClientPrefs.difficulty;
+    
+                //trace('CURRENT WEEK: ' + WeekData.getWeekFileName());
+                LoadingState.loadAndSwitchState(new DebugPlaystate());
+    
+                FlxG.sound.music.volume = 0;
+                        
+                //destroyFreeplayVocals();
+            }
 }

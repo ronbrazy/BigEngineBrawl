@@ -295,6 +295,18 @@ class PlayState extends MusicBeatState
 		'godrays remix' => 'The Old Guards Van', 
 	];
 
+	var achieves:Array<String> = [
+        'awardpuffball',
+        'awardmainweek',
+        'awardsadstory',
+        'awardremix',
+        'awardgameover',
+        'awardconfusiondelay',
+        'awardexpress',
+        'awardloathed',
+        'awarduseful'
+    ];
+
 	public static var campaignScore:Int = 0;
 	public static var campaignMisses:Int = 0;
 	public static var seenCutscene:Bool = false;
@@ -406,6 +418,8 @@ class PlayState extends MusicBeatState
 
 		// for lua
 		instance = this;
+
+		BebMainMenu.previousState = '';
 
 		
         FlxG.mouse.visible = false;
@@ -883,6 +897,71 @@ class PlayState extends MusicBeatState
 					ob5.updateHitbox();
 					ob5.alpha = 0.60;
 					overlaySprs.push(ob5);
+				
+				case 'confusion':
+					ob1 = new FlxSprite().loadGraphic(Paths.image('awards/tophamoffice','menu'));
+					ob1.antialiasing = ClientPrefs.globalAntialiasing;
+					ob1.setGraphicSize(Std.int(FlxG.width));
+					ob1.screenCenter();
+					add(ob1);
+
+					ob1.scrollFactor.set();
+
+					var photos = new FlxSpriteGroup();
+					var xFuckShit:Int = 0;
+					for (i in 0...achieves.length-2)
+						{
+							var achieveImage:FlxSprite = new FlxSprite().loadGraphic(Paths.image('awards/award portraits/${achieves[i]}','menu'));
+							achieveImage.scale.x = 0.2;
+							achieveImage.scale.y = 0.2;
+							achieveImage.updateHitbox();
+							achieveImage.x = 10 + achieveImage.width * i;
+							if (i > 0)
+								achieveImage.x += 15 * i;
+							achieveImage.y += 25;
+							if (xFuckShit > 4)
+							{
+								achieveImage.x = 10 + achieveImage.width * (i - 5);
+								if (i - 5 > 0)
+									achieveImage.x += 15 * (i - 5);
+								achieveImage.y += achieveImage.height;
+							}
+							
+							xFuckShit++;
+							achieveImage.scrollFactor.set();
+							photos.add(achieveImage);
+						}
+			
+					add(photos);
+					photos.scrollFactor.set();
+
+					ob4 = new FlxSprite().loadGraphic(Paths.image('awards/topham3','menu'));
+					ob4.antialiasing = ClientPrefs.globalAntialiasing;
+					ob4.setGraphicSize(Std.int(FlxG.width));
+					ob4.screenCenter();
+					add(ob4);
+					ob4.scrollFactor.set();
+					
+					ob2 = new FlxSprite().loadGraphic(Paths.image('awards/awardsoverlaymultiply','menu'));
+					ob2.antialiasing = ClientPrefs.globalAntialiasing;
+					ob2.setGraphicSize(Std.int(FlxG.width));
+					ob2.screenCenter();
+					ob2.blend = MULTIPLY;
+					ob2.scrollFactor.set();
+					overlaySprs.push(ob2);
+
+					ob3 = new FlxSprite().loadGraphic(Paths.image('awards/awardsoverlay2add','menu'));
+					ob3.antialiasing = ClientPrefs.globalAntialiasing;
+					ob3.setGraphicSize(Std.int(FlxG.width));
+					ob3.screenCenter();
+					ob3.blend = ADD;
+					ob3.scrollFactor.set();
+					overlaySprs.push(ob3);
+					skipCountdown = true;
+					var tophamSound:FlxSound = new FlxSound();
+					tophamSound = FlxG.sound.load(Paths.sound('fatcontroller_unlock3', 'menu'));
+                    tophamSound.play();
+					camHUD.alpha = 0;
 		}
 
 		switch(Paths.formatToSongPath(SONG.song))
@@ -1050,6 +1129,11 @@ class PlayState extends MusicBeatState
 				addBehindDad(evilTrail);
 			case 'sadstory':
 				boyfriend.color = 0xFFB2B2B2;
+			case 'confusion':
+				boyfriend.visible = false;
+				dad.visible = false;
+				boyfriend.scrollFactor.set();
+				dad.scrollFactor.set();
 		}
 
 		var file:String = Paths.json(songName + '/dialogue'); //Checks for json/Psych Engine dialogue
@@ -1425,7 +1509,7 @@ class PlayState extends MusicBeatState
 		super.create();
 		switch (SONG.song)
 		{
-			case 'confusion-and-delay':
+			case 'confusion and delay':
 				mech1 = new FlxSprite(734,-265);
 				mech1.frames = Paths.getSparrowAtlas('mech/cad/signalsign');
 				mech1.animation.addByPrefix('move','mat',24,false);
@@ -2166,7 +2250,8 @@ class PlayState extends MusicBeatState
 
 	public function startCountdown():Void
 	{
-		FlxG.camera.flash(FlxColor.WHITE, 3);
+		if (!skipCountdown)
+			FlxG.camera.flash(FlxColor.WHITE, 3);
 		if(startedCountdown) {
 			callOnLuas('onStartCountdown', []);
 			return;
@@ -2205,7 +2290,8 @@ class PlayState extends MusicBeatState
 			}
 			else if (skipCountdown)
 			{
-				setSongTime(0);
+				//setSongTime(0);
+				FlxTween.tween(camHUD, {alpha: 1}, 0.5, {startDelay: 4});
 				return;
 			}
 
@@ -2585,11 +2671,17 @@ class PlayState extends MusicBeatState
 				swagNote.noteType = songNotes[3];
 				if(!Std.isOfType(songNotes[3], String)) swagNote.noteType = editors.ChartingState.noteTypeList[songNotes[3]]; //Backward compatibility + compatibility with Week 7 charts
 
-				if (swagNote.noteType != 'Whistle Note' || swagNote.noteType != 'Signal Note')
+
+				switch(swagNote.noteType)
 				{
-					swagNote.texture = 'NOTE_assets';
-					if(!swagNote.mustPress)
-						swagNote.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter.toLowerCase())}';
+					case 'Whistle Note':
+						trace('whistle note');
+					case 'Signal Note':
+						trace('Signal note');
+					default: 
+						swagNote.texture = 'NOTE_assets';
+						if(!swagNote.mustPress)
+							swagNote.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter.toLowerCase())}';
 				}
 
 				swagNote.scrollFactor.set();
@@ -2610,12 +2702,19 @@ class PlayState extends MusicBeatState
 						sustainNote.gfNote = (section.gfSection && (songNotes[1]<4));
 						sustainNote.noteType = swagNote.noteType;
 						sustainNote.scrollFactor.set();
-						if (swagNote.noteType != 'Whistle Note' || swagNote.noteType != 'Signal Note')
+
+							switch(sustainNote.noteType)
 							{
-								sustainNote.texture = 'NOTE_assets';
-								if(!sustainNote.mustPress)
-									sustainNote.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter.toLowerCase())}';
+								case 'Whistle Note':
+									//this is just here to cancel out the entire note skin changing for every note lol
+								case 'Signal Note':
+									//this is just here to cancel out the entire note skin changing for every note lol
+								default: 
+									sustainNote.texture = 'NOTE_assets';
+									if(!sustainNote.mustPress)
+										sustainNote.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter.toLowerCase())}';
 							}
+						
 						swagNote.tail.push(sustainNote);
 						sustainNote.parent = swagNote;
 						unspawnNotes.push(sustainNote);
@@ -3925,6 +4024,10 @@ class PlayState extends MusicBeatState
 			case 'White Flash':
 				if (ClientPrefs.flashing)
 				FlxG.camera.flash(FlxColor.WHITE,Std.parseFloat(value1));
+
+			case 'Kill Topham':
+				ob4.visible = false;
+				dad.visible = true;
 
 			case 'HUD Fade':
 				FlxTween.tween(camHUD, {alpha: Std.parseFloat(value2)}, Std.parseFloat(value1), {
