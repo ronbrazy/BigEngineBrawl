@@ -1,7 +1,7 @@
 {
 	"song": {
 		"player1": "bf",
-		"player2": "dad",
+		"player2": "edward",
 		"events": [],
 		"notes": [
 			{
@@ -1842,7 +1842,7 @@
 		"splashSkin": "noteSplashes",
 		"song": "old reliable",
 		"validScore": true,
-		"stage": "stage",
+		"stage": "oldreliable",
 		"arrowSkin": "",
 		"needsVoices": true,
 		"speed": 2,

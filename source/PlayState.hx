@@ -392,7 +392,8 @@ class PlayState extends MusicBeatState
 		"sadhenry" => "HenryNote",
 		"thomas" => "thomasNote",
 		"gordon" => "gordonNote",
-		"edward" => "edwardNote"
+		"edward" => "edwardNote",
+		"fatass" => "fatNote",
 	];
 
 	public var shaderFilter:ShaderFilter;
@@ -903,7 +904,7 @@ class PlayState extends MusicBeatState
 					overlaySprs.push(ob5);
 				
 				case 'confusion':
-					ob1 = new FlxSprite().loadGraphic(Paths.image('awards/tophamoffice','menu'));
+					ob1 = new FlxSprite().loadGraphic(Paths.image('awards/tophamofficeblank','menu'));
 					ob1.antialiasing = ClientPrefs.globalAntialiasing;
 					ob1.setGraphicSize(Std.int(FlxG.width));
 					ob1.screenCenter();
@@ -968,6 +969,36 @@ class PlayState extends MusicBeatState
 					tophamSound = FlxG.sound.load(Paths.sound('fatcontroller_unlock3', 'menu'));
                     tophamSound.play();
 					camHUD.alpha = 0;
+
+				case 'oldreliable':
+					ob1 = new FlxSprite().loadGraphic(Paths.image('bgs/oldreliable/insideshed'));
+					ob1.antialiasing = ClientPrefs.globalAntialiasing;
+					ob1.setGraphicSize();
+					ob1.updateHitbox();
+					add(ob1);
+
+					ob2 = new FlxSprite().loadGraphic(Paths.image('bgs/oldreliable/bg'));
+					ob2.antialiasing = ClientPrefs.globalAntialiasing;
+					ob2.setGraphicSize();
+					ob2.updateHitbox();
+					add(ob2);
+		
+					ob3 = new FlxSprite().loadGraphic(Paths.image('bgs/oldreliable/door1'));
+					ob3.antialiasing = ClientPrefs.globalAntialiasing;
+					ob3.setGraphicSize();
+					ob3.updateHitbox();
+					add(ob3);
+
+					add(dadGroup); 
+		
+					ob4 = new FlxSprite().loadGraphic(Paths.image('bgs/oldreliable/door2'));
+					ob4.antialiasing = ClientPrefs.globalAntialiasing;
+					ob4.setGraphicSize();
+					ob4.updateHitbox();
+					add(ob4);
+					
+					editable = true;
+					editbleSprite = ob1;
 		}
 
 		switch(Paths.formatToSongPath(SONG.song))
