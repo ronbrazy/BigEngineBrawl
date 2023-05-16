@@ -13,6 +13,11 @@
 						"Add Camera Zoom",
 						"0.010",
 						"0.02"
+					],
+					[
+						"Alt Idle Animation",
+						"Dad",
+						"-alt"
 					]
 				]
 			],
