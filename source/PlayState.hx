@@ -2712,9 +2712,9 @@ class PlayState extends MusicBeatState
 				switch(swagNote.noteType)
 				{
 					case 'Whistle Note':
-						trace('whistle note');
+						//this is just here to cancel out the entire note skin changing for every note lol
 					case 'Signal Note':
-						trace('Signal note');
+						//this is just here to cancel out the entire note skin changing for every note lol
 					default: 
 						swagNote.texture = 'NOTE_assets';
 						if(!swagNote.mustPress)
