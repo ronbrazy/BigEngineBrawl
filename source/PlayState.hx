@@ -4285,6 +4285,9 @@ class PlayState extends MusicBeatState
 			}
 		}
 
+		if (oreoWindow)
+			resetWindow();
+
 		timeBarBG.visible = false;
 		timeBar.visible = false;
 		timeTxt.visible = false;
