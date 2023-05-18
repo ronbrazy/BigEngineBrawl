@@ -96,6 +96,78 @@ class Character extends FlxSprite
 		{
 			//case 'your character name in case you want to hardcode them instead':
 
+			case 'fatass':
+				var characterPath:String = 'characters/' + curCharacter + '.json';
+
+				var path:String = Paths.getPreloadPath(characterPath);
+
+				trace(path);
+
+				if (!Assets.exists(path))
+				{
+					path = Paths.getPreloadPath('characters/' + DEFAULT_CHARACTER + '.json'); //If a character couldn't be found, change him to BF just to prevent a crash
+				}
+
+				var rawJson = Assets.getText(path);
+				var json:CharacterFile = cast Json.parse(rawJson);
+				var spriteType = "sparrow";
+
+				trace(CachedFrames.cachedInstance.get('topham').assetsKey);
+				var tex:FlxAtlasFrames = CachedFrames.cachedInstance.fromSparrow(CachedFrames.cachedInstance.get('topham'),'topham');
+
+				frames = tex;
+
+				graphic.persist = true;
+				graphic.destroyOnNoUse = false;
+
+				imageFile = json.image;
+
+				if(json.scale != 1) {
+					jsonScale = json.scale;
+					setGraphicSize(Std.int(width * jsonScale));
+					updateHitbox();
+				}
+
+				positionArray = json.position;
+				cameraPosition = json.camera_position;
+
+				healthIcon = json.healthicon;
+				singDuration = json.sing_duration;
+				flipX = !!json.flip_x;
+				if(json.no_antialiasing) {
+					antialiasing = false;
+					noAntialiasing = true;
+				}
+
+				if(json.healthbar_colors != null && json.healthbar_colors.length > 2)
+					healthColorArray = json.healthbar_colors;
+
+				antialiasing = !noAntialiasing;
+				if(!ClientPrefs.globalAntialiasing) antialiasing = false;
+
+				animationsArray = json.animations;
+				if(animationsArray != null && animationsArray.length > 0) {
+					for (anim in animationsArray) {
+						var animAnim:String = '' + anim.anim;
+						var animName:String = '' + anim.name;
+						var animFps:Int = anim.fps;
+						var animLoop:Bool = !!anim.loop; //Bruh
+						var animIndices:Array<Int> = anim.indices;
+						if(animIndices != null && animIndices.length > 0) {
+							animation.addByIndices(animAnim, animName, animIndices, "", animFps, animLoop);
+						} else {
+							animation.addByPrefix(animAnim, animName, animFps, animLoop);
+						}
+
+						if(anim.offsets != null && anim.offsets.length > 1) {
+							addOffset(anim.anim, anim.offsets[0], anim.offsets[1]);
+						}
+					}
+				} else {
+					quickAnimAdd('idle', 'BF idle dance');
+				}
+
+
 			default:
 				var characterPath:String = 'characters/' + curCharacter + '.json';
 

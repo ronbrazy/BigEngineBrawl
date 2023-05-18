@@ -99,6 +99,8 @@ class BebAwardsState extends MusicBeatState
 
         BebMainMenu.previousState = 'awards';
 
+        trace(CachedFrames.cachedInstance.get('topham').assetsKey);
+
         
 		CoolUtil.difficulties = CoolUtil.defaultDifficulties.copy();
 		        

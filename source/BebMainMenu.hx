@@ -33,7 +33,7 @@ class BebMainMenu extends MusicBeatState
     //var selectingCursor:Bool = false;
     override function create()
     {
-        if (previousState == 'awards')
+        if (previousState != '')
         {
             FlxG.sound.playMusic(Paths.music('bebmenu'), 0);
             FlxG.sound.music.fadeIn(1, 0, 0.7);
@@ -44,6 +44,8 @@ class BebMainMenu extends MusicBeatState
             FlxG.sound.playMusic(Paths.music('bebmenu'), 0);
             FlxG.sound.music.fadeIn(1, 0, 0.7);
         }
+
+        trace(CachedFrames.cachedInstance.get('topham').assetsKey);
 
         previousState = '';
 

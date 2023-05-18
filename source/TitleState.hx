@@ -95,6 +95,14 @@ class TitleState extends MusicBeatState
 		// Just to load a mod on start up if ya got one. For mods that change the menu music and bg
 		WeekData.loadTheFirstEnabledMod();
 
+		BebMainMenu.previousState = 'title';
+
+		if(FlxG.sound.music == null) {
+			FlxG.sound.playMusic(Paths.music('beb_preloading'), 0);
+			FlxG.sound.music.fadeIn(1, 0, 0.7);
+		}
+		
+
 		//trace(path, FileSystem.exists(path));
 
 		/*#if (polymod && !html5)
@@ -196,14 +204,21 @@ class TitleState extends MusicBeatState
 		}
 
 		FlxG.mouse.visible = true;
-		
+		/*
 		#if FREEPLAY
 		MusicBeatState.switchState(new FreeplayState());
 		#elseif CHARTING
 		MusicBeatState.switchState(new ChartingState());
 		#else
 		MusicBeatState.switchState(new BebMainMenu());
-		#end
+		#end*/
+
+		loadingImage = new FlxSprite().loadGraphic(Paths.image('title/loading', 'menu'));
+		loadingImage.setGraphicSize(Std.int(FlxG.width));
+		loadingImage.screenCenter();
+		add(loadingImage);
+
+		CachedFrames.loadEverything();
 	}
 
 	var logoBl:FlxSprite;
@@ -413,8 +428,28 @@ class TitleState extends MusicBeatState
 	var newTitle:Bool = false;
 	var titleTimer:Float = 0;
 
+	
+	var loadingImage:FlxSprite;
+	var once:Bool;
+
 	override function update(elapsed:Float)
 	{
+
+		if (CachedFrames.cachedInstance.loaded && !once)
+			{
+				once = true;
+				//var snd:FlxSound = new FlxSound().loadEmbedded(Paths.sound('complete','clown'));
+				//snd.play();
+				
+				FlxG.sound.music.fadeOut(1, 0);
+				new FlxTimer().start(2, function(tmr:FlxTimer)
+					{
+						//canSkip = true;
+						//startIntro();
+						MusicBeatState.switchState(new BebMainMenu());
+					});
+			}
+
 		if (FlxG.sound.music != null)
 			Conductor.songPosition = FlxG.sound.music.time;
 		// FlxG.watch.addQuick('amp', FlxG.sound.music.amplitude);
@@ -589,93 +624,7 @@ class TitleState extends MusicBeatState
 
 	private var sickBeats:Int = 0; //Basically curBeat but won't be skipped if you hold the tab or resize the screen
 	public static var closedState:Bool = false;
-	override function beatHit()
-	{
-		super.beatHit();
-
-		if(logoBl != null)
-			logoBl.animation.play('bump', true);
-
-		if(gfDance != null) {
-			danceLeft = !danceLeft;
-			if (danceLeft)
-				gfDance.animation.play('danceRight');
-			else
-				gfDance.animation.play('danceLeft');
-		}
-
-		if(!closedState) {
-			sickBeats++;
-			switch (sickBeats)
-			{
-				case 1:
-					//FlxG.sound.music.stop();
-					FlxG.sound.playMusic(Paths.music('bebmenu'), 0);
-					FlxG.sound.music.fadeIn(4, 0, 0.7);
-				case 2:
-					#if PSYCH_WATERMARKS
-					createCoolText(['Psych Engine by'], 15);
-					#else
-					createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
-					#end
-				// credTextShit.visible = true;
-				case 4:
-					#if PSYCH_WATERMARKS
-					addMoreText('Shadow Mario', 15);
-					addMoreText('RiverOaken', 15);
-					addMoreText('shubs', 15);
-					#else
-					addMoreText('present');
-					#end
-				// credTextShit.text += '\npresent...';
-				// credTextShit.addText();
-				case 5:
-					deleteCoolText();
-				// credTextShit.visible = false;
-				// credTextShit.text = 'In association \nwith';
-				// credTextShit.screenCenter();
-				case 6:
-					#if PSYCH_WATERMARKS
-					createCoolText(['Not associated', 'with'], -40);
-					#else
-					createCoolText(['In association', 'with'], -40);
-					#end
-				case 8:
-					addMoreText('newgrounds', -40);
-					ngSpr.visible = true;
-				// credTextShit.text += '\nNewgrounds';
-				case 9:
-					deleteCoolText();
-					ngSpr.visible = false;
-				// credTextShit.visible = false;
-
-				// credTextShit.text = 'Shoutouts Tom Fulp';
-				// credTextShit.screenCenter();
-				case 10:
-					createCoolText([curWacky[0]]);
-				// credTextShit.visible = true;
-				case 12:
-					addMoreText(curWacky[1]);
-				// credTextShit.text += '\nlmao';
-				case 13:
-					deleteCoolText();
-				// credTextShit.visible = false;
-				// credTextShit.text = "Friday";
-				// credTextShit.screenCenter();
-				case 14:
-					addMoreText('Friday');
-				// credTextShit.visible = true;
-				case 15:
-					addMoreText('Night');
-				// credTextShit.text += '\nNight';
-				case 16:
-					addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
-
-				case 17:
-					skipIntro();
-			}
-		}
-	}
+	
 
 	var skippedIntro:Bool = false;
 	var increaseVolume:Bool = false;

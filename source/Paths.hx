@@ -91,6 +91,7 @@ class Paths
 		for (key in FlxG.bitmap._cache.keys())
 		{
 			var obj = FlxG.bitmap._cache.get(key);
+			if (obj.assetsKey == 'assets/images/characters/topham.png') continue;
 			if (obj != null && !currentTrackedAssets.exists(key)) {
 				openfl.Assets.cache.removeBitmapData(key);
 				FlxG.bitmap._cache.remove(key);
@@ -239,6 +240,13 @@ class Paths
 		return inst;
 		#end
 	}
+
+	inline static public function imagePath(key:String, ?library:String):String
+		{
+			var path = getPath('images/$key.png', IMAGE, library);
+			trace(path);
+			return path;
+		}
 
 	inline static public function image(key:String, ?library:String):FlxGraphic
 	{
