@@ -423,7 +423,8 @@ class PlayState extends MusicBeatState
 	override public function create()
 	{
 		//trace('Playback Rate: ' + playbackRate);
-		Paths.clearStoredMemory();
+		if (!ClientPrefs.preload)
+			Paths.clearStoredMemory();
 
 		// for lua
 		instance = this;

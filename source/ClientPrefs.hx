@@ -62,6 +62,7 @@ class ClientPrefs {
 	public static var badWindow:Int = 135;
 	public static var safeFrames:Float = 10;
 	public static var difficulty:Int = 0;
+	public static var preload:Bool = true;
 
 	//Every key has two binds, add your key bind down here and then add your control on options/ControlsSubState.hx and Controls.hx
 	public static var keyBinds:Map<String, Array<FlxKey>> = [
@@ -135,6 +136,7 @@ class ClientPrefs {
 		FlxG.save.data.comboStacking = comboStacking;
 
 		FlxG.save.data.difficulty = difficulty;
+		FlxG.save.data.preload = preload;
 	
 		FlxG.save.flush();
 
@@ -257,6 +259,11 @@ class ClientPrefs {
 			{
 				gameplaySettings.set(name, value);
 			}
+		}
+
+		if(FlxG.save.data.preload != null)
+		{
+			preload = FlxG.save.data.preload;
 		}
 		
 		// flixel automatically saves your volume!

@@ -6,6 +6,7 @@ import sys.thread.Thread;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+import flixel.graphics.FlxGraphic;
 import flixel.input.keyboard.FlxKey;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileDiamond;
@@ -218,7 +219,12 @@ class TitleState extends MusicBeatState
 		loadingImage.screenCenter();
 		add(loadingImage);
 
-		CachedFrames.loadEverything();
+		//CachedFrames.loadEverything();
+		#if cpp
+		Thread.create(cacheStuff);
+		#else
+		cacheStuff();
+		#end
 	}
 
 	var logoBl:FlxSprite;
@@ -435,7 +441,7 @@ class TitleState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 
-		if (CachedFrames.cachedInstance.loaded && !once)
+		if (iscompleted && !once)
 			{
 				once = true;
 				//var snd:FlxSound = new FlxSound().loadEmbedded(Paths.sound('complete','clown'));
@@ -625,6 +631,76 @@ class TitleState extends MusicBeatState
 	private var sickBeats:Int = 0; //Basically curBeat but won't be skipped if you hold the tab or resize the screen
 	public static var closedState:Bool = false;
 	
+
+	var iscompleted:Bool = false;
+	var loadFolders:Array<String> = [
+		'assets/images/characters',
+		'assets/menu',
+		'assets/videos',
+		'assets/shared/images/bgs'
+	];
+	function cacheStuff() { 
+		#if sys
+		for (i in loadFolders)
+			{
+				loadfolder(i);
+			}
+		#end
+		iscompleted = true;
+	}
+
+	function getItemsInFolder(folder:String) {
+		var charpaths = [];
+		#if sys
+		charpaths = FileSystem.readDirectory(Sys.getCwd() + '/' + folder);
+		#end
+		var leAmt:Int = 0;
+
+		for (path in charpaths)
+		{
+			var fullpath = '$folder/$path';
+
+			if (path.contains(".png"))
+				leAmt++;
+		}
+		return leAmt;
+	}
+	var curAss:String = '';
+	public var loadedImages:Int = 0;
+	function loadfolder(folder:String) {
+		var charpaths = [];
+		#if sys
+		charpaths = FileSystem.readDirectory(Sys.getCwd() + '/' + folder);
+		#end
+
+		for (path in charpaths)
+		{
+			var fullpath = '$folder/$path';
+            //trace(fullpath);
+
+			#if sys
+			if (!path.contains('.png') || !FileSystem.exists(Sys.getCwd() + '/' + fullpath))
+				continue;
+
+			curAss = path;
+			var bitmap = BitmapData.fromFile(Sys.getCwd() + '/' + fullpath);
+			FlxG.bitmap.add(bitmap).persist = true;
+
+			Paths.cache.setBitmapData(fullpath, bitmap);
+			// Paths.excludeAsset(fullpath); 
+			var stupi:FlxGraphic = FlxGraphic.fromBitmapData(bitmap);
+			stupi.persist = true;
+
+			Paths.cachedAsses.set(fullpath, stupi);
+			Paths.cachedShit.push(fullpath);
+			Paths.cache.clear(fullpath);
+			if (Paths.cache.hasBitmapData(fullpath))
+				Paths.cache.removeBitmapData(fullpath);
+			#end
+
+			loadedImages++;
+		}
+	}
 
 	var skippedIntro:Bool = false;
 	var increaseVolume:Bool = false;

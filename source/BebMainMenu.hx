@@ -45,7 +45,6 @@ class BebMainMenu extends MusicBeatState
             FlxG.sound.music.fadeIn(1, 0, 0.7);
         }
 
-        trace(CachedFrames.cachedInstance.get('topham').assetsKey);
 
         previousState = '';
 
