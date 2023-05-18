@@ -1,0 +1,122 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-5,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "G_idle"
+		},
+		{
+			"offsets": [
+				2,
+				2
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "G_left"
+		},
+		{
+			"offsets": [
+				0,
+				-4
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "G_down"
+		},
+		{
+			"offsets": [
+				-6,
+				13
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "G_up"
+		},
+		{
+			"offsets": [
+				-7,
+				4
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "G_right"
+		},
+		{
+			"offsets": [
+				1,
+				3
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFTmiss",
+			"loop": false,
+			"name": "G_LMiss"
+		},
+		{
+			"offsets": [
+				0,
+				-8
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWNmiss",
+			"loop": false,
+			"name": "G_dMiss"
+		},
+		{
+			"offsets": [
+				-7,
+				14
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUPmiss",
+			"loop": false,
+			"name": "G_uMiss"
+		},
+		{
+			"offsets": [
+				-7,
+				4
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHTmiss",
+			"loop": false,
+			"name": "G_rMiss"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/gordon_loathed",
+	"position": [
+		0,
+		350
+	],
+	"healthicon": "gordon",
+	"flip_x": true,
+	"healthbar_colors": [
+		7,
+		149,
+		233
+	],
+	"camera_position": [
+		130,
+		-180
+	],
+	"sing_duration": 4,
+	"scale": 0.8
+}

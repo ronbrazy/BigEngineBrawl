@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				171,
+				33
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "alfside idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				171,
+				29
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "alfside down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				155,
+				44
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "alfside up",
+			"indices": []
+		},
+		{
+			"offsets": [
+				193,
+				34
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "alfside right"
+		},
+		{
+			"offsets": [
+				162,
+				35
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "alfside left"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/alfred_sprite",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "alfred",
+	"flip_x": false,
+	"healthbar_colors": [
+		0,
+		153,
+		0
+	],
+	"camera_position": [
+		-60,
+		-30
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}

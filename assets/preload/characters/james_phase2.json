@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				176,
+				-126
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "james phase2 idle"
+		},
+		{
+			"offsets": [
+				179,
+				-124
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "james phase2 down"
+		},
+		{
+			"offsets": [
+				175,
+				-123
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "james phase2 left"
+		},
+		{
+			"offsets": [
+				170,
+				-120
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "james phase2 up"
+		},
+		{
+			"offsets": [
+				172,
+				-125
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "james phase2 right"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/james_phase2_mainbody",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "james",
+	"flip_x": false,
+	"healthbar_colors": [
+		238,
+		15,
+		52
+	],
+	"camera_position": [
+		-900,
+		-130
+	],
+	"sing_duration": 6.1,
+	"scale": 2
+}
