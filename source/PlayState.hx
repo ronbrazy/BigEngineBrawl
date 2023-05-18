@@ -183,6 +183,9 @@ class PlayState extends MusicBeatState
 	public var camZoomingDecay:Float = 1;
 	private var curSong:String = "";
 
+	public var gameBlackLayerAlphaTween:FlxTween;
+	public var gameBlackLayer:FlxSprite;
+
 	public var gfSpeed:Int = 1;
 	public var health:Float = 1;
 	public var combo:Int = 0;
@@ -722,7 +725,7 @@ class PlayState extends MusicBeatState
 					ob4.frames = Paths.getSparrowAtlas('bgs/splendid/james_phase2_chasis');
 					ob4.animation.addByPrefix('james phase2 chasis idle','james phase2 chasis idle',24,true);
 					ob4.animation.play('james phase2 chasis idle');
-					ob4.alpha = 0.00001;
+					ob4.alpha = 0;
 					ob4.setGraphicSize(2680);
 					ob4.updateHitbox();
 					add(ob4);
@@ -1385,6 +1388,14 @@ class PlayState extends MusicBeatState
 		timeBarBG.cameras = [camHUD];
 		timeTxt.cameras = [camHUD];
 		doof.cameras = [camHUD];
+		
+		gameBlackLayer = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+		gameBlackLayer.scrollFactor.set();
+		add(gameBlackLayer);
+
+		gameBlackLayer.alpha = 0;
+		gameBlackLayer.cameras = [camOther];
+
 
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
@@ -2985,6 +2996,8 @@ class PlayState extends MusicBeatState
 				finishTimer.active = false;
 			if (songSpeedTween != null)
 				songSpeedTween.active = false;
+			if (gameBlackLayerAlphaTween != null)
+				gameBlackLayerAlphaTween.active = false;
 
 			if(carTimer != null) carTimer.active = false;
 
@@ -3024,6 +3037,8 @@ class PlayState extends MusicBeatState
 				finishTimer.active = true;
 			if (songSpeedTween != null)
 				songSpeedTween.active = true;
+			if (gameBlackLayerAlphaTween != null)
+				gameBlackLayerAlphaTween.active = true;
 
 			if(carTimer != null) carTimer.active = true;
 
@@ -4063,7 +4078,11 @@ class PlayState extends MusicBeatState
 			
 			case 'White Flash':
 				if (ClientPrefs.flashing)
-				FlxG.camera.flash(FlxColor.WHITE,Std.parseFloat(value1));
+				camOther.flash(FlxColor.WHITE,Std.parseFloat(value1));
+				if(curStage == "splendid"){
+					ob4.alpha = 1;
+					ob3.alpha = 0;
+				}
 
 			case 'Kill Topham':
 				ob4.visible = false;
@@ -4073,6 +4092,33 @@ class PlayState extends MusicBeatState
 				FlxTween.tween(camHUD, {alpha: Std.parseFloat(value2)}, Std.parseFloat(value1), {
 					ease: FlxEase.cubeInOut
 				});	
+			case 'Camera Fade':
+				if (gameBlackLayerAlphaTween != null)
+				{
+					gameBlackLayerAlphaTween.cancel();
+					gameBlackLayerAlphaTween = null;
+				}
+				var leAlpha:Float = Std.parseFloat(value1);
+				if(Math.isNaN(leAlpha)) leAlpha = 1;
+
+				leAlpha = 1 - leAlpha;
+
+				var duration:Float = Std.parseFloat(value2);
+				if(Math.isNaN(duration)) duration = 1;
+
+				if (duration > 0)
+				{
+					gameBlackLayerAlphaTween = FlxTween.tween(gameBlackLayer, {alpha: leAlpha}, duration, {ease: FlxEase.linear, onComplete:
+						function (twn:FlxTween)
+						{
+							gameBlackLayerAlphaTween = null;
+						}
+					});
+				}
+				else
+				{
+					gameBlackLayer.alpha = leAlpha;
+				}
 
 			case 'Change Character':
 				var charType:Int = 0;
