@@ -100,7 +100,8 @@ class ChartingState extends MusicBeatState
 		['Set Property', "Value 1: Variable name\nValue 2: New value"],
 		['HUD Fade'],
 		['Camera Fade'],
-		['Camera Zoom']
+		['Camera Zoom'],
+		['Play Video']
 	];
 
 	var _file:FileReference;

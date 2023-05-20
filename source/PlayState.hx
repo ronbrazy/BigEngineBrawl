@@ -79,7 +79,9 @@ import sys.io.File;
 #if (hxCodec >= "2.6.1") import hxcodec.VideoHandler as MP4Handler;
 #elseif (hxCodec == "2.6.0") import VideoHandler as MP4Handler;
 #else import vlc.MP4Handler; #end
+import hxcodec.VideoSprite;
 #end
+
 
 using StringTools;
 
@@ -375,6 +377,7 @@ class PlayState extends MusicBeatState
 	var ob15:FlxSprite;
 	var ob16:FlxSprite;
 	var jamessky:FlxBackdrop;
+	var modifier:Float = 1;
 	var mech1:FlxSprite;
     var editable:Bool = false; // DEBUG THING
     var editbleSprite:FlxSprite;
@@ -724,7 +727,7 @@ class PlayState extends MusicBeatState
 					ob4 = new FlxSprite(191,86);
 					ob4.antialiasing = ClientPrefs.globalAntialiasing;
 					ob4.frames = Paths.getSparrowAtlas('bgs/splendid/james_phase2_chasis');
-					ob4.animation.addByPrefix('james phase2 chasis idle','james phase2 chasis idle',24,true);
+					ob4.animation.addByPrefix('james phase2 chasis idle','james phase2 chasis idle',34,true);
 					ob4.animation.play('james phase2 chasis idle');
 					ob4.alpha = 0;
 					ob4.setGraphicSize(2680);
@@ -1389,13 +1392,13 @@ class PlayState extends MusicBeatState
 		timeBarBG.cameras = [camHUD];
 		timeTxt.cameras = [camHUD];
 		doof.cameras = [camHUD];
-		
-		gameBlackLayer = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+
+		gameBlackLayer = new FlxSprite().makeGraphic(FlxG.width * 10, FlxG.height * 10, FlxColor.BLACK);
 		gameBlackLayer.scrollFactor.set();
 		add(gameBlackLayer);
 
 		gameBlackLayer.alpha = 0;
-		gameBlackLayer.cameras = [camOther];
+		gameBlackLayer.cameras = [camHUD];
 
 
 		// if (SONG.song == 'South')
@@ -2830,6 +2833,14 @@ class PlayState extends MusicBeatState
 
 	function eventPushed(event:EventNote) {
 		switch(event.event) {
+			case 'Play Video':
+				var video = new VideoSprite();
+				video.cameras = [camHUD];
+				video.visible = false;
+				video.playVideo(Paths.video(event.value1));
+				video.finishCallback = function(){
+					video.destroy();
+				}
 			case 'Change Character':
 				var charType:Int = 0;
 				switch(event.value1.toLowerCase()) {
@@ -3220,10 +3231,11 @@ class PlayState extends MusicBeatState
 		}*/
 		callOnLuas('onUpdate', [elapsed]);
 
+		// gameBlackLayer.setGraphicSize(gameBlackLayer.width / defaultCamZoom, gameBlackLayer.height / defaultCamZoom, );
 		switch (curStage)
 		{
 			case 'splendid':
-				jamessky.x += elapsed*200;
+				jamessky.x += (elapsed*200) * modifier;
 			case 'ugh':
 				jamessky.x += elapsed*200;
 			case 'tank':
@@ -4083,6 +4095,7 @@ class PlayState extends MusicBeatState
 				if(curStage == "splendid"){
 					ob4.alpha = 1;
 					ob3.alpha = 0;
+					modifier = 2;
 				}
 
 			case 'Kill Topham':
@@ -4224,6 +4237,16 @@ class PlayState extends MusicBeatState
 				} else {
 					FunkinLua.setVarInArray(this, value1, value2);
 				}
+			case 'Play Video':
+				var video = new VideoSprite();
+				video.cameras = [camOther];
+				video.visible = true;
+				video.setGraphicSize(1280, 720);
+				video.playVideo(Paths.video(value1));
+				video.finishCallback = function(){
+					video.destroy();
+				}
+				add(video);
 		}
 		callOnLuas('onEvent', [eventName, value1, value2]);
 	}

@@ -5156,7 +5156,7 @@
 					[
 						144271.307207454,
 						0,
-						2268.29268292683
+						1975.60975609756
 					],
 					[
 						143978.624280625,
@@ -5922,44 +5922,64 @@
 				"bpm": 178
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"typeOfSection": 0,
 				"sectionNotes": [],
-				"bpm": 178,
 				"sectionBeats": 4,
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 178,
 				"changeBPM": false,
 				"mustHitSection": true
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"typeOfSection": 0,
 				"sectionNotes": [],
-				"bpm": 178,
 				"sectionBeats": 4,
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 178,
 				"changeBPM": false,
 				"mustHitSection": true
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"typeOfSection": 0,
 				"sectionNotes": [],
-				"bpm": 178,
 				"sectionBeats": 4,
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 178,
 				"changeBPM": false,
 				"mustHitSection": true
 			},
 			{
-				"gfSection": false,
-				"altAnim": false,
 				"typeOfSection": 0,
 				"sectionNotes": [],
-				"bpm": 178,
 				"sectionBeats": 4,
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 178,
 				"changeBPM": false,
 				"mustHitSection": true
+			},
+			{
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"sectionBeats": 4,
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 178,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 178
 			},
 			{
 				"gfSection": false,
@@ -5973,7 +5993,38 @@
 			}
 		],
 		"gfVersion": "gf",
-		"events": [],
+		"events": [
+			[
+				144271.307207454,
+				[
+					[
+						"White Flash",
+						"1",
+						""
+					],
+					[
+						"Camera Fade",
+						"0",
+						"0"
+					]
+				]
+			],
+			[
+				146832.28281721,
+				[
+					[
+						"White Flash",
+						"1",
+						""
+					],
+					[
+						"Play Video",
+						"jamescrashscene",
+						""
+					]
+				]
+			]
+		],
 		"player3": null,
 		"song": "Splendid",
 		"validScore": true,
