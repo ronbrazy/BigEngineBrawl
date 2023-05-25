@@ -3399,6 +3399,8 @@ class PlayState extends MusicBeatState
 
 		if (FlxG.keys.anyJustPressed(debugKeysChart) && !endingSong && !inCutscene)
 		{
+			if (oreoWindow)
+				resetWindow();
 			openChartEditor();
 		}
 
@@ -4402,6 +4404,8 @@ class PlayState extends MusicBeatState
 
 			if (chartingMode)
 			{
+				if (oreoWindow)
+					resetWindow();
 				openChartEditor();
 				return;
 			}
