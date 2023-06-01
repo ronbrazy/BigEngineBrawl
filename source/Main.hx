@@ -11,6 +11,7 @@ import openfl.display.Sprite;
 import openfl.events.Event;
 import openfl.display.StageScaleMode;
 import lime.app.Application;
+import flixel.addons.transition.FlxTransitionableState;
 
 #if desktop
 import Discord.DiscordClient;
@@ -88,6 +89,7 @@ class Main extends Sprite
 		}
 	
 		ClientPrefs.loadDefaultKeys();
+		FlxTransitionableState.skipNextTransOut = true;
 		addChild(new FlxGame(game.width, game.height, game.initialState, #if (flixel < "5.0.0") game.zoom, #end game.framerate, game.framerate, game.skipSplash, game.startFullscreen));
 
 		#if !mobile

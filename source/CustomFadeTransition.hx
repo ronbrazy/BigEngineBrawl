@@ -34,14 +34,18 @@ class CustomFadeTransition extends MusicBeatSubstate {
 		transBlack = new FlxSprite().makeGraphic(width, height, FlxColor.WHITE);
 		transBlack.scrollFactor.set();
 		add(transBlack);
+		transBlack.alpha = 0;
 
 		transBlack.x = FlxG.width;
 
 		steamTrans = new FlxSprite();
 		steamTrans.antialiasing = ClientPrefs.globalAntialiasing;
 		steamTrans.frames = Paths.getSparrowAtlas('steamtransition', 'menu');
-		steamTrans.animation.addByPrefix('intro','Smoke',24,false);
-		steamTrans.animation.play('intro');
+		steamTrans.animation.addByPrefix('intro','Intro',24,false);
+		steamTrans.animation.addByPrefix('middle','Middle',24,false);
+		steamTrans.animation.addByPrefix('end','end',24,false);
+		if (!isTransIn) steamTrans.animation.play('intro');
+		else steamTrans.animation.play('end');
 		add(steamTrans);
 
 		if(isTransIn) {
