@@ -59,29 +59,9 @@ class BebAwardsState extends MusicBeatState
 
     var music2:FlxSound = new FlxSound();
 
-    var achieves:Array<String> = [
-        'awardpuffball',
-        'awardmainweek',
-        'awardsadstory',
-        'awardremix',
-        'awardgameover',
-        'awardconfusiondelay',
-        'awardexpress',
-        'awardloathed',
-        'awarduseful'
-    ];
+    var achieves:Array<String> = [];
 
-    var achieveDescs:Array<Dynamic> = [
-        ['Welcome to Sodor!','(Play Puffball)'],
-        ['Big Engine Brawl!','(Play the Main Week)'],
-        ['Always and always and always.','(Play Sad Story)'],
-        ['Old Tunes, New Twists!','(Play all the Remixes)'],
-        ['It isn\'t wrong, but we just don\'t do it.','(Get a Game Over)'],
-        ['The Stout Gentleman.','(Play Confusion & Delay)'],
-        ['Express Coming Through!','(Full Combo the Main Week)'],
-        ['Hero of Sodor.','(Discover Loathed)'],
-        ['','']
-    ];
+    var achieveDescs:Array<Dynamic> = [];
 
     var achieveName:FlxText;
     var achieveDesc:FlxText;
@@ -90,6 +70,16 @@ class BebAwardsState extends MusicBeatState
         #if desktop
 		DiscordClient.changePresence("Options Menu", null);
 		#end
+
+        for(i in 0...Achievements.achievementsStuff.length)
+        {
+            if (Achievements.isAchievementUnlocked(Achievements.achievementsStuff[i][2]))
+            {
+                achieves.push(Achievements.achievementsStuff[i][2]);
+                achieveDescs.push([Achievements.achievementsStuff[i][0], Achievements.achievementsStuff[i][1]]);
+            }
+        }
+        trace(achieves);
 
         music2 = FlxG.sound.load(Paths.music('beb_awards_angry'), 0);
         music2.looped = true;
@@ -110,8 +100,9 @@ class BebAwardsState extends MusicBeatState
 
         photos = new FlxSpriteGroup();
         var xFuckShit:Int = 0;
-        for (i in 0...achieves.length-2)
+        for (i in 0...achieves.length)
             {
+                
                 var achieveImage:FlxSprite = new FlxSprite().loadGraphic(Paths.image('awards/award portraits/${achieves[i]}','menu'));
                 achieveImage.scale.x = 0.2;
                 achieveImage.scale.y = 0.2;

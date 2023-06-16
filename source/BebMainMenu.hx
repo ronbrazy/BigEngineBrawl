@@ -33,6 +33,8 @@ class BebMainMenu extends MusicBeatState
     //var selectingCursor:Bool = false;
     override function create()
     {
+        Achievements.loadAchievements();
+        
         if (previousState != '')
         {
             FlxG.sound.playMusic(Paths.music('bebmenu'), 0);

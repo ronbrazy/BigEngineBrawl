@@ -300,17 +300,7 @@ class PlayState extends MusicBeatState
 		'godrays remix' => 'The Old Guards Van', 
 	];
 
-	var achieves:Array<String> = [
-        'awardpuffball',
-        'awardmainweek',
-        'awardsadstory',
-        'awardremix',
-        'awardgameover',
-        'awardconfusiondelay',
-        'awardexpress',
-        'awardloathed',
-        'awarduseful'
-    ];
+	var achieves:Array<String> = [];
 
 	public static var campaignScore:Int = 0;
 	public static var campaignMisses:Int = 0;
@@ -916,6 +906,15 @@ class PlayState extends MusicBeatState
 					overlaySprs.push(ob5);
 				
 				case 'confusion':
+
+					for(i in 0...Achievements.achievementsStuff.length)
+					{
+						if (Achievements.isAchievementUnlocked(Achievements.achievementsStuff[i][2]))
+						{
+							achieves.push(Achievements.achievementsStuff[i][2]);
+						}
+					}
+
 					ob1 = new FlxSprite().loadGraphic(Paths.image('awards/tophamofficeblank','menu'));
 					ob1.antialiasing = ClientPrefs.globalAntialiasing;
 					ob1.setGraphicSize(Std.int(FlxG.width));
@@ -928,7 +927,7 @@ class PlayState extends MusicBeatState
 
 					var photos = new FlxSpriteGroup();
 					var xFuckShit:Int = 0;
-					for (i in 0...achieves.length-2)
+					for (i in 0...achieves.length)
 						{
 							var achieveImage:FlxSprite = new FlxSprite().loadGraphic(Paths.image('awards/award portraits/${achieves[i]}','menu'));
 							achieveImage.scale.x = 0.2;
@@ -3779,6 +3778,8 @@ class PlayState extends MusicBeatState
 				for (timer in modchartTimers) {
 					timer.active = true;
 				}
+				var achieve:String = checkForAchievement(['awardgameover']);
+				if (achieve != null) startAchievement('awardgameover');
 				openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x - boyfriend.positionArray[0], boyfriend.getScreenPosition().y - boyfriend.positionArray[1], camFollowPos.x, camFollowPos.y));
 
 				// MusicBeatState.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
@@ -3994,8 +3995,6 @@ class PlayState extends MusicBeatState
 						phillyGlowGradient.bop();
 				}
 
-			case 'Kill Henchmen':
-				killHenchmen();
 
 			case 'Add Camera Zoom':
 				if(ClientPrefs.camZooms && FlxG.camera.zoom < 1.35) {
@@ -4384,12 +4383,21 @@ class PlayState extends MusicBeatState
 		seenCutscene = false;
 
 		#if ACHIEVEMENTS_ALLOWED
+
+		var currentSong:String = Paths.formatToSongPath(SONG.song);
+
+		if (currentSong == 'endless-remix' || currentSong == 'monochrome-remix' || currentSong == 'ugh-remix' || currentSong == 'godrays-remix')
+			{
+				trace('current song:${currentSong}');
+				ClientPrefs.unlockedRemixes[currentSong] = true;
+				FlxG.save.data.unlockedRemixes = ClientPrefs.unlockedRemixes;
+				FlxG.save.flush();
+			}
+
 		if(achievementObj != null) {
 			return;
 		} else {
-			var achieve:String = checkForAchievement(['week1_nomiss', 'week2_nomiss', 'week3_nomiss', 'week4_nomiss',
-				'week5_nomiss', 'week6_nomiss', 'week7_nomiss', 'ur_bad',
-				'ur_good', 'hype', 'two_keys', 'toastie', 'debugger']);
+			var achieve:String = checkForAchievement(['awardpuffball', 'awardmainweek', 'awardsadstory', 'awardremix', 'awardconfusiondelay', 'awardexpress']);
 
 			if(achieve != null) {
 				startAchievement(achieve);
@@ -4927,12 +4935,7 @@ class PlayState extends MusicBeatState
 			});
 
 			if (parsedHoldArray.contains(true) && !endingSong) {
-				#if ACHIEVEMENTS_ALLOWED
-				var achieve:String = checkForAchievement(['oversinging']);
-				if (achieve != null) {
-					startAchievement(achieve);
-				}
-				#end
+				
 			}
 			else if (boyfriend.animation.curAnim != null && boyfriend.holdTimer > Conductor.stepCrochet * (0.0011 / FlxG.sound.music.pitch) * boyfriend.singDuration && boyfriend.animation.curAnim.name.startsWith('sing') && !boyfriend.animation.curAnim.name.endsWith('miss'))
 			{
@@ -5384,31 +5387,6 @@ class PlayState extends MusicBeatState
 		}
 	}
 
-	function killHenchmen():Void
-	{
-		if(!ClientPrefs.lowQuality && ClientPrefs.violence && curStage == 'limo') {
-			if(limoKillingState < 1) {
-				limoMetalPole.x = -400;
-				limoMetalPole.visible = true;
-				limoLight.visible = true;
-				limoCorpse.visible = false;
-				limoCorpseTwo.visible = false;
-				limoKillingState = 1;
-
-				#if ACHIEVEMENTS_ALLOWED
-				Achievements.henchmenDeath++;
-				FlxG.save.data.henchmenDeath = Achievements.henchmenDeath;
-				var achieve:String = checkForAchievement(['roadkill_enthusiast']);
-				if (achieve != null) {
-					startAchievement(achieve);
-				} else {
-					FlxG.save.flush();
-				}
-				FlxG.log.add('Deaths: ' + Achievements.henchmenDeath);
-				#end
-			}
-		}
-	}
 
 	function resetLimoKill():Void
 	{
@@ -5785,54 +5763,40 @@ class PlayState extends MusicBeatState
 			var achievementName:String = achievesToCheck[i];
 			if(!Achievements.isAchievementUnlocked(achievementName) && !cpuControlled) {
 				var unlock:Bool = false;
+				var currentSong:String = Paths.formatToSongPath(SONG.song);
 				
-				if (achievementName.contains(WeekData.getWeekFileName()) && achievementName.endsWith('nomiss')) // any FC achievements, name should be "weekFileName_nomiss", e.g: "weekd_nomiss";
+				if (achievementName == 'awardexpress') // any FC achievements, name should be "weekFileName_nomiss", e.g: "weekd_nomiss";
 				{
 					if(isStoryMode && campaignMisses + songMisses < 1 && CoolUtil.difficultyString() == 'HARD'
 						&& storyPlaylist.length <= 1 && !changedDifficulty && !usedPractice)
 						unlock = true;
 				}
+				else if (achievementName == 'awardmainweek') // any FC achievements, name should be "weekFileName_nomiss", e.g: "weekd_nomiss";
+				{
+					if(isStoryMode && storyPlaylist.length <= 1 && !usedPractice)
+						unlock = true;
+				}
 				switch(achievementName)
 				{
-					case 'ur_bad':
-						if(ratingPercent < 0.2 && !practiceMode) {
-							unlock = true;
-						}
-					case 'ur_good':
-						if(ratingPercent >= 1 && !usedPractice) {
-							unlock = true;
-						}
-					case 'roadkill_enthusiast':
-						if(Achievements.henchmenDeath >= 100) {
-							unlock = true;
-						}
-					case 'oversinging':
-						if(boyfriend.holdTimer >= 10 && !usedPractice) {
-							unlock = true;
-						}
-					case 'hype':
-						if(!boyfriendIdled && !usedPractice) {
-							unlock = true;
-						}
-					case 'two_keys':
-						if(!usedPractice) {
-							var howManyPresses:Int = 0;
-							for (j in 0...keysPressed.length) {
-								if(keysPressed[j]) howManyPresses++;
-							}
+					case 'awardpuffball':
+						if (currentSong == 'puffball') unlock = true;
 
-							if(howManyPresses <= 2) {
-								unlock = true;
-							}
+					case 'awardsadstory':
+						if (currentSong == 'sad-story') unlock = true;
+
+					case 'awardconfusiondelay':
+						if (currentSong == 'confusion-and-delay') unlock = true;
+					
+					case 'awardremix':
+						var unlockCount:Int = 0;
+						var arrayLol:Array<String> = ['endless-remix', 'monochrome-remix', 'ugh-remix', 'godrays-remix'];
+						for(i in 0...arrayLol.length)
+						{
+							if(ClientPrefs.unlockedRemixes[arrayLol[i]] == true) unlockCount++;
 						}
-					case 'toastie':
-						if(/*ClientPrefs.framerate <= 60 &&*/ !ClientPrefs.shaders && ClientPrefs.lowQuality && !ClientPrefs.globalAntialiasing) {
-							unlock = true;
-						}
-					case 'debugger':
-						if(Paths.formatToSongPath(SONG.song) == 'test' && !usedPractice) {
-							unlock = true;
-						}
+						if(unlockCount > 3) unlock = true;
+					case 'awardgameover':
+						unlock = true;
 				}
 
 				if(unlock) {

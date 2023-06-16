@@ -91,6 +91,16 @@ class ClientPrefs {
 	];
 	public static var defaultKeys:Map<String, Array<FlxKey>> = null;
 
+	public static var unlockedRemixes:Map<String, Bool> = [
+
+		'endless-remix' => false,
+		'monochrome-remix' => false,
+		'ugh-remix' => false,
+		'godrays-remix' => false,
+		'talentless-fox-remix' => false
+
+	];
+
 	public static function loadDefaultKeys() {
 		defaultKeys = keyBinds.copy();
 		//trace(defaultKeys);
@@ -264,6 +274,15 @@ class ClientPrefs {
 		if(FlxG.save.data.preload != null)
 		{
 			preload = FlxG.save.data.preload;
+		}
+
+		if(FlxG.save.data.unlockedRemixes != null)
+		{
+			var savedMap:Map<String, Dynamic> = FlxG.save.data.unlockedRemixes;
+			for (name => value in savedMap)
+			{
+				unlockedRemixes.set(name, value);
+			}
 		}
 		
 		// flixel automatically saves your volume!
