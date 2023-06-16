@@ -19,7 +19,6 @@ class CustomFadeTransition extends MusicBeatSubstate {
 	private var leTween:FlxTween = null;
 	public static var nextCamera:FlxCamera;
 	var isTransIn:Bool = false;
-	var transBlack:FlxSprite;
 	var transGradient:FlxSprite;
 	var steamTrans:FlxSprite;
 
@@ -31,43 +30,33 @@ class CustomFadeTransition extends MusicBeatSubstate {
 		var width:Int = Std.int(FlxG.width / zoom);
 		var height:Int = Std.int(FlxG.height / zoom);
 
-		transBlack = new FlxSprite().makeGraphic(width, height, FlxColor.WHITE);
-		transBlack.scrollFactor.set();
-		add(transBlack);
-		transBlack.alpha = 0;
-
-		transBlack.x = FlxG.width;
-
 		steamTrans = new FlxSprite();
 		steamTrans.antialiasing = ClientPrefs.globalAntialiasing;
 		steamTrans.frames = Paths.getSparrowAtlas('steamtransition', 'menu');
 		steamTrans.animation.addByPrefix('intro','Intro',24,false);
 		steamTrans.animation.addByPrefix('middle','Middle',24,false);
 		steamTrans.animation.addByPrefix('end','end',24,false);
-		if (!isTransIn) steamTrans.animation.play('intro');
-		else steamTrans.animation.play('end');
+		//steamTrans.setGraphicSize(Std.int(FlxG.width));
+		//steamTrans.updateHitbox();
+		//steamTrans.screenCenter();
+		if (!isTransIn) 
+			{
+				steamTrans.animation.play('intro');
+				steamTrans.animation.finishCallback = function(name:String){finishCallback();};
+			}
+		else 
+			{
+				steamTrans.animation.play('end');
+				steamTrans.animation.finishCallback = function(name:String){close();};
+			}
+		
 		add(steamTrans);
 
-		if(isTransIn) {
-			FlxTween.tween(transBlack, {x: 0}, duration, {
-				onComplete: function(twn:FlxTween) {
-					close();
-				},
-			ease: FlxEase.linear});
-		} else {
-			transBlack.x = 0;
-			leTween = FlxTween.tween(transBlack, {x: 0 - transBlack.width}, duration, {
-				onComplete: function(twn:FlxTween) {
-					if(finishCallback != null) {
-						finishCallback();
-					}
-				},
-			ease: FlxEase.linear});
+		if(nextCamera != null) {
+			steamTrans.cameras = [nextCamera];
 		}
 
-		if(nextCamera != null) {
-			transBlack.cameras = [nextCamera];
-		}
+		
 		nextCamera = null;
 	}
 

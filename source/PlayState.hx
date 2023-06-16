@@ -405,9 +405,11 @@ class PlayState extends MusicBeatState
 		"fatass" => "fatNote",
 	];
 
-	public var shaderFilter:ShaderFilter;
+	public var tvFilter:ShaderFilter;
+	public var grayFilter:ShaderFilter;
     var screenShader:Screen = new Screen();
 	var shaderTime:Float = 0;
+	var grayScale:GrayScale = new GrayScale();
 
 	
 	public static var oreoWindow:Bool = false;
@@ -458,7 +460,8 @@ class PlayState extends MusicBeatState
 			'NOTE_RIGHT'
 		];
 
-		shaderFilter = new ShaderFilter(screenShader);
+		tvFilter = new ShaderFilter(screenShader);
+		grayFilter = new ShaderFilter(grayScale);
 
 		//Ratings
 		ratingsData.push(new Rating('sick')); //default rating
@@ -810,8 +813,7 @@ class PlayState extends MusicBeatState
 					ob5.updateHitbox();
 					add(ob5);
 
-					camGame.setFilters([shaderFilter]);
-					camHUD.setFilters([shaderFilter]);
+					
 
 					screenShader.noiseIntensity.value = [0.75];
 					resizeDaWindow([Std.int(800),Std.int(600)]);
@@ -1015,6 +1017,12 @@ class PlayState extends MusicBeatState
 		{
 			case 'stress':
 				GameOverSubstate.characterName = 'bf-holding-gf-dead';
+			case 'sad-story':
+				camGame.setFilters([tvFilter]);
+				camHUD.setFilters([tvFilter]);
+			case 'monochrome-remix':
+				camGame.setFilters([grayFilter, tvFilter]);
+				camHUD.setFilters([grayFilter, tvFilter]);
 		}
 
 		if(isPixelStage) {
