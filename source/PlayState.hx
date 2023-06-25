@@ -929,7 +929,7 @@ class PlayState extends MusicBeatState
 					var xFuckShit:Int = 0;
 					for (i in 0...achieves.length)
 						{
-							var achieveImage:FlxSprite = new FlxSprite().loadGraphic(Paths.image('awards/award portraits/${achieves[i]}','menu'));
+							var achieveImage:FlxSprite = new FlxSprite().loadGraphic(Paths.image('award portraits/${achieves[i]}','secretStuff'));
 							achieveImage.scale.x = 0.2;
 							achieveImage.scale.y = 0.2;
 							achieveImage.updateHitbox();
@@ -4442,7 +4442,7 @@ class PlayState extends MusicBeatState
 					if(FlxTransitionableState.skipNextTransIn) {
 						CustomFadeTransition.nextCamera = null;
 					}
-					MusicBeatState.switchState(new StoryMenuState());
+					MusicBeatState.switchState(new BebMainMenu());
 
 					// if ()
 					if(!ClientPrefs.getGameplaySetting('practice', false) && !ClientPrefs.getGameplaySetting('botplay', false)) {

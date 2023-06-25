@@ -326,6 +326,12 @@ class Note extends FlxSprite
 				setGraphicSize(Std.int(width * 0.7));
 				updateHitbox();
 			}
+		else if (texture.contains('edward'))
+		{
+			frames = Paths.getSparrowAtlas(blahblah, 'secretStuff');
+			loadNoteAnims();
+			antialiasing = ClientPrefs.globalAntialiasing;
+		}
 		else {
 			frames = Paths.getSparrowAtlas(blahblah);
 			loadNoteAnims();

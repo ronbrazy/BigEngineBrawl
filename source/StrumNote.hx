@@ -82,7 +82,10 @@ class StrumNote extends FlxSprite
 		}
 		else
 		{
-			frames = Paths.getSparrowAtlas(texture);
+			if (texture.contains('edward'))
+				frames = Paths.getSparrowAtlas(texture, 'secretStuff');
+			else
+				frames = Paths.getSparrowAtlas(texture);
 			animation.addByPrefix('green', 'arrowUP');
 			animation.addByPrefix('blue', 'arrowDOWN');
 			animation.addByPrefix('purple', 'arrowLEFT');

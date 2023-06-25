@@ -1,0 +1,23 @@
+{
+	"songs": [
+		["puffball", "dad", [146, 113, 253]],
+		["flying-kipper", "dad", [146, 113, 253]],
+		["splendid", "dad", [146, 113, 253]],
+		["indignation", "dad", [146, 113, 253]]
+	],
+
+	"weekCharacters": [
+		"",
+		"bf",
+		"gf"
+	],
+	"weekBackground": "stage",
+
+	"storyName": "",
+	"weekBefore": "tutorial",
+	"weekName": "Tutorial",
+	"startUnlocked": true,
+
+	"hideStoryMode": false,
+	"hideFreeplay": false
+}

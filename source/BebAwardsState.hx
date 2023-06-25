@@ -103,7 +103,7 @@ class BebAwardsState extends MusicBeatState
         for (i in 0...achieves.length)
             {
                 
-                var achieveImage:FlxSprite = new FlxSprite().loadGraphic(Paths.image('awards/award portraits/${achieves[i]}','menu'));
+                var achieveImage:FlxSprite = new FlxSprite().loadGraphic(Paths.image('award portraits/${achieves[i]}','secretStuff'));
                 achieveImage.scale.x = 0.2;
                 achieveImage.scale.y = 0.2;
                 achieveImage.updateHitbox();
@@ -163,7 +163,7 @@ class BebAwardsState extends MusicBeatState
         photoBG.alpha = 0;
         add(photoBG);
 
-        photoZoom = new FlxSprite().loadGraphic(Paths.image('awards/award full imgs/${achieves[0]}','menu'));
+        photoZoom = new FlxSprite().loadGraphic(Paths.image('award full imgs/${achieves[0]}','secretStuff'));
         photoZoom.alpha = 0;
         add(photoZoom);
 
@@ -206,7 +206,7 @@ class BebAwardsState extends MusicBeatState
                             if (FlxG.mouse.justPressed)
                             {
                                 inPhoto = true;
-                                photoZoom.loadGraphic(Paths.image('awards/award full imgs/${achieves[i]}','menu'));
+                                photoZoom.loadGraphic(Paths.image('award full imgs/${achieves[i]}','secretStuff'));
                                 photoZoom.setGraphicSize(0, Std.int(FlxG.height));
                                 photoZoom.screenCenter();
                                 achieveName.text = achieveDescs[i][0];

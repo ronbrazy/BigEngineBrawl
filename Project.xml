@@ -71,12 +71,14 @@
 		<library name="songs"         preload="true" />
 		<library name="shared"        preload="true" />
 		<library name="menu"        preload="true" />
+		<library name="secretStuff"		preload="true" />
 	</section>
 	
 	<section if="NO_PRELOAD_ALL">
 		<library name="songs"         preload="false" />
 		<library name="shared"        preload="false" />
 		<library name="menu"        preload="false" />
+		<library name="secretStuff"		preload="true" />
 	</section>
 	
 	<assets path="assets/videos"        library="videos"        if="VIDEOS_ALLOWED"/>
@@ -101,6 +103,7 @@
 		NOT USING A DIRECT THING TO THE ASSET!!!
 	-->
 	<assets path="assets/fonts" />
+	<assets path="assets/secretStuff" library="secretStuff" embed='true'/>
 	<!-- _______________________________ Libraries ______________________________ -->
 
 	<haxelib name="flixel" />

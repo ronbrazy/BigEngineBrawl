@@ -163,7 +163,10 @@ class FreeplayState extends MusicBeatState
 				if (i == trains.length - 1 && !allowEdward) break;
 				var train:FlxSprite = new FlxSprite((i * 220 + i * 30) + 35, 275);
 				train.ID = i;
-				train.frames = Paths.getSparrowAtlas('freeplay/freeplay_${trains[i]}', 'menu');
+				if (trains[i] != 'edward')
+					train.frames = Paths.getSparrowAtlas('freeplay/freeplay_${trains[i]}', 'menu');
+				else
+					train.frames = Paths.getSparrowAtlas('freeplay/freeplay_${trains[i]}', 'secretStuff');
 				train.animation.addByPrefix('idle', 'freeplay_${trains[i]} idle', 12);
 				train.animation.addByPrefix('select', 'freeplay_${trains[i]} select', 12, false);
 				train.animation.addByPrefix('selected', 'freeplay_${trains[i]} selected', 12);

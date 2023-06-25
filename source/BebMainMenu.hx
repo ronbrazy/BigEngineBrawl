@@ -4,6 +4,9 @@ import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.system.FlxSound;
 
+import flixel.util.FlxTimer;
+
+
 class BebMainMenu extends MusicBeatState
 {
     var curTrain:String = 'thomas';
@@ -28,12 +31,14 @@ class BebMainMenu extends MusicBeatState
     var cursorSprite:FlxSprite;
     var cursorSprite2:FlxSprite;
     var trainWhistle:FlxSound = new FlxSound();
+    var selectedSomethin:Bool = false;
 
     public static var previousState:String = '';
     //var selectingCursor:Bool = false;
     override function create()
     {
         Achievements.loadAchievements();
+        WeekData.reloadWeekFiles(true);
         
         if (previousState != '')
         {
@@ -47,6 +52,8 @@ class BebMainMenu extends MusicBeatState
             FlxG.sound.music.fadeIn(1, 0, 0.7);
         }
 
+        
+		CoolUtil.difficulties = CoolUtil.defaultDifficulties.copy();
 
         previousState = '';
 
@@ -71,9 +78,18 @@ class BebMainMenu extends MusicBeatState
             ClientPrefs.saveSettings();
         }
 
-        trainWhistle = FlxG.sound.load(Paths.sound('${curTrain}Whistle', 'menu'));
+        if (curTrain != 'edward')
+        {
+            trainWhistle = FlxG.sound.load(Paths.sound('${curTrain}Whistle', 'menu'));
+            tankEngine = new FlxSprite().loadGraphic(Paths.image('main/menu$curTrain', 'menu'));
+        }
+        else
+        {
+            trainWhistle = FlxG.sound.load(Paths.sound('${curTrain}Whistle', 'secretStuff'));
+            tankEngine = new FlxSprite().loadGraphic(Paths.image('main/menu$curTrain', 'secretStuff'));
+        }
 
-        tankEngine = new FlxSprite().loadGraphic(Paths.image('main/menu$curTrain', 'menu'));
+        
         tankEngine.antialiasing = ClientPrefs.globalAntialiasing;
         tankEngine.setGraphicSize(Std.int(tankEngine.width / 1.5));
         tankEngine.updateHitbox();
@@ -115,56 +131,58 @@ class BebMainMenu extends MusicBeatState
     }
     override function update(elapsed:Float)
     {
-        
-        for (i in 0...btns.length)
+        if (!selectedSomethin)
         {
-            if (FlxG.mouse.overlaps(buttons[curButton]) && FlxG.mouse.y < (buttons[curButton].y + 75))
-                {
-                    if (FlxG.mouse.justPressed)
+            for (i in 0...btns.length)
+            {
+                if (FlxG.mouse.overlaps(buttons[curButton]) && FlxG.mouse.y < (buttons[curButton].y + 75))
                     {
-                        selectedSomething();
-                        break;
+                        if (FlxG.mouse.justPressed)
+                        {
+                            selectedSomething();
+                            break;
+                        }
                     }
-                }
-            if (buttons[i].ID != curButton)
+                if (buttons[i].ID != curButton)
+                    if (FlxG.mouse.overlaps(buttons[i]) && FlxG.mouse.y < (buttons[i].y + 75))
+                        {
+                            curButton = i;
+                            selecting();
+                        }
                 if (FlxG.mouse.overlaps(buttons[i]) && FlxG.mouse.y < (buttons[i].y + 75))
                     {
-                        curButton = i;
-                        selecting();
+                        changeCursor(true);
+                        break;
                     }
-            if (FlxG.mouse.overlaps(buttons[i]) && FlxG.mouse.y < (buttons[i].y + 75))
+                else
+                    changeCursor(false);
+                    
+                    
+            }
+
+            if (FlxG.mouse.overlaps(tankEngine) && FlxG.mouse.y > 238 && FlxG.mouse.y < 465 && FlxG.mouse.x > 324 && FlxG.mouse.x < 525)
                 {
                     changeCursor(true);
-                    break;
+                    if (FlxG.mouse.justPressed && !trainWhistle.playing)
+                        {
+                            trainWhistle.play();
+                        }
                 }
-            else
-                changeCursor(false);
-                
-                
+            
+            if(FlxG.keys.justPressed.C)
+                {
+                    trace('mousepos\nx:${FlxG.mouse.x}\ny:${FlxG.mouse.y}');
+                }
+
+            if (controls.UI_UP_P)
+                selecting(-1);
+            if (controls.UI_DOWN_P)
+                selecting(1);
+            if (controls.ACCEPT)
+                {
+                    selectedSomething();
+                }
         }
-
-        if (FlxG.mouse.overlaps(tankEngine) && FlxG.mouse.y > 238 && FlxG.mouse.y < 465 && FlxG.mouse.x > 324 && FlxG.mouse.x < 525)
-            {
-                changeCursor(true);
-                if (FlxG.mouse.justPressed && !trainWhistle.playing)
-                    {
-                        trainWhistle.play();
-                    }
-            }
-        
-        if(FlxG.keys.justPressed.C)
-            {
-                trace('mousepos\nx:${FlxG.mouse.x}\ny:${FlxG.mouse.y}');
-            }
-
-        if (controls.UI_UP_P)
-            selecting(-1);
-        if (controls.UI_DOWN_P)
-            selecting(1);
-        if (controls.ACCEPT)
-            {
-                selectedSomething();
-            }
         super.update(elapsed);
     }
     function selecting(huh:Int = 0)
@@ -182,10 +200,12 @@ class BebMainMenu extends MusicBeatState
 
     function selectedSomething()
         {
+            selectedSomethin = true;
             FlxG.sound.play(Paths.sound('confirmMenu'));
                 switch(btns[curButton])
                 {
                     case 'StoryButton':
+                        selectWeek(ClientPrefs.difficulty);
                     case 'FreePlayButton':
                         MusicBeatState.switchState(new FreeplayState());
                     case 'AwardsButton':
@@ -193,6 +213,7 @@ class BebMainMenu extends MusicBeatState
                         FlxG.sound.music.fadeOut(1, 0);
                     case 'OptionsButton':
                         openSubState(new BebOptionsSubstate());
+                        selectedSomethin = false;
                     case 'CreditsButton':
                         //yeah
                 }
@@ -209,4 +230,33 @@ class BebMainMenu extends MusicBeatState
                     FlxG.mouse.load(cursorSprite.pixels);
                 }
         }
+
+        function selectWeek(diff:Int = 0)
+            {
+                var songArray:Array<String> = [];
+                var leWeek:Array<Dynamic> = WeekData.weeksLoaded.get(WeekData.weeksList[1]).songs;
+                for (i in 0...leWeek.length) {
+                    songArray.push(leWeek[i][0]);
+                }
+    
+                // Nevermind that's stupid lmao
+                PlayState.storyPlaylist = songArray;
+                PlayState.isStoryMode = true;
+                //selectedWeek = true;
+    
+                var diffic = CoolUtil.getDifficultyFilePath(diff);
+                if(diffic == null) diffic = '';
+    
+                PlayState.storyDifficulty = diff;
+    
+                PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
+                PlayState.storyWeek = 0;
+                PlayState.campaignScore = 0;
+                PlayState.campaignMisses = 0;
+                new FlxTimer().start(1, function(tmr:FlxTimer)
+                {
+                    LoadingState.loadAndSwitchState(new PlayState(), true);
+                    FreeplayState.destroyFreeplayVocals();
+                });
+            }
 }
