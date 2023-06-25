@@ -179,12 +179,18 @@ class Character extends FlxSprite
 
 				if (!FileSystem.exists(path))
 				#else
-				var path:String = Paths.getPreloadPath(characterPath);
-				if (!Assets.exists(path))
+				var path:String = '';
+				if (curCharacter.contains('edward'))
+					path = Paths.getLibraryPath(characterPath, 'secretStuff');
+				else
+					path = Paths.getPreloadPath(characterPath);
+				
 				#end
-				{
-					path = Paths.getPreloadPath('characters/' + DEFAULT_CHARACTER + '.json'); //If a character couldn't be found, change him to BF just to prevent a crash
-				}
+
+				if (!Assets.exists(path) && curCharacter != 'edward')
+					{
+						path = Paths.getPreloadPath('characters/' + DEFAULT_CHARACTER + '.json'); //If a character couldn't be found, change him to BF just to prevent a crash
+					}
 
 				#if MODS_ALLOWED
 				var rawJson = File.getContent(path);
@@ -233,7 +239,10 @@ class Character extends FlxSprite
 						frames = Paths.getPackerAtlas(json.image);
 					
 					case "sparrow":
-						frames = Paths.getSparrowAtlas(json.image);
+						if (json.image.contains('edward'))
+							frames = Paths.getSparrowAtlas(json.image, 'secretStuff');
+						else
+							frames = Paths.getSparrowAtlas(json.image);
 					
 					case "texture":
 						frames = AtlasFrameMaker.construct(json.image);

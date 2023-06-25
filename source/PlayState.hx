@@ -729,6 +729,17 @@ class PlayState extends MusicBeatState
 	
 					add(boyfriendGroup);
 					add(dadGroup);
+
+					ob5 = new FlxSprite();
+					ob5.frames = Paths.getSparrowAtlas('bgs/splendid/splendid_runaway_sparks');
+					ob5.animation.addByPrefix('loop', 'splendid runaway sparks loop', 24, true);
+					ob5.animation.play('loop');
+					ob5.alpha = 0;
+					//ob5.scrollFactor.set();
+					ob5.screenCenter(X);
+					ob5.cameras = [camHUD];
+					ob5.y = FlxG.height - ob5.frameHeight + 20;
+					add(ob5);
 	
 					//editable = true;
 					//editbleSprite = ob1;
@@ -2840,14 +2851,6 @@ class PlayState extends MusicBeatState
 
 	function eventPushed(event:EventNote) {
 		switch(event.event) {
-			case 'Play Video':
-				var video = new VideoSprite();
-				video.cameras = [camHUD];
-				video.visible = false;
-				video.playVideo(Paths.video(event.value1));
-				video.finishCallback = function(){
-					video.destroy();
-				}
 			case 'Change Character':
 				var charType:Int = 0;
 				switch(event.value1.toLowerCase()) {
@@ -4102,6 +4105,7 @@ class PlayState extends MusicBeatState
 				if (ClientPrefs.flashing)
 				camOther.flash(FlxColor.WHITE,Std.parseFloat(value1));
 				if(curStage == "splendid"){
+					ob5.alpha = 1;
 					ob4.alpha = 1;
 					ob3.alpha = 0;
 					modifier = 2;
@@ -4247,15 +4251,9 @@ class PlayState extends MusicBeatState
 					FunkinLua.setVarInArray(this, value1, value2);
 				}
 			case 'Play Video':
-				var video = new VideoSprite();
-				video.cameras = [camOther];
-				video.visible = true;
-				video.setGraphicSize(1280, 720);
-				video.playVideo(Paths.video(value1));
-				video.finishCallback = function(){
-					video.destroy();
-				}
-				add(video);
+				var whiteSprite:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.WHITE);
+				whiteSprite.cameras = [camHUD];
+				startVideo('jamescrashscene');
 		}
 		callOnLuas('onEvent', [eventName, value1, value2]);
 	}

@@ -514,7 +514,7 @@ class ChartingState extends MusicBeatState
 		for(mod in Paths.getGlobalMods())
 			directories.push(Paths.mods(mod + '/characters/'));
 		#else
-		var directories:Array<String> = [Paths.getPreloadPath('characters/')];
+		var directories:Array<String> = [Paths.getPreloadPath('characters/'), Paths.getLibraryPath('characters/', 'secretStuff')];
 		#end
 
 		var tempMap:Map<String, Bool> = new Map<String, Bool>();
@@ -2537,7 +2537,10 @@ class ChartingState extends MusicBeatState
 
 		if (!FileSystem.exists(path))
 		#else
-		var path:String = Paths.getPreloadPath(characterPath);
+		if (char.contains('edward'))
+			path = Paths.getLibraryPath(characterPath, 'secretStuff');
+		else
+			path = Paths.getPreloadPath(characterPath);
 		if (!OpenFlAssets.exists(path))
 		#end
 		{

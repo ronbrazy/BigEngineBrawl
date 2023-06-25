@@ -1,0 +1,122 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				25,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "splendid bf idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				16,
+				-1
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "splendid bf left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				14,
+				1
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "splendid bf right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				12,
+				-4
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "splendid bf miss right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				79,
+				1
+			],
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"name": "splendid bf miss left",
+			"indices": []
+		},
+		{
+			"offsets": [
+				21,
+				2
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "splendid bf down"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				6,
+				8
+			],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "splendid bf miss up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				14,
+				7
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "splendid bf up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				29,
+				-12
+			],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "splendid bf miss down",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/splendid_bf_two",
+	"position": [
+		0,
+		350
+	],
+	"healthicon": "bf",
+	"flip_x": true,
+	"healthbar_colors": [
+		49,
+		176,
+		209
+	],
+	"camera_position": [
+		130,
+		-180
+	],
+	"sing_duration": 4,
+	"scale": 1.9
+}

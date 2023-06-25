@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TextureAtlas imagePath="james phase2.png"><SubTexture name="james phase2 idle0000" x="0" y="4235" width="1194" height="702" frameX="0" frameY="-12" frameWidth="1194" frameHeight="714" />
+<TextureAtlas imagePath="james_phase2_mainbody.png"><SubTexture name="james phase2 idle0000" x="0" y="4235" width="1194" height="702" frameX="0" frameY="-12" frameWidth="1194" frameHeight="714" />
 <SubTexture name="james phase2 idle0001" x="0" y="4235" width="1194" height="702" frameX="0" frameY="-12" frameWidth="1194" frameHeight="714" />
 <SubTexture name="james phase2 idle0002" x="4741" y="705" width="1188" height="704" frameX="-3" frameY="-6" frameWidth="1194" frameHeight="714" />
 <SubTexture name="james phase2 idle0003" x="4741" y="705" width="1188" height="704" frameX="-3" frameY="-6" frameWidth="1194" frameHeight="714" />

@@ -5,6 +5,8 @@ import flixel.FlxG;
 import flixel.system.FlxSound;
 
 import flixel.util.FlxTimer;
+import flixel.input.keyboard.FlxKey;
+import editors.MasterEditorMenu;
 
 
 class BebMainMenu extends MusicBeatState
@@ -32,6 +34,7 @@ class BebMainMenu extends MusicBeatState
     var cursorSprite2:FlxSprite;
     var trainWhistle:FlxSound = new FlxSound();
     var selectedSomethin:Bool = false;
+	var debugKeys:Array<FlxKey>;
 
     public static var previousState:String = '';
     //var selectingCursor:Bool = false;
@@ -39,6 +42,8 @@ class BebMainMenu extends MusicBeatState
     {
         Achievements.loadAchievements();
         WeekData.reloadWeekFiles(true);
+
+        debugKeys = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
         
         if (previousState != '')
         {
@@ -182,6 +187,11 @@ class BebMainMenu extends MusicBeatState
                 {
                     selectedSomething();
                 }
+            if (FlxG.keys.anyJustPressed(debugKeys))
+            {
+                selectedSomethin = true;
+                MusicBeatState.switchState(new MasterEditorMenu());
+            }
         }
         super.update(elapsed);
     }
