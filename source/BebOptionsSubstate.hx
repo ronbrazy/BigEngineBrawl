@@ -32,7 +32,8 @@ using StringTools;
 
 class BebOptionsSubstate extends MusicBeatSubstate
 {
-	var options:Array<String> = ['Note Colors', 'Controls', 'Adjust Delay and Combo', 'Graphics', 'Visuals and UI', 'Gameplay'];
+	var options:Array<String> = ['Note Colors', 'Controls', 'Adjust Delay and Combo', 'Graphics', 'Visuals and UI', 'Gameplay', 'difficulty'];
+    var diffs:Array<String> = ['easy', 'normal', 'hard'];
 	var grpOptions:FlxSpriteGroup;
     var bg:FlxSprite;
     var allowedToChange:Bool = false;
@@ -42,6 +43,8 @@ class BebOptionsSubstate extends MusicBeatSubstate
     var cursorSprite:FlxSprite;
     var cursorSprite2:FlxSprite;
 	var backButton:FlxSprite;
+    var diffState:Bool = false;
+    var grpDiffs:FlxSpriteGroup;
 
     function openSelectedSubstate(label:String) {
 		switch(label) {
@@ -57,6 +60,9 @@ class BebOptionsSubstate extends MusicBeatSubstate
 				openSubState(new options.GameplaySettingsSubState());
 			case 'Adjust Delay and Combo':
 				LoadingState.loadAndSwitchState(new options.NoteOffsetState());
+            case 'difficulty':
+                slideTabsOut();
+                //openSubState(new options.DifficultySubState());
 		}
 	}
 
@@ -96,33 +102,90 @@ class BebOptionsSubstate extends MusicBeatSubstate
         }
         add(grpOptions);
 
-        FlxTween.tween(bg, {alpha: 0.75}, 0.25, {ease: FlxEase.backInOut, /* goated ease */ onComplete: function(lol:FlxTween){
-            allowedToChange = true;
-            curSelected = 0;
-            changeSelection();
-            for(i in grpOptions){
-                FlxTween.tween(i, {x: 808}, 0.75, {ease: FlxEase.backOut});
-            }
-        }});
+        grpDiffs = new FlxSpriteGroup();
+        for(i in 0...diffs.length){
+            var imgPath:String = 'options/difficulties/${diffs[i]}';
+            if(i == ClientPrefs.difficulty) imgPath += ' glow';
+            var optionBar:FlxSprite = new FlxSprite(1280, FlxG.height/2 + (172 * (i - 1))).loadGraphic(Paths.image(imgPath, 'menu'));
+            optionBar.scale.set(0.3, 0.3);
+            optionBar.updateHitbox();
+            optionBar.y -= optionBar.height / 2;
+            optionBar.ID = i;
+            //optionBar.alpha = 0.5;
+            grpDiffs.add(optionBar);
+        }
+        add(grpDiffs);
+        curSelected = 0;
+
+        slideTabsIn();
 
 
         super.create();
     }
+
+    public function slideTabsIn()
+        {
+            FlxTween.tween(bg, {alpha: 0.75}, 0.25, {ease: FlxEase.backInOut, /* goated ease */ onComplete: function(lol:FlxTween){
+                
+                for(i in grpOptions){
+                    FlxTween.tween(i, {x: 808}, 0.75, {ease: FlxEase.backOut, onComplete: function(lol:FlxTween){
+                        allowedToChange = true;
+                        changeSelection();
+                    }});
+                }
+            }});
+        }
+
+    public function slideTabsOut(closeMenu:Bool = false)
+        {
+            allowedToChange = false;
+            if (closeMenu) FlxTween.tween(backButton, {alpha: 0}, 0.25);
+                for(i in grpOptions)
+                {
+                    FlxTween.tween(i, {x: 1280}, 0.75, {ease: FlxEase.backIn, onComplete: function(poop:FlxTween){
+                        if (closeMenu) { close(); }
+                        else slideDiffsIn();
+                    }});
+                }
+        }
+
+        public function slideDiffsIn()
+            {
+                diffState = true;
+                FlxTween.tween(bg, {alpha: 0.75}, 0.25, {ease: FlxEase.backInOut, /* goated ease */ onComplete: function(lol:FlxTween){
+                    for(i in grpDiffs){
+                        FlxTween.tween(i, {x: 808}, 0.75, {ease: FlxEase.backOut});
+                    }
+                }});
+            }
+    
+        public function slideDiffsOut()
+            {
+                diffState = false;
+                    for(i in grpDiffs)
+                    {
+                        FlxTween.tween(i, {x: 1280}, 0.75, {ease: FlxEase.backIn, onComplete: function(poop:FlxTween){
+                            slideTabsIn();
+                        }});
+                    }
+            }
 
     var targetY:Float = 0;
 
     override function update(elapsed:Float){
 
         if (controls.BACK || FlxG.mouse.justPressedRight) {
-            allowedToChange = false;
+            if (!diffState)
+            {
+                allowedToChange = false;
 
-			FlxG.sound.play(Paths.sound('cancelMenu'));
-            FlxTween.tween(bg, {alpha: 0}, 0.25);
-            FlxTween.tween(backButton, {alpha: 0}, 0.25);
-            for(i in grpOptions){
-                FlxTween.tween(i, {x: 1280}, 0.75, {ease: FlxEase.backIn, onComplete: function(poop:FlxTween){
-                    close();
-                }});
+                FlxG.sound.play(Paths.sound('cancelMenu'));
+                FlxTween.tween(bg, {alpha: 0}, 0.25);
+                slideTabsOut(true);
+            }
+            else
+            {
+                slideDiffsOut();
             }
 
         }
@@ -163,7 +226,7 @@ class BebOptionsSubstate extends MusicBeatSubstate
                     
             }
 
-            if (allowedToChange)
+            if (allowedToChange || diffState)
             {
             if (FlxG.mouse.overlaps(backButton))
                 {
@@ -171,20 +234,23 @@ class BebOptionsSubstate extends MusicBeatSubstate
                     backButton.loadGraphic(Paths.image('freeplay/back_button_selected', 'menu'));
                     if (FlxG.mouse.justPressed)
                         {
-                            allowedToChange = false;
-
-                            FlxG.sound.play(Paths.sound('cancelMenu'));
-                            FlxTween.tween(bg, {alpha: 0}, 0.25);
-                            FlxTween.tween(backButton, {alpha: 0}, 0.25);
-                            for(i in grpOptions){
-                                FlxTween.tween(i, {x: 1280}, 0.75, {ease: FlxEase.backIn, onComplete: function(poop:FlxTween){
-                                    close();
-                                }});
-                            }
+                            if (!diffState)
+                                {
+                                    allowedToChange = false;
+                    
+                                    FlxG.sound.play(Paths.sound('cancelMenu'));
+                                    FlxTween.tween(bg, {alpha: 0}, 0.25);
+                                    slideTabsOut(true);
+                                }
+                            else
+                                {
+                                    slideDiffsOut();
+                                }
                         }
                 }
             else
                 backButton.loadGraphic(Paths.image('freeplay/back_button', 'menu'));
+
         }
 
         if(FlxG.mouse.wheel != 0)
@@ -204,15 +270,40 @@ class BebOptionsSubstate extends MusicBeatSubstate
                 openSelectedSubstate(options[curSelected]);
 		}
 
-        grpOptions.y = FlxMath.lerp(grpOptions.y, targetY, CoolUtil.boundTo(elapsed * 7.5, 0, 1));
-        grpOptions.forEach(function(spr:FlxSprite){
-            if(allowedToChange){
-                if(spr.active)
-                    spr.x = FlxMath.lerp(spr.x, 690, CoolUtil.boundTo(elapsed * 7.5, 0, 1));
-                else
-                    spr.x = FlxMath.lerp(spr.x, 808, CoolUtil.boundTo(elapsed * 7.5, 0, 1));    
-            }
-        });
+        if (!diffState)
+        {
+            grpOptions.y = FlxMath.lerp(grpOptions.y, targetY, CoolUtil.boundTo(elapsed * 7.5, 0, 1));
+            grpOptions.forEach(function(spr:FlxSprite){
+                if(allowedToChange){
+                    if(spr.active)
+                        spr.x = FlxMath.lerp(spr.x, 690, CoolUtil.boundTo(elapsed * 7.5, 0, 1));
+                    else
+                        spr.x = FlxMath.lerp(spr.x, 808, CoolUtil.boundTo(elapsed * 7.5, 0, 1));    
+                }
+            });
+        }
+        else
+        {
+            for(i in grpDiffs)
+                {
+                    if (FlxG.mouse.overlaps(i))
+                    {
+                        changeCursor(true);
+                        if (FlxG.mouse.justPressed)
+                            {
+                                ClientPrefs.difficulty = i.ID;
+                                trace('clicked on ${i.ID} | difficulty is: ${ClientPrefs.difficulty}');
+                                i.loadGraphic(Paths.image('options/difficulties/${diffs[i.ID]} glow', 'menu'));
+                                i.updateHitbox();
+                            }
+                    }
+                    if (i.ID != ClientPrefs.difficulty)
+                    {
+                        i.loadGraphic(Paths.image('options/difficulties/${diffs[i.ID]}', 'menu'));
+                        i.updateHitbox();
+                    }
+                }
+        }
 
         super.update(elapsed);
 
@@ -242,7 +333,6 @@ class BebOptionsSubstate extends MusicBeatSubstate
                     spr.active = true;
                 }
             });
-            trace(targetY);
         }    
     }
 

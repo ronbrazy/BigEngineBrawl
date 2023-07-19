@@ -166,7 +166,48 @@ class Character extends FlxSprite
 				} else {
 					quickAnimAdd('idle', 'BF idle dance');
 				}*/
+			case 'edward':
+				frames = Paths.getSparrowAtlas("characters/edward", 'secretStuff');
 
+				animation.addByPrefix('idle', 'edward idle', 24, false);
+				animation.addByPrefix('singDOWN', 'edward down', 24, false);
+				animation.addByPrefix('singUP', 'edward up', 24, false);
+				animation.addByPrefix('singLEFT', 'edward left', 24, false);
+				animation.addByPrefix('singRIGHT', 'edward right', 24, false);
+				animation.addByPrefix('intro', 'edward intro', 24, false);
+				animation.addByPrefix('outro', 'edward end', 24, false);
+
+				addOffset('idle', 0, 0);
+				addOffset('singUP', -7, -1);
+				addOffset('singRIGHT', -8, -3);
+				addOffset('singLEFT', -5, -1);
+				addOffset('singDOWN', -8, -1);
+				addOffset('intro', -7, 2);
+				addOffset('outro', -7, 2);
+
+				setGraphicSize(Std.int(width * 1.8));
+				updateHitbox();
+
+				positionArray = [
+					-460,
+					-210
+				];
+				
+				cameraPosition = [
+					-130,
+					-150
+				];
+
+				healthColorArray = [
+					7,
+					149,
+					233
+				];
+
+				healthIcon = "edward";
+				singDuration = 6.1;
+
+				dance();
 
 			default:
 				var characterPath:String = 'characters/' + curCharacter + '.json';

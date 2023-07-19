@@ -234,6 +234,13 @@ class Paths
 		return sound;
 	}
 
+	inline static public function voicesHidden(song:String)
+		{
+			var songLowercase = StringTools.replace(song, " ", "-").toLowerCase();
+	
+			return getPath('songs/${songLowercase}/Voices.$SOUND_EXT', SOUND, 'secretStuff');
+		}
+
 	inline static public function soundRandom(key:String, min:Int, max:Int, ?library:String)
 	{
 		return sound(key + FlxG.random.int(min, max), library);
@@ -266,6 +273,13 @@ class Paths
 		return inst;
 		#end
 	}
+
+	inline static public function instHidden(song:String)
+		{
+			var songLowercase = StringTools.replace(song, " ", "-").toLowerCase();
+	
+			return getPath('songs/${songLowercase}/Inst.$SOUND_EXT', SOUND, 'secretStuff');
+		}
 
 	inline static public function imagePath(key:String, ?library:String):String
 		{

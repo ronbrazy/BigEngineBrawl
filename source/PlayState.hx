@@ -103,6 +103,8 @@ class PlayState extends MusicBeatState
 		['Really Useful!!', 1] //The value on this one isn't used actually, since Perfect is always "1"
 	];
 
+	public static var hiddenSongs:Array<String> = ['loathed', "old reliable"];
+
 	//event variables
 	private var isCameraOnForcedPos:Bool = false;
 
@@ -374,6 +376,7 @@ class PlayState extends MusicBeatState
 	var curEditSprite:Int = 0;
 	var lpo:Int = 700;
 	var signalTween:FlxTween;
+	var firstLoad:Bool = true;
 
 	var doMiddleScroll:Bool = false;
 
@@ -562,22 +565,43 @@ class PlayState extends MusicBeatState
 		SONG.stage = curStage;
 
 		var stageData:StageFile = StageData.getStageFile(curStage);
-		if(stageData == null) { //Stage couldn't be found, create a dummy stage for preventing a crash
-			stageData = {
-				directory: "",
-				defaultZoom: 0.9,
-				isPixelStage: false,
+		if (curStage == 'oldreliable')
+		{ //Stage couldn't be found, create a dummy stage for preventing a crash
+			switch(SONG.song)
+			{
+				case 'old reliable':
+					stageData = {
+						directory: "",
+						defaultZoom: 1.4,
+						isPixelStage: false,
 
-				boyfriend: [770, 100],
-				girlfriend: [400, 130],
-				opponent: [100, 100],
-				hide_girlfriend: false,
+						boyfriend: [470, -500],
+						girlfriend: [400, -230],
+						opponent: [100, 100],
+						hide_girlfriend: false,
 
-				camera_boyfriend: [0, 0],
-				camera_opponent: [0, 0],
-				camera_girlfriend: [0, 0],
-				camera_speed: 1
-			};
+						camera_boyfriend: [0, 0],
+						camera_opponent: [0, 0],
+						camera_girlfriend: [0, 0],
+						camera_speed: 1
+					};
+					case 'loathed':
+						stageData = {
+							directory: "",
+							defaultZoom: 0.9,
+							isPixelStage: false,
+	
+							boyfriend: [770, 100],
+							girlfriend: [400, 130],
+							opponent: [100, 100],
+							hide_girlfriend: false,
+	
+							camera_boyfriend: [0, 0],
+							camera_opponent: [0, 0],
+							camera_girlfriend: [0, 0],
+							camera_speed: 1
+						};
+			}
 		}
 
 		defaultCamZoom = stageData.defaultZoom;
@@ -993,30 +1017,34 @@ class PlayState extends MusicBeatState
 					camHUD.alpha = 0;
 
 				case 'oldreliable':
-					ob1 = new FlxSprite().loadGraphic(Paths.image('bgs/oldreliable/insideshed'));
+					ob1 = new FlxSprite().loadGraphic(Paths.image('backgrounds/reliable/insideshed', 'secretStuff'));
 					ob1.antialiasing = ClientPrefs.globalAntialiasing;
-					ob1.setGraphicSize();
+					ob1.setGraphicSize(Std.int(1425));
 					ob1.updateHitbox();
+					ob1.x = -539; ob1.y = -371;
 					add(ob1);
 
-					ob2 = new FlxSprite().loadGraphic(Paths.image('bgs/oldreliable/bg'));
+					ob2 = new FlxSprite().loadGraphic(Paths.image('backgrounds/reliable/bg', 'secretStuff'));
 					ob2.antialiasing = ClientPrefs.globalAntialiasing;
-					ob2.setGraphicSize();
+					ob2.setGraphicSize(Std.int(1425));
 					ob2.updateHitbox();
+					ob2.x = -539; ob2.y = -371;
 					add(ob2);
 		
-					ob3 = new FlxSprite().loadGraphic(Paths.image('bgs/oldreliable/door1'));
+					ob3 = new FlxSprite().loadGraphic(Paths.image('backgrounds/reliable/door1', 'secretStuff'));
 					ob3.antialiasing = ClientPrefs.globalAntialiasing;
-					ob3.setGraphicSize();
+					ob3.setGraphicSize(Std.int(1425));
 					ob3.updateHitbox();
+					ob3.x = -539; ob3.y = -371;
 					add(ob3);
 
 					add(dadGroup); 
 		
-					ob4 = new FlxSprite().loadGraphic(Paths.image('bgs/oldreliable/door2'));
+					ob4 = new FlxSprite().loadGraphic(Paths.image('backgrounds/reliable/door2', 'secretStuff'));
 					ob4.antialiasing = ClientPrefs.globalAntialiasing;
-					ob4.setGraphicSize();
+					ob4.setGraphicSize(Std.int(1425));
 					ob4.updateHitbox();
+					ob4.x = -539; ob4.y = -371;
 					add(ob4);
 					
 					editable = true;
@@ -1045,7 +1073,8 @@ class PlayState extends MusicBeatState
 		if (curStage == 'limo')
 			add(limo);
 
-		add(dadGroup);
+		if (curStage != 'oldreliable')
+			add(dadGroup);
 		for (i in overDad)
 			{
 				add(i);
@@ -1840,7 +1869,7 @@ class PlayState extends MusicBeatState
 	public function startVideo(name:String)
 	{
 		#if VIDEOS_ALLOWED
-		inCutscene = true;
+		if (!firstLoad) inCutscene = true;
 
 		var filepath:String = Paths.video(name);
 		#if sys
@@ -1856,6 +1885,7 @@ class PlayState extends MusicBeatState
 
 		var video:MP4Handler = new MP4Handler();
 		video.playVideo(filepath);
+		if(firstLoad) { video.dispose(); firstLoad = false;}
 		video.finishCallback = function()
 		{
 			startAndEnd();
@@ -2610,7 +2640,10 @@ class PlayState extends MusicBeatState
 		previousFrameTime = FlxG.game.ticks;
 		lastReportedPlayheadPosition = 0;
 
-		FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
+		if (hiddenSongs.contains(PlayState.SONG.song))
+			FlxG.sound.playMusic(Paths.instHidden(PlayState.SONG.song), 1, false);
+		else
+			FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
 		FlxG.sound.music.pitch = playbackRate;
 		FlxG.sound.music.onComplete = finishSong.bind();
 		vocals.play();
@@ -2672,7 +2705,12 @@ class PlayState extends MusicBeatState
 		curSong = songData.song;
 
 		if (SONG.needsVoices)
-			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
+		{
+			if(hiddenSongs.contains(PlayState.SONG.song))
+				vocals = new FlxSound().loadEmbedded(Paths.voicesHidden(PlayState.SONG.song));
+			else
+				vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
+		}
 		else
 			vocals = new FlxSound();
 
