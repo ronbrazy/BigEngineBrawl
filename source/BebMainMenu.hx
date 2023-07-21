@@ -8,6 +8,18 @@ import flixel.util.FlxTimer;
 import flixel.input.keyboard.FlxKey;
 import editors.MasterEditorMenu;
 
+#if MODS_ALLOWED
+import sys.FileSystem;
+import sys.io.File;
+#end
+
+#if VIDEOS_ALLOWED
+#if (hxCodec >= "2.6.1") import hxcodec.VideoHandler as MP4Handler;
+#elseif (hxCodec == "2.6.0") import VideoHandler as MP4Handler;
+#else import vlc.MP4Handler; #end
+import hxcodec.VideoSprite;
+#end
+
 
 class BebMainMenu extends MusicBeatState
 {
@@ -35,6 +47,7 @@ class BebMainMenu extends MusicBeatState
     var trainWhistle:FlxSound = new FlxSound();
     var selectedSomethin:Bool = false;
 	var debugKeys:Array<FlxKey>;
+    var videoPlaying:Bool = false;
 
     public static var previousState:String = '';
     //var selectingCursor:Bool = false;
@@ -45,13 +58,13 @@ class BebMainMenu extends MusicBeatState
 
         debugKeys = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
         
-        if (previousState != '')
+        if (previousState != '' && !ClientPrefs.firstTime)
         {
             FlxG.sound.playMusic(Paths.music('bebmenu'), 0);
             FlxG.sound.music.fadeIn(1, 0, 0.7);
         }
 
-        else if (FlxG.sound.music == null)
+        else if (FlxG.sound.music == null && !ClientPrefs.firstTime)
         {
             FlxG.sound.playMusic(Paths.music('bebmenu'), 0);
             FlxG.sound.music.fadeIn(1, 0, 0.7);
@@ -79,8 +92,7 @@ class BebMainMenu extends MusicBeatState
         }
         else
         {
-            ClientPrefs.firstTime = false;
-            ClientPrefs.saveSettings();
+            startVideo('tophamintroduction');
         }
 
         if (curTrain != 'edward')
@@ -136,7 +148,7 @@ class BebMainMenu extends MusicBeatState
     }
     override function update(elapsed:Float)
     {
-        if (!selectedSomethin)
+        if (!selectedSomethin && !videoPlaying)
         {
             for (i in 0...btns.length)
             {
@@ -228,6 +240,36 @@ class BebMainMenu extends MusicBeatState
                         //yeah
                 }
         }
+
+        public function startVideo(name:String)
+            {
+                
+                #if VIDEOS_ALLOWED
+                videoPlaying = true;
+                var filepath:String = Paths.video(name);
+                #if sys
+                if(!FileSystem.exists(filepath))
+                #else
+                if(!OpenFlAssets.exists(filepath))
+                #end
+                {
+                    FlxG.log.warn('Couldnt find video file: ' + name);
+                    return;
+                }
+        
+                var video:MP4Handler = new MP4Handler();
+                video.skipKeys = [FlxKey.ENTER];
+                video.playVideo(filepath);
+                video.finishCallback = function()
+                    {
+                        videoPlaying = false;
+                        ClientPrefs.firstTime = false;
+                        ClientPrefs.saveSettings();
+                        FlxG.sound.playMusic(Paths.music('bebmenu'), 0);
+                        FlxG.sound.music.fadeIn(1, 0, 0.7);
+                    }
+                #end
+            }
 
     function changeCursor(value:Bool)
         {

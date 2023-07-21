@@ -37,6 +37,13 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import openfl.Assets;
 
+#if VIDEOS_ALLOWED
+#if (hxCodec >= "2.6.1") import hxcodec.VideoHandler as MP4Handler;
+#elseif (hxCodec == "2.6.0") import VideoHandler as MP4Handler;
+#else import vlc.MP4Handler; #end
+import hxcodec.VideoSprite;
+#end
+
 using StringTools;
 typedef TitleData =
 {
@@ -63,6 +70,8 @@ class TitleState extends MusicBeatState
 	var credTextShit:Alphabet;
 	var textGroup:FlxGroup;
 	var ngSpr:FlxSprite;
+
+	var videos:Array<String> = ['jamescrashscene'];
 	
 	var titleTextColors:Array<FlxColor> = [0xFF33FFFF, 0xFF3333CC];
 	var titleTextAlphas:Array<Float> = [1, .64];
@@ -102,6 +111,11 @@ class TitleState extends MusicBeatState
 			FlxG.sound.playMusic(Paths.music('beb_preloading'), 0);
 			FlxG.sound.music.fadeIn(1, 0, 0.7);
 		}
+
+		for(i in 0...videos.length)
+			{
+				startVideo(videos[i]);
+			}
 		
 
 		//trace(path, FileSystem.exists(path));
@@ -226,6 +240,27 @@ class TitleState extends MusicBeatState
 		cacheStuff();
 		#end
 	}
+
+	public function startVideo(name:String)
+		{
+			#if VIDEOS_ALLOWED
+	
+			var filepath:String = Paths.video(name);
+			#if sys
+			if(!FileSystem.exists(filepath))
+			#else
+			if(!OpenFlAssets.exists(filepath))
+			#end
+			{
+				FlxG.log.warn('Couldnt find video file: ' + name);
+				return;
+			}
+	
+			var video:MP4Handler = new MP4Handler();
+			video.playVideo(filepath);
+			video.dispose();
+			#end
+		}
 
 	var logoBl:FlxSprite;
 	var gfDance:FlxSprite;

@@ -376,7 +376,6 @@ class PlayState extends MusicBeatState
 	var curEditSprite:Int = 0;
 	var lpo:Int = 700;
 	var signalTween:FlxTween;
-	var firstLoad:Bool = true;
 
 	var doMiddleScroll:Bool = false;
 
@@ -1869,7 +1868,7 @@ class PlayState extends MusicBeatState
 	public function startVideo(name:String)
 	{
 		#if VIDEOS_ALLOWED
-		if (!firstLoad) inCutscene = true;
+		inCutscene = true;
 
 		var filepath:String = Paths.video(name);
 		#if sys
@@ -1885,7 +1884,6 @@ class PlayState extends MusicBeatState
 
 		var video:MP4Handler = new MP4Handler();
 		video.playVideo(filepath);
-		if(firstLoad) { video.dispose(); firstLoad = false;}
 		video.finishCallback = function()
 		{
 			startAndEnd();
