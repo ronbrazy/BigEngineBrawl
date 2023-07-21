@@ -64,6 +64,7 @@ class TitleState extends MusicBeatState
 	public static var volumeUpKeys:Array<FlxKey> = [FlxKey.NUMPADPLUS, FlxKey.PLUS];
 
 	public static var initialized:Bool = false;
+	var canTransition:Bool = false;
 
 	var blackScreen:FlxSprite;
 	var credGroup:FlxGroup;
@@ -243,6 +244,7 @@ class TitleState extends MusicBeatState
 
 	public function startVideo(name:String)
 		{
+			
 			#if VIDEOS_ALLOWED
 	
 			var filepath:String = Paths.video(name);
@@ -258,7 +260,16 @@ class TitleState extends MusicBeatState
 	
 			var video:MP4Handler = new MP4Handler();
 			video.playVideo(filepath);
-			video.dispose();
+			video.openingCallback = function()
+				{
+					video.stop();	
+					video.dispose();
+					if (name == videos[videos.length-1])
+						{
+							canTransition = true;
+						}
+				}
+			
 			#end
 		}
 
@@ -476,7 +487,7 @@ class TitleState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 
-		if (iscompleted && !once)
+		if (iscompleted && !once && canTransition)
 			{
 				once = true;
 				//var snd:FlxSound = new FlxSound().loadEmbedded(Paths.sound('complete','clown'));
