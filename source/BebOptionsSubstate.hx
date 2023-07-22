@@ -34,6 +34,13 @@ class BebOptionsSubstate extends MusicBeatSubstate
 {
 	var options:Array<String> = ['Note Colors', 'Controls', 'Adjust Delay and Combo', 'Graphics', 'Visuals and UI', 'Gameplay', 'difficulty'];
     var diffs:Array<String> = ['easy', 'normal', 'hard'];
+    var diffMap:Map<String, String> = [
+
+		'easy' => 'mini',
+		'normal' => 'nar',
+		'hard' => 'stand'
+
+	];
 	var grpOptions:FlxSpriteGroup;
     var bg:FlxSprite;
     var allowedToChange:Bool = false;
@@ -144,7 +151,7 @@ class BebOptionsSubstate extends MusicBeatSubstate
                 {
                     FlxTween.tween(i, {x: 1280}, 0.75, {ease: FlxEase.backIn, onComplete: function(poop:FlxTween){
                         if (closeMenu) { close(); }
-                        else slideDiffsIn();
+                        else {slideDiffsIn(); }
                     }});
                 }
         }
@@ -152,6 +159,7 @@ class BebOptionsSubstate extends MusicBeatSubstate
         public function slideDiffsIn()
             {
                 diffState = true;
+                FlxG.sound.play(Paths.sound('topham_select', 'menu'), 0.7);
                 FlxTween.tween(bg, {alpha: 0.75}, 0.25, {ease: FlxEase.backInOut, /* goated ease */ onComplete: function(lol:FlxTween){
                     for(i in grpDiffs){
                         FlxTween.tween(i, {x: 808}, 0.75, {ease: FlxEase.backOut});
@@ -185,6 +193,7 @@ class BebOptionsSubstate extends MusicBeatSubstate
             }
             else
             {
+                FlxG.sound.play(Paths.sound('cancelMenu'));
                 slideDiffsOut();
             }
 
@@ -199,6 +208,7 @@ class BebOptionsSubstate extends MusicBeatSubstate
                             trace('selected');
                             if(allowedToChange)
                                 {
+                                    FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
                                     openSelectedSubstate(options[curSelected]);
                                     break;
                                 }
@@ -209,6 +219,7 @@ class BebOptionsSubstate extends MusicBeatSubstate
                         {
                             if (FlxG.mouse.justPressed)
                                 {
+                                    FlxG.sound.play(Paths.sound('scrollMenu'), 0.7);
                                     trace('changed to ${i}:${options[i]} from ${grpOptions.members[curSelected].ID}:${options[curSelected]}');
                                     curSelected = i;
                                     changeSelection();
@@ -244,6 +255,7 @@ class BebOptionsSubstate extends MusicBeatSubstate
                                 }
                             else
                                 {
+                                    FlxG.sound.play(Paths.sound('cancelMenu'), 0.7);
                                     slideDiffsOut();
                                 }
                         }
@@ -255,19 +267,24 @@ class BebOptionsSubstate extends MusicBeatSubstate
 
         if(FlxG.mouse.wheel != 0)
 			{
-				FlxG.sound.play(Paths.sound('scrollMenu'), 0.2);
+				FlxG.sound.play(Paths.sound('scrollMenu'), 0.7);
 				changeSelection(-FlxG.mouse.wheel);
 			}
 
         if (controls.UI_UP_P) {
+            FlxG.sound.play(Paths.sound('scrollMenu'), 0.7);
 			changeSelection(-1);
 		}
 		if (controls.UI_DOWN_P) {
+            FlxG.sound.play(Paths.sound('scrollMenu'), 0.7);
 			changeSelection(1);
 		}
 		if (controls.ACCEPT) {
             if(allowedToChange)
-                openSelectedSubstate(options[curSelected]);
+                {
+                    FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
+                    openSelectedSubstate(options[curSelected]);
+                }
 		}
 
         if (!diffState)
@@ -291,7 +308,9 @@ class BebOptionsSubstate extends MusicBeatSubstate
                         changeCursor(true);
                         if (FlxG.mouse.justPressed)
                             {
+                                FlxG.sound.play(Paths.sound('confirmMenu'), 0.3);
                                 ClientPrefs.difficulty = i.ID;
+                                FlxG.sound.play(Paths.sound('topham_${diffMap.get(diffs[ClientPrefs.difficulty])}', 'menu'));
                                 trace('clicked on ${i.ID} | difficulty is: ${ClientPrefs.difficulty}');
                                 i.loadGraphic(Paths.image('options/difficulties/${diffs[i.ID]} glow', 'menu'));
                                 i.updateHitbox();

@@ -34,17 +34,6 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		title = 'Gameplay Settings';
 		rpcTitle = 'Gameplay Settings Menu'; //for Discord Rich Presence
 
-		var option:Option = new Option('Difficulty',
-			'Changes the difficulty.',
-			'difficulty',
-			'int',
-			2);
-		option.displayFormat = '%v';
-		option.scrollSpeed = 1;
-		option.minValue = 0;
-		option.maxValue = 2;
-		addOption(option);
-
 		var option:Option = new Option('Controller Mode',
 			'Check this if you want to play with\na controller instead of using your Keyboard.',
 			'controllerMode',
