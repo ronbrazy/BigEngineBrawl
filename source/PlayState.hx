@@ -4546,8 +4546,16 @@ class PlayState extends MusicBeatState
 				if(FlxTransitionableState.skipNextTransIn) {
 					CustomFadeTransition.nextCamera = null;
 				}
-				MusicBeatState.switchState(new FreeplayState());
-				FlxG.sound.playMusic(Paths.music('bebmenu'));
+				if(!ClientPrefs.firstTime)
+				{
+					MusicBeatState.switchState(new FreeplayState());
+					FlxG.sound.playMusic(Paths.music('bebmenu'));
+				}
+				else
+				{
+					FlxG.sound.music.stop();
+					MusicBeatState.switchState(new BebMainMenu());
+				}
 				changedDifficulty = false;
 			}
 			transitioning = true;

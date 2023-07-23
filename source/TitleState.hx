@@ -72,7 +72,7 @@ class TitleState extends MusicBeatState
 	var textGroup:FlxGroup;
 	var ngSpr:FlxSprite;
 
-	var videos:Array<String> = ['jamescrashscene', 'tophamintroduction', 'kipper', 'Indignation', 'Splendid'];
+	var videos:Array<String> = ['jamescrashscene', 'tophamintroduction', 'kipper', 'Indignation', 'Splendid', 'intro'];
 	
 	var titleTextColors:Array<FlxColor> = [0xFF33FFFF, 0xFF3333CC];
 	var titleTextAlphas:Array<Float> = [1, .64];
@@ -498,7 +498,10 @@ class TitleState extends MusicBeatState
 					{
 						//canSkip = true;
 						//startIntro();
-						MusicBeatState.switchState(new BebMainMenu());
+						if(!ClientPrefs.firstTime)
+							MusicBeatState.switchState(new BebMainMenu());
+						else
+							MusicBeatState.switchState(new ThomasState());
 					});
 			}
 
