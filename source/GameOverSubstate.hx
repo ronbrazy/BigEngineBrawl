@@ -113,30 +113,32 @@ class GameOverSubstate extends MusicBeatSubstate
 				isFollowingAlready = true;
 			}
 
-			if (boyfriend.animation.curAnim.finished && !playingDeathSound)
+			if (boyfriend.animation.curAnim.finished)
 			{
-				if (PlayState.SONG.stage == 'tank')
-				{
-					playingDeathSound = true;
-					coolStartDeath(0.2);
-					
-					var exclude:Array<Int> = [];
-					//if(!ClientPrefs.cursing) exclude = [1, 3, 8, 13, 17, 21];
-
-					FlxG.sound.play(Paths.sound('jeffGameover/jeffGameover-' + FlxG.random.int(1, 25, exclude)), 1, false, null, true, function() {
-						if(!isEnding)
-						{
-							FlxG.sound.music.fadeIn(0.2, 1, 4);
-						}
-					});
-				}
-				else
-				{
-					coolStartDeath();
-				}
+				
 				boyfriend.startedDeath = true;
 			}
 		}
+
+		if (PlayState.SONG.stage == 'confusion' && !playingDeathSound && !FlxG.sound.music.playing)
+			{
+				playingDeathSound = true;
+				coolStartDeath(0.2);
+				
+				var exclude:Array<Int> = [];
+				//if(!ClientPrefs.cursing) exclude = [1, 3, 8, 13, 17, 21];
+
+				FlxG.sound.play(Paths.sound('cnd/gameover/confusion_gameover_' + FlxG.random.int(1, 6, exclude), 'menu'), 1, false, null, true, function() {
+					if(!isEnding)
+					{
+						FlxG.sound.music.fadeIn(0.2, 1, 4);
+					}
+				});
+			}
+			else if (!FlxG.sound.music.playing)
+			{
+				coolStartDeath();
+			}
 
 		if (FlxG.sound.music.playing)
 		{

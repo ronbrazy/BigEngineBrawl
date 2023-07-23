@@ -72,7 +72,7 @@ class TitleState extends MusicBeatState
 	var textGroup:FlxGroup;
 	var ngSpr:FlxSprite;
 
-	var videos:Array<String> = ['jamescrashscene', 'tophamintroduction'];
+	var videos:Array<String> = ['jamescrashscene', 'tophamintroduction', 'kipper', 'Indignation', 'Splendid'];
 	
 	var titleTextColors:Array<FlxColor> = [0xFF33FFFF, 0xFF3333CC];
 	var titleTextAlphas:Array<Float> = [1, .64];

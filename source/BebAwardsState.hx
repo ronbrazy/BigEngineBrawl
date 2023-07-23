@@ -256,27 +256,39 @@ class BebAwardsState extends MusicBeatState
                             
                             if (FlxG.mouse.justPressed && !tophamSound.playing)
                             {
-                                if (tophamState < 3)
+                                if (!ClientPrefs.fatassPlayed)
                                 {
-                                    tophamState++;
-                                    topham.loadGraphic(Paths.image('awards/topham${tophamState}', 'menu'));
+                                    if (tophamState < 3)
+                                    {
+                                        tophamState++;
+                                        topham.loadGraphic(Paths.image('awards/topham${tophamState}', 'menu'));
+                                    }
+                                    if (tophamState <= 2)
+                                    {
+                                        tophamSound = FlxG.sound.load(Paths.sound('cnd/fatcontroller_unlock${tophamState}', 'menu'));
+                                        tophamSound.play();
+                                    }
+                                    if (tophamState == 2)
+                                        {
+                                            music2.fadeIn(1, 0, 0.7);
+                                            FlxG.sound.music.fadeOut(1, 0);
+                                        }
+                                    if (tophamState == 3)
+                                        {
+                                            backButton.visible = false;
+                                            FlxG.mouse.visible = false;
+                                            ClientPrefs.fatassPlayed = true;
+                                            ClientPrefs.saveSettings();
+                                            loadSong();
+                                        }
                                 }
-                                if (tophamState <= 2)
+                                else
                                 {
-                                    tophamSound = FlxG.sound.load(Paths.sound('fatcontroller_unlock${tophamState}', 'menu'));
-                                    tophamSound.play();
+                                    topham.loadGraphic(Paths.image('awards/topham3', 'menu'));
+                                    backButton.visible = false;
+                                    FlxG.mouse.visible = false;
+                                    loadSong();
                                 }
-                                if (tophamState == 2)
-                                    {
-                                        music2.fadeIn(1, 0, 0.7);
-                                        FlxG.sound.music.fadeOut(1, 0);
-                                    }
-                                if (tophamState == 3)
-                                    {
-                                        backButton.visible = false;
-                                        FlxG.mouse.visible = false;
-                                        loadSong();
-                                    }
                             }
                         }
         

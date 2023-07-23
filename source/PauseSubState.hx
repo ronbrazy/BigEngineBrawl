@@ -37,6 +37,7 @@ class PauseSubState extends MusicBeatSubstate
 	{
 		super();
 		if(CoolUtil.difficulties.length < 2) menuItemsOG.remove('Change Difficulty'); //No need to change difficulty if there is only one!
+		if(ClientPrefs.firstTime) menuItemsOG.remove('Exit to menu');
 
 		if(PlayState.chartingMode)
 		{

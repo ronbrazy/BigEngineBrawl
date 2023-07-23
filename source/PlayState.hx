@@ -837,6 +837,22 @@ class PlayState extends MusicBeatState
 					ob5.updateHitbox();
 					add(ob5);
 
+					ob7 = new FlxSprite(-2250,-1650).loadGraphic(Paths.image('bgs/endlessremix/nighttime_overlay'));
+					ob7.antialiasing = ClientPrefs.globalAntialiasing;
+					ob7.setGraphicSize(8315);
+					ob7.updateHitbox();
+					ob7.alpha = 0;
+					overlaySprs.push(ob7);
+
+					ob6 = new FlxSprite(-2250,-1650);
+					ob6.frames = Paths.getSparrowAtlas('bgs/sadstory/rain');
+					ob6.antialiasing = ClientPrefs.globalAntialiasing;
+					ob6.animation.addByPrefix('idle','rain idle',24,true);
+					ob6.animation.play('idle');
+					ob6.setGraphicSize(8315*2);
+					ob6.updateHitbox();
+					overlaySprs.push(ob6);
+					ob6.alpha = 0;
 					
 
 					screenShader.noiseIntensity.value = [0.75];
@@ -1011,7 +1027,10 @@ class PlayState extends MusicBeatState
 					overlaySprs.push(ob3);
 					skipCountdown = true;
 					var tophamSound:FlxSound = new FlxSound();
-					tophamSound = FlxG.sound.load(Paths.sound('fatcontroller_unlock3', 'menu'));
+					if (!ClientPrefs.fatassPlayed)
+						tophamSound = FlxG.sound.load(Paths.sound('cnd/fatcontroller_unlock3', 'menu'));
+					else
+						tophamSound = FlxG.sound.load(Paths.sound('cnd/retry/confusion_retry_${FlxG.random.int(1, 8)}', 'menu'));
                     tophamSound.play();
 					camHUD.alpha = 0;
 
@@ -1510,65 +1529,14 @@ class PlayState extends MusicBeatState
 		{
 			switch (daSong)
 			{
-				case "monster":
-					var whiteScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.WHITE);
-					add(whiteScreen);
-					whiteScreen.scrollFactor.set();
-					whiteScreen.blend = ADD;
-					camHUD.visible = false;
-					snapCamFollowToPos(dad.getMidpoint().x + 150, dad.getMidpoint().y - 100);
-					inCutscene = true;
+				case "flying-kipper":
+					startVideo('kipper');
 
-					FlxTween.tween(whiteScreen, {alpha: 0}, 1, {
-						startDelay: 0.1,
-						ease: FlxEase.linear,
-						onComplete: function(twn:FlxTween)
-						{
-							camHUD.visible = true;
-							remove(whiteScreen);
-							startCountdown();
-						}
-					});
-					FlxG.sound.play(Paths.soundRandom('thunder_', 1, 2));
-					if(gf != null) gf.playAnim('scared', true);
-					boyfriend.playAnim('scared', true);
+				case "splendid":
+					startVideo('Splendid');
 
-				case "winter-horrorland":
-					var blackScreen:FlxSprite = new FlxSprite().makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
-					add(blackScreen);
-					blackScreen.scrollFactor.set();
-					camHUD.visible = false;
-					inCutscene = true;
-
-					FlxTween.tween(blackScreen, {alpha: 0}, 0.7, {
-						ease: FlxEase.linear,
-						onComplete: function(twn:FlxTween) {
-							remove(blackScreen);
-						}
-					});
-					FlxG.sound.play(Paths.sound('Lights_Turn_On'));
-					snapCamFollowToPos(400, -2050);
-					FlxG.camera.focusOn(camFollow);
-					FlxG.camera.zoom = 1.5;
-
-					new FlxTimer().start(0.8, function(tmr:FlxTimer)
-					{
-						camHUD.visible = true;
-						remove(blackScreen);
-						FlxTween.tween(FlxG.camera, {zoom: defaultCamZoom}, 2.5, {
-							ease: FlxEase.quadInOut,
-							onComplete: function(twn:FlxTween)
-							{
-								startCountdown();
-							}
-						});
-					});
-				case 'senpai' | 'roses' | 'thorns':
-					if(daSong == 'roses') FlxG.sound.play(Paths.sound('ANGRY'));
-					schoolIntro(doof);
-
-				case 'ugh' | 'guns' | 'stress':
-					tankIntro();
+				case "indignation":
+					startVideo('Indignation');
 
 				default:
 					startCountdown();
@@ -4144,7 +4112,7 @@ class PlayState extends MusicBeatState
 					ob5.alpha = 1;
 					ob4.alpha = 1;
 					ob3.alpha = 0;
-					modifier = 2;
+					modifier = 3;
 				}
 
 			case 'Kill Topham':
@@ -4286,9 +4254,26 @@ class PlayState extends MusicBeatState
 				} else {
 					FunkinLua.setVarInArray(this, value1, value2);
 				}
+
+			case 'Start Rain':
+				FlxTween.tween(ob6, {alpha: 1}, 0.4, {ease: FlxEase.linear, onComplete:
+					function (twn:FlxTween)
+					{
+						
+					}
+				});
+
+				FlxTween.tween(ob7, {alpha: 0.60}, 0.4, {ease: FlxEase.linear, onComplete:
+					function (twn:FlxTween)
+					{
+						
+					}
+				});
+
 			case 'Play Video':
 				var whiteSprite:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.WHITE);
 				whiteSprite.cameras = [camHUD];
+				add(whiteSprite);
 				startVideo('jamescrashscene');
 		}
 		callOnLuas('onEvent', [eventName, value1, value2]);
