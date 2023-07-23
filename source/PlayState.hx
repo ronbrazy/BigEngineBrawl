@@ -302,6 +302,8 @@ class PlayState extends MusicBeatState
 		'godrays remix' => 'The Old Guards Van', 
 	];
 
+	var monochromeSprites:Array<String> = ['always', 'design', 'nobody', 'send', 'GETTHEFUCKOVERHERE'];
+
 	var achieves:Array<String> = [];
 
 	public static var campaignScore:Int = 0;
@@ -350,6 +352,7 @@ class PlayState extends MusicBeatState
 	private var controlArray:Array<String>;
 
 	var overlaySprs:Array<FlxSprite> = [];
+	var belowArrowGrp:FlxSpriteGroup;
 	var overDad:Array<FlxSprite> = [];
 	var beatSprs:Array<FlxSprite> = [];
 	var ob1:FlxSprite;
@@ -1307,6 +1310,10 @@ class PlayState extends MusicBeatState
 		add(timeBar);
 		add(timeTxt);
 		timeBarBG.sprTracker = timeBar;
+
+		belowArrowGrp = new FlxSpriteGroup();
+		belowArrowGrp.cameras = [camHUD];
+		add(belowArrowGrp);
 
 		strumLineNotes = new FlxTypedGroup<StrumNote>();
 		add(strumLineNotes);
@@ -4269,6 +4276,21 @@ class PlayState extends MusicBeatState
 						
 					}
 				});
+
+			case 'fnaf':
+				var randomNumber:Int = FlxG.random.int(0, 100);
+				var randomSprite:Int = FlxG.random.int(0, 4);
+				if (randomNumber == 0) randomSprite == 4;
+
+				var jumpScare:FlxSprite = new FlxSprite().loadGraphic(Paths.image('monochrome/${monochromeSprites[randomSprite]}'));
+				jumpScare.setGraphicSize(Std.int(FlxG.width));
+				jumpScare.updateHitbox();
+				jumpScare.cameras = [camHUD];
+				belowArrowGrp.add(jumpScare);
+				new FlxTimer().start(Std.parseFloat(value1), function(timer:FlxTimer)
+					{
+						belowArrowGrp.remove(jumpScare);
+					});
 
 			case 'Play Video':
 				var whiteSprite:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.WHITE);

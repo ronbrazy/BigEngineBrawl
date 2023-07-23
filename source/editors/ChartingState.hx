@@ -79,6 +79,7 @@ class ChartingState extends MusicBeatState
 	var eventStuff:Array<Dynamic> =
 	[
 		['', "Nothing. Yep, that's right."],
+		['fnaf', 'funee jumpscare'],
 		['Start Rain', 'starts the rain on sad story'],
 		['White Flash',''],
 		['Kill Topham', 'specifically made for confusion and delay'],
