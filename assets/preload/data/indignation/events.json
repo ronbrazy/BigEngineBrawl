@@ -98,6 +98,73 @@
 						"Play Animation",
 						"callforbackup",
 						"Dad"
+					],
+					[
+						"BF Fade",
+						"1",
+						"0"
+					],
+					[
+						"HUD Fade",
+						"1",
+						"0"
+					],
+					[
+						"Set Cam Zoom",
+						"0.7",
+						""
+					]
+				]
+			],
+			[
+				63281.25,
+				[
+					[
+						"Set Cam Zoom",
+						"0.55",
+						""
+					]
+				]
+			],
+			[
+				69000,
+				[
+					[
+						"opendoor",
+						"gordon",
+						"close"
+					]
+				],
+				null,
+				"Henry Note"
+			],
+			[
+				69900,
+				[
+					[
+						"opendoor",
+						"henry",
+						"open"
+					],
+					[
+						"HUD Fade",
+						"1",
+						"1"
+					],
+					[
+						"BF Fade",
+						"1",
+						"1"
+					]
+				]
+			],
+			[
+				141900,
+				[
+					[
+						"opendoor",
+						"james",
+						"open"
 					]
 				]
 			],
@@ -108,6 +175,21 @@
 						"Play Animation",
 						"speech",
 						"Dad"
+					],
+					[
+						"opendoor",
+						"gordon",
+						"open"
+					],
+					[
+						"HUD Fade",
+						"1",
+						"0"
+					],
+					[
+						"BF Fade",
+						"1",
+						"0"
 					]
 				]
 			],
@@ -118,6 +200,16 @@
 						"White Flash",
 						"1",
 						""
+					],
+					[
+						"HUD Fade",
+						"1",
+						"1"
+					],
+					[
+						"BF Fade",
+						"1",
+						"1"
 					]
 				]
 			],
