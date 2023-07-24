@@ -260,6 +260,7 @@ class TitleState extends MusicBeatState
 	
 			var video:MP4Handler = new MP4Handler();
 			video.playVideo(filepath);
+			video.volume = 0;
 			video.openingCallback = function()
 				{
 					video.stop();	
