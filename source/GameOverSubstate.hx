@@ -87,7 +87,7 @@ class GameOverSubstate extends MusicBeatSubstate
 			endBullshit();
 		}
 
-		if (controls.BACK)
+		if (controls.BACK && !ClientPrefs.firstTime)
 		{
 			FlxG.sound.music.stop();
 			PlayState.deathCounter = 0;
