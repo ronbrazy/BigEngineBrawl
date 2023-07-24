@@ -139,6 +139,16 @@
 				"Henry Note"
 			],
 			[
+				69300,
+				[
+					[
+						"Set Camera Target",
+						"henry",
+						""
+					]
+				]
+			],
+			[
 				69900,
 				[
 					[
@@ -159,12 +169,37 @@
 				]
 			],
 			[
+				141450,
+				[
+					[
+						"Play Animation",
+						"HUH",
+						"henry"
+					]
+				]
+			],
+			[
 				141900,
 				[
 					[
 						"opendoor",
 						"james",
 						"open"
+					],
+					[
+						"Set Camera Target",
+						"james",
+						""
+					]
+				]
+			],
+			[
+				180600,
+				[
+					[
+						"Set Camera Target",
+						"gordon",
+						""
 					]
 				]
 			],
@@ -190,6 +225,106 @@
 						"BF Fade",
 						"1",
 						"0"
+					]
+				]
+			],
+			[
+				184950,
+				[
+					[
+						"Set Camera Target",
+						"james",
+						""
+					]
+				]
+			],
+			[
+				185100,
+				[
+					[
+						"Play Animation",
+						"ugh",
+						"james"
+					]
+				]
+			],
+			[
+				185400,
+				[
+					[
+						"Set Camera Target",
+						"henry",
+						""
+					]
+				]
+			],
+			[
+				185550,
+				[
+					[
+						"Play Animation",
+						"whatever",
+						"henry"
+					]
+				]
+			],
+			[
+				186225,
+				[
+					[
+						"Set Camera Target",
+						"gordon",
+						""
+					]
+				]
+			],
+			[
+				197250,
+				[
+					[
+						"Set Camera Target",
+						"james",
+						""
+					]
+				]
+			],
+			[
+				197475,
+				[
+					[
+						"Play Animation",
+						"DISGUSTING",
+						"james"
+					]
+				]
+			],
+			[
+				198150,
+				[
+					[
+						"Set Camera Target",
+						"henry",
+						""
+					]
+				]
+			],
+			[
+				198375,
+				[
+					[
+						"Play Animation",
+						"DESPICABLE",
+						"henry"
+					]
+				]
+			],
+			[
+				199500,
+				[
+					[
+						"Set Camera Target",
+						"gordon",
+						""
 					]
 				]
 			],

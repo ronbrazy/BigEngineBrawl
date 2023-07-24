@@ -889,37 +889,37 @@ class PlayState extends MusicBeatState
 					ob1.updateHitbox();
 					add(ob1);
 					
-					ob2 = new FlxSprite(-912,-187);
+					ob2 = new FlxSprite(-918,-177);
 					ob2.antialiasing = ClientPrefs.globalAntialiasing;
 					ob2.frames = Paths.getSparrowAtlas('bgs/indignation/door_open');
 					ob2.animation.addByPrefix('indig_shed doorcloseidle','door open closed',24,true);
 					ob2.animation.addByPrefix('indig_shed dooropenidle','door open idle',24,true);
 					ob2.animation.addByPrefix('indig_shed dooropen','door open open',24,false);
 					ob2.animation.play('indig_shed doorcloseidle');
-					ob2.setGraphicSize(975);
+					ob2.setGraphicSize(985);
 					ob2.updateHitbox();
 					overDad.push(ob2);
 	
-					ob3 = new FlxSprite(1656,-187);
+					ob3 = new FlxSprite(1645,-177);
 					ob3.antialiasing = ClientPrefs.globalAntialiasing;
 					ob3.frames = Paths.getSparrowAtlas('bgs/indignation/door_open');
 					ob3.animation.addByPrefix('indig_shed doorcloseidle','door open closed',24,true);
 					ob3.animation.addByPrefix('indig_shed dooropenidle','door open idle',24,true);
 					ob3.animation.addByPrefix('indig_shed dooropen','door open open',24,false);
 					ob3.animation.play('indig_shed doorcloseidle');
-					ob3.setGraphicSize(975);
+					ob3.setGraphicSize(985);
 					ob3.updateHitbox();
 					overDad.push(ob3);
 	
-					ob4 = new FlxSprite(378,-187);
+					ob4 = new FlxSprite(380,-177);
 					ob4.antialiasing = ClientPrefs.globalAntialiasing;
 					ob4.frames = Paths.getSparrowAtlas('bgs/indignation/door_gordon');
-					ob4.animation.addByPrefix('indig_shed dooropenidle','door gordon idle',24,true);
-					ob4.animation.addByPrefix('indig_shed doorcloseidle','door gordon close idle',24,true);
-					ob4.animation.addByPrefix('indig_shed doorclose','door gordon close',24,false);
-					ob4.animation.addByPrefix('indig_shed dooropen','door gordon open',24,false);
+					ob4.animation.addByPrefix('indig_shed dooropenidle','door middle idle',24,true);
+					ob4.animation.addByPrefix('indig_shed doorcloseidle','door middle alt idle',24,true);
+					ob4.animation.addByPrefix('indig_shed doorclose','door middle close',24,false);
+					ob4.animation.addByPrefix('indig_shed dooropen','door middle open',24,false);
 					ob4.animation.play('indig_shed dooropenidle');
-					ob4.setGraphicSize(975);
+					ob4.setGraphicSize(985);
 					ob4.updateHitbox();
 					overDad.push(ob4);
 
