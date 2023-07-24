@@ -371,6 +371,9 @@ class PlayState extends MusicBeatState
 	var ob14:FlxSprite;
 	var ob15:FlxSprite;
 	var ob16:FlxSprite;
+	var singChar:String = '';
+	var exChar1:Character = null;
+	var exChar2:Character = null;
 	var jamessky:FlxBackdrop;
 	var modifier:Float = 1;
 	var mech1:FlxSprite;
@@ -888,30 +891,48 @@ class PlayState extends MusicBeatState
 					
 					ob2 = new FlxSprite(-912,-187);
 					ob2.antialiasing = ClientPrefs.globalAntialiasing;
-					ob2.frames = Paths.getSparrowAtlas('bgs/indignation/indig_sheddoor');
-					ob2.animation.addByPrefix('indig_shed doorcloseidle','indig_shed doorcloseidle',24,true);
+					ob2.frames = Paths.getSparrowAtlas('bgs/indignation/door_open');
+					ob2.animation.addByPrefix('indig_shed doorcloseidle','door open closed',24,true);
+					ob2.animation.addByPrefix('indig_shed dooropenidle','door open idle',24,true);
+					ob2.animation.addByPrefix('indig_shed dooropen','door open open',24,false);
 					ob2.animation.play('indig_shed doorcloseidle');
 					ob2.setGraphicSize(975);
 					ob2.updateHitbox();
-					add(ob2);
+					overDad.push(ob2);
 	
 					ob3 = new FlxSprite(1656,-187);
 					ob3.antialiasing = ClientPrefs.globalAntialiasing;
-					ob3.frames = Paths.getSparrowAtlas('bgs/indignation/indig_sheddoor');
-					ob3.animation.addByPrefix('indig_shed doorcloseidle','indig_shed doorcloseidle',24,true);
+					ob3.frames = Paths.getSparrowAtlas('bgs/indignation/door_open');
+					ob3.animation.addByPrefix('indig_shed doorcloseidle','door open closed',24,true);
+					ob3.animation.addByPrefix('indig_shed dooropenidle','door open idle',24,true);
+					ob3.animation.addByPrefix('indig_shed dooropen','door open open',24,false);
 					ob3.animation.play('indig_shed doorcloseidle');
 					ob3.setGraphicSize(975);
 					ob3.updateHitbox();
-					add(ob3);
+					overDad.push(ob3);
 	
 					ob4 = new FlxSprite(378,-187);
 					ob4.antialiasing = ClientPrefs.globalAntialiasing;
-					ob4.frames = Paths.getSparrowAtlas('bgs/indignation/indig_sheddoor');
-					ob4.animation.addByPrefix('indig_shed dooropenidle','indig_shed dooropenidle',24,true);
+					ob4.frames = Paths.getSparrowAtlas('bgs/indignation/door_gordon');
+					ob4.animation.addByPrefix('indig_shed dooropenidle','door gordon idle',24,true);
+					ob4.animation.addByPrefix('indig_shed doorcloseidle','door gordon close idle',24,true);
+					ob4.animation.addByPrefix('indig_shed doorclose','door gordon close',24,false);
+					ob4.animation.addByPrefix('indig_shed dooropen','door gordon open',24,false);
 					ob4.animation.play('indig_shed dooropenidle');
 					ob4.setGraphicSize(975);
 					ob4.updateHitbox();
 					overDad.push(ob4);
+
+					exChar1 = new Character(-220, 290, 'indighenry');
+					startCharacterPos(exChar1, true);
+					add(exChar1);
+
+					exChar2 = new Character(2400, 310, 'indigjames');
+					startCharacterPos(exChar2, true);
+					add(exChar2);
+
+					exChar1.recalculateDanceIdle();
+					exChar2.recalculateDanceIdle();
 					
 	
 					//editable = true;
@@ -2384,6 +2405,14 @@ class PlayState extends MusicBeatState
 				if (tmr.loopsLeft % dad.danceEveryNumBeats == 0 && dad.animation.curAnim != null && !dad.animation.curAnim.name.startsWith('sing') && !dad.stunned)
 				{
 					dad.dance();
+
+					for (i in [exChar1,exChar2])
+						{
+							if (i != null)
+							{
+									i.dance();
+							}
+						}
 				}
 
 				var introAssets:Map<String, Array<String>> = new Map<String, Array<String>>();
@@ -2758,6 +2787,10 @@ class PlayState extends MusicBeatState
 
 				switch(swagNote.noteType)
 				{
+					case 'James Note':
+						//this is just here to cancel out the entire note skin changing for every note lol
+					case 'Henry Note':
+						//this is just here to cancel out the entire note skin changing for every note lol
 					case 'Whistle Note':
 						//this is just here to cancel out the entire note skin changing for every note lol
 					case 'Signal Note':
@@ -2789,6 +2822,10 @@ class PlayState extends MusicBeatState
 
 							switch(sustainNote.noteType)
 							{
+								case 'James Note':
+									//this is just here to cancel out the entire note skin changing for every note lol
+								case 'Henry Note':
+									//this is just here to cancel out the entire note skin changing for every note lol
 								case 'Whistle Note':
 									//this is just here to cancel out the entire note skin changing for every note lol
 								case 'Signal Note':
@@ -4126,6 +4163,10 @@ class PlayState extends MusicBeatState
 				ob4.visible = false;
 				dad.visible = true;
 
+			case 'BF Fade':
+				FlxTween.tween(boyfriend, {alpha: Std.parseFloat(value2)}, Std.parseFloat(value1), {
+					ease: FlxEase.cubeInOut
+				});
 			case 'HUD Fade':
 				FlxTween.tween(camHUD, {alpha: Std.parseFloat(value2)}, Std.parseFloat(value1), {
 					ease: FlxEase.cubeInOut
@@ -4291,6 +4332,53 @@ class PlayState extends MusicBeatState
 					{
 						belowArrowGrp.remove(jumpScare);
 					});
+
+			case 'opendoor':
+				switch(value1)
+				{
+					case 'henry':
+						ob2.animation.play('indig_shed dooropen');
+						ob2.animation.finishCallback = function(name:String)
+							{
+								if(name == 'indig_shed dooropen')
+									{
+										ob2.animation.play('indig_shed dooropenidle');
+									}
+							}
+
+					case 'james':
+						ob3.animation.play('indig_shed dooropen');
+						ob3.animation.finishCallback = function(name:String)
+							{
+								if(name == 'indig_shed dooropen')
+									{
+										ob3.animation.play('indig_shed dooropenidle');
+									}
+							}
+					case 'gordon':
+						if (value2 == 'open')
+						{
+							ob4.animation.play('indig_shed dooropen');
+							ob4.animation.finishCallback = function(name:String)
+								{
+									if(name == 'indig_shed dooropen')
+										{
+											ob4.animation.play('indig_shed dooropenidle');
+										}
+								}
+						}
+						if (value2 == 'close')
+							{
+								ob4.animation.play('indig_shed doorclose');
+								ob4.animation.finishCallback = function(name:String)
+									{
+										if(name == 'indig_shed doorclose')
+											{
+												ob4.animation.play('indig_shed doorcloseidle');
+											}
+									}
+							}
+				}
 
 			case 'Play Video':
 				var whiteSprite:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.WHITE);
@@ -5144,8 +5232,22 @@ class PlayState extends MusicBeatState
 
 			if(char != null)
 			{
-				char.playAnim(animToPlay, true);
-				char.holdTimer = 0;
+				if (note.noteType == 'Henry Note')
+				{
+					exChar1.playAnim(animToPlay, true);
+					exChar1.holdTimer = 0;
+				}
+				else if(note.noteType == 'James Note')
+				{
+					exChar2.playAnim(animToPlay, true);
+					exChar2.holdTimer = 0;
+				}
+				else
+				{
+					char.playAnim(animToPlay, true);
+					char.holdTimer = 0;
+				}
+				
 			}
 		}
 
@@ -5550,6 +5652,14 @@ class PlayState extends MusicBeatState
 		{
 			dad.dance();
 		}
+		for (i in [exChar1,exChar2])
+			{
+				if (i != null)
+				if (curBeat % 1 == 0 && i.animation.curAnim != null && !i.animation.curAnim.name.startsWith('sing'))
+				{
+					i.dance();
+				}
+			}
 
 		switch (curStage)
 		{

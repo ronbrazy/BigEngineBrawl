@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="door open.png"><SubTexture name="door open open0000" x="631" y="0" width="554" height="793" frameX="-46" frameY="0" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0001" x="1185" y="0" width="565" height="793" frameX="-40" frameY="0" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0002" x="1185" y="0" width="565" height="793" frameX="-40" frameY="0" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0003" x="1750" y="0" width="566" height="792" frameX="-40" frameY="-3" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0004" x="1750" y="0" width="566" height="792" frameX="-40" frameY="-3" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0005" x="1750" y="792" width="560" height="787" frameX="-43" frameY="-8" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0006" x="1750" y="792" width="560" height="787" frameX="-43" frameY="-8" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0007" x="0" y="793" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0008" x="631" y="793" width="646" height="793" frameX="0" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0009" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0010" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0011" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0012" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0013" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0014" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0015" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0016" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0017" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0018" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0019" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0020" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0021" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0022" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0023" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0024" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0025" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0026" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0027" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open open0028" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open idle0000" x="0" y="0" width="631" height="793" frameX="-7" frameY="-2" frameWidth="646" frameHeight="795" />
+<SubTexture name="door open closed0000" x="1185" y="0" width="565" height="793" frameX="-40" frameY="0" frameWidth="646" frameHeight="795" />
+</TextureAtlas>

@@ -63,6 +63,8 @@ class ChartingState extends MusicBeatState
 	public static var noteTypeList:Array<String> = //Used for backwards compatibility with 0.1 - 0.3.2 charts, though, you should add your hardcoded custom note types here too.
 	[
 		'',
+		'Henry Note',
+		'James Note',
 		'Alt Animation',
 		'Whistle Note',
 		'Signal Note',
@@ -79,7 +81,8 @@ class ChartingState extends MusicBeatState
 	var eventStuff:Array<Dynamic> =
 	[
 		['', "Nothing. Yep, that's right."],
-		['fnaf', 'funee jumpscare'],
+		['fnaf', 'funee jumpscare, value 1: duration of image popup'],
+		['opendoor', 'opens a door on indignation, value 1: name of engine\n value 2: open/close (only for gordon)'],
 		['Start Rain', 'starts the rain on sad story'],
 		['White Flash',''],
 		['Kill Topham', 'specifically made for confusion and delay'],
@@ -101,6 +104,7 @@ class ChartingState extends MusicBeatState
 		['Change Scroll Speed', "Value 1: Scroll Speed Multiplier (1 is default)\nValue 2: Time it takes to change fully in seconds."],
 		['Set Property', "Value 1: Variable name\nValue 2: New value"],
 		['HUD Fade'],
+		['BF Fade'],
 		['Camera Fade'],
 		['Camera Zoom'],
 		['Play Video']

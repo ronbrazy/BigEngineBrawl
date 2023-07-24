@@ -130,6 +130,16 @@ class Note extends FlxSprite
 
 		if(noteData > -1 && noteType != value) {
 			switch(value) {
+				case 'Henry Note':
+					reloadNote('noteskins/','HenryNote');
+					colorSwap.hue = 0;
+					colorSwap.saturation = 0;
+					colorSwap.brightness = 0;
+				case 'James Note':
+					reloadNote('noteskins/','jameNote');
+					colorSwap.hue = 0;
+					colorSwap.saturation = 0;
+					colorSwap.brightness = 0;
 				case 'Whistle Note':
 					ignoreNote = mustPress;
 					reloadNote('notes/','whistle_special_note');
