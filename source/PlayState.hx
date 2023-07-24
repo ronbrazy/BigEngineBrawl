@@ -4073,6 +4073,10 @@ class PlayState extends MusicBeatState
 				//trace('Anim to play: ' + value1);
 				var char:Character = dad;
 				switch(value2.toLowerCase().trim()) {
+					case 'henry':
+						char = exChar1;
+					case 'james':
+						char = exChar2;
 					case 'bf' | 'boyfriend':
 						char = boyfriend;
 					case 'gf' | 'girlfriend':
@@ -4170,7 +4174,12 @@ class PlayState extends MusicBeatState
 			case 'HUD Fade':
 				FlxTween.tween(camHUD, {alpha: Std.parseFloat(value2)}, Std.parseFloat(value1), {
 					ease: FlxEase.cubeInOut
-				});	
+				});
+			case 'Set Camera Target':
+				if (value1 == 'gordon')
+					singChar = '';
+				else
+					singChar = value1;	
 			case 'Camera Fade':
 				if (gameBlackLayerAlphaTween != null)
 				{
@@ -4419,9 +4428,25 @@ class PlayState extends MusicBeatState
 	{
 		if(isDad)
 		{
-			camFollow.set(dad.getMidpoint().x + 150, dad.getMidpoint().y - 100);
-			camFollow.x += dad.cameraPosition[0] + opponentCameraOffset[0];
-			camFollow.y += dad.cameraPosition[1] + opponentCameraOffset[1];
+			switch(singChar)
+			{
+				case 'henry':
+					camFollow.set(exChar1.getMidpoint().x + 150, exChar1.getMidpoint().y - 100);
+					camFollow.x += exChar1.cameraPosition[0] + opponentCameraOffset[0];
+					camFollow.y += exChar1.cameraPosition[1] + opponentCameraOffset[1];
+				case 'james':
+					camFollow.set(exChar2.getMidpoint().x + 150, exChar2.getMidpoint().y - 100);
+					camFollow.x += exChar2.cameraPosition[0] + opponentCameraOffset[0];
+					camFollow.y += exChar2.cameraPosition[1] + opponentCameraOffset[1];
+				case '':
+					camFollow.set(dad.getMidpoint().x + 150, dad.getMidpoint().y - 100);
+					camFollow.x += dad.cameraPosition[0] + opponentCameraOffset[0];
+					camFollow.y += dad.cameraPosition[1] + opponentCameraOffset[1];
+				default:
+					camFollow.set(dad.getMidpoint().x + 150, dad.getMidpoint().y - 100);
+					camFollow.x += dad.cameraPosition[0] + opponentCameraOffset[0];
+					camFollow.y += dad.cameraPosition[1] + opponentCameraOffset[1];
+			}
 			tweenCamIn();
 		}
 		else

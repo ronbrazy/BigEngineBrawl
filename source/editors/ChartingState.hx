@@ -105,6 +105,7 @@ class ChartingState extends MusicBeatState
 		['Set Property', "Value 1: Variable name\nValue 2: New value"],
 		['HUD Fade'],
 		['BF Fade'],
+		['Set Camera Target', 'value 1: henry/james/gordon'],
 		['Camera Fade'],
 		['Camera Zoom'],
 		['Play Video']
