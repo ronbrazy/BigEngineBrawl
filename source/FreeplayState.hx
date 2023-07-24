@@ -67,6 +67,11 @@ class FreeplayState extends MusicBeatState
         'gordon',
         'edward'
     ];
+
+	private static var edwardList:Array<Dynamic> = [
+		'old-reliable'
+	];
+
     var cursorSprite:FlxSprite;
     var cursorSprite2:FlxSprite;
 	var backButton:FlxSprite;
@@ -91,6 +96,8 @@ class FreeplayState extends MusicBeatState
 		trace(curDifficulty);
 		curSongList = [];
 		CoolUtil.difficulties = CoolUtil.defaultDifficulties.copy();
+
+		allowEdward = Achievements.isAchievementUnlocked('award100');
 		
 		persistentUpdate = true;
 		PlayState.isStoryMode = false;
@@ -179,7 +186,28 @@ class FreeplayState extends MusicBeatState
 
 				var testArray:Array<FlxSprite> = [];
 
-				if (loadedTabs[i] == null) continue;
+				if (i == 4)
+					{
+						if(allowEdward)
+							{
+								var songSprite:FlxSprite = new FlxSprite(500, 75).loadGraphic(Paths.image('freeplay/songbuttons/${edwardList[0]}','secretStuff'));
+								grpButtons.add(songSprite);
+								songSprite.setGraphicSize(Std.int(songSprite.width * 0.6));
+								songSprite.updateHitbox();
+								songSprite.visible = false;
+								testArray.push(songSprite);
+
+								if (curSelected == i)
+									{
+										songSprite.alpha = 1;
+									}
+								
+								curButtons.push(testArray);
+									
+							}
+						else continue;
+					}
+				else
 				for (j in 0...loadedTabs[i].songs.length)
 					{
 						trace(loadedTabs[i].songs[j]);
@@ -383,7 +411,10 @@ class FreeplayState extends MusicBeatState
 																{tweening = false;}});
 														}
 												}
-											curSongList = loadedTabs[curSelected].songs;
+											if(curSelected == 4)
+												curSongList = edwardList;
+											else
+												curSongList = loadedTabs[curSelected].songs;
 
 											grpOptions.members[i].animation.play('select');
 											FlxG.sound.play(Paths.sound('engineselect', 'menu'));
@@ -411,7 +442,10 @@ class FreeplayState extends MusicBeatState
 					if (FlxG.mouse.overlaps(curButtons[curSelected][i]) && FlxG.mouse.x < curButtons[curSelected][i].x + curButtons[curSelected][i].width/2 && FlxG.mouse.y < curButtons[curSelected][i].y + curButtons[curSelected][i].height/2)
 						{
 							changeCursor(true);
-							curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[curSelected].songs[i]} glow','menu'));
+							if (curSelected != 4)
+								curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[curSelected].songs[i]} glow','menu'));
+							else
+								curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${edwardList[0]} glow','secretStuff'));
 							if (FlxG.mouse.justPressed)
 								{
 									FlxG.sound.play(Paths.sound('confirmMenu'));
@@ -421,7 +455,10 @@ class FreeplayState extends MusicBeatState
 						}
 					else
 					{
-						curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[curSelected].songs[i]}','menu'));
+						if (curSelected != 4)
+							curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[curSelected].songs[i]}','menu'));
+						else
+							curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${edwardList[0]}','secretStuff'));
 					}
 				}
 		}

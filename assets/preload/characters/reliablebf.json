@@ -1,103 +1,103 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				-5,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "idle",
-			"indices": [],
-			"name": "bf idle"
-		},
-		{
-			"offsets": [
-				20,
-				-3
-			],
-			"loop": false,
 			"fps": 24,
-			"anim": "singLEFT",
-			"indices": [],
-			"name": "bf left"
+			"name": "bf idle",
+			"indices": []
 		},
 		{
+			"loop": false,
+			"offsets": [
+				15,
+				-2
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "bf left",
+			"indices": []
+		},
+		{
+			"loop": false,
 			"offsets": [
 				-3,
-				-15
+				-10
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singDOWN",
-			"indices": [],
-			"name": "bf down"
+			"fps": 24,
+			"name": "bf down",
+			"indices": []
 		},
 		{
-			"offsets": [
-				-24,
-				15
-			],
 			"loop": false,
-			"fps": 24,
+			"offsets": [
+				-17,
+				9
+			],
 			"anim": "singUP",
-			"indices": [],
-			"name": "bf up"
+			"fps": 24,
+			"name": "bf up",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
-				23,
-				-8
+				17,
+				-5
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singLEFTmiss",
-			"fps": 24,
-			"name": "bf miss left",
-			"indices": []
+			"indices": [],
+			"name": "bf miss left"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				3,
-				-15
+				0,
+				-10
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singDOWNmiss",
-			"fps": 24,
-			"name": "bf miss down",
-			"indices": []
+			"indices": [],
+			"name": "bf miss down"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				-24,
-				37
+				-16,
+				23
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singUPmiss",
+			"indices": [],
+			"name": "bf miss up"
+		},
+		{
+			"offsets": [
+				-23,
+				-4
+			],
+			"loop": false,
 			"fps": 24,
-			"name": "bf miss up",
-			"indices": []
+			"anim": "singRIGHTmiss",
+			"indices": [],
+			"name": "bf miss right"
 		},
 		{
 			"loop": false,
 			"offsets": [
-				-34,
-				-6
-			],
-			"anim": "singRIGHTmiss",
-			"fps": 24,
-			"name": "bf miss right",
-			"indices": []
-		},
-		{
-			"offsets": [
-				-30,
+				-21,
 				0
 			],
-			"loop": false,
-			"fps": 24,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "bf right"
+			"fps": 24,
+			"name": "bf right",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
@@ -114,9 +114,9 @@
 		209
 	],
 	"camera_position": [
-		130,
-		-180
+		20,
+		180
 	],
 	"sing_duration": 4,
-	"scale": 0.8
+	"scale": 0.5
 }

@@ -18,7 +18,8 @@ class Achievements {
 		['It isn\'t wrong, but we just don\'t do it.',	'(Get a Game Over)',				'awardgameover',		false],
 		['The Stout Gentleman.',		'(Play Confusion & Delay)',							'awardconfusiondelay',	false],
 		['Express Coming Through!',		'(Full Combo the Main Week)',						'awardexpress',			false],
-		['Hero of Sodor.',				'(Discover Loathed)',								'awardloathed',			false]
+		['Hero of Sodor.',				'(Discover Loathed)',								'awardloathed',			false],
+		['Really Useful Engine!',		'(Unlock all achievements)',						'award100',				false]
 	];
 	public static var achievementsMap:Map<String, Bool> = new Map<String, Bool>();
 

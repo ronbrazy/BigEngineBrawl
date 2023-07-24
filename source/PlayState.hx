@@ -580,10 +580,10 @@ class PlayState extends MusicBeatState
 						defaultZoom: 1.4,
 						isPixelStage: false,
 
-						boyfriend: [470, -500],
+						boyfriend: [400, -500],
 						girlfriend: [400, -230],
 						opponent: [100, 100],
-						hide_girlfriend: false,
+						hide_girlfriend: true,
 
 						camera_boyfriend: [0, 0],
 						camera_opponent: [0, 0],
