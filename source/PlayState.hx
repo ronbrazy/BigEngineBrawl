@@ -572,42 +572,40 @@ class PlayState extends MusicBeatState
 		var stageData:StageFile = StageData.getStageFile(curStage);
 		if (curStage == 'oldreliable')
 		{ //Stage couldn't be found, create a dummy stage for preventing a crash
-			switch(SONG.song)
-			{
-				case 'old reliable':
-					stageData = {
-						directory: "",
-						defaultZoom: 1.4,
-						isPixelStage: false,
+			stageData = {
+				directory: "",
+				defaultZoom: 1.4,
+				isPixelStage: false,
 
-						boyfriend: [400, -500],
-						girlfriend: [400, -230],
-						opponent: [100, 100],
-						hide_girlfriend: true,
+				boyfriend: [400, -500],
+				girlfriend: [400, -230],
+				opponent: [100, 100],
+				hide_girlfriend: true,
 
-						camera_boyfriend: [0, 0],
-						camera_opponent: [0, 0],
-						camera_girlfriend: [0, 0],
-						camera_speed: 1
-					};
-					case 'loathed':
-						stageData = {
-							directory: "",
-							defaultZoom: 0.9,
-							isPixelStage: false,
-	
-							boyfriend: [770, 100],
-							girlfriend: [400, 130],
-							opponent: [100, 100],
-							hide_girlfriend: false,
-	
-							camera_boyfriend: [0, 0],
-							camera_opponent: [0, 0],
-							camera_girlfriend: [0, 0],
-							camera_speed: 1
-						};
-			}
+				camera_boyfriend: [0, 0],
+				camera_opponent: [0, 0],
+				camera_girlfriend: [0, 0],
+				camera_speed: 1
+			};
 		}
+		if (curStage == 'loathed')
+			{
+				stageData = {
+					directory: "",
+					defaultZoom: 0.9,
+					isPixelStage: false,
+
+					boyfriend: [770, 100],
+					girlfriend: [400, 130],
+					opponent: [100, 100],
+					hide_girlfriend: true,
+
+					camera_boyfriend: [0, 0],
+					camera_opponent: [0, 0],
+					camera_girlfriend: [0, 0],
+					camera_speed: 1
+				};
+			}
 
 		defaultCamZoom = stageData.defaultZoom;
 		isPixelStage = stageData.isPixelStage;

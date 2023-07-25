@@ -99,6 +99,11 @@ class Song
 		}
 		#end
 
+		if (PlayState.hiddenSongs.contains(formattedFolder.replace("-", " ")))
+			{
+				rawJson = Assets.getText(Paths.json(formattedFolder + '/' + formattedSong, 'secretStuff')).trim();
+			}
+
 		if(rawJson == null) {
 			#if sys
 			rawJson = File.getContent(Paths.json(formattedFolder + '/' + formattedSong)).trim();
