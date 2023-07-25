@@ -1053,7 +1053,7 @@ class PlayState extends MusicBeatState
 					if (!ClientPrefs.fatassPlayed)
 						tophamSound = FlxG.sound.load(Paths.sound('cnd/fatcontroller_unlock3', 'menu'));
 					else
-						tophamSound = FlxG.sound.load(Paths.sound('cnd/retry/confusion_retry_${FlxG.random.int(1, 8)}', 'menu'));
+						tophamSound = FlxG.sound.load(Paths.sound('cnd/retry/confusion_retry_${FlxG.random.int(1, 7)}', 'menu'));
                     tophamSound.play();
 					camHUD.alpha = 0;
 

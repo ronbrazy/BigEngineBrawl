@@ -30,15 +30,17 @@ class CustomFadeTransition extends MusicBeatSubstate {
 		var width:Int = Std.int(FlxG.width / zoom);
 		var height:Int = Std.int(FlxG.height / zoom);
 
-		steamTrans = new FlxSprite();
-		steamTrans.antialiasing = ClientPrefs.globalAntialiasing;
+		steamTrans = new FlxSprite(0, -1);
 		steamTrans.frames = Paths.getSparrowAtlas('steamtransition', 'menu');
 		steamTrans.animation.addByPrefix('intro','Intro',24,false);
-		steamTrans.animation.addByPrefix('middle','Middle',24,false);
 		steamTrans.animation.addByPrefix('end','end',24,false);
+		steamTrans.antialiasing = ClientPrefs.globalAntialiasing;
 		//steamTrans.setGraphicSize(Std.int(FlxG.width));
 		//steamTrans.updateHitbox();
 		//steamTrans.screenCenter();
+		add(steamTrans);
+		
+		
 		if (!isTransIn) 
 			{
 				steamTrans.animation.play('intro');
@@ -49,8 +51,6 @@ class CustomFadeTransition extends MusicBeatSubstate {
 				steamTrans.animation.play('end');
 				steamTrans.animation.finishCallback = function(name:String){close();};
 			}
-		
-		add(steamTrans);
 
 		if(nextCamera != null) {
 			steamTrans.cameras = [nextCamera];
