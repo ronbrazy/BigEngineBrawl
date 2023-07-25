@@ -83,12 +83,14 @@ class FreeplayState extends MusicBeatState
 		//Paths.clearStoredMemory();
 		//Paths.clearUnusedMemory();
 
+		TitleState.checkFile();
 		TabData.reloadTabFiles();
 
 		for (i in 0...TabData.tabsList.length)
 			{
 				var tabFile:TabData = TabData.tabsLoaded.get(TabData.tabsList[i]);
-					loadedTabs.push(tabFile);
+				if (i == 3 && TitleState.rwsFuckShit) tabFile.songs.push('loathed');
+				loadedTabs.push(tabFile);
 			}
 
 		curSelected = -1;
@@ -97,7 +99,7 @@ class FreeplayState extends MusicBeatState
 		curSongList = [];
 		CoolUtil.difficulties = CoolUtil.defaultDifficulties.copy();
 
-		allowEdward = true;//Achievements.isAchievementUnlocked('award100');
+		allowEdward = Achievements.isAchievementUnlocked('award100');
 		
 		persistentUpdate = true;
 		PlayState.isStoryMode = false;
@@ -149,7 +151,10 @@ class FreeplayState extends MusicBeatState
 			}
 		}*/
 
-		bg = new FlxSprite().loadGraphic(Paths.image('freeplay/fp_bg','menu'));
+		if (!allowEdward)
+			bg = new FlxSprite().loadGraphic(Paths.image('freeplay/fp_bg','menu'));
+		else
+			bg = new FlxSprite().loadGraphic(Paths.image('freeplay/fp_bg2','menu'));
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		bg.setGraphicSize(Std.int(FlxG.width));
 		trace(bg.width);
@@ -211,7 +216,11 @@ class FreeplayState extends MusicBeatState
 				for (j in 0...loadedTabs[i].songs.length)
 					{
 						trace(loadedTabs[i].songs[j]);
-						var songSprite:FlxSprite = new FlxSprite(100 + (j * 500), 100).loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[i].songs[j]}','menu'));
+						var songSprite:FlxSprite = null;
+						if(loadedTabs[i].songs[j] != 'loathed')
+							songSprite = new FlxSprite(100 + (j * 500), 100).loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[i].songs[j]}','menu'));
+						else
+							songSprite = new FlxSprite(100 + (j * 500), 100).loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[i].songs[j]}','secretStuff'));
 						if (i == 3 && j == 1)
 							{
 								songSprite.x += 100;
@@ -227,7 +236,10 @@ class FreeplayState extends MusicBeatState
 							}
 						if (j == 2)
 							{
-								songSprite.x -= 800;
+								if (i == 1)
+									songSprite.x -= 800;
+								else
+									songSprite.x -= 600;
 								songSprite.y += 100;
 							}
 						grpButtons.add(songSprite);
@@ -443,7 +455,12 @@ class FreeplayState extends MusicBeatState
 						{
 							changeCursor(true);
 							if (curSelected != 4)
-								curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[curSelected].songs[i]} glow','menu'));
+							{
+								if(curSelected == 3 && i != 2)
+									curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[curSelected].songs[i]} glow','menu'));
+								else
+									curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[curSelected].songs[i]} glow','secretStuff'));
+							}
 							else
 								curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${edwardList[0]} glow','secretStuff'));
 							if (FlxG.mouse.justPressed)
@@ -456,7 +473,12 @@ class FreeplayState extends MusicBeatState
 					else
 					{
 						if (curSelected != 4)
-							curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[curSelected].songs[i]}','menu'));
+							{
+								if(curSelected == 3 && i != 2)
+									curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[curSelected].songs[i]}','menu'));
+								else
+									curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[curSelected].songs[i]}','secretStuff'));
+							}
 						else
 							curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${edwardList[0]}','secretStuff'));
 					}

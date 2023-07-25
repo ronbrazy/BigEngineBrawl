@@ -25,7 +25,6 @@ class BebMainMenu extends MusicBeatState
 {
     var curTrain:String = 'thomas';
     var trains:Array<String> = [
-        'edward',
         'gordon',
         'henry',
         'james',
@@ -55,6 +54,9 @@ class BebMainMenu extends MusicBeatState
     {
         Achievements.loadAchievements();
         WeekData.reloadWeekFiles(true);
+
+        if(Achievements.isAchievementUnlocked('award100'))
+            trains.push('edward');
 
         debugKeys = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
         

@@ -339,17 +339,31 @@ class Paths
 		return 'assets/fonts/$key';
 	}
 
+	inline public static function alfredExists(key:String, ?library:String) {
+		if(FileSystem.exists(getPath('Content Manager/$key.cdp', TEXT, library)))
+			{
+				trace('shit found dickhead');
+				return true;
+			}
+		trace('shit not found dickhead');
+		return false;
+	}
+
+
 	inline static public function fileExists(key:String, type:AssetType, ?ignoreMods:Bool = false, ?library:String)
 	{
 		#if MODS_ALLOWED
 		if(FileSystem.exists(mods(currentModDirectory + '/' + key)) || FileSystem.exists(mods(key))) {
+			trace('ur smart');
 			return true;
 		}
 		#end
 
 		if(OpenFlAssets.exists(getPath(key, type))) {
+			trace('ur smart');
 			return true;
 		}
+		trace('shit not found dumbass');
 		return false;
 	}
 

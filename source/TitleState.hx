@@ -81,6 +81,8 @@ class TitleState extends MusicBeatState
 
 	var wackyImage:FlxSprite;
 
+	public static var rwsFuckShit:Bool = false;
+
 	#if TITLE_SCREEN_EASTER_EGG
 	var easterEggKeys:Array<String> = [
 		'SHADOW', 'RIVER', 'SHUBS', 'BBPANZU'
@@ -105,6 +107,8 @@ class TitleState extends MusicBeatState
 		#end
 		// Just to load a mod on start up if ya got one. For mods that change the menu music and bg
 		WeekData.loadTheFirstEnabledMod();
+
+		checkFile();
 
 		BebMainMenu.previousState = 'title';
 
@@ -241,6 +245,11 @@ class TitleState extends MusicBeatState
 		cacheStuff();
 		#end
 	}
+
+	inline public static function checkFile()
+		{
+			rwsFuckShit = Paths.alfredExists('Alfred', 'preload');
+		}
 
 	public function startVideo(name:String)
 		{
