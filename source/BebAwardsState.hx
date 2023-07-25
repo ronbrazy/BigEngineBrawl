@@ -71,12 +71,17 @@ class BebAwardsState extends MusicBeatState
 		DiscordClient.changePresence("Options Menu", null);
 		#end
 
-        for(i in 0...Achievements.achievementsStuff.length)
+        for(i in 0...Achievements.achievementsStuff.length-2)
         {
             if (Achievements.isAchievementUnlocked(Achievements.achievementsStuff[i][2]))
             {
                 achieves.push(Achievements.achievementsStuff[i][2]);
                 achieveDescs.push([Achievements.achievementsStuff[i][0], Achievements.achievementsStuff[i][1]]);
+            }
+            else
+            {
+                achieves.push('awardempty');
+                achieveDescs.push([Achievements.achievementsStuff[i][0], '????']);
             }
         }
         trace(achieves);
@@ -100,7 +105,7 @@ class BebAwardsState extends MusicBeatState
 
         photos = new FlxSpriteGroup();
         var xFuckShit:Int = 0;
-        for (i in 0...achieves.length-2)
+        for (i in 0...achieves.length)
             {
                 
                 var achieveImage:FlxSprite = new FlxSprite().loadGraphic(Paths.image('award portraits/${achieves[i]}','secretStuff'));
@@ -122,6 +127,29 @@ class BebAwardsState extends MusicBeatState
                 xFuckShit++;
                 photos.add(achieveImage);
             }
+
+        if(Achievements.isAchievementUnlocked(Achievements.achievementsStuff[Achievements.achievementsStuff.length-1][2]))
+        {
+            achieves.push(Achievements.achievementsStuff[Achievements.achievementsStuff.length-1][2]);
+            achieveDescs.push([Achievements.achievementsStuff[Achievements.achievementsStuff.length-1][0], Achievements.achievementsStuff[Achievements.achievementsStuff.length-1][1]]);
+
+            var achieveImage:FlxSprite = new FlxSprite(FlxG.width/4*3 - 175, FlxG.height/2 - 225).loadGraphic(Paths.image('award portraits/${achieves[achieves.length-1]}','secretStuff'));
+            achieveImage.scale.x = 0.2;
+            achieveImage.scale.y = 0.2;
+            achieveImage.updateHitbox();
+            photos.add(achieveImage);
+        }
+        else if(Achievements.isAchievementUnlocked(Achievements.achievementsStuff[Achievements.achievementsStuff.length-2][2]))
+        {
+            achieves.push(Achievements.achievementsStuff[Achievements.achievementsStuff.length-1][2]);
+            achieveDescs.push([Achievements.achievementsStuff[Achievements.achievementsStuff.length-1][0], Achievements.achievementsStuff[Achievements.achievementsStuff.length-1][1]]);
+
+            var achieveImage:FlxSprite = new FlxSprite(FlxG.width/4*3 - 175, FlxG.height/2 - 225).loadGraphic(Paths.image('award portraits/${achieves[achieves.length-1]}','secretStuff'));
+            achieveImage.scale.x = 0.2;
+            achieveImage.scale.y = 0.2;
+            achieveImage.updateHitbox();
+            photos.add(achieveImage);
+        }
 
             add(photos);
 
@@ -187,6 +215,17 @@ class BebAwardsState extends MusicBeatState
 
     override function update(elapsed:Float){
 
+        if (FlxG.keys.justPressed.SPACE)
+            {
+                #if debug
+                
+                for(i in 0...Achievements.achievementsStuff.length)
+                    {
+                        Achievements.unlockAchievement(Achievements.achievementsStuff[i][2]);
+                    }
+
+                #end
+            }
         if (!inPhoto)
         {
             if (controls.BACK || FlxG.mouse.justPressedRight) {
@@ -206,7 +245,10 @@ class BebAwardsState extends MusicBeatState
                             if (FlxG.mouse.justPressed)
                             {
                                 inPhoto = true;
-                                photoZoom.loadGraphic(Paths.image('award full imgs/${achieves[i]}','secretStuff'));
+                                if(Achievements.isAchievementUnlocked(Achievements.achievementsStuff[i][2]))
+                                    photoZoom.loadGraphic(Paths.image('award full imgs/${achieves[i]}','secretStuff'));
+                                else
+                                    photoZoom.makeGraphic(2000, 2000, FlxColor.BLACK);
                                 photoZoom.setGraphicSize(0, Std.int(FlxG.height));
                                 photoZoom.screenCenter();
                                 achieveName.text = achieveDescs[i][0];

@@ -980,11 +980,15 @@ class PlayState extends MusicBeatState
 				
 				case 'confusion':
 
-					for(i in 0...Achievements.achievementsStuff.length)
+				for(i in 0...Achievements.achievementsStuff.length-2)
 					{
 						if (Achievements.isAchievementUnlocked(Achievements.achievementsStuff[i][2]))
 						{
 							achieves.push(Achievements.achievementsStuff[i][2]);
+						}
+						else
+						{
+							achieves.push('awardempty');
 						}
 					}
 
@@ -1022,6 +1026,27 @@ class PlayState extends MusicBeatState
 							achieveImage.scrollFactor.set();
 							photos.add(achieveImage);
 						}
+
+						if(Achievements.isAchievementUnlocked(Achievements.achievementsStuff[Achievements.achievementsStuff.length-1][2]))
+							{
+								achieves.push(Achievements.achievementsStuff[Achievements.achievementsStuff.length-1][2]);
+					
+								var achieveImage:FlxSprite = new FlxSprite(FlxG.width/4*3 - 175, FlxG.height/2 - 225).loadGraphic(Paths.image('award portraits/${achieves[achieves.length-1]}','secretStuff'));
+								achieveImage.scale.x = 0.2;
+								achieveImage.scale.y = 0.2;
+								achieveImage.updateHitbox();
+								photos.add(achieveImage);
+							}
+							else if(Achievements.isAchievementUnlocked(Achievements.achievementsStuff[Achievements.achievementsStuff.length-2][2]))
+							{
+								achieves.push(Achievements.achievementsStuff[Achievements.achievementsStuff.length-1][2]);
+					
+								var achieveImage:FlxSprite = new FlxSprite(FlxG.width/4*3 - 175, FlxG.height/2 - 225).loadGraphic(Paths.image('award portraits/${achieves[achieves.length-1]}','secretStuff'));
+								achieveImage.scale.x = 0.2;
+								achieveImage.scale.y = 0.2;
+								achieveImage.updateHitbox();
+								photos.add(achieveImage);
+							}
 			
 					add(photos);
 					photos.scrollFactor.set();
@@ -5950,11 +5975,11 @@ class PlayState extends MusicBeatState
 				
 				if (achievementName == 'awardexpress') // any FC achievements, name should be "weekFileName_nomiss", e.g: "weekd_nomiss";
 				{
-					if(isStoryMode && campaignMisses + songMisses < 1 && CoolUtil.difficultyString() == 'HARD'
+					if(isStoryMode && campaignMisses + songMisses < 1 
 						&& storyPlaylist.length <= 1 && !changedDifficulty && !usedPractice)
 						unlock = true;
 				}
-				else if (achievementName == 'awardmainweek') // any FC achievements, name should be "weekFileName_nomiss", e.g: "weekd_nomiss";
+				if (achievementName == 'awardmainweek') // any FC achievements, name should be "weekFileName_nomiss", e.g: "weekd_nomiss";
 				{
 					if(isStoryMode && storyPlaylist.length <= 1 && !usedPractice)
 						unlock = true;

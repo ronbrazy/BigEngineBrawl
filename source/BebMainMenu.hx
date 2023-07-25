@@ -55,7 +55,7 @@ class BebMainMenu extends MusicBeatState
         Achievements.loadAchievements();
         WeekData.reloadWeekFiles(true);
 
-        if(Achievements.isAchievementUnlocked('award100'))
+        if(Achievements.isAchievementUnlocked('awarduseful'))
             trains.push('edward');
 
         debugKeys = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
@@ -88,7 +88,7 @@ class BebMainMenu extends MusicBeatState
         add(bg);
 
         if (!ClientPrefs.firstTime){
-            var shit = FlxG.random.int(0, trains.length - 1);
+            var shit = FlxG.random.int(0, trains.length);
             curTrain = trains[shit];
             trace(shit);
         }
