@@ -182,7 +182,7 @@ class Character extends FlxSprite
 				var path:String = Paths.getPreloadPath(characterPath);
 				#end
 
-				if (!Assets.exists(path) && curCharacter != 'edward')
+				if (!Assets.exists(path) && !PlayState.hiddenChars.contains(curCharacter))
 					{
 						path = Paths.getPreloadPath('characters/' + DEFAULT_CHARACTER + '.json'); //If a character couldn't be found, change him to BF just to prevent a crash
 					}
@@ -244,7 +244,7 @@ class Character extends FlxSprite
 						frames = Paths.getPackerAtlas(json.image);
 					
 					case "sparrow":
-						if (json.image.contains('edward'))
+						if (PlayState.hiddenChars.contains(curCharacter))
 							frames = Paths.getSparrowAtlas(json.image, 'secretStuff');
 						else
 							frames = Paths.getSparrowAtlas(json.image);
