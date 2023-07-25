@@ -4208,7 +4208,12 @@ class PlayState extends MusicBeatState
 				if (value1 == 'gordon')
 					singChar = '';
 				else
-					singChar = value1;	
+					singChar = value1;
+				
+				if(value2 == 'true')
+				{
+					moveCamera(true);
+				}
 			case 'Camera Fade':
 				if (gameBlackLayerAlphaTween != null)
 				{
