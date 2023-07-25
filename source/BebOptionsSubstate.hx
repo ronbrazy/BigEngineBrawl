@@ -145,15 +145,16 @@ class BebOptionsSubstate extends MusicBeatSubstate
 
     public function slideTabsOut(closeMenu:Bool = false)
         {
-            allowedToChange = false;
-            if (closeMenu) FlxTween.tween(backButton, {alpha: 0}, 0.25);
-                for(i in grpOptions)
-                {
-                    FlxTween.tween(i, {x: 1280}, 0.75, {ease: FlxEase.backIn, onComplete: function(poop:FlxTween){
-                        if (closeMenu) { close(); }
-                        else {slideDiffsIn(); }
-                    }});
-                }
+                allowedToChange = false;
+                if (closeMenu) FlxTween.tween(backButton, {alpha: 0}, 0.25);
+                    for(i in grpOptions)
+                    {
+                        FlxTween.tween(i, {x: 1280}, 0.75, {ease: FlxEase.backIn, onComplete: function(poop:FlxTween){
+                            if (closeMenu) { close(); }
+                            else {slideDiffsIn(); }
+                        }});
+                    }
+            
         }
 
         public function slideDiffsIn()
@@ -162,7 +163,7 @@ class BebOptionsSubstate extends MusicBeatSubstate
                 FlxG.sound.play(Paths.sound('topham_select', 'menu'), 0.7);
                 FlxTween.tween(bg, {alpha: 0.75}, 0.25, {ease: FlxEase.backInOut, /* goated ease */ onComplete: function(lol:FlxTween){
                     for(i in grpDiffs){
-                        FlxTween.tween(i, {x: 808}, 0.75, {ease: FlxEase.backOut});
+                        FlxTween.tween(i, {x: 808}, 0.75, {ease: FlxEase.backOut, onComplete: function(lol:FlxTween){allowedToChange = true;}});
                     }
                 }});
             }
@@ -181,7 +182,7 @@ class BebOptionsSubstate extends MusicBeatSubstate
     var targetY:Float = 0;
 
     override function update(elapsed:Float){
-
+        if (allowedToChange)
         if (controls.BACK || FlxG.mouse.justPressedRight) {
             if (!diffState)
             {
@@ -193,6 +194,7 @@ class BebOptionsSubstate extends MusicBeatSubstate
             }
             else
             {
+                allowedToChange = false;
                 FlxG.sound.play(Paths.sound('cancelMenu'));
                 slideDiffsOut();
             }
@@ -237,7 +239,7 @@ class BebOptionsSubstate extends MusicBeatSubstate
                     
             }
 
-            if (allowedToChange || diffState)
+            if (allowedToChange)
             {
             if (FlxG.mouse.overlaps(backButton))
                 {
@@ -255,6 +257,7 @@ class BebOptionsSubstate extends MusicBeatSubstate
                                 }
                             else
                                 {
+                                    allowedToChange = false;
                                     FlxG.sound.play(Paths.sound('cancelMenu'), 0.7);
                                     slideDiffsOut();
                                 }
@@ -265,27 +268,30 @@ class BebOptionsSubstate extends MusicBeatSubstate
 
         }
 
-        if(FlxG.mouse.wheel != 0)
-			{
-				FlxG.sound.play(Paths.sound('scrollMenu'), 0.7);
-				changeSelection(-FlxG.mouse.wheel);
-			}
-
-        if (controls.UI_UP_P) {
-            FlxG.sound.play(Paths.sound('scrollMenu'), 0.7);
-			changeSelection(-1);
-		}
-		if (controls.UI_DOWN_P) {
-            FlxG.sound.play(Paths.sound('scrollMenu'), 0.7);
-			changeSelection(1);
-		}
-		if (controls.ACCEPT) {
-            if(allowedToChange)
+        if (!diffState)
+        {
+            if(FlxG.mouse.wheel != 0)
                 {
-                    FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
-                    openSelectedSubstate(options[curSelected]);
+                    FlxG.sound.play(Paths.sound('scrollMenu'), 0.7);
+                    changeSelection(-FlxG.mouse.wheel);
                 }
-		}
+
+            if (controls.UI_UP_P) {
+                FlxG.sound.play(Paths.sound('scrollMenu'), 0.7);
+                changeSelection(-1);
+            }
+            if (controls.UI_DOWN_P) {
+                FlxG.sound.play(Paths.sound('scrollMenu'), 0.7);
+                changeSelection(1);
+            }
+            if (controls.ACCEPT) {
+                if(allowedToChange)
+                    {
+                        FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
+                        openSelectedSubstate(options[curSelected]);
+                    }
+            }
+        }
 
         if (!diffState)
         {

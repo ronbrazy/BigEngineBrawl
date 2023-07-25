@@ -97,7 +97,7 @@ class FreeplayState extends MusicBeatState
 		curSongList = [];
 		CoolUtil.difficulties = CoolUtil.defaultDifficulties.copy();
 
-		allowEdward = Achievements.isAchievementUnlocked('award100');
+		allowEdward = true;//Achievements.isAchievementUnlocked('award100');
 		
 		persistentUpdate = true;
 		PlayState.isStoryMode = false;

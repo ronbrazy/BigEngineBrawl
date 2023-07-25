@@ -104,6 +104,7 @@ class PlayState extends MusicBeatState
 	];
 
 	public static var hiddenSongs:Array<String> = ['loathed', "old reliable"];
+	public static var hiddenChars:Array<String> = ['alfred', 'edward', 'loathed_gordon', 'reliablebf'];
 
 	//event variables
 	private var isCameraOnForcedPos:Bool = false;

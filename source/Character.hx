@@ -166,48 +166,7 @@ class Character extends FlxSprite
 				} else {
 					quickAnimAdd('idle', 'BF idle dance');
 				}*/
-			case 'edward':
-				frames = Paths.getSparrowAtlas("characters/edward", 'secretStuff');
-
-				animation.addByPrefix('idle', 'edward idle', 24, false);
-				animation.addByPrefix('singDOWN', 'edward down', 24, false);
-				animation.addByPrefix('singUP', 'edward up', 24, false);
-				animation.addByPrefix('singLEFT', 'edward left', 24, false);
-				animation.addByPrefix('singRIGHT', 'edward right', 24, false);
-				animation.addByPrefix('intro', 'edward intro', 24, false);
-				animation.addByPrefix('outro', 'edward end', 24, false);
-
-				addOffset('idle', 0, 0);
-				addOffset('singUP', -7, -1);
-				addOffset('singRIGHT', -8, -3);
-				addOffset('singLEFT', -5, -1);
-				addOffset('singDOWN', -8, -1);
-				addOffset('intro', -7, 2);
-				addOffset('outro', -7, 2);
-
-				setGraphicSize(Std.int(width * 1.8));
-				updateHitbox();
-
-				positionArray = [
-					-460,
-					-210
-				];
-				
-				cameraPosition = [
-					-130,
-					-150
-				];
-
-				healthColorArray = [
-					7,
-					149,
-					233
-				];
-
-				healthIcon = "edward";
-				singDuration = 6.1;
-
-				dance();
+			
 
 			default:
 				var characterPath:String = 'characters/' + curCharacter + '.json';
@@ -220,12 +179,7 @@ class Character extends FlxSprite
 
 				if (!FileSystem.exists(path))
 				#else
-				var path:String = '';
-				if (curCharacter.contains('edward'))
-					path = Paths.getLibraryPath(characterPath, 'secretStuff');
-				else
-					path = Paths.getPreloadPath(characterPath);
-				
+				var path:String = Paths.getPreloadPath(characterPath);
 				#end
 
 				if (!Assets.exists(path) && curCharacter != 'edward')
@@ -233,11 +187,21 @@ class Character extends FlxSprite
 						path = Paths.getPreloadPath('characters/' + DEFAULT_CHARACTER + '.json'); //If a character couldn't be found, change him to BF just to prevent a crash
 					}
 
-				#if MODS_ALLOWED
-				var rawJson = File.getContent(path);
-				#else
-				var rawJson = Assets.getText(path);
-				#end
+				var rawJson = '';
+
+				if(PlayState.hiddenChars.contains(curCharacter))
+					{
+						rawJson = Assets.getText(Paths.jsonChar(characterPath, 'secretStuff')).trim();
+					}
+				
+				else
+				{
+					#if MODS_ALLOWED
+					rawJson = File.getContent(path);
+					#else
+					rawJson = Assets.getText(path);
+					#end
+				}
 
 				var json:CharacterFile = cast Json.parse(rawJson);
 				var spriteType = "sparrow";
