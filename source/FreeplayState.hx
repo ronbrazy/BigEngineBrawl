@@ -456,10 +456,10 @@ class FreeplayState extends MusicBeatState
 							changeCursor(true);
 							if (curSelected != 4)
 							{
-								if(curSelected == 3 && i != 2)
-									curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[curSelected].songs[i]} glow','menu'));
-								else
+								if(curSelected == 3 && i == 2)
 									curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[curSelected].songs[i]} glow','secretStuff'));
+								else
+									curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[curSelected].songs[i]} glow','menu'));
 							}
 							else
 								curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${edwardList[0]} glow','secretStuff'));
@@ -474,10 +474,10 @@ class FreeplayState extends MusicBeatState
 					{
 						if (curSelected != 4)
 							{
-								if(curSelected == 3 && i != 2)
-									curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[curSelected].songs[i]}','menu'));
-								else
+								if(curSelected == 3 && i == 2)
 									curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[curSelected].songs[i]}','secretStuff'));
+								else
+									curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${loadedTabs[curSelected].songs[i]}','menu'));
 							}
 						else
 							curButtons[curSelected][i].loadGraphic(Paths.image('freeplay/songbuttons/${edwardList[0]}','secretStuff'));

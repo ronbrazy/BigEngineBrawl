@@ -100,7 +100,7 @@ class BebAwardsState extends MusicBeatState
 
         photos = new FlxSpriteGroup();
         var xFuckShit:Int = 0;
-        for (i in 0...achieves.length)
+        for (i in 0...achieves.length-2)
             {
                 
                 var achieveImage:FlxSprite = new FlxSprite().loadGraphic(Paths.image('award portraits/${achieves[i]}','secretStuff'));
