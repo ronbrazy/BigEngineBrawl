@@ -88,7 +88,7 @@ class BebMainMenu extends MusicBeatState
         add(bg);
 
         if (!ClientPrefs.firstTime){
-            var shit = FlxG.random.int(0, trains.length);
+            var shit = FlxG.random.int(0, trains.length-1);
             curTrain = trains[shit];
             trace(shit);
         }
