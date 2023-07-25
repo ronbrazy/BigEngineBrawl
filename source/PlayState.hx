@@ -1113,6 +1113,8 @@ class PlayState extends MusicBeatState
 					ob4.x = -539; ob4.y = -371;
 					add(ob4);
 					
+					screenShader.noiseIntensity.value = [0.50];
+
 					editable = true;
 					editbleSprite = ob1;
 		}
@@ -1121,6 +1123,9 @@ class PlayState extends MusicBeatState
 		{
 			case 'stress':
 				GameOverSubstate.characterName = 'bf-holding-gf-dead';
+			case 'old-reliable':
+				camGame.setFilters([tvFilter]);
+				camHUD.setFilters([tvFilter]);
 			case 'sad-story':
 				camGame.setFilters([tvFilter]);
 				camHUD.setFilters([tvFilter]);
