@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="indig bf james.png"><SubTexture name="indig bf james idle0000" x="3186" y="2341" width="406" height="576" frameX="-12" frameY="-28" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf james idle0001" x="0" y="3023" width="406" height="576" frameX="-12" frameY="-28" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf james idle0002" x="3186" y="1177" width="398" height="586" frameX="-12" frameY="-18" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf james idle0003" x="3186" y="1177" width="398" height="586" frameX="-12" frameY="-18" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf james idle0004" x="2367" y="1203" width="394" height="596" frameX="-8" frameY="-8" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf james idle0005" x="2367" y="603" width="395" height="600" frameX="-4" frameY="-4" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf james idle0006" x="2367" y="603" width="395" height="600" frameX="-4" frameY="-4" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf james idle0007" x="2367" y="0" width="395" height="603" frameX="-1" frameY="-1" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf james idle0008" x="2367" y="0" width="395" height="603" frameX="-1" frameY="-1" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf james idle0009" x="0" y="611" width="395" height="604" frameX="0" frameY="0" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf james idle0010" x="0" y="611" width="395" height="604" frameX="0" frameY="0" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf james idle0011" x="0" y="611" width="395" height="604" frameX="0" frameY="0" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf james idle0012" x="0" y="611" width="395" height="604" frameX="0" frameY="0" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf james right0000" x="0" y="2422" width="411" height="601" frameX="-12" frameY="-2" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf james right0001" x="0" y="2422" width="411" height="601" frameX="-12" frameY="-2" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf james right0002" x="2762" y="1808" width="418" height="602" frameX="-6" frameY="-1" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf james right0003" x="2762" y="1808" width="418" height="602" frameX="-6" frameY="-1" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf james right0004" x="425" y="1819" width="424" height="603" frameX="0" frameY="0" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf james right0005" x="425" y="1819" width="424" height="603" frameX="0" frameY="0" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf james right0006" x="425" y="1819" width="424" height="603" frameX="0" frameY="0" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf james right0007" x="425" y="1819" width="424" height="603" frameX="0" frameY="0" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf james left0000" x="411" y="2422" width="421" height="600" frameX="-1" frameY="-3" frameWidth="426" frameHeight="603" />
+<SubTexture name="indig bf james left0001" x="411" y="2422" width="421" height="600" frameX="-1" frameY="-3" frameWidth="426" frameHeight="603" />
+<SubTexture name="indig bf james left0002" x="2762" y="1206" width="424" height="602" frameX="0" frameY="-1" frameWidth="426" frameHeight="603" />
+<SubTexture name="indig bf james left0003" x="2762" y="1206" width="424" height="602" frameX="0" frameY="-1" frameWidth="426" frameHeight="603" />
+<SubTexture name="indig bf james left0004" x="0" y="1819" width="425" height="603" frameX="-1" frameY="0" frameWidth="426" frameHeight="603" />
+<SubTexture name="indig bf james left0005" x="0" y="1819" width="425" height="603" frameX="-1" frameY="0" frameWidth="426" frameHeight="603" />
+<SubTexture name="indig bf james left0006" x="0" y="1819" width="425" height="603" frameX="-1" frameY="0" frameWidth="426" frameHeight="603" />
+<SubTexture name="indig bf james left0007" x="0" y="1819" width="425" height="603" frameX="-1" frameY="0" frameWidth="426" frameHeight="603" />
+<SubTexture name="indig bf james up0000" x="392" y="0" width="391" height="611" frameX="0" frameY="0" frameWidth="395" frameHeight="611" />
+<SubTexture name="indig bf james up0001" x="392" y="0" width="391" height="611" frameX="0" frameY="0" frameWidth="395" frameHeight="611" />
+<SubTexture name="indig bf james up0002" x="1175" y="0" width="390" height="607" frameX="-2" frameY="-4" frameWidth="395" frameHeight="611" />
+<SubTexture name="indig bf james up0003" x="1175" y="0" width="390" height="607" frameX="-2" frameY="-4" frameWidth="395" frameHeight="611" />
+<SubTexture name="indig bf james up0004" x="1565" y="0" width="394" height="604" frameX="-1" frameY="-7" frameWidth="395" frameHeight="611" />
+<SubTexture name="indig bf james up0005" x="1565" y="0" width="394" height="604" frameX="-1" frameY="-7" frameWidth="395" frameHeight="611" />
+<SubTexture name="indig bf james up0006" x="1565" y="0" width="394" height="604" frameX="-1" frameY="-7" frameWidth="395" frameHeight="611" />
+<SubTexture name="indig bf james up0007" x="1565" y="0" width="394" height="604" frameX="-1" frameY="-7" frameWidth="395" frameHeight="611" />
+<SubTexture name="indig bf james down0000" x="3186" y="589" width="417" height="588" frameX="-2" frameY="-15" frameWidth="419" frameHeight="603" />
+<SubTexture name="indig bf james down0001" x="3186" y="589" width="417" height="588" frameX="-2" frameY="-15" frameWidth="419" frameHeight="603" />
+<SubTexture name="indig bf james down0002" x="1253" y="2422" width="414" height="594" frameX="0" frameY="-9" frameWidth="419" frameHeight="603" />
+<SubTexture name="indig bf james down0003" x="1253" y="2422" width="414" height="594" frameX="0" frameY="-9" frameWidth="419" frameHeight="603" />
+<SubTexture name="indig bf james down0004" x="849" y="1819" width="407" height="603" frameX="-2" frameY="0" frameWidth="419" frameHeight="603" />
+<SubTexture name="indig bf james down0005" x="849" y="1819" width="407" height="603" frameX="-2" frameY="0" frameWidth="419" frameHeight="603" />
+<SubTexture name="indig bf james down0006" x="849" y="1819" width="407" height="603" frameX="-2" frameY="0" frameWidth="419" frameHeight="603" />
+<SubTexture name="indig bf james down0007" x="849" y="1819" width="407" height="603" frameX="-2" frameY="0" frameWidth="419" frameHeight="603" />
+<SubTexture name="indig bf james miss left0000" x="832" y="2422" width="421" height="600" frameX="-9" frameY="-3" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf james miss left0001" x="832" y="2422" width="421" height="600" frameX="-9" frameY="-3" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf james miss left0002" x="1256" y="1819" width="429" height="603" frameX="0" frameY="0" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf james miss left0003" x="1256" y="1819" width="429" height="603" frameX="0" frameY="0" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf james miss left0004" x="1685" y="1819" width="424" height="603" frameX="-9" frameY="0" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf james miss left0005" x="2109" y="1819" width="424" height="603" frameX="-9" frameY="0" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf james miss left0006" x="2762" y="0" width="424" height="603" frameX="-9" frameY="0" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf james miss left0007" x="2762" y="603" width="424" height="603" frameX="-9" frameY="0" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf james miss left0008" x="1685" y="1819" width="424" height="603" frameX="-9" frameY="0" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf james miss left0009" x="2109" y="1819" width="424" height="603" frameX="-9" frameY="0" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf james miss up0000" x="0" y="0" width="392" height="611" frameX="0" frameY="0" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf james miss up0001" x="0" y="0" width="392" height="611" frameX="0" frameY="0" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf james miss up0002" x="783" y="0" width="392" height="608" frameX="-5" frameY="-3" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf james miss up0003" x="783" y="0" width="392" height="608" frameX="-5" frameY="-3" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf james miss up0004" x="395" y="611" width="395" height="604" frameX="-2" frameY="-7" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf james miss up0005" x="395" y="611" width="395" height="604" frameX="-2" frameY="-7" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf james miss up0006" x="790" y="611" width="395" height="604" frameX="-2" frameY="-7" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf james miss up0007" x="790" y="611" width="395" height="604" frameX="-2" frameY="-7" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf james miss up0008" x="395" y="611" width="395" height="604" frameX="-2" frameY="-7" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf james miss up0009" x="395" y="611" width="395" height="604" frameX="-2" frameY="-7" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf james miss right0000" x="0" y="2422" width="411" height="601" frameX="-12" frameY="-2" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf james miss right0001" x="0" y="2422" width="411" height="601" frameX="-12" frameY="-2" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf james miss right0002" x="0" y="1215" width="420" height="604" frameX="-10" frameY="0" frameWidth="430" frameHeight="604" />
+<SubTexture name="indig bf james miss right0003" x="420" y="1215" width="420" height="604" frameX="-10" frameY="0" frameWidth="430" frameHeight="604" />
+<SubTexture name="indig bf james miss right0004" x="840" y="1215" width="425" height="604" frameX="0" frameY="0" frameWidth="430" frameHeight="604" />
+<SubTexture name="indig bf james miss right0005" x="840" y="1215" width="425" height="604" frameX="0" frameY="0" frameWidth="430" frameHeight="604" />
+<SubTexture name="indig bf james miss right0006" x="1265" y="1215" width="425" height="604" frameX="0" frameY="0" frameWidth="430" frameHeight="604" />
+<SubTexture name="indig bf james miss right0007" x="1265" y="1215" width="425" height="604" frameX="0" frameY="0" frameWidth="430" frameHeight="604" />
+<SubTexture name="indig bf james miss right0008" x="840" y="1215" width="425" height="604" frameX="0" frameY="0" frameWidth="430" frameHeight="604" />
+<SubTexture name="indig bf james miss right0009" x="840" y="1215" width="425" height="604" frameX="0" frameY="0" frameWidth="430" frameHeight="604" />
+<SubTexture name="indig bf james miss down0000" x="3186" y="0" width="417" height="589" frameX="-4" frameY="-14" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf james miss down0001" x="2513" y="2422" width="417" height="589" frameX="-4" frameY="-14" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf james miss down0002" x="1667" y="2422" width="423" height="593" frameX="0" frameY="-10" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf james miss down0003" x="2090" y="2422" width="423" height="593" frameX="0" frameY="-10" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf james miss down0004" x="1959" y="0" width="408" height="603" frameX="-8" frameY="0" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf james miss down0005" x="1959" y="603" width="408" height="603" frameX="-8" frameY="0" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf james miss down0006" x="1959" y="0" width="408" height="603" frameX="-8" frameY="0" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf james miss down0007" x="1959" y="0" width="408" height="603" frameX="-8" frameY="0" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf james miss down0008" x="1959" y="1206" width="408" height="603" frameX="-8" frameY="0" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf james miss down0009" x="1959" y="1206" width="408" height="603" frameX="-8" frameY="0" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf james james switch0000" x="406" y="3023" width="405" height="576" frameX="-7" frameY="-2" frameWidth="495" frameHeight="578" />
+<SubTexture name="indig bf james james switch0001" x="811" y="3023" width="419" height="568" frameX="0" frameY="-10" frameWidth="495" frameHeight="578" />
+<SubTexture name="indig bf james james switch0002" x="3186" y="1763" width="412" height="578" frameX="-8" frameY="0" frameWidth="495" frameHeight="578" />
+<SubTexture name="indig bf james james switch0003" x="1230" y="3023" width="414" height="564" frameX="-81" frameY="-8" frameWidth="495" frameHeight="578" />
+<SubTexture name="indig bf james james switch0004" x="1644" y="3023" width="414" height="564" frameX="-81" frameY="-8" frameWidth="495" frameHeight="578" />
+</TextureAtlas>

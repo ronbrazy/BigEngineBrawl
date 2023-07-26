@@ -75,7 +75,7 @@ class BebOptionsSubstate extends MusicBeatSubstate
 
     override function create(){
         #if desktop
-		DiscordClient.changePresence("Options Menu", null);
+		DiscordClient.changePresence("Idling in the Station (Options)", null);
 		#end
 		        
         bg = new FlxSprite().makeGraphic(1280, 720, FlxColor.BLACK);

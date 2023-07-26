@@ -68,7 +68,7 @@ class BebAwardsState extends MusicBeatState
 
     override function create(){
         #if desktop
-		DiscordClient.changePresence("Options Menu", null);
+		DiscordClient.changePresence("In Sir Topham Hatt's Office (Awards Menu)", null);
 		#end
 
         for(i in 0...Achievements.achievementsStuff.length-2)

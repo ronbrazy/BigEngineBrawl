@@ -1,5 +1,8 @@
 package;
 
+#if desktop
+import Discord.DiscordClient;
+#end
 import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.system.FlxSound;
@@ -80,6 +83,11 @@ class BebMainMenu extends MusicBeatState
         cursorSprite = new FlxSprite().loadGraphic(Paths.image('ui/cursor'));
         cursorSprite2 = new FlxSprite().loadGraphic(Paths.image('ui/cursor2'));
         FlxG.mouse.visible = true;
+
+        #if desktop
+		// Updating Discord Rich Presence
+		DiscordClient.changePresence("Idling in the Station (Main Menu)", null);
+		#end
 
         var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('main/menubackground', 'menu'));
         bg.antialiasing = ClientPrefs.globalAntialiasing;

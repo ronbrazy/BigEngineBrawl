@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="indig bf henry.png"><SubTexture name="indig bf henry idle0000" x="0" y="3024" width="406" height="576" frameX="0" frameY="-28" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf henry idle0001" x="406" y="3024" width="406" height="576" frameX="0" frameY="-28" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf henry idle0002" x="2779" y="1799" width="398" height="586" frameX="-8" frameY="-18" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf henry idle0003" x="2779" y="1799" width="398" height="586" frameX="-8" frameY="-18" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf henry idle0004" x="2779" y="1203" width="394" height="596" frameX="-16" frameY="-8" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf henry idle0005" x="2779" y="1203" width="394" height="596" frameX="-16" frameY="-8" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf henry idle0006" x="2779" y="603" width="395" height="600" frameX="-19" frameY="-4" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf henry idle0007" x="2779" y="603" width="395" height="600" frameX="-19" frameY="-4" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf henry idle0008" x="1960" y="0" width="395" height="603" frameX="-22" frameY="-1" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf henry idle0009" x="1960" y="0" width="395" height="603" frameX="-22" frameY="-1" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf henry idle0010" x="1565" y="0" width="395" height="604" frameX="-23" frameY="0" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf henry idle0011" x="1565" y="0" width="395" height="604" frameX="-23" frameY="0" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf henry idle0012" x="1565" y="0" width="395" height="604" frameX="-23" frameY="0" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf henry idle0013" x="1565" y="0" width="395" height="604" frameX="-23" frameY="0" frameWidth="418" frameHeight="604" />
+<SubTexture name="indig bf henry left0000" x="1253" y="2422" width="411" height="601" frameX="-1" frameY="-2" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf henry left0001" x="1253" y="2422" width="411" height="601" frameX="-1" frameY="-2" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf henry left0002" x="0" y="2422" width="418" height="602" frameX="0" frameY="-1" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf henry left0003" x="0" y="2422" width="418" height="602" frameX="0" frameY="-1" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf henry left0004" x="2355" y="0" width="424" height="603" frameX="0" frameY="0" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf henry left0005" x="2355" y="0" width="424" height="603" frameX="0" frameY="0" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf henry left0006" x="2355" y="0" width="424" height="603" frameX="0" frameY="0" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf henry left0007" x="2355" y="0" width="424" height="603" frameX="0" frameY="0" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf henry up0000" x="0" y="0" width="391" height="611" frameX="-4" frameY="0" frameWidth="395" frameHeight="611" />
+<SubTexture name="indig bf henry up0001" x="0" y="0" width="391" height="611" frameX="-4" frameY="0" frameWidth="395" frameHeight="611" />
+<SubTexture name="indig bf henry up0002" x="1175" y="0" width="390" height="607" frameX="-3" frameY="-4" frameWidth="395" frameHeight="611" />
+<SubTexture name="indig bf henry up0003" x="1175" y="0" width="390" height="607" frameX="-3" frameY="-4" frameWidth="395" frameHeight="611" />
+<SubTexture name="indig bf henry up0004" x="1565" y="604" width="394" height="604" frameX="0" frameY="-7" frameWidth="395" frameHeight="611" />
+<SubTexture name="indig bf henry up0005" x="1565" y="604" width="394" height="604" frameX="0" frameY="-7" frameWidth="395" frameHeight="611" />
+<SubTexture name="indig bf henry up0006" x="1565" y="604" width="394" height="604" frameX="0" frameY="-7" frameWidth="395" frameHeight="611" />
+<SubTexture name="indig bf henry up0007" x="1565" y="604" width="394" height="604" frameX="0" frameY="-7" frameWidth="395" frameHeight="611" />
+<SubTexture name="indig bf henry right0000" x="1664" y="2422" width="421" height="600" frameX="-4" frameY="-3" frameWidth="426" frameHeight="603" />
+<SubTexture name="indig bf henry right0001" x="1664" y="2422" width="421" height="600" frameX="-4" frameY="-3" frameWidth="426" frameHeight="603" />
+<SubTexture name="indig bf henry right0002" x="418" y="2422" width="424" height="602" frameX="-2" frameY="-1" frameWidth="426" frameHeight="603" />
+<SubTexture name="indig bf henry right0003" x="418" y="2422" width="424" height="602" frameX="-2" frameY="-1" frameWidth="426" frameHeight="603" />
+<SubTexture name="indig bf henry right0004" x="0" y="1819" width="425" height="603" frameX="0" frameY="0" frameWidth="426" frameHeight="603" />
+<SubTexture name="indig bf henry right0005" x="0" y="1819" width="425" height="603" frameX="0" frameY="0" frameWidth="426" frameHeight="603" />
+<SubTexture name="indig bf henry right0006" x="0" y="1819" width="425" height="603" frameX="0" frameY="0" frameWidth="426" frameHeight="603" />
+<SubTexture name="indig bf henry right0007" x="0" y="1819" width="425" height="603" frameX="0" frameY="0" frameWidth="426" frameHeight="603" />
+<SubTexture name="indig bf henry down0000" x="3187" y="2364" width="417" height="588" frameX="0" frameY="-15" frameWidth="419" frameHeight="603" />
+<SubTexture name="indig bf henry down0001" x="3187" y="2364" width="417" height="588" frameX="0" frameY="-15" frameWidth="419" frameHeight="603" />
+<SubTexture name="indig bf henry down0002" x="2506" y="2422" width="414" height="594" frameX="-5" frameY="-9" frameWidth="419" frameHeight="603" />
+<SubTexture name="indig bf henry down0003" x="2506" y="2422" width="414" height="594" frameX="-5" frameY="-9" frameWidth="419" frameHeight="603" />
+<SubTexture name="indig bf henry down0004" x="2355" y="603" width="407" height="603" frameX="-10" frameY="0" frameWidth="419" frameHeight="603" />
+<SubTexture name="indig bf henry down0005" x="2355" y="603" width="407" height="603" frameX="-10" frameY="0" frameWidth="419" frameHeight="603" />
+<SubTexture name="indig bf henry down0006" x="2355" y="603" width="407" height="603" frameX="-10" frameY="0" frameWidth="419" frameHeight="603" />
+<SubTexture name="indig bf henry down0007" x="2355" y="603" width="407" height="603" frameX="-10" frameY="0" frameWidth="419" frameHeight="603" />
+<SubTexture name="indig bf henry miss left0000" x="842" y="2422" width="411" height="601" frameX="-1" frameY="-2" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf henry miss left0001" x="842" y="2422" width="411" height="601" frameX="-1" frameY="-2" frameWidth="424" frameHeight="603" />
+<SubTexture name="indig bf henry miss left0002" x="0" y="611" width="420" height="604" frameX="0" frameY="0" frameWidth="430" frameHeight="604" />
+<SubTexture name="indig bf henry miss left0003" x="0" y="1215" width="420" height="604" frameX="0" frameY="0" frameWidth="430" frameHeight="604" />
+<SubTexture name="indig bf henry miss left0004" x="420" y="611" width="425" height="604" frameX="-5" frameY="0" frameWidth="430" frameHeight="604" />
+<SubTexture name="indig bf henry miss left0005" x="420" y="611" width="425" height="604" frameX="-5" frameY="0" frameWidth="430" frameHeight="604" />
+<SubTexture name="indig bf henry miss left0006" x="845" y="611" width="425" height="604" frameX="-5" frameY="0" frameWidth="430" frameHeight="604" />
+<SubTexture name="indig bf henry miss left0007" x="845" y="611" width="425" height="604" frameX="-5" frameY="0" frameWidth="430" frameHeight="604" />
+<SubTexture name="indig bf henry miss left0008" x="420" y="611" width="425" height="604" frameX="-5" frameY="0" frameWidth="430" frameHeight="604" />
+<SubTexture name="indig bf henry miss left0009" x="420" y="611" width="425" height="604" frameX="-5" frameY="0" frameWidth="430" frameHeight="604" />
+<SubTexture name="indig bf henry miss up0000" x="391" y="0" width="392" height="611" frameX="-5" frameY="0" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf henry miss up0001" x="391" y="0" width="392" height="611" frameX="-5" frameY="0" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf henry miss up0002" x="783" y="0" width="392" height="608" frameX="0" frameY="-3" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf henry miss up0003" x="783" y="0" width="392" height="608" frameX="0" frameY="-3" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf henry miss up0004" x="420" y="1215" width="395" height="604" frameX="0" frameY="-7" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf henry miss up0005" x="420" y="1215" width="395" height="604" frameX="0" frameY="-7" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf henry miss up0006" x="815" y="1215" width="395" height="604" frameX="0" frameY="-7" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf henry miss up0007" x="815" y="1215" width="395" height="604" frameX="0" frameY="-7" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf henry miss up0008" x="420" y="1215" width="395" height="604" frameX="0" frameY="-7" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf henry miss up0009" x="420" y="1215" width="395" height="604" frameX="0" frameY="-7" frameWidth="397" frameHeight="611" />
+<SubTexture name="indig bf henry miss right0000" x="2085" y="2422" width="421" height="600" frameX="-3" frameY="-3" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf henry miss right0001" x="2085" y="2422" width="421" height="600" frameX="-3" frameY="-3" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf henry miss right0002" x="1210" y="1215" width="429" height="603" frameX="-4" frameY="0" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf henry miss right0003" x="1210" y="1215" width="429" height="603" frameX="-4" frameY="0" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf henry miss right0004" x="2355" y="1206" width="424" height="603" frameX="0" frameY="0" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf henry miss right0005" x="425" y="1819" width="424" height="603" frameX="0" frameY="0" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf henry miss right0006" x="849" y="1819" width="424" height="603" frameX="0" frameY="0" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf henry miss right0007" x="1273" y="1819" width="424" height="603" frameX="0" frameY="0" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf henry miss right0008" x="2355" y="1206" width="424" height="603" frameX="0" frameY="0" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf henry miss right0009" x="425" y="1819" width="424" height="603" frameX="0" frameY="0" frameWidth="433" frameHeight="603" />
+<SubTexture name="indig bf henry miss down0000" x="3187" y="1775" width="417" height="589" frameX="-2" frameY="-14" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf henry miss down0001" x="3187" y="1186" width="417" height="589" frameX="-2" frameY="-14" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf henry miss down0002" x="3187" y="0" width="423" height="593" frameX="0" frameY="-10" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf henry miss down0003" x="3187" y="593" width="423" height="593" frameX="0" frameY="-10" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf henry miss down0004" x="1697" y="1819" width="408" height="603" frameX="-7" frameY="0" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf henry miss down0005" x="2105" y="1819" width="408" height="603" frameX="-7" frameY="0" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf henry miss down0006" x="1697" y="1819" width="408" height="603" frameX="-7" frameY="0" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf henry miss down0007" x="1697" y="1819" width="408" height="603" frameX="-7" frameY="0" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf henry miss down0008" x="2779" y="0" width="408" height="603" frameX="-7" frameY="0" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf henry miss down0009" x="2779" y="0" width="408" height="603" frameX="-7" frameY="0" frameWidth="423" frameHeight="603" />
+<SubTexture name="indig bf henry henry switch0000" x="1660" y="3024" width="424" height="545" frameX="-21" frameY="-17" frameWidth="452" frameHeight="562" />
+<SubTexture name="indig bf henry henry switch0001" x="2084" y="3024" width="444" height="530" frameX="-8" frameY="-32" frameWidth="452" frameHeight="562" />
+<SubTexture name="indig bf henry henry switch0002" x="2528" y="3024" width="442" height="530" frameX="-10" frameY="-32" frameWidth="452" frameHeight="562" />
+<SubTexture name="indig bf henry henry switch0003" x="812" y="3024" width="424" height="562" frameX="0" frameY="0" frameWidth="452" frameHeight="562" />
+<SubTexture name="indig bf henry henry switch0004" x="1236" y="3024" width="424" height="562" frameX="0" frameY="0" frameWidth="452" frameHeight="562" />
+</TextureAtlas>

@@ -8,100 +8,100 @@
 			],
 			"anim": "idle",
 			"fps": 24,
-			"name": "indig bf mid idle",
+			"name": "indig bf henry idle",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				19,
+				2,
 				-1
 			],
 			"anim": "singLEFT",
 			"fps": 24,
-			"name": "indig bf mid left",
+			"name": "indig bf henry left",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				-19,
-				-1
+				-6,
+				-2
 			],
 			"anim": "singDOWN",
 			"fps": 24,
-			"name": "indig bf mid down",
+			"name": "indig bf henry down",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				-20,
-				9
+				-26,
+				5
 			],
 			"anim": "singUP",
 			"fps": 24,
-			"name": "indig bf mid up",
+			"name": "indig bf henry up",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				17,
-				11
+				6,
+				-1
 			],
 			"anim": "singLEFTmiss",
 			"fps": 24,
-			"name": "indig bf mid miss left",
+			"name": "indig bf henry miss left",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				-18,
-				21
+				-8,
+				-2
 			],
 			"anim": "singDOWNmiss",
 			"fps": 24,
-			"name": "indig bf mid miss down",
+			"name": "indig bf henry miss down",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				-19,
-				37
+				-25,
+				4
 			],
 			"anim": "singUPmiss",
 			"fps": 24,
-			"name": "indig bf mid miss up",
+			"name": "indig bf henry miss up",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				6,
-				23
+				2,
+				-1
 			],
 			"anim": "singRIGHTmiss",
 			"fps": 24,
-			"name": "indig bf mid miss right",
+			"name": "indig bf henry miss right",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				6,
-				0
+				2,
+				-1
 			],
 			"anim": "singRIGHT",
 			"fps": 24,
-			"name": "indig bf mid right",
+			"name": "indig bf henry right",
 			"indices": []
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/indig_bf",
+	"image": "characters/indig_bf_henry",
 	"position": [
 		0,
 		350

@@ -143,6 +143,11 @@
 						"Set Cam Zoom",
 						"0.7",
 						""
+					],
+					[
+						"Change Character",
+						"bf",
+						"indigbf-henry"
 					]
 				],
 				null,
@@ -165,6 +170,11 @@
 						"BF Fade",
 						"1",
 						"1"
+					],
+					[
+						"Set Health Bar",
+						"henry",
+						""
 					]
 				]
 			],
@@ -173,8 +183,13 @@
 				[
 					[
 						"Set Cam Zoom",
-						"1",
+						"0.8",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"350",
+						"550"
 					]
 				]
 			],
@@ -185,6 +200,11 @@
 						"Set Cam Zoom",
 						"0.7",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
+						""
 					]
 				]
 			],
@@ -193,8 +213,13 @@
 				[
 					[
 						"Set Cam Zoom",
-						"1",
+						"0.8",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"350",
+						"550"
 					]
 				]
 			],
@@ -205,6 +230,11 @@
 						"Set Cam Zoom",
 						"0.7",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
+						""
 					]
 				]
 			],
@@ -213,8 +243,13 @@
 				[
 					[
 						"Set Cam Zoom",
-						"1",
+						"0.8",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"350",
+						"550"
 					]
 				]
 			],
@@ -225,6 +260,11 @@
 						"Set Cam Zoom",
 						"0.7",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
+						""
 					]
 				]
 			],
@@ -233,8 +273,13 @@
 				[
 					[
 						"Set Cam Zoom",
-						"1",
+						"0.8",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"350",
+						"550"
 					]
 				]
 			],
@@ -245,6 +290,11 @@
 						"Set Cam Zoom",
 						"0.7",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
+						""
 					]
 				]
 			],
@@ -253,8 +303,13 @@
 				[
 					[
 						"Set Cam Zoom",
-						"1",
+						"0.8",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"350",
+						"550"
 					]
 				]
 			],
@@ -265,6 +320,11 @@
 						"Set Cam Zoom",
 						"0.7",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
+						""
 					]
 				]
 			],
@@ -273,8 +333,13 @@
 				[
 					[
 						"Set Cam Zoom",
-						"1",
+						"0.8",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"350",
+						"550"
 					]
 				]
 			],
@@ -284,6 +349,11 @@
 					[
 						"Set Cam Zoom",
 						"0.7",
+						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
 						""
 					]
 				]
@@ -303,8 +373,13 @@
 				[
 					[
 						"Set Cam Zoom",
-						"1",
+						"0.8",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"350",
+						"550"
 					]
 				]
 			],
@@ -315,6 +390,11 @@
 						"Set Cam Zoom",
 						"0.7",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
+						""
 					]
 				]
 			],
@@ -323,8 +403,13 @@
 				[
 					[
 						"Set Cam Zoom",
-						"1",
+						"0.8",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"350",
+						"550"
 					]
 				]
 			],
@@ -335,6 +420,11 @@
 						"Set Cam Zoom",
 						"0.7",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
+						""
 					]
 				]
 			],
@@ -343,8 +433,13 @@
 				[
 					[
 						"Set Cam Zoom",
-						"1",
+						"0.8",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"350",
+						"550"
 					]
 				]
 			],
@@ -354,6 +449,11 @@
 					[
 						"Set Cam Zoom",
 						"0.7",
+						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
 						""
 					]
 				]
@@ -365,6 +465,21 @@
 						"Play Animation",
 						"HUH",
 						"henry"
+					],
+					[
+						"Change Character",
+						"bf",
+						"indigbf-james"
+					]
+				]
+			],
+			[
+				141454.6875,
+				[
+					[
+						"Play Animation",
+						"james switch",
+						"bf"
 					]
 				]
 			],
@@ -380,6 +495,11 @@
 						"Set Camera Target",
 						"james",
 						"true"
+					],
+					[
+						"Set Health Bar",
+						"james",
+						""
 					]
 				]
 			],
@@ -388,8 +508,13 @@
 				[
 					[
 						"Set Cam Zoom",
-						"1",
+						"0.8",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"1400",
+						"550"
 					]
 				]
 			],
@@ -398,12 +523,17 @@
 				[
 					[
 						"Set Cam Zoom",
-						"0.5",
+						"0.4",
 						""
 					],
 					[
 						"Set Camera Target",
 						"gordon",
+						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
 						""
 					]
 				]
@@ -413,8 +543,13 @@
 				[
 					[
 						"Set Cam Zoom",
-						"1",
+						"0.8",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"1400",
+						"550"
 					]
 				]
 			],
@@ -430,6 +565,11 @@
 						"Set Camera Target",
 						"james",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
+						""
 					]
 				]
 			],
@@ -438,8 +578,13 @@
 				[
 					[
 						"Set Cam Zoom",
-						"1",
+						"0.8",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"1400",
+						"550"
 					]
 				]
 			],
@@ -450,6 +595,11 @@
 						"Set Cam Zoom",
 						"0.7",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
+						""
 					]
 				]
 			],
@@ -458,8 +608,13 @@
 				[
 					[
 						"Set Cam Zoom",
-						"1",
+						"0.8",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"1400",
+						"550"
 					]
 				]
 			],
@@ -469,6 +624,11 @@
 					[
 						"Set Cam Zoom",
 						"0.7",
+						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
 						""
 					]
 				]
@@ -483,7 +643,7 @@
 					],
 					[
 						"Set Cam Zoom",
-						"0.5",
+						"0.4",
 						""
 					]
 				]
@@ -493,8 +653,13 @@
 				[
 					[
 						"Set Cam Zoom",
-						"1",
+						"0.8",
 						""
+					],
+					[
+						"Camera Follow Pos",
+						"1400",
+						"550"
 					]
 				]
 			],
@@ -509,6 +674,11 @@
 					[
 						"Set Cam Zoom",
 						"0.65",
+						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
 						""
 					]
 				]
@@ -653,7 +823,7 @@
 				[
 					[
 						"Set Cam Zoom",
-						"0.7",
+						"0.75",
 						""
 					]
 				]
@@ -663,8 +833,13 @@
 				[
 					[
 						"Set Cam Zoom",
-						"0.75",
+						"0.85",
 						""
+					],
+					[
+						"Change Character",
+						"bf",
+						"indigbf"
 					]
 				]
 			],
@@ -685,6 +860,11 @@
 						"BF Fade",
 						"1",
 						"1"
+					],
+					[
+						"Set Health Bar",
+						"gordon",
+						""
 					]
 				]
 			],
@@ -728,7 +908,7 @@
 				[
 					[
 						"Set Cam Zoom",
-						"0.5",
+						"0.4",
 						""
 					]
 				]
@@ -783,7 +963,7 @@
 					],
 					[
 						"Set Cam Zoom",
-						"0.5",
+						"0.4",
 						""
 					]
 				]
