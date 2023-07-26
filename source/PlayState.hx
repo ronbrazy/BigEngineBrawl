@@ -4214,20 +4214,22 @@ class PlayState extends MusicBeatState
 				});
 
 			case 'Set Health Bar':
-				if (value1 == 'gordon')
+		
+					switch(value1)
 					{
-						iconP2.changeIcon(dad.healthIcon);
+						case 'henry':
+							iconP2.changeIcon(exChar1.healthIcon);
+						case 'james':
+							iconP2.changeIcon(exChar2.healthIcon);
+						case 'gordon':
+							dad.healthIcon = 'gordon';
+							iconP2.changeIcon(dad.healthIcon);
+						case 'gordon2':
+							dad.healthIcon = 'gordon2';
+							iconP2.changeIcon(dad.healthIcon);
+								
 					}
-					else
-					{
-						switch(value1)
-						{
-							case 'henry':
-								iconP2.changeIcon(exChar1.healthIcon);
-							case 'james':
-								iconP2.changeIcon(exChar2.healthIcon);
-						}
-					}
+					
 	
 					reloadHealthBarColors(value1);
 			case 'Set Camera Target':
