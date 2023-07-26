@@ -1798,8 +1798,16 @@ class PlayState extends MusicBeatState
 		#end
 	}
 
-	public function reloadHealthBarColors() {
-		healthBar.createFilledBar(FlxColor.fromRGB(dad.healthColorArray[0], dad.healthColorArray[1], dad.healthColorArray[2]),
+	public function reloadHealthBarColors(?chara:String) {
+		var char:Character = dad;
+		switch(chara)
+		{
+			case 'henry':
+				char = exChar1;
+			case 'james':
+				char = exChar2;
+		}
+		healthBar.createFilledBar(FlxColor.fromRGB(char.healthColorArray[0], char.healthColorArray[1], char.healthColorArray[2]),
 			FlxColor.fromRGB(boyfriend.healthColorArray[0], boyfriend.healthColorArray[1], boyfriend.healthColorArray[2]));
 
 		healthBar.updateBar();
@@ -4204,11 +4212,33 @@ class PlayState extends MusicBeatState
 				FlxTween.tween(camHUD, {alpha: Std.parseFloat(value2)}, Std.parseFloat(value1), {
 					ease: FlxEase.cubeInOut
 				});
+
+			case 'Set Health Bar':
+				if (value1 == 'gordon')
+					{
+						iconP2.changeIcon(dad.healthIcon);
+					}
+					else
+					{
+						switch(singChar)
+						{
+							case 'henry':
+								iconP2.changeIcon(exChar1.healthIcon);
+							case 'james':
+								iconP2.changeIcon(exChar2.healthIcon);
+						}
+					}
+	
+					reloadHealthBarColors();
 			case 'Set Camera Target':
 				if (value1 == 'gordon')
+				{
 					singChar = '';
+				}
 				else
+				{
 					singChar = value1;
+				}
 				
 				if(value2 == 'true')
 				{
