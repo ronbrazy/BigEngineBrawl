@@ -229,6 +229,7 @@ class PlayState extends MusicBeatState
 	public var iconP1:HealthIcon;
 	public var iconP2:HealthIcon;
 	public var camHUD:FlxCamera;
+	public var camBAR:FlxCamera;
 	public var camGame:FlxCamera;
 	public var camOther:FlxCamera;
 	public var cameraSpeed:Float = 1;
@@ -501,12 +502,15 @@ class PlayState extends MusicBeatState
 
 		// var gameCam:FlxCamera = FlxG.camera;
 		camGame = new FlxCamera();
+		camBAR = new FlxCamera();
 		camHUD = new FlxCamera();
 		camOther = new FlxCamera();
+		camBAR.bgColor.alpha = 0;
 		camHUD.bgColor.alpha = 0;
 		camOther.bgColor.alpha = 0;
 
 		FlxG.cameras.reset(camGame);
+		FlxG.cameras.add(camBAR, false);
 		FlxG.cameras.add(camHUD, false);
 		FlxG.cameras.add(camOther, false);
 		grpNoteSplashes = new FlxTypedGroup<NoteSplash>();
@@ -1535,6 +1539,18 @@ class PlayState extends MusicBeatState
 
 		gameBlackLayer.alpha = 0;
 		gameBlackLayer.cameras = [camHUD];
+
+		if(curStage == 'indignation')
+		{
+			var barHeight:Int = 70;
+			var blackBar:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, barHeight, FlxColor.BLACK);
+			blackBar.cameras = [camBAR];
+			add(blackBar);
+
+			var blackBar:FlxSprite = new FlxSprite(0, FlxG.height - barHeight).makeGraphic(FlxG.width, barHeight, FlxColor.BLACK);
+			blackBar.cameras = [camBAR];
+			add(blackBar);
+		}
 
 
 		// if (SONG.song == 'South')
@@ -2784,7 +2800,11 @@ class PlayState extends MusicBeatState
 		var daBeats:Int = 0; // Not exactly representative of 'daBeats' lol, just how much it has looped
 
 		var songName:String = Paths.formatToSongPath(SONG.song);
-		var file:String = Paths.json(songName + '/events');
+		var file:String = '';
+		if(hiddenSongs.contains(songName.replace("-", " ")))
+			file = Paths.json(songName + '/events', 'secretStuff');
+		else
+			file = Paths.json(songName + '/events');
 		#if MODS_ALLOWED
 		if (FileSystem.exists(Paths.modsJson(songName + '/events')) || FileSystem.exists(file)) {
 		#else
@@ -4239,7 +4259,7 @@ class PlayState extends MusicBeatState
 							dad.healthIcon = 'gordon';
 							iconP2.changeIcon(dad.healthIcon);
 						case 'gordon2':
-							dad.healthIcon = 'gordon2';
+							dad.healthIcon = 'gordon-rage';
 							iconP2.changeIcon(dad.healthIcon);
 								
 					}
