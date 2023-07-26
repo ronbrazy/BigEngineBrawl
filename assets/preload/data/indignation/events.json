@@ -379,7 +379,7 @@
 					[
 						"Set Camera Target",
 						"james",
-						""
+						"true"
 					]
 				]
 			],
@@ -542,16 +542,6 @@
 				184950,
 				[
 					[
-						"Set Camera Target",
-						"james",
-						""
-					]
-				]
-			],
-			[
-				185100,
-				[
-					[
 						"Play Animation",
 						"ugh",
 						"james"
@@ -559,17 +549,17 @@
 				]
 			],
 			[
-				185400,
+				185100,
 				[
 					[
-						"Set Camera Target",
-						"henry",
+						"Set Cam Zoom",
+						"0.4",
 						""
 					]
 				]
 			],
 			[
-				185550,
+				185475,
 				[
 					[
 						"Play Animation",
@@ -579,11 +569,31 @@
 				]
 			],
 			[
-				186225,
+				186600,
 				[
 					[
-						"Set Camera Target",
-						"gordon",
+						"Set Cam Zoom",
+						"0.65",
+						""
+					]
+				]
+			],
+			[
+				190575,
+				[
+					[
+						"Set Cam Zoom",
+						"0.75",
+						""
+					]
+				]
+			],
+			[
+				196500,
+				[
+					[
+						"Set Cam Zoom",
+						"0.65",
 						""
 					]
 				]
@@ -594,7 +604,7 @@
 					[
 						"Set Camera Target",
 						"james",
-						""
+						"true"
 					]
 				]
 			],
@@ -614,7 +624,7 @@
 					[
 						"Set Camera Target",
 						"henry",
-						""
+						"true"
 					]
 				]
 			],
@@ -634,6 +644,26 @@
 					[
 						"Set Camera Target",
 						"gordon",
+						"true"
+					]
+				]
+			],
+			[
+				206025,
+				[
+					[
+						"Set Cam Zoom",
+						"0.7",
+						""
+					]
+				]
+			],
+			[
+				206550,
+				[
+					[
+						"Set Cam Zoom",
+						"0.75",
 						""
 					]
 				]
@@ -665,6 +695,11 @@
 						"Alt Idle Animation",
 						"Dad",
 						"-alt"
+					],
+					[
+						"Set Cam Zoom",
+						"0.65",
+						""
 					]
 				]
 			],
@@ -694,16 +729,6 @@
 					[
 						"Set Cam Zoom",
 						"0.5",
-						""
-					]
-				]
-			],
-			[
-				223800,
-				[
-					[
-						"Set Cam Zoom",
-						"1",
 						""
 					]
 				]
@@ -769,16 +794,6 @@
 					[
 						"Alt Idle Animation",
 						"Dad",
-						""
-					]
-				]
-			],
-			[
-				245400,
-				[
-					[
-						"Set Cam Zoom",
-						"0.6",
 						""
 					]
 				]
