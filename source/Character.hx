@@ -244,7 +244,7 @@ class Character extends FlxSprite
 						frames = Paths.getPackerAtlas(json.image);
 					
 					case "sparrow":
-						if (PlayState.hiddenChars.contains(curCharacter))
+						if (PlayState.hiddenChars.contains(curCharacter) && curCharacter != 'reliablebf')
 							frames = Paths.getSparrowAtlas(json.image, 'secretStuff');
 						else
 							frames = Paths.getSparrowAtlas(json.image);
