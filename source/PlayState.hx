@@ -4220,7 +4220,7 @@ class PlayState extends MusicBeatState
 					}
 					else
 					{
-						switch(singChar)
+						switch(value1)
 						{
 							case 'henry':
 								iconP2.changeIcon(exChar1.healthIcon);
@@ -4229,7 +4229,7 @@ class PlayState extends MusicBeatState
 						}
 					}
 	
-					reloadHealthBarColors();
+					reloadHealthBarColors(value1);
 			case 'Set Camera Target':
 				if (value1 == 'gordon')
 				{
