@@ -887,6 +887,20 @@ class PlayState extends MusicBeatState
 					ob1.setGraphicSize(3865);
 					ob1.updateHitbox();
 					add(ob1);
+
+					ob5 = new FlxSprite(ob1.x + ob1.width,-739).loadGraphic(Paths.image('bgs/indignation/bg'));
+					ob5.antialiasing = ClientPrefs.globalAntialiasing;
+					
+					ob5.setGraphicSize(3865);
+					ob5.updateHitbox();
+					add(ob5);
+
+					ob6 = new FlxSprite(ob1.x - ob1.width,-739).loadGraphic(Paths.image('bgs/indignation/bg'));
+					ob6.antialiasing = ClientPrefs.globalAntialiasing;
+					
+					ob6.setGraphicSize(3865);
+					ob6.updateHitbox();
+					add(ob6);
 					
 					ob2 = new FlxSprite(-918,-177);
 					ob2.antialiasing = ClientPrefs.globalAntialiasing;
