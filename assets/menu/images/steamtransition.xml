@@ -2,7 +2,6 @@
 <TextureAtlas imagePath="steamtransition2.png">
 	<!-- Created with Adobe Animate version 23.0.0.407 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="Intro0000" x="0" y="0" width="0" height="0" frameX="27" frameY="15" frameWidth="1936" frameHeight="1081"/>
 	<SubTexture name="Intro0001" x="0" y="0" width="339" height="95" frameX="-1597" frameY="-983" frameWidth="1936" frameHeight="1081"/>
 	<SubTexture name="Intro0002" x="339" y="0" width="467" height="331" frameX="-1462" frameY="-750" frameWidth="1936" frameHeight="1081"/>
 	<SubTexture name="Intro0003" x="806" y="0" width="466" height="332" frameX="-1463" frameY="-749" frameWidth="1936" frameHeight="1081"/>
