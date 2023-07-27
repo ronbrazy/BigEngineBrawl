@@ -44,7 +44,7 @@ class DiscordClient
 		DiscordRpc.presence({
 			details: "Idling in the Station",
 			state: null,
-			largeImageKey: 'logofr',
+			largeImageKey: 'icon',
 			largeImageText: "BIG ENGINE BRAWL",
 		});
 	}

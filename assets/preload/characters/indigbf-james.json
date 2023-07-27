@@ -1,114 +1,114 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				-4,
 				-1
 			],
-			"anim": "idle",
+			"loop": false,
 			"fps": 24,
-			"name": "indig bf james idle",
-			"indices": []
+			"anim": "idle",
+			"indices": [],
+			"name": "indig bf james idle"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-2,
 				-1
 			],
-			"anim": "singLEFT",
+			"loop": false,
 			"fps": 24,
-			"name": "indig bf james left",
-			"indices": []
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "indig bf james left"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-3,
 				-2
 			],
-			"anim": "singDOWN",
+			"loop": false,
 			"fps": 24,
-			"name": "indig bf james down",
-			"indices": []
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "indig bf james down"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-1,
 				5
 			],
-			"anim": "singUP",
+			"loop": false,
 			"fps": 24,
-			"name": "indig bf james up",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "indig bf james up"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				6,
 				-1
 			],
-			"anim": "singLEFTmiss",
+			"loop": false,
 			"fps": 24,
-			"name": "indig bf james miss left",
-			"indices": []
+			"anim": "singLEFTmiss",
+			"indices": [],
+			"name": "indig bf james miss left"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				3,
 				-2
 			],
-			"anim": "singDOWNmiss",
+			"loop": false,
 			"fps": 24,
-			"name": "indig bf james miss down",
-			"indices": []
+			"anim": "singDOWNmiss",
+			"indices": [],
+			"name": "indig bf james miss down"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-1,
 				4
 			],
-			"anim": "singUPmiss",
+			"loop": false,
 			"fps": 24,
-			"name": "indig bf james miss up",
-			"indices": []
+			"anim": "singUPmiss",
+			"indices": [],
+			"name": "indig bf james miss up"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-3,
 				-2
 			],
-			"anim": "singRIGHTmiss",
+			"loop": false,
 			"fps": 24,
-			"name": "indig bf james miss right",
-			"indices": []
+			"anim": "singRIGHTmiss",
+			"indices": [],
+			"name": "indig bf james miss right"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-5,
 				-3
 			],
-			"anim": "singRIGHT",
+			"loop": false,
 			"fps": 24,
-			"name": "indig bf james right",
-			"indices": []
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "indig bf james right"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				53,
-				-29
+				66,
+				-26
 			],
-			"anim": "james switch",
+			"loop": false,
 			"fps": 24,
-			"name": "indig bf james james switch",
-			"indices": []
+			"anim": "james switch",
+			"indices": [],
+			"name": "indig bf james james switch"
 		}
 	],
 	"no_antialiasing": false,

@@ -191,12 +191,20 @@ class BebOptionsSubstate extends MusicBeatSubstate
                 FlxG.sound.play(Paths.sound('cancelMenu'));
                 FlxTween.tween(bg, {alpha: 0}, 0.25);
                 slideTabsOut(true);
+                #if desktop
+                // Updating Discord Rich Presence
+                DiscordClient.changePresence("Idling in the Station (Main Menu)", null);
+                #end
             }
             else
             {
                 allowedToChange = false;
                 FlxG.sound.play(Paths.sound('cancelMenu'));
                 slideDiffsOut();
+                #if desktop
+                // Updating Discord Rich Presence
+                DiscordClient.changePresence("Idling in the Station (Main Menu)", null);
+                #end
             }
 
         }
@@ -254,12 +262,20 @@ class BebOptionsSubstate extends MusicBeatSubstate
                                     FlxG.sound.play(Paths.sound('cancelMenu'));
                                     FlxTween.tween(bg, {alpha: 0}, 0.25);
                                     slideTabsOut(true);
+                                    #if desktop
+                                    // Updating Discord Rich Presence
+                                    DiscordClient.changePresence("Idling in the Station (Main Menu)", null);
+                                    #end
                                 }
                             else
                                 {
                                     allowedToChange = false;
                                     FlxG.sound.play(Paths.sound('cancelMenu'), 0.7);
                                     slideDiffsOut();
+                                    #if desktop
+                                    // Updating Discord Rich Presence
+                                    DiscordClient.changePresence("Idling in the Station (Main Menu)", null);
+                                    #end
                                 }
                         }
                 }
