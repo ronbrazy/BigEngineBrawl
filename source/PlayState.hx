@@ -763,8 +763,8 @@ class PlayState extends MusicBeatState
 					add(dadGroup);
 
 					ob5 = new FlxSprite();
-					ob5.frames = Paths.getSparrowAtlas('bgs/splendid/splendid_runaway_sparks');
-					ob5.animation.addByPrefix('loop', 'splendid runaway sparks loop', 24, true);
+					ob5.frames = Paths.getSparrowAtlas('bgs/splendid/sparks');
+					ob5.animation.addByPrefix('loop', 'sparks idle', 24, true);
 					ob5.animation.play('loop');
 					ob5.alpha = 0;
 					//ob5.scrollFactor.set();
@@ -772,6 +772,14 @@ class PlayState extends MusicBeatState
 					ob5.cameras = [camHUD];
 					ob5.y = FlxG.height - ob5.frameHeight + 20;
 					add(ob5);
+
+					ob6 = new FlxSprite().loadGraphic(Paths.image('bgs/splendid/spark-overlay'));
+					ob6.alpha = 0;
+					//ob5.scrollFactor.set();
+					ob6.screenCenter(X);
+					ob6.cameras = [camHUD];
+					ob6.y = FlxG.height - ob6.frameHeight + 20;
+					add(ob6);
 	
 					//editable = true;
 					//editbleSprite = ob1;
@@ -4229,6 +4237,7 @@ class PlayState extends MusicBeatState
 				camOther.flash(FlxColor.WHITE,Std.parseFloat(value1));
 				if(curStage == "splendid"){
 					ob5.alpha = 1;
+					ob6.alpha = 1;
 					ob4.alpha = 1;
 					ob3.alpha = 0;
 					modifier = 3;
