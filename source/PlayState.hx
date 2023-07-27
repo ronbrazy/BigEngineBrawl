@@ -1107,6 +1107,8 @@ class PlayState extends MusicBeatState
 					else
 						tophamSound = FlxG.sound.load(Paths.sound('cnd/retry/confusion_retry_${FlxG.random.int(1, 7)}', 'menu'));
                     tophamSound.play();
+					ClientPrefs.fatassPlayed = true;
+					ClientPrefs.saveSettings();
 					camHUD.alpha = 0;
 
 				case 'oldreliable':

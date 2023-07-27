@@ -319,8 +319,6 @@ class BebAwardsState extends MusicBeatState
                                         {
                                             backButton.visible = false;
                                             FlxG.mouse.visible = false;
-                                            ClientPrefs.fatassPlayed = true;
-                                            ClientPrefs.saveSettings();
                                             loadSong();
                                         }
                                 }
