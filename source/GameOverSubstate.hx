@@ -16,6 +16,7 @@ import flixel.group.FlxGroup;
 import flixel.FlxCamera;
 import flixel.effects.FlxFlicker;
 import openfl.filters.ShaderFilter;
+import Achievements;
 
 class GameOverSubstate extends MusicBeatSubstate
 {
@@ -98,6 +99,9 @@ class GameOverSubstate extends MusicBeatSubstate
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
+		var achieve:String = checkForAchievement(['awardgameover', 'awarduseful']);
+		if(achieve != null) startAchievement(achieve);
 
 		screenShader.iTime.value = [shaderTime];
 		shaderTime += FlxG.elapsed;
@@ -308,4 +312,55 @@ class GameOverSubstate extends MusicBeatSubstate
 			PlayState.instance.callOnLuas('onGameOverConfirm', [true]);
 		}
 	}
+
+	var achievementObj:AchievementObject = null;
+	function startAchievement(achieve:String) 
+	{
+		achievementObj = new AchievementObject(achieve);
+		
+		achievementObj.scrollFactor.set(0.9);
+		achievementObj.onFinish = achievementEnd;
+		add(achievementObj);
+		trace('Giving achievement ' + achieve);
+	}
+
+	function achievementEnd():Void
+	{
+		achievementObj = null;
+	}
+
+	private function checkForAchievement(achievesToCheck:Array<String> = null):String
+		{
+			for (i in 0...achievesToCheck.length) {
+				var achievementName:String = achievesToCheck[i];
+				if(!Achievements.isAchievementUnlocked(achievementName)) {
+					var unlock:Bool = false;
+					
+					switch(achievementName)
+					{
+						case 'awardgameover':
+							unlock = true;
+						case 'awarduseful':
+							var check:Int = 0;
+							for(i in 0...Achievements.achievementsStuff.length-3)
+							{
+								if(Achievements.isAchievementUnlocked(Achievements.achievementsStuff[i][2]))
+								{
+									check++;
+								}
+							}
+							if(check >= Achievements.achievementsStuff.length-3)
+							{
+								unlock = true;
+							}
+					}
+	
+					if(unlock) {
+						Achievements.unlockAchievement(achievementName);
+						return achievementName;
+					}
+				}
+			}
+			return null;
+		}
 }

@@ -3934,8 +3934,7 @@ class PlayState extends MusicBeatState
 				for (timer in modchartTimers) {
 					timer.active = true;
 				}
-				var achieve:String = checkForAchievement(['awardgameover']);
-				if (achieve != null) startAchievement('awardgameover');
+				
 				openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x - boyfriend.positionArray[0], boyfriend.getScreenPosition().y - boyfriend.positionArray[1], camFollowPos.x, camFollowPos.y));
 
 				// MusicBeatState.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
@@ -4686,7 +4685,7 @@ class PlayState extends MusicBeatState
 		if(achievementObj != null) {
 			return;
 		} else {
-			var achieve:String = checkForAchievement(['awardpuffball', 'awardmainweek', 'awardsadstory', 'awardremix', 'awardconfusiondelay', 'awardexpress']);
+			var achieve:String = checkForAchievement(['awardpuffball', 'awardmainweek', 'awardsadstory', 'awardremix', 'awardconfusiondelay', 'awardexpress', 'awardloathed', 'awarduseful', 'awardreallyuseful']);
 
 			if(achieve != null) {
 				startAchievement(achieve);
@@ -6114,8 +6113,29 @@ class PlayState extends MusicBeatState
 							if(ClientPrefs.unlockedRemixes[arrayLol[i]] == true) unlockCount++;
 						}
 						if(unlockCount > 3) unlock = true;
-					case 'awardgameover':
-						unlock = true;
+					case 'awardloathed':
+						if (currentSong == 'loathed') unlock = true;
+					case 'awardtalentless':
+						// go fuck yourself lol
+						trace('percy gets trolled');
+					case 'awarduseful':
+						var check:Int = 0;
+						for(i in 0...Achievements.achievementsStuff.length-3)
+						{
+							if(Achievements.isAchievementUnlocked(Achievements.achievementsStuff[i][2]))
+							{
+								check++;
+							}
+						}
+						if(check >= Achievements.achievementsStuff.length-3)
+						{
+							unlock = true;
+						}
+					case 'awardreallyuseful':
+						if(Achievements.isAchievementUnlocked('awarduseful') && currentSong == 'old-reliable')
+							{
+								unlock = true;
+							}
 				}
 
 				if(unlock) {
