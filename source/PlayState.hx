@@ -399,6 +399,7 @@ class PlayState extends MusicBeatState
 		"sadhenry" => "HenryNote",
 		"thomas" => "thomasNote",
 		"gordon" => "gordonNote",
+		"gordondamn" => "gordonNote",
 		"loathed_gordon" => "gordonNote",
 		"alfred" => "alfredNote",
 		"edward" => "edwardNote",
@@ -1559,6 +1560,31 @@ class PlayState extends MusicBeatState
 			blackBar.cameras = [camBAR];
 			add(blackBar);
 		}
+
+		if(curStage == 'godraysremix')
+			{
+				var barHeight:Int = 70;
+				var blackBar:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, barHeight, FlxColor.BLACK);
+				blackBar.cameras = [camBAR];
+				add(blackBar);
+	
+				var blackBar:FlxSprite = new FlxSprite(0, FlxG.height - barHeight).makeGraphic(FlxG.width, barHeight, FlxColor.BLACK);
+				blackBar.cameras = [camBAR];
+				add(blackBar);
+			}
+
+		if(curStage == 'loathed')
+			{
+				var barHeight:Int = 70;
+				var blackBar:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, barHeight, FlxColor.BLACK);
+				blackBar.cameras = [camBAR];
+				add(blackBar);
+	
+				var blackBar:FlxSprite = new FlxSprite(0, FlxG.height - barHeight).makeGraphic(FlxG.width, barHeight, FlxColor.BLACK);
+				blackBar.cameras = [camBAR];
+				add(blackBar);
+			}			
+	
 
 
 		// if (SONG.song == 'South')

@@ -1,0 +1,155 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				173,
+				-121
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "indig_gordon down"
+		},
+		{
+			"offsets": [
+				179,
+				-125
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "indig_gordon left"
+		},
+		{
+			"offsets": [
+				172,
+				-110
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "indig_gordon up"
+		},
+		{
+			"offsets": [
+				170,
+				-122
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "indig_gordon right"
+		},
+		{
+			"offsets": [
+				180,
+				440
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "callforbackup",
+			"indices": [],
+			"name": "indig_gordon callforbackup"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				180,
+				-113
+			],
+			"anim": "speech",
+			"fps": 24,
+			"name": "indig_gordon speech",
+			"indices": []
+		},
+		{
+			"offsets": [
+				175,
+				-127
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle-alt",
+			"indices": [],
+			"name": "indig_gordon alt idle"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				174,
+				-121
+			],
+			"anim": "singDOWN-alt",
+			"fps": 24,
+			"name": "indig_gordon alt down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				178,
+				-125
+			],
+			"anim": "singLEFT-alt",
+			"fps": 24,
+			"name": "indig_gordon alt left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				171,
+				-113
+			],
+			"anim": "singUP-alt",
+			"fps": 24,
+			"name": "indig_gordon alt up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				170,
+				-119
+			],
+			"anim": "singRIGHT-alt",
+			"fps": 24,
+			"name": "indig_gordon alt right",
+			"indices": []
+		},
+		{
+			"offsets": [
+				176,
+				-126
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "indig_gordon alt idle"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/indig_gordon",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "gordon-rage",
+	"flip_x": false,
+	"healthbar_colors": [
+		7,
+		149,
+		233
+	],
+	"camera_position": [
+		-60,
+		-30
+	],
+	"sing_duration": 6.1,
+	"scale": 1.6
+}
