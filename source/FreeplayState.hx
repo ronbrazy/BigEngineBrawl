@@ -186,6 +186,7 @@ class FreeplayState extends MusicBeatState
 				train.animation.play('idle');
 				train.scale.x = 0.35;
 				train.scale.y = 0.35;
+				train.antialiasing = ClientPrefs.globalAntialiasing;
 				train.updateHitbox();
 				grpOptions.add(train);
 
@@ -245,6 +246,7 @@ class FreeplayState extends MusicBeatState
 						grpButtons.add(songSprite);
 						songSprite.setGraphicSize(Std.int(songSprite.width * 0.6));
 						songSprite.updateHitbox();
+						songSprite.antialiasing = ClientPrefs.globalAntialiasing;
 						songSprite.visible = false;
 						testArray.push(songSprite);
 
