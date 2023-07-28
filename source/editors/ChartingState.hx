@@ -470,9 +470,17 @@ class ChartingState extends MusicBeatState
 		{
 
 			var songName:String = Paths.formatToSongPath(_song.song);
-			var file:String = Paths.json(songName + '/events');
+			var file:String = '';
+			trace(songName);
+			if(PlayState.hiddenSongs.contains(songName.replace("-", " ")))
+			{
+				file = Paths.json(songName + '/events', 'secretStuff');
+				trace('${file} exists ${OpenFlAssets.exists(file)}');
+			}
+			else
+				file = Paths.json(songName + '/events');
 			#if sys
-			if (#if MODS_ALLOWED FileSystem.exists(Paths.modsJson(songName + '/events')) || #end FileSystem.exists(file))
+			if (#if MODS_ALLOWED FileSystem.exists(Paths.modsJson(songName + '/events')) || #end FileSystem.exists(file) || (PlayState.hiddenSongs.contains(songName.replace("-", " ")) && OpenFlAssets.exists(file)))
 			#else
 			if (OpenFlAssets.exists(file))
 			#end
