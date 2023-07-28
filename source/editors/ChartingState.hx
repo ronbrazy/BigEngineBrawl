@@ -82,6 +82,7 @@ class ChartingState extends MusicBeatState
 	[
 		['', "Nothing. Yep, that's right."],
 		['fnaf', 'funee jumpscare, value 1: duration of image popup'],
+		['spawn image', 'image popup with fadeout, value 1: image name\nvalue 2: fade out duration'],
 		['opendoor', 'opens a door on indignation, value 1: name of engine\n value 2: open/close (only for gordon)'],
 		['Start Rain', 'starts the rain on sad story'],
 		['White Flash',''],

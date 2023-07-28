@@ -4504,6 +4504,18 @@ class PlayState extends MusicBeatState
 						belowArrowGrp.remove(jumpScare);
 					});
 
+			case 'spawn image':
+				var jumpScare:FlxSprite = new FlxSprite().loadGraphic(Paths.image('endless/${value1}'));
+				jumpScare.setGraphicSize(Std.int(jumpScare.width * 0.3));
+				jumpScare.updateHitbox();
+				jumpScare.screenCenter();
+				jumpScare.cameras = [camHUD];
+				add(jumpScare);
+				FlxTween.tween(jumpScare, {alpha: 0}, Std.parseFloat(value2), {ease: FlxEase.cubeInOut, onComplete: function(tween:FlxTween)
+					{
+						remove(jumpScare);
+					}});
+
 			case 'opendoor':
 				switch(value1)
 				{
