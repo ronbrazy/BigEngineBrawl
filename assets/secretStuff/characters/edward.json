@@ -1,81 +1,81 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"anim": "idle",
+			"loop": false,
 			"fps": 24,
-			"name": "edward idle",
-			"indices": []
+			"anim": "idle",
+			"indices": [],
+			"name": "edward idle"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-8,
 				-1
 			],
-			"anim": "singDOWN",
+			"loop": false,
 			"fps": 24,
-			"name": "edward down",
-			"indices": []
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "edward down"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-5,
 				-1
 			],
-			"anim": "singLEFT",
+			"loop": false,
 			"fps": 24,
-			"name": "edward left",
-			"indices": []
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "edward left"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-7,
 				-1
 			],
-			"anim": "singUP",
+			"loop": false,
 			"fps": 24,
-			"name": "edward up",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "edward up"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-8,
 				-3
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singRIGHT",
-			"fps": 24,
-			"name": "edward right",
-			"indices": []
+			"indices": [],
+			"name": "edward right"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-7,
 				2
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "intro",
-			"fps": 24,
-			"name": "edward intro",
-			"indices": []
+			"indices": [],
+			"name": "edward intro"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-7,
 				2
 			],
-			"anim": "outro",
+			"loop": false,
 			"fps": 24,
-			"name": "edward end",
-			"indices": []
+			"anim": "outro",
+			"indices": [],
+			"name": "edward end"
 		}
 	],
 	"no_antialiasing": false,
@@ -92,8 +92,8 @@
 		233
 	],
 	"camera_position": [
-		-130,
-		-150
+		-340,
+		-130
 	],
 	"sing_duration": 6.1,
 	"scale": 1.8
