@@ -104,7 +104,7 @@ class AchievementObject extends FlxSpriteGroup {
 		var achievementBG:FlxSprite = new FlxSprite(60, 50).makeGraphic(420, 120, FlxColor.BLACK);
 		achievementBG.scrollFactor.set();
 
-		var achievementIcon:FlxSprite = new FlxSprite(achievementBG.x + 10, achievementBG.y + 10).loadGraphic(Paths.image('awards/award full imgs/' + name, 'secretStuff'));
+		var achievementIcon:FlxSprite = new FlxSprite(achievementBG.x + 10, achievementBG.y + 10).loadGraphic(Paths.image('award full imgs/' + name, 'secretStuff'));
 		achievementIcon.scrollFactor.set();
 		achievementIcon.setGraphicSize(Std.int(150 * (2 / 3)));
 		achievementIcon.updateHitbox();
