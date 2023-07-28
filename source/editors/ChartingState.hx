@@ -1386,8 +1386,8 @@ class ChartingState extends MusicBeatState
 			// vocals.stop();
 		}
 
-		var file:Dynamic = Paths.voices(currentSongName);
-		if(PlayState.hiddenSongs.contains(currentSongName)) file = Paths.voicesHidden(currentSongName);
+		var file:Dynamic = Paths.voices(currentSongName.replace(' ', '-'));
+		if(PlayState.hiddenSongs.contains(currentSongName.replace('-', ' '))) file = Paths.voicesHidden(currentSongName);
 		vocals = new FlxSound();
 		if (Std.isOfType(file, Sound) || OpenFlAssets.exists(file)) {
 			vocals.loadEmbedded(file);
@@ -1400,8 +1400,8 @@ class ChartingState extends MusicBeatState
 	}
 
 	function generateSong() {
-		if (PlayState.hiddenSongs.contains(currentSongName))
-			FlxG.sound.playMusic(Paths.instHidden(currentSongName), 0.6/*, false*/);
+		if (PlayState.hiddenSongs.contains(currentSongName.replace('-', ' ')))
+			FlxG.sound.playMusic(Paths.instHidden(currentSongName.replace(' ', '-')), 0.6/*, false*/);
 		else
 			FlxG.sound.playMusic(Paths.inst(currentSongName), 0.6/*, false*/);
 		if (instVolume != null) FlxG.sound.music.volume = instVolume.value;
