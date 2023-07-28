@@ -474,7 +474,7 @@ class ChartingState extends MusicBeatState
 			trace(songName);
 			if(PlayState.hiddenSongs.contains(songName.replace("-", " ")))
 			{
-				file = Paths.json(songName + '/events', 'secretStuff');
+				file = Paths.json(songName.replace(" ", "-") + '/events', 'secretStuff');
 				trace('${file} exists ${OpenFlAssets.exists(file)}');
 			}
 			else
