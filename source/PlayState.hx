@@ -4686,8 +4686,6 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		if (oreoWindow)
-			resetWindow();
 
 		timeBarBG.visible = false;
 		timeBar.visible = false;
@@ -4724,6 +4722,9 @@ class PlayState extends MusicBeatState
 			}
 		}
 		#end
+
+		if (oreoWindow)
+			resetWindow();
 
 		var ret:Dynamic = callOnLuas('onEndSong', [], false);
 		if(ret != FunkinLua.Function_Stop && !transitioning) {
