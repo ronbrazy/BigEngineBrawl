@@ -233,6 +233,11 @@ class Paths
 		return 'assets/videos/$key.$VIDEO_EXT';
 	}
 
+	static public function videoHidden(key:String)
+		{
+			return getPreloadPath('images/menudifficulties/${key}.mp4');
+		}
+
 	static public function sound(key:String, ?library:String):Sound
 	{
 		var sound:Sound = returnSound('sounds', key, library);
@@ -354,13 +359,13 @@ class Paths
 	{
 		#if MODS_ALLOWED
 		if(FileSystem.exists(mods(currentModDirectory + '/' + key)) || FileSystem.exists(mods(key))) {
-			trace('ur smart');
+			trace('${key} exists');
 			return true;
 		}
 		#end
 
 		if(OpenFlAssets.exists(getPath(key, type))) {
-			trace('ur smart');
+			trace('${key} exists');
 			return true;
 		}
 		trace('shit not found dumbass');

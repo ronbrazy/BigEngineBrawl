@@ -601,9 +601,9 @@ class PlayState extends MusicBeatState
 					defaultZoom: 0.9,
 					isPixelStage: false,
 
-					boyfriend: [770, 100],
-					girlfriend: [400, 130],
-					opponent: [100, 100],
+					boyfriend: [960, -320],
+					girlfriend: [550, -130],
+					opponent: [-35, 0],
 					hide_girlfriend: true,
 
 					camera_boyfriend: [0, 0],
@@ -1146,6 +1146,22 @@ class PlayState extends MusicBeatState
 
 					editable = true;
 					editbleSprite = ob1;
+				
+				case 'loathed':
+					ob1 = new FlxSprite().loadGraphic(Paths.image('backgrounds/loathed/phase1/sky', 'secretStuff'));
+					ob1.antialiasing = ClientPrefs.globalAntialiasing;
+					ob1.setGraphicSize(Std.int(1425));
+					ob1.updateHitbox();
+					ob1.x = -539; ob1.y = -371;
+					add(ob1);
+
+					ob2 = new FlxSprite().loadGraphic(Paths.image('backgrounds/loathed/phase2/sky', 'secretStuff'));
+					ob2.antialiasing = ClientPrefs.globalAntialiasing;
+					ob2.setGraphicSize(Std.int(1425));
+					ob2.updateHitbox();
+					ob2.x = -539; ob2.y = -371;
+					ob2.alpha = 0;
+					add(ob2);
 		}
 
 		switch(Paths.formatToSongPath(SONG.song))
@@ -1967,9 +1983,15 @@ class PlayState extends MusicBeatState
 	public function startVideo(name:String)
 	{
 		#if VIDEOS_ALLOWED
+		if (name != 'train_standoff')
 		inCutscene = true;
 
-		var filepath:String = Paths.video(name);
+		var filepath:String = '';
+			filepath = Paths.video(name);
+			if (TitleState.hiddenVideos.contains(name))
+				{
+					filepath = Paths.videoHidden(name);
+				}
 		#if sys
 		if(!FileSystem.exists(filepath))
 		#else
@@ -2837,12 +2859,16 @@ class PlayState extends MusicBeatState
 
 		var songName:String = Paths.formatToSongPath(SONG.song);
 		var file:String = '';
+		trace(songName);
 		if(hiddenSongs.contains(songName.replace("-", " ")))
-			file = Paths.json(songName + '/events', 'secretStuff');
+			{
+				file = Paths.json(songName + '/events', 'secretStuff');
+				trace('${file} exists ${OpenFlAssets.exists(file)}');
+			}
 		else
 			file = Paths.json(songName + '/events');
 		#if MODS_ALLOWED
-		if (FileSystem.exists(Paths.modsJson(songName + '/events')) || FileSystem.exists(file)) {
+		if (FileSystem.exists(Paths.modsJson(songName + '/events')) || FileSystem.exists(file) || (hiddenSongs.contains(songName.replace("-", " ")) && OpenFlAssets.exists(file))) {
 		#else
 		if (OpenFlAssets.exists(file)) {
 		#end
@@ -4526,10 +4552,13 @@ class PlayState extends MusicBeatState
 				}
 
 			case 'Play Video':
-				var whiteSprite:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.WHITE);
-				whiteSprite.cameras = [camHUD];
-				add(whiteSprite);
-				startVideo('jamescrashscene');
+				if (value1 != 'train_standoff')
+				{
+					var whiteSprite:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.WHITE);
+					whiteSprite.cameras = [camHUD];
+					add(whiteSprite);
+				}
+				startVideo(value1);
 		}
 		callOnLuas('onEvent', [eventName, value1, value2]);
 	}

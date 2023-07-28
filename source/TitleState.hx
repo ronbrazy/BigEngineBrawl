@@ -72,7 +72,8 @@ class TitleState extends MusicBeatState
 	var textGroup:FlxGroup;
 	var ngSpr:FlxSprite;
 
-	var videos:Array<String> = ['jamescrashscene', 'tophamintroduction', 'kipper', 'Indignation', 'Splendid', 'intro', 'alfredintro'];
+	var videos:Array<String> = ['jamescrashscene', 'tophamintroduction', 'kipper', 'Indignation', 'Splendid', 'intro'];
+	public static var hiddenVideos:Array<String> = ['train_standoff'];
 	
 	var titleTextColors:Array<FlxColor> = [0xFF33FFFF, 0xFF3333CC];
 	var titleTextAlphas:Array<Float> = [1, .64];
@@ -111,6 +112,8 @@ class TitleState extends MusicBeatState
 		checkFile();
 
 		BebMainMenu.previousState = 'title';
+
+		videos.push(hiddenVideos[0]);
 
 		if(FlxG.sound.music == null) {
 			FlxG.sound.playMusic(Paths.music('beb_preloading'), 0);
@@ -257,18 +260,25 @@ class TitleState extends MusicBeatState
 			
 			#if VIDEOS_ALLOWED
 	
-			var filepath:String = Paths.video(name);
-			#if sys
-			if(!FileSystem.exists(filepath))
-			#else
-			if(!OpenFlAssets.exists(filepath))
-			#end
-			{
-				FlxG.log.warn('Couldnt find video file: ' + name);
-				return;
-			}
+			var filepath:String = '';
+			filepath = Paths.video(name);
+			if (hiddenVideos.contains(name))
+				{
+					filepath = Paths.videoHidden(name);
+				}
+
+				#if sys
+				if(!FileSystem.exists(filepath))
+				#else
+				if(!OpenFlAssets.exists(filepath))
+				#end
+				{
+					FlxG.log.warn('Couldnt find video file: ' + name);
+					return;
+				}
 	
 			var video:MP4Handler = new MP4Handler();
+			trace(filepath);
 			video.playVideo(filepath);
 			video.volume = 0;
 			video.openingCallback = function()
