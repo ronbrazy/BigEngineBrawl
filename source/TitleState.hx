@@ -236,7 +236,7 @@ class TitleState extends MusicBeatState
 		MusicBeatState.switchState(new BebMainMenu());
 		#end*/
 
-		loadingImage = new FlxSprite().loadGraphic(Paths.image('title/loading${FlxG.random.int(0, 4)}', 'menu'));
+		loadingImage = new FlxSprite().loadGraphic(Paths.image('title/loading${FlxG.random.int(0, 6)}', 'menu'));
 		loadingImage.setGraphicSize(Std.int(FlxG.width));
 		loadingImage.screenCenter();
 		loadingImage.antialiasing = ClientPrefs.globalAntialiasing;
