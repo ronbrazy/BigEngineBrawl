@@ -4845,6 +4845,7 @@ class PlayState extends MusicBeatState
 	var achievementObj:AchievementObject = null;
 	function startAchievement(achieve:String) {
 		achievementObj = new AchievementObject(achieve, camOther);
+		if (oreoWindow) achievementObj.x += 100;
 		achievementObj.onFinish = achievementEnd;
 		add(achievementObj);
 		trace('Giving achievement ' + achieve);

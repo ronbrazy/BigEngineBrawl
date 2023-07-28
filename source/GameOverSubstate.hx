@@ -316,8 +316,8 @@ class GameOverSubstate extends MusicBeatSubstate
 	var achievementObj:AchievementObject = null;
 	function startAchievement(achieve:String) 
 	{
-		achievementObj = new AchievementObject(achieve);
-		
+		achievementObj = new AchievementObject(achieve, camMenu);
+		if (PlayState.oreoWindow) achievementObj.x += 100;
 		achievementObj.scrollFactor.set(0.9);
 		achievementObj.onFinish = achievementEnd;
 		add(achievementObj);

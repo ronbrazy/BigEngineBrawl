@@ -110,13 +110,16 @@ class AchievementObject extends FlxSpriteGroup {
 		achievementIcon.updateHitbox();
 		achievementIcon.antialiasing = ClientPrefs.globalAntialiasing;
 
-		var achievementName:FlxText = new FlxText(achievementIcon.x + achievementIcon.width + 20, achievementIcon.y + 16, 280, Achievements.achievementsStuff[id][0], 16);
+		var achievementName:FlxText = new FlxText(achievementIcon.x + achievementIcon.width + 20, achievementIcon.y + 16, 0, Achievements.achievementsStuff[id][0], 16);
 		achievementName.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, LEFT);
 		achievementName.scrollFactor.set();
 
-		var achievementText:FlxText = new FlxText(achievementName.x, achievementName.y + 32, 280, Achievements.achievementsStuff[id][1], 16);
+		var achievementText:FlxText = new FlxText(achievementName.x, achievementName.y + 32, 0, Achievements.achievementsStuff[id][1], 16);
 		achievementText.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, LEFT);
 		achievementText.scrollFactor.set();
+
+		if(achievementName.x + achievementName.width > achievementBG.width)
+			achievementBG.setGraphicSize(Std.int(achievementName.x + achievementName.width + 20));
 
 		add(achievementBG);
 		add(achievementName);
