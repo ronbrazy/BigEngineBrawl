@@ -312,6 +312,13 @@ class PlayState extends MusicBeatState
 		'james-fire' => 'james'
 	];
 
+	var checkNoteSplash:Map<String, String> = [
+		"bf" => "noteSplashes",
+		"sadbf" => "noteSplashes",
+		"reliablebf" => "noteSplashes",
+		"loathed_gordon" => "noteSplashes_gordon"
+	];
+
 	var monochromeSprites:Array<String> = ['always', 'design', 'nobody', 'send', 'GETTHEFUCKOVERHERE'];
 
 	var achieves:Array<String> = [];
@@ -405,6 +412,7 @@ class PlayState extends MusicBeatState
 		"ughjames" => "jameNote",
 		"indigjames" => "jameNote",
 		"sadbf" => "NOTE_assets",
+		"reliablebf" => "NOTE_assets",
 		"sadhenry" => "HenryNote",
 		"thomas" => "thomasNote",
 		"gordon" => "gordonNote",
@@ -3050,7 +3058,7 @@ class PlayState extends MusicBeatState
 					case 'Signal Note':
 						//this is just here to cancel out the entire note skin changing for every note lol
 					default: 
-						swagNote.texture = 'NOTE_assets';
+						swagNote.texture = 'noteskins/${charToNoteSkin.get(boyfriend.curCharacter.toLowerCase())}';
 						if(!swagNote.mustPress)
 							swagNote.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter.toLowerCase())}';
 				}
@@ -3085,7 +3093,7 @@ class PlayState extends MusicBeatState
 								case 'Signal Note':
 									//this is just here to cancel out the entire note skin changing for every note lol
 								default: 
-									sustainNote.texture = 'NOTE_assets';
+									sustainNote.texture = 'noteskins/${charToNoteSkin.get(boyfriend.curCharacter.toLowerCase())}';
 									if(!sustainNote.mustPress)
 										sustainNote.texture = 'noteskins/${charToNoteSkin.get(dad.curCharacter.toLowerCase())}';
 							}
@@ -3281,7 +3289,7 @@ class PlayState extends MusicBeatState
 				if (oreoWindow)
 					babyArrow.x -= 82;
 				playerStrums.add(babyArrow);
-				babyArrow.texture = 'NOTE_assets';
+				babyArrow.texture = 'noteskins/${charToNoteSkin.get(boyfriend.curCharacter.toLowerCase())}';
 			}
 			else
 			{
@@ -5754,8 +5762,8 @@ class PlayState extends MusicBeatState
 	}
 
 	public function spawnNoteSplash(x:Float, y:Float, data:Int, ?note:Note = null) {
-		var skin:String = 'noteSplashes';
-		if(PlayState.SONG.splashSkin != null && PlayState.SONG.splashSkin.length > 0) skin = PlayState.SONG.splashSkin;
+		var skin:String = 'splashes/${checkNoteSplash.get(boyfriend.curCharacter.toLowerCase())}';
+		//if(PlayState.SONG.splashSkin != null && PlayState.SONG.splashSkin.length > 0) skin = PlayState.SONG.splashSkin;
 
 		var hue:Float = 0;
 		var sat:Float = 0;
@@ -5766,7 +5774,7 @@ class PlayState extends MusicBeatState
 			sat = ClientPrefs.arrowHSV[data][1] / 100;
 			brt = ClientPrefs.arrowHSV[data][2] / 100;
 			if(note != null) {
-				skin = note.noteSplashTexture;
+				//skin = note.noteSplashTexture;
 				hue = note.noteSplashHue;
 				sat = note.noteSplashSat;
 				brt = note.noteSplashBrt;
