@@ -12,6 +12,8 @@ class AttachedSprite extends FlxSprite
 	public var yAdd:Float = 0;
 	public var angleAdd:Float = 0;
 	public var alphaMult:Float = 1;
+	public var ignoreX:Bool = false;
+	public var ignoreY:Bool = false;
 
 	public var copyAngle:Bool = true;
 	public var copyAlpha:Bool = true;
@@ -25,7 +27,10 @@ class AttachedSprite extends FlxSprite
 			animation.addByPrefix('idle', anim, 24, loop);
 			animation.play('idle');
 		} else if(file != null) {
-			loadGraphic(Paths.image(file));
+			if (library != null)
+				loadGraphic(Paths.image(file, library));
+			else
+				loadGraphic(Paths.image(file));
 		}
 		antialiasing = ClientPrefs.globalAntialiasing;
 		scrollFactor.set();
@@ -36,7 +41,13 @@ class AttachedSprite extends FlxSprite
 		super.update(elapsed);
 
 		if (sprTracker != null) {
-			setPosition(sprTracker.x + xAdd, sprTracker.y + yAdd);
+
+			if (!ignoreX)
+			x = sprTracker.x + xAdd;
+			if (!ignoreY)
+			y = sprTracker.y + yAdd;
+
+			//setPosition(sprTracker.x + xAdd, sprTracker.y + yAdd);
 			scrollFactor.set(sprTracker.scrollFactor.x, sprTracker.scrollFactor.y);
 
 			if(copyAngle)
