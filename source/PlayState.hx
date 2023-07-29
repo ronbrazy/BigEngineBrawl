@@ -4298,13 +4298,26 @@ class PlayState extends MusicBeatState
 				}
 
 			case 'Change Loathed Background':
-				ob1.alpha = 0;
-				ob2.alpha = 0;
-				ob3.alpha = 0;
-				ob4.alpha = 0;
-				ob5.alpha = 1;
-				ob6.alpha = 1;
-				ob7.alpha = 1;
+				switch(value1)
+				{
+					case 'phase2':
+						ob1.alpha = 0;
+						ob2.alpha = 0;
+						ob3.alpha = 0;
+						ob4.alpha = 0;
+						ob5.alpha = 1;
+						ob6.alpha = 1;
+						ob7.alpha = 1;
+
+					case 'phase1':
+						ob1.alpha = 1;
+						ob2.alpha = 1;
+						ob3.alpha = 1;
+						ob4.alpha = 1;
+						ob5.alpha = 0;
+						ob6.alpha = 0;
+						ob7.alpha = 0;
+				}
 
 			case 'Add Camera Zoom':
 				if(ClientPrefs.camZooms && FlxG.camera.zoom < 1.35) {
