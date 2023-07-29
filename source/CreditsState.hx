@@ -24,16 +24,23 @@ using StringTools;
 class CreditsState extends MusicBeatState
 {
 	var curSelected:Int = -1;
+	var prevSelected:Int = -1;
 
 	private var grpOptions:FlxTypedGroup<Alphabet>;
+	private var grpSprites:FlxTypedGroup<AttachedSprite>;
 	private var iconArray:Array<AttachedSprite> = [];
 	private var creditsStuff:Array<Array<String>> = [];
 
 	var bg:FlxSprite;
+	var thomas:FlxSprite;
 	var descText:FlxText;
 	var intendedColor:Int;
 	var colorTween:FlxTween;
 	var descBox:AttachedSprite;
+	var blinkTime:Float = 0;
+    var cursorSprite:FlxSprite;
+    var cursorSprite2:FlxSprite;
+	var backButton:FlxSprite;
 
 	var offsetThing:Float = -75;
 
@@ -44,13 +51,41 @@ class CreditsState extends MusicBeatState
 		DiscordClient.changePresence("Idling in the Station (Credits)", null);
 		#end
 
+		cursorSprite = new FlxSprite().loadGraphic(Paths.image('ui/cursor'));
+        cursorSprite2 = new FlxSprite().loadGraphic(Paths.image('ui/cursor2'));
+
 		persistentUpdate = true;
-		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		bg = new FlxSprite().loadGraphic(Paths.image('credits/credits_bg', 'menu'));
 		add(bg);
+		bg.setGraphicSize(Std.int(FlxG.width));
+		bg.updateHitbox();
 		bg.screenCenter();
+
+		thomas = new FlxSprite();
+		thomas.frames = Paths.getSparrowAtlas('credits/thomas_credits', 'menu');
+		thomas.animation.addByPrefix('credit','thomas credits credit lookatcredit',24,false);
+		thomas.animation.addByPrefix('credit loop','thomas credits credit loop',24,true);
+		thomas.animation.addByPrefix('viewer','thomas credits credit lookatviewer',24,false);
+		thomas.animation.play('viewer');
+		thomas.setGraphicSize(Std.int(thomas.width*0.6));
+		thomas.updateHitbox();
+		thomas.y = FlxG.height - thomas.height;
+		add(thomas);
+
+		backButton = new FlxSprite().loadGraphic(Paths.image('freeplay/back_button',"menu"));
+		backButton.x = 10;
+		backButton.setGraphicSize(Std.int(backButton.width * 0.8));
+		backButton.updateHitbox();
+		backButton.y = FlxG.height - backButton.height - 10;
+        backButton.alpha = 0;
+        FlxTween.tween(backButton, {alpha: 1}, 0.25);
+		add(backButton);
 		
 		grpOptions = new FlxTypedGroup<Alphabet>();
 		add(grpOptions);
+
+		grpSprites = new FlxTypedGroup<AttachedSprite>();
+		add(grpSprites);
 
 		#if MODS_ALLOWED
 		var path:String = 'modsList.txt';
@@ -80,30 +115,32 @@ class CreditsState extends MusicBeatState
 		}
 		#end
 
-		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
-			['Psych Engine Team'],
-			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',								'https://twitter.com/Shadow_Mario_',	'444444'],
-			['RiverOaken',			'river',			'Main Artist/Animator of Psych Engine',							'https://twitter.com/RiverOaken',		'B42F71'],
-			['shubs',				'shubs',			'Additional Programmer of Psych Engine',						'https://twitter.com/yoshubs',			'5E99DF'],
-			[''],
-			['Former Engine Members'],
-			['bb-panzu',			'bb',				'Ex-Programmer of Psych Engine',								'https://twitter.com/bbsub3',			'3E813A'],
-			[''],
-			['Engine Contributors'],
-			['iFlicky',				'flicky',			'Composer of Psync and Tea Time\nMade the Dialogue Sounds',		'https://twitter.com/flicky_i',			'9E29CF'],
-			['SqirraRNG',			'sqirra',			'Crash Handler and Base code for\nChart Editor\'s Waveform',	'https://twitter.com/gedehari',			'E1843A'],
-			['EliteMasterEric',		'mastereric',		'Runtime Shaders support',										'https://twitter.com/EliteMasterEric',	'FFBD40'],
-			['PolybiusProxy',		'proxy',			'.MP4 Video Loader Library (hxCodec)',							'https://twitter.com/polybiusproxy',	'DCD294'],
-			['KadeDev',				'kade',				'Fixed some cool stuff on Chart Editor\nand other PRs',			'https://twitter.com/kade0912',			'64A250'],
-			['Keoiki',				'keoiki',			'Note Splash Animations',										'https://twitter.com/Keoiki_',			'D2D2D2'],
-			['Nebula the Zorua',	'nebula',			'LUA JIT Fork and some Lua reworks',							'https://twitter.com/Nebula_Zorua',		'7D40B2'],
-			['Smokey',				'smokey',			'Sprite Atlas Support',											'https://twitter.com/Smokey_5_',		'483D92'],
-			[''],
-			["Funkin' Crew"],
-			['ninjamuffin99',		'ninjamuffin99',	"Programmer of Friday Night Funkin'",							'https://twitter.com/ninja_muffin99',	'CF2D2D'],
-			['PhantomArcade',		'phantomarcade',	"Animator of Friday Night Funkin'",								'https://twitter.com/PhantomArcade3K',	'FADC45'],
-			['evilsk8r',			'evilsk8r',			"Artist of Friday Night Funkin'",								'https://twitter.com/evilsk8r',			'5ABD4B'],
-			['kawaisprite',			'kawaisprite',		"Composer of Friday Night Funkin'",								'https://twitter.com/kawaisprite',		'378FC7']
+		var pisspoop:Array<Array<String>> = [ //Name - Link
+			['ronbrazy', ''],
+			['Jack Orange', ''],
+			['boid', ''],
+			['broster', 'https://twitter.com/BrosterMedia'],
+			['CybbrGhost', ''],
+			['DPZ', ''],
+			['Cerbera', ''],
+			['SeaSwine9', ''],
+			['Chunko', ''],
+			['theoldguardsvan', ''],
+			['SplendidStudios', ''],
+			['Miyno', ''],
+			['minuil', ''],
+			['DiamondHeart', ''],
+			['typic', ''],
+			['sketchygirl711', ''],
+			['Lofi', ''],
+			['rafael wasnt here', ''],
+			['AndyJoeS', ''],
+			['Plongo', ''],
+			['OvalFrankie', ''],
+			['thetrainnerd', ''],
+			['stephensons wolf', ''],
+			['SteamySudric', ''],
+			['DuskieWhy', ''] // lmao
 		];
 		
 		for(i in pisspoop){
@@ -120,43 +157,30 @@ class CreditsState extends MusicBeatState
 			optionText.snapToPosition();
 			grpOptions.add(optionText);
 
+			var item2 = new AttachedSprite('credits/people/' + creditsStuff[i][0].toLowerCase(), null, 'menu');
+			item2.setGraphicSize(Std.int(item2.width * 0.5));
+			item2.updateHitbox();
+			item2.x = FlxG.width/8*6.5;
+			item2.x -= item2.width/2;
+			item2.ID = i;
+			item2.ignoreX = true;
+			item2.sprTracker = grpOptions.members[i];
+			grpOptions.members[i].visible = false;
+			grpSprites.add(item2);
+
 			if(isSelectable) {
 				if(creditsStuff[i][5] != null)
 				{
 					Paths.currentModDirectory = creditsStuff[i][5];
 				}
 
-				var icon:AttachedSprite = new AttachedSprite('credits/' + creditsStuff[i][1]);
-				icon.xAdd = optionText.width + 10;
-				icon.sprTracker = optionText;
-	
-				// using a FlxGroup is too much fuss!
-				iconArray.push(icon);
-				add(icon);
 				Paths.currentModDirectory = '';
 
 				if(curSelected == -1) curSelected = i;
 			}
 			else optionText.alignment = CENTERED;
 		}
-		
-		descBox = new AttachedSprite();
-		descBox.makeGraphic(1, 1, FlxColor.BLACK);
-		descBox.xAdd = -10;
-		descBox.yAdd = -10;
-		descBox.alphaMult = 0.6;
-		descBox.alpha = 0.6;
-		add(descBox);
 
-		descText = new FlxText(50, FlxG.height + offsetThing - 25, 1180, "", 32);
-		descText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
-		descText.scrollFactor.set();
-		//descText.borderSize = 2.4;
-		descBox.sprTracker = descText;
-		add(descText);
-
-		bg.color = getCurrentBGColor();
-		intendedColor = bg.color;
 		changeSelection();
 		super.create();
 	}
@@ -170,6 +194,20 @@ class CreditsState extends MusicBeatState
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 		}
 
+		blinkTime += elapsed * 1000;
+		if(blinkTime >= 5000)
+			{
+				switch(FlxG.random.int(1, 2))
+				{
+					case 1:
+						thomas.animation.play('credit');
+						blinkTime = 0;
+					case 2:
+						thomas.animation.play('viewer');
+						blinkTime = 0;
+				}
+			}
+
 		if(!quitting)
 		{
 			if(creditsStuff.length > 1)
@@ -179,6 +217,45 @@ class CreditsState extends MusicBeatState
 
 				var upP = controls.UI_UP_P;
 				var downP = controls.UI_DOWN_P;
+
+				for (i in grpSprites)
+					{
+						if (FlxG.mouse.overlaps(i))
+							{
+								if (FlxG.mouse.justPressed)
+								{
+									curSelected = i.ID;
+									selectedSomething();
+									break;
+								}
+								changeCursor(true);
+								break;
+							}
+						else
+							changeCursor(false);
+							
+							
+					}
+
+					if (FlxG.mouse.overlaps(backButton))
+						{
+							changeCursor(true);
+							backButton.loadGraphic(Paths.image('freeplay/back_button_selected', 'menu'));
+							if (FlxG.mouse.justPressed)
+							{
+								FlxG.sound.play(Paths.sound('cancelMenu'));
+								MusicBeatState.switchState(new BebMainMenu());
+								quitting = true;
+							}
+						}
+					else
+						backButton.loadGraphic(Paths.image('freeplay/back_button', 'menu'));
+
+				if(FlxG.mouse.wheel != 0)
+				{
+					FlxG.sound.play(Paths.sound('scrollMenu'), 0.7);
+					changeSelection(-FlxG.mouse.wheel);
+				}	
 
 				if (upP)
 				{
@@ -204,38 +281,57 @@ class CreditsState extends MusicBeatState
 				}
 			}
 
-			if(controls.ACCEPT && (creditsStuff[curSelected][3] == null || creditsStuff[curSelected][3].length > 4)) {
-				CoolUtil.browserLoad(creditsStuff[curSelected][3]);
+			if(controls.ACCEPT && (creditsStuff[curSelected][1] == null || creditsStuff[curSelected][1].length > 4)) {
+				CoolUtil.browserLoad(creditsStuff[curSelected][1]);
 			}
 			if (controls.BACK)
 			{
-				if(colorTween != null) {
-					colorTween.cancel();
-				}
+
 				FlxG.sound.play(Paths.sound('cancelMenu'));
-				MusicBeatState.switchState(new MainMenuState());
+				MusicBeatState.switchState(new BebMainMenu());
 				quitting = true;
 			}
 		}
 		
-		for (item in grpOptions.members)
-		{
-			if(!item.bold)
-			{
-				var lerpVal:Float = CoolUtil.boundTo(elapsed * 12, 0, 1);
-				if(item.targetY == 0)
-				{
-					var lastX:Float = item.x;
-					item.screenCenter(X);
-					item.x = FlxMath.lerp(lastX, item.x - 70, lerpVal);
-				}
-				else
-				{
-					item.x = FlxMath.lerp(item.x, 200 + -40 * Math.abs(item.targetY), lerpVal);
-				}
-			}
-		}
+		
 		super.update(elapsed);
+	}
+
+	function changeCursor(value:Bool)
+        {
+            if (value)
+                {
+                    FlxG.mouse.load(cursorSprite2.pixels);
+                }
+            if (!value)
+                {
+                    FlxG.mouse.load(cursorSprite.pixels);
+                }
+        }
+
+	function selectedSomething()
+	{
+		if(prevSelected == curSelected && (creditsStuff[curSelected][1] == null || creditsStuff[curSelected][1].length > 4)) {
+			CoolUtil.browserLoad(creditsStuff[curSelected][1]);
+		}
+		else if (prevSelected != curSelected)
+		{
+			changeSelection();
+			
+			for (item in grpSprites.members)
+				{
+					if (item.ID == curSelected)
+						{
+							item.loadGraphic(Paths.image('credits/people/${creditsStuff[curSelected][0].toLowerCase()} glow', 'menu'));
+							item.updateHitbox();
+						}
+					else
+						{
+							item.loadGraphic(Paths.image('credits/people/${creditsStuff[item.ID][0].toLowerCase()}', 'menu'));
+							item.updateHitbox();
+						}
+				}
+		}
 	}
 
 	var moveTween:FlxTween = null;
@@ -248,20 +344,10 @@ class CreditsState extends MusicBeatState
 				curSelected = creditsStuff.length - 1;
 			if (curSelected >= creditsStuff.length)
 				curSelected = 0;
-		} while(unselectableCheck(curSelected));
 
-		var newColor:Int =  getCurrentBGColor();
-		if(newColor != intendedColor) {
-			if(colorTween != null) {
-				colorTween.cancel();
-			}
-			intendedColor = newColor;
-			colorTween = FlxTween.color(bg, 1, bg.color, intendedColor, {
-				onComplete: function(twn:FlxTween) {
-					colorTween = null;
-				}
-			});
-		}
+			
+			prevSelected = curSelected;
+		} while(unselectableCheck(curSelected));
 
 		var bullShit:Int = 0;
 
@@ -269,23 +355,18 @@ class CreditsState extends MusicBeatState
 		{
 			item.targetY = bullShit - curSelected;
 			bullShit++;
-
-			if(!unselectableCheck(bullShit-1)) {
-				item.alpha = 0.6;
-				if (item.targetY == 0) {
-					item.alpha = 1;
-				}
-			}
 		}
-
-		descText.text = creditsStuff[curSelected][2];
-		descText.y = FlxG.height - descText.height + offsetThing - 60;
-
-		if(moveTween != null) moveTween.cancel();
-		moveTween = FlxTween.tween(descText, {y : descText.y + 75}, 0.25, {ease: FlxEase.sineOut});
-
-		descBox.setGraphicSize(Std.int(descText.width + 20), Std.int(descText.height + 25));
-		descBox.updateHitbox();
+		for (item in grpSprites.members)
+			{
+				if (item.ID == curSelected)
+					{
+						item.loadGraphic(Paths.image('credits/people/${creditsStuff[curSelected][0].toLowerCase()} glow', 'menu'));
+					}
+				else
+					{
+						item.loadGraphic(Paths.image('credits/people/${creditsStuff[item.ID][0].toLowerCase()}', 'menu'));
+					}
+			}
 	}
 
 	#if MODS_ALLOWED
@@ -312,14 +393,6 @@ class CreditsState extends MusicBeatState
 		modsAdded.push(folder);
 	}
 	#end
-
-	function getCurrentBGColor() {
-		var bgColor:String = creditsStuff[curSelected][4];
-		if(!bgColor.startsWith('0x')) {
-			bgColor = '0xFF' + bgColor;
-		}
-		return Std.parseInt(bgColor);
-	}
 
 	private function unselectableCheck(num:Int):Bool {
 		return creditsStuff[num].length <= 1;

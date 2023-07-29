@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="thomas credits.png"><SubTexture name="thomas credits credit lookatcredit0000" x="0" y="0" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatcredit0001" x="0" y="0" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatcredit0002" x="1151" y="0" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatcredit0003" x="1151" y="0" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatcredit0004" x="0" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatcredit0005" x="0" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatcredit0006" x="1151" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatcredit0007" x="1151" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatcredit0008" x="1151" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatcredit0009" x="1151" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0000" x="1151" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0001" x="1151" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0002" x="1151" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0003" x="2302" y="0" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0004" x="2302" y="0" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0005" x="2302" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0006" x="2302" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0007" x="2302" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0008" x="2302" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0009" x="2302" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0010" x="2302" y="0" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0011" x="2302" y="0" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0012" x="1151" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0013" x="1151" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0014" x="1151" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0015" x="1151" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0016" x="1151" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0017" x="1151" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0018" x="1151" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit loop0019" x="1151" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatviewer0000" x="1151" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatviewer0001" x="1151" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatviewer0002" x="1151" y="0" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatviewer0003" x="1151" y="0" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatviewer0004" x="0" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatviewer0005" x="0" y="1080" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatviewer0006" x="0" y="0" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatviewer0007" x="0" y="0" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatviewer0008" x="0" y="0" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="thomas credits credit lookatviewer0009" x="0" y="0" width="1151" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+</TextureAtlas>

@@ -247,7 +247,7 @@ class BebMainMenu extends MusicBeatState
                         openSubState(new BebOptionsSubstate());
                         selectedSomethin = false;
                     case 'CreditsButton':
-                        //yeah
+                        MusicBeatState.switchState(new CreditsState());
                 }
         }
 
