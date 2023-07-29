@@ -33,6 +33,14 @@ class PauseSubState extends MusicBeatSubstate
 
 	public static var songName:String = '';
 
+	var diffMap:Map<String, String> = [
+
+		'easy' => 'miniature',
+		'normal' => 'narrow',
+		'hard' => 'standard'
+
+	];
+
 	public function new(x:Float, y:Float)
 	{
 		super();
@@ -86,7 +94,7 @@ class PauseSubState extends MusicBeatSubstate
 		add(levelInfo);
 
 		var levelDifficulty:FlxText = new FlxText(20, 15 + 32, 0, "", 32);
-		levelDifficulty.text += CoolUtil.difficultyString();
+		levelDifficulty.text += diffMap.get(CoolUtil.difficultyString().toLowerCase());
 		levelDifficulty.scrollFactor.set();
 		levelDifficulty.setFormat(Paths.font('vcr.ttf'), 32);
 		levelDifficulty.updateHitbox();
@@ -224,10 +232,10 @@ class PauseSubState extends MusicBeatSubstate
 			{
 				case "Resume":
 					close();
-				case 'Change Difficulty':
+				/*case 'Change Difficulty':
 					menuItems = difficultyChoices;
 					deleteSkipTimeText();
-					regenMenu();
+					regenMenu();*/
 				case 'Toggle Practice Mode':
 					PlayState.instance.practiceMode = !PlayState.instance.practiceMode;
 					PlayState.changedDifficulty = true;
