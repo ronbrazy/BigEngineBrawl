@@ -1261,14 +1261,23 @@ class PlayState extends MusicBeatState
 			case 'stress':
 				GameOverSubstate.characterName = 'bf-holding-gf-dead';
 			case 'old-reliable':
-				camGame.setFilters([tvFilter]);
-				camHUD.setFilters([tvFilter]);
+				if(ClientPrefs.shaders)
+				{
+					camGame.setFilters([tvFilter]);
+					camHUD.setFilters([tvFilter]);
+				}
 			case 'sad-story':
-				camGame.setFilters([tvFilter]);
-				camHUD.setFilters([tvFilter]);
+				if(ClientPrefs.shaders)
+				{
+					camGame.setFilters([tvFilter]);
+					camHUD.setFilters([tvFilter]);
+				}
 			case 'monochrome-remix':
-				camGame.setFilters([grayFilter, tvFilter]);
-				camHUD.setFilters([grayFilter, tvFilter]);
+				if(ClientPrefs.shaders)
+				{
+					camGame.setFilters([grayFilter, tvFilter]);
+					camHUD.setFilters([grayFilter, tvFilter]);
+				}
 		}
 
 		if(isPixelStage) {

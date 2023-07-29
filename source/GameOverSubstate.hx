@@ -88,8 +88,11 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		FlxG.cameras.add(camMenu);
 
-		FlxG.camera.setFilters([tvFilter]);
-		camMenu.setFilters([tvFilter]);
+		if(ClientPrefs.shaders)
+		{
+			FlxG.camera.setFilters([tvFilter]);
+			camMenu.setFilters([tvFilter]);
+		}
 
 		regenMenu();
 
