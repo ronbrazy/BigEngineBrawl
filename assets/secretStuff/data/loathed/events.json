@@ -22,6 +22,36 @@
 				]
 			],
 			[
+				49714.2857142857,
+				[
+					[
+						"Camera Follow Pos",
+						"500",
+						"0"
+					],
+					[
+						"Set Cam Zoom",
+						"0.7",
+						""
+					],
+					[
+						"White Flash",
+						"1",
+						""
+					]
+				]
+			],
+			[
+				63214.2857142858,
+				[
+					[
+						"Set Cam Zoom",
+						"1.5",
+						""
+					]
+				]
+			],
+			[
 				63428.5714285715,
 				[
 					[
@@ -43,6 +73,16 @@
 						"Change Character",
 						"BF",
 						"loathed-gordon2"
+					],
+					[
+						"Set Cam Zoom",
+						"1.05",
+						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
+						""
 					]
 				]
 			],
@@ -258,6 +298,46 @@
 						"Change Character",
 						"BF",
 						"loathed_gordon"
+					],
+					[
+						"Set Cam Zoom",
+						"1.05",
+						""
+					]
+				]
+			],
+			[
+				118285.714285714,
+				[
+					[
+						"White Flash",
+						"1",
+						""
+					],
+					[
+						"Set Cam Zoom",
+						"0.7",
+						""
+					],
+					[
+						"Camera Follow Pos",
+						"500",
+						"0"
+					]
+				]
+			],
+			[
+				132000,
+				[
+					[
+						"Camera Follow Pos",
+						"",
+						""
+					],
+					[
+						"White Flash",
+						"1",
+						""
 					],
 					[
 						"Set Cam Zoom",
