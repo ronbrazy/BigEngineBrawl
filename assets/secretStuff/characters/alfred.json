@@ -71,8 +71,8 @@
 	],
 	"camera_position": [
 		-600,
-		0
+		40
 	],
 	"sing_duration": 6.1,
-	"scale": 1
+	"scale": 0.9
 }
