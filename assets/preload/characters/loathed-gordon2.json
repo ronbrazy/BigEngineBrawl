@@ -1,0 +1,111 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				14,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "left instancia"
+		},
+		{
+			"offsets": [
+				-8,
+				-4
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "down instancia"
+		},
+		{
+			"offsets": [
+				-1,
+				15
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "up instancia"
+		},
+		{
+			"offsets": [
+				6,
+				-1
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "right instancia"
+		},
+		{
+			"offsets": [
+				16,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFTmiss",
+			"loop": false,
+			"name": "ML instancia"
+		},
+		{
+			"offsets": [
+				6,
+				2
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHTmiss",
+			"loop": false,
+			"name": "MR instancia"
+		},
+		{
+			"offsets": [
+				1,
+				15
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUPmiss",
+			"loop": false,
+			"name": "MUP instancia"
+		},
+		{
+			"offsets": [
+				-5,
+				-8
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWNmiss",
+			"loop": false,
+			"name": "MDOWN instancia"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Gordon2",
+	"position": [
+		0,
+		350
+	],
+	"healthicon": "gordon-rage",
+	"flip_x": true,
+	"healthbar_colors": [
+		7,
+		149,
+		233
+	],
+	"camera_position": [
+		130,
+		-180
+	],
+	"sing_duration": 4,
+	"scale": 0.9
+}

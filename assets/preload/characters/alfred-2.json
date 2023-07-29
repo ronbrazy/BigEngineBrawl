@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": -2147483648,
+			"name": "idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				6,
+				-28
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				14,
+				3
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "up",
+			"indices": []
+		},
+		{
+			"offsets": [
+				28,
+				-4
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "right"
+		},
+		{
+			"offsets": [
+				17,
+				-8
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "left"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/alf_loathed_ph2",
+	"position": [
+		-460,
+		-210
+	],
+	"healthicon": "alfred",
+	"flip_x": false,
+	"healthbar_colors": [
+		0,
+		153,
+		0
+	],
+	"camera_position": [
+		-130,
+		-150
+	],
+	"sing_duration": 6.1,
+	"scale": 0.899999999999999
+}

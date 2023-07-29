@@ -316,7 +316,13 @@ class PlayState extends MusicBeatState
 		"bf" => "noteSplashes",
 		"sadbf" => "noteSplashes",
 		"reliablebf" => "noteSplashes",
-		"loathed_gordon" => "noteSplashes_gordon"
+		"splendidbf" => "noteSplashes",
+		"splendidbf2" => "noteSplashes",
+		"indigbf" => "noteSplashes",
+		"indigbf-henry" => "noteSplashes",
+		"indigbf-james" => "noteSplashes",
+		"loathed_gordon" => "noteSplashes_gordon",
+		"loathed-gordon2" => "noteSplashes_gordon"
 	];
 
 	var monochromeSprites:Array<String> = ['always', 'design', 'nobody', 'send', 'GETTHEFUCKOVERHERE'];
@@ -418,7 +424,9 @@ class PlayState extends MusicBeatState
 		"gordon" => "gordonNote",
 		"gordondamn" => "gordonNote",
 		"loathed_gordon" => "gordonNote",
+		"loathed-gordon2" => "gordonNote",
 		"alfred" => "alfredNote",
+		"alfred-2" => "alfredNote",
 		"edward" => "edwardNote",
 		"fatass" => "fatNote",
 	];
