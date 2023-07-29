@@ -2005,8 +2005,12 @@ class PlayState extends MusicBeatState
 		var barDad:FlxGraphic = Paths.image('healthbar/' + iconP2.getCharacter());
 		if (translateHealthBar.exists(iconP2.getCharacter())) barDad = Paths.image('healthbar/' + translateHealthBar.get(iconP2.getCharacter()));
 		if (hiddenChars.contains(iconP2.getCharacter())) barDad = Paths.image('healthbar/' + iconP2.getCharacter(), 'secretStuff');
+		if (hiddenChars.contains(iconP2.getCharacter()) && translateHealthBar.exists(iconP2.getCharacter())) barDad = Paths.image('healthbar/' + translateHealthBar.get(iconP2.getCharacter()), 'secretStuff');
 
 		var barBf:FlxGraphic = Paths.image('healthbar/' + iconP1.getCharacter());
+		if (translateHealthBar.exists(iconP1.getCharacter())) barBf = Paths.image('healthbar/' + translateHealthBar.get(iconP1.getCharacter()));
+		if (hiddenChars.contains(iconP1.getCharacter())) barBf = Paths.image('healthbar/' + iconP1.getCharacter(), 'secretStuff');
+		if (hiddenChars.contains(iconP1.getCharacter()) && translateHealthBar.exists(iconP1.getCharacter())) barBf = Paths.image('healthbar/' + translateHealthBar.get(iconP1.getCharacter()), 'secretStuff');
 
 		healthBar.createImageBar(barDad, barBf);
 		/*healthBar.createFilledBar(FlxColor.fromRGB(char.healthColorArray[0], char.healthColorArray[1], char.healthColorArray[2]),
