@@ -316,7 +316,10 @@ class PlayState extends MusicBeatState
 		"bf" => "noteSplashes",
 		"sadbf" => "noteSplashes",
 		"reliablebf" => "noteSplashes",
-		"loathed_gordon" => "noteSplashes_gordon"
+		"loathed_gordon" => "noteSplashes_gordon",
+		"indigbf" => "noteSplashes",
+		"splendidbf" => "noteSplashes"
+
 	];
 
 	var monochromeSprites:Array<String> = ['always', 'design', 'nobody', 'send', 'GETTHEFUCKOVERHERE'];
@@ -405,6 +408,8 @@ class PlayState extends MusicBeatState
 
 	var charToNoteSkin = [
 		"bf" => "NOTE_assets",
+		"indigbf" => "NOTE_assets",
+		"splendidbf" => "NOTE_assets",
 		"henry" => "HenryNote",
 		"indighenry" => "HenryNote",
 		"james" => "jameNote",
