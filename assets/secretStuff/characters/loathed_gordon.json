@@ -106,7 +106,7 @@
 		0,
 		350
 	],
-	"healthicon": "gordon",
+	"healthicon": "gordon-rage",
 	"flip_x": true,
 	"healthbar_colors": [
 		7,
@@ -115,8 +115,8 @@
 	],
 	"camera_position": [
 		-500,
-		0
+		40
 	],
 	"sing_duration": 4,
-	"scale": 1
+	"scale": 0.9
 }

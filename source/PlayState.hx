@@ -607,7 +607,7 @@ class PlayState extends MusicBeatState
 			{
 				stageData = {
 					directory: "",
-					defaultZoom: 0.9,
+					defaultZoom: 1.05,
 					isPixelStage: false,
 
 					boyfriend: [-800, -700],
@@ -1220,6 +1220,22 @@ class PlayState extends MusicBeatState
 					ob7.x = -539; ob7.y = -685;
 					ob7.alpha = 0;
 					add(ob7);
+
+					ob8 = new FlxSprite(-2250,-1650).loadGraphic(Paths.image('bgs/endlessremix/nighttime_overlay'));
+					ob8.antialiasing = ClientPrefs.globalAntialiasing;
+					ob8.setGraphicSize(8315);
+					ob8.updateHitbox();
+					ob8.alpha = 0.40;
+					overlaySprs.push(ob8);
+
+					ob9 = new FlxSprite(-2250,-1650);
+					ob9.frames = Paths.getSparrowAtlas('bgs/sadstory/rain');
+					ob9.antialiasing = ClientPrefs.globalAntialiasing;
+					ob9.animation.addByPrefix('idle','rain idle',24,true);
+					ob9.animation.play('idle');
+					ob9.setGraphicSize(4320);
+					ob9.updateHitbox();
+					overlaySprs.push(ob9);
 		}
 
 		switch(Paths.formatToSongPath(SONG.song))

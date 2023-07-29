@@ -10,6 +10,46 @@
 						""
 					]
 				]
+			],
+			[
+				21535.7142857143,
+				[
+					[
+						"White Flash",
+						"2",
+						""
+					]
+				]
+			],
+			[
+				63428.5714285715,
+				[
+					[
+						"White Flash",
+						"2",
+						""
+					],
+					[
+						"Change Loathed Background",
+						"phase2",
+						""
+					]
+				]
+			],
+			[
+				104571.428571429,
+				[
+					[
+						"Change Loathed Background",
+						"phase1",
+						""
+					],
+					[
+						"White Flash",
+						"2",
+						""
+					]
+				]
 			]
 		]
 	}
