@@ -108,6 +108,7 @@ class ChartingState extends MusicBeatState
 		['BF Fade'],
 		['Set Camera Target', 'value 1: henry/james/gordon\nmove camera? value 2: true'],
 		['Set Health Bar', 'value 1: henry/james/gordon'],
+		['Change Loathed Background'],
 		['Camera Fade'],
 		['Camera Zoom'],
 		['Play Video']

@@ -1199,11 +1199,27 @@ class PlayState extends MusicBeatState
 
 					ob5 = new FlxSprite().loadGraphic(Paths.image('backgrounds/loathed/phase2/sky', 'secretStuff'));
 					ob5.antialiasing = ClientPrefs.globalAntialiasing;
-					ob5.setGraphicSize(Std.int(1425));
+					ob5.setGraphicSize(Std.int(2160));
 					ob5.updateHitbox();
 					ob5.x = -539; ob5.y = -685;
 					ob5.alpha = 0;
 					add(ob5);
+
+					ob6 = new FlxSprite().loadGraphic(Paths.image('backgrounds/loathed/phase2/clouds2', 'secretStuff'));
+					ob6.antialiasing = ClientPrefs.globalAntialiasing;
+					ob6.setGraphicSize(Std.int(2160));
+					ob6.updateHitbox();
+					ob6.x = -539; ob6.y = -685;
+					ob6.alpha = 0;
+					add(ob6);
+
+					ob7 = new FlxSprite().loadGraphic(Paths.image('backgrounds/loathed/phase2/stage2', 'secretStuff'));
+					ob7.antialiasing = ClientPrefs.globalAntialiasing;
+					ob7.setGraphicSize(Std.int(2160));
+					ob7.updateHitbox();
+					ob7.x = -539; ob7.y = -685;
+					ob7.alpha = 0;
+					add(ob7);
 		}
 
 		switch(Paths.formatToSongPath(SONG.song))
@@ -4281,6 +4297,14 @@ class PlayState extends MusicBeatState
 						phillyGlowGradient.bop();
 				}
 
+			case 'Change Loathed Background':
+				ob1.alpha = 0;
+				ob2.alpha = 0;
+				ob3.alpha = 0;
+				ob4.alpha = 0;
+				ob5.alpha = 1;
+				ob6.alpha = 1;
+				ob7.alpha = 1;
 
 			case 'Add Camera Zoom':
 				if(ClientPrefs.camZooms && FlxG.camera.zoom < 1.35) {
