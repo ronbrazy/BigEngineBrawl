@@ -387,7 +387,7 @@ class PlayState extends MusicBeatState
 	var jamessky:FlxBackdrop;
 	var modifier:Float = 1;
 	var mech1:FlxSprite;
-    var editable:Bool = true; // DEBUG THING
+    var editable:Bool = false; // DEBUG THING
     var editbleSprite:FlxSprite;
 	var curEditSprite:Int = 0;
 	var lpo:Int = 700;
@@ -1159,8 +1159,8 @@ class PlayState extends MusicBeatState
 					
 					screenShader.noiseIntensity.value = [0.50];
 
-					editable = true;
-					editbleSprite = ob1;
+					//editable = true;
+					//editbleSprite = ob1;
 				
 				case 'loathed':
 
