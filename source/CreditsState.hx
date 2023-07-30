@@ -125,12 +125,12 @@ class CreditsState extends MusicBeatState
 			['Cerbera', 'https://www.youtube.com/channel/UCgfJjMiNGlI7uZu1cVag5NA'],
 			['SeaSwine9', 'https://twitter.com/SeaSwine9'],
 			['Chunko', 'https://twitter.com/Chunklezz?t=UVlM9XFlLmkc3FFAw3rENQ&s=09'],
-			['theoldguardsvan', ''],
-			['SplendidStudios', ''],
-			['Miyno', ''],
+			['theoldguardsvan', 'https://twitter.com/TheOldGuardsVan'],
+			['SplendidStudios', 'https://www.youtube.com/channel/UCdg6GnDPlOTvSeBoBhjitrA'],
+			['Miyno', 'https://twitter.com/Miyno26'],
 			['minuil', 'https://twitter.com/balbin_brian'],
-			['DiamondHeart', ''],
-			['typic', ''],
+			['DiamondHeart', 'https://twitter.com/KDiamond_Heart'],
+			['typic', 'https://twitter.com/typicalemerald'],
 			['sketchygirl711', 'https://twitter.com/sketchygirl711/status/1681806961547911169?t=v2HAzgbUxrQeRyJNsCOncQ&s=19'],
 			['Lofi', 'https://twitter.com/LofiOrSomethin'],
 			['rafael wasnt here', 'https://twitter.com/rafawasnth3r3?s=21&t=CzLRF3xxDvz3l2m59jgA0Q'],
@@ -138,9 +138,9 @@ class CreditsState extends MusicBeatState
 			['Plongo', 'https://youtube.com/@PlongoYT'],
 			['OvalFrankie', 'https://twitter.com/OvalFrankie'],
 			['thetrainnerd', 'https://twitter.com/TheTrainNerrd'],
-			['stephensons wolf', ''],
-			['SteamySudric', ''],
-			['DuskieWhy', ''] // lmao
+			['stephensons wolf', 'https://twitter.com/AW_Dry_and_Co'],
+			['SteamySudric', 'https://twitter.com/SSudric'],
+			['DuskieWhy', 'https://twitter.com/DuskieWhy'] // lmao
 		];
 		
 		for(i in pisspoop){
