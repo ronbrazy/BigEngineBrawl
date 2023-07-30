@@ -64,6 +64,7 @@ class ClientPrefs {
 	public static var difficulty:Int = 2;
 	public static var preload:Bool = true;
 	public static var fatassPlayed:Bool = false;
+	public static var fatassBeat:Bool = false;
 
 	//Every key has two binds, add your key bind down here and then add your control on options/ControlsSubState.hx and Controls.hx
 	public static var keyBinds:Map<String, Array<FlxKey>> = [
@@ -149,6 +150,7 @@ class ClientPrefs {
 		FlxG.save.data.difficulty = difficulty;
 		FlxG.save.data.preload = preload;
 		FlxG.save.data.fatassPlayed = fatassPlayed;
+		FlxG.save.data.fatassBeat = fatassBeat;
 	
 		FlxG.save.flush();
 
@@ -242,6 +244,10 @@ class ClientPrefs {
 
 		if(FlxG.save.data.fatassPlayed != null) {
 			fatassPlayed = FlxG.save.data.fatassPlayed;
+		}
+
+		if(FlxG.save.data.fatassBeat != null) {
+			fatassBeat = FlxG.save.data.fatassBeat;
 		}
 		
 		if(FlxG.save.data.ratingOffset != null) {

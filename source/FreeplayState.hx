@@ -77,6 +77,8 @@ class FreeplayState extends MusicBeatState
 	var backButton:FlxSprite;
 	var cloudSprite:FlxSprite;
 	var tweening:Bool;
+	var allowFatass:Bool = false;
+	var fatass:FlxSprite;
 
 	override function create()
 	{
@@ -100,6 +102,7 @@ class FreeplayState extends MusicBeatState
 		CoolUtil.difficulties = CoolUtil.defaultDifficulties.copy();
 
 		allowEdward = Achievements.isAchievementUnlocked('awarduseful');
+		allowFatass = ClientPrefs.fatassBeat;
 		
 		persistentUpdate = true;
 		PlayState.isStoryMode = false;
@@ -264,6 +267,17 @@ class FreeplayState extends MusicBeatState
 					}
 			}
 		add(grpOptions);
+
+		if (allowFatass)
+		{
+			fatass = new FlxSprite().loadGraphic(Paths.image('freeplay/fp_topham', 'menu'));
+			fatass.setGraphicSize(Std.int(fatass.width * 0.6));
+			fatass.updateHitbox();
+			fatass.x = FlxG.width - fatass.width;
+			fatass.y = FlxG.height - fatass.height;
+			add(fatass);
+			
+		}
 
 
 		cloudSprite = new FlxSprite(25, 0);
@@ -487,6 +501,15 @@ class FreeplayState extends MusicBeatState
 				}
 		}
 
+		if (fatass != null && FlxG.mouse.overlaps(fatass))
+			{
+				changeCursor(true);
+				if (FlxG.mouse.justPressed)
+					{
+						loadSong2('confusion-and-delay');
+					}
+			}
+
 		if (FlxG.mouse.overlaps(backButton))
 			{
 				changeCursor(true);
@@ -611,16 +634,48 @@ class FreeplayState extends MusicBeatState
 				colorTween.cancel();
 			}
 			
-			if (FlxG.keys.pressed.SHIFT){
-				LoadingState.loadAndSwitchState(new ChartingState());
-			}else{
-				LoadingState.loadAndSwitchState(new DebugPlaystate());
-			}
+
+			LoadingState.loadAndSwitchState(new DebugPlaystate());
+			
 
 			FlxG.sound.music.volume = 0;
 					
 			destroyFreeplayVocals();
 		}
+
+		function loadSong2(id:String)
+			{
+				persistentUpdate = false;
+				var songLowercase:String = Paths.formatToSongPath(id);
+				var poop:String = Highscore.formatSong(songLowercase, curDifficulty);
+				/*#if MODS_ALLOWED
+				if(!sys.FileSystem.exists(Paths.modsJson(songLowercase + '/' + poop)) && !sys.FileSystem.exists(Paths.json(songLowercase + '/' + poop))) {
+				#else
+				if(!OpenFlAssets.exists(Paths.json(songLowercase + '/' + poop))) {
+				#end
+					poop = songLowercase;
+					curDifficulty = 1;
+					trace('Couldnt find file');
+				}*/
+				trace(poop);
+	
+				PlayState.SONG = Song.loadFromJson(poop, songLowercase);
+				PlayState.isStoryMode = false;
+				PlayState.storyDifficulty = curDifficulty;
+	
+				trace('CURRENT WEEK: ' + WeekData.getWeekFileName());
+				if(colorTween != null) {
+					colorTween.cancel();
+				}
+				
+
+				LoadingState.loadAndSwitchState(new DebugPlaystate());
+				
+	
+				FlxG.sound.music.volume = 0;
+						
+				destroyFreeplayVocals();
+			}
 
 	public static function destroyFreeplayVocals() {
 		if(vocals != null) {

@@ -112,7 +112,7 @@ class BebMainMenu extends MusicBeatState
         }
         else
         {
-            trainWhistle = FlxG.sound.load(Paths.sound('${curTrain}Whistle', 'secretStuff'));
+            trainWhistle = new FlxSound().loadEmbedded(Paths.whistleHidden('${curTrain}Whistle'));
             tankEngine = new FlxSprite().loadGraphic(Paths.image('main/menu$curTrain', 'secretStuff'));
         }
 

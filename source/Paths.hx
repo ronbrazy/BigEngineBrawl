@@ -251,6 +251,11 @@ class Paths
 			return getPath('songs/${songLowercase}/Voices.$SOUND_EXT', SOUND, 'secretStuff');
 		}
 
+		inline static public function whistleHidden(song:String)
+			{
+				return getPath('sounds/${song}.$SOUND_EXT', SOUND, 'secretStuff');
+			}
+
 	inline static public function soundRandom(key:String, min:Int, max:Int, ?library:String)
 	{
 		return sound(key + FlxG.random.int(min, max), library);

@@ -1135,10 +1135,13 @@ class PlayState extends MusicBeatState
 					overlaySprs.push(ob3);
 					skipCountdown = true;
 					var tophamSound:FlxSound = new FlxSound();
-					if (!ClientPrefs.fatassPlayed)
-						tophamSound = FlxG.sound.load(Paths.sound('cnd/fatcontroller_unlock3', 'menu'));
-					else
+					if (ClientPrefs.fatassBeat)
+						tophamSound = FlxG.sound.load(Paths.sound('cnd/freeplay/confusion_freeplay_${FlxG.random.int(1, 2)}', 'menu'));
+					else if(ClientPrefs.fatassPlayed)
 						tophamSound = FlxG.sound.load(Paths.sound('cnd/retry/confusion_retry_${FlxG.random.int(1, 7)}', 'menu'));
+					else
+						tophamSound = FlxG.sound.load(Paths.sound('cnd/fatcontroller_unlock3', 'menu'));
+						
                     tophamSound.play();
 					ClientPrefs.fatassPlayed = true;
 					ClientPrefs.saveSettings();
@@ -2143,6 +2146,12 @@ class PlayState extends MusicBeatState
 			}
 			else
 			{
+				FlxTween.tween(songtitleTxt, {alpha: 1}, 3, {ease: FlxEase.quadInOut, onComplete: function(shit:FlxTween){
+					FlxTween.tween(songtitleTxt, {alpha: 0}, 3, {ease: FlxEase.quadInOut});
+				}});
+				FlxTween.tween(composerTxt, {alpha: 1}, 3, {ease: FlxEase.quadInOut, onComplete: function(shit:FlxTween){
+					FlxTween.tween(composerTxt, {alpha: 0}, 3, {ease: FlxEase.quadInOut});
+				}});
 				canPause = true;
 				if (ob16 != null) remove(ob16);
 			}
@@ -4913,6 +4922,13 @@ class PlayState extends MusicBeatState
 				trace('current song:${currentSong}');
 				ClientPrefs.unlockedRemixes[currentSong] = true;
 				FlxG.save.data.unlockedRemixes = ClientPrefs.unlockedRemixes;
+				FlxG.save.flush();
+			}
+
+		if (currentSong == 'confusion-and-delay')
+			{
+				ClientPrefs.fatassBeat = true;
+				FlxG.save.data.fatassBeat = ClientPrefs.fatassBeat;
 				FlxG.save.flush();
 			}
 
