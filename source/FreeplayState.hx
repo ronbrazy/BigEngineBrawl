@@ -635,7 +635,7 @@ class FreeplayState extends MusicBeatState
 			}
 			
 
-			LoadingState.loadAndSwitchState(new DebugPlaystate());
+			LoadingState.loadAndSwitchState(new PlayState());
 			
 
 			FlxG.sound.music.volume = 0;
@@ -669,7 +669,7 @@ class FreeplayState extends MusicBeatState
 				}
 				
 
-				LoadingState.loadAndSwitchState(new DebugPlaystate());
+				LoadingState.loadAndSwitchState(new PlayState());
 				
 	
 				FlxG.sound.music.volume = 0;

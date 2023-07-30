@@ -2155,7 +2155,7 @@ class PlayState extends MusicBeatState
 
 		var video:MP4Handler = new MP4Handler();
 		if (name == 'train_standoff' || name == 'jamescrashscene')
-			video.skipKeys = [FlxKey.ENTER];
+			video.skipKeys = [];
 		else
 			video.skipKeys = [FlxKey.ENTER];
 		video.playVideo(filepath);
@@ -4738,6 +4738,48 @@ class PlayState extends MusicBeatState
 					{
 						belowArrowGrp.remove(jumpScare);
 					});
+			
+			case 'fnaf2':
+				var randomNumber:Int = FlxG.random.int(0, 100);
+				var randomSprite:Int = FlxG.random.int(0, 3);
+				if (randomNumber == 0) randomSprite == 4;
+
+				var jumpScare:FlxSprite = new FlxSprite().loadGraphic(Paths.image('monochrome/${monochromeSprites[randomSprite]}'));
+				jumpScare.setGraphicSize(Std.int(FlxG.width));
+				jumpScare.updateHitbox();
+				jumpScare.cameras = [camHUD];
+				belowArrowGrp.add(jumpScare);
+				new FlxTimer().start(0.15, function(timer:FlxTimer)
+					{
+						belowArrowGrp.remove(jumpScare);
+
+						var randomNumber2:Int = FlxG.random.int(0, 100);
+						var randomSprite2:Int = FlxG.random.int(0, 3);
+						if (randomNumber2 == 0) randomSprite2 == 4;
+						var jumpScare2:FlxSprite = new FlxSprite().loadGraphic(Paths.image('monochrome/${monochromeSprites[randomSprite2]}'));
+						jumpScare2.setGraphicSize(Std.int(FlxG.width));
+						jumpScare2.updateHitbox();
+						jumpScare2.cameras = [camHUD];
+						belowArrowGrp.add(jumpScare2);
+						new FlxTimer().start(0.15, function(timer:FlxTimer)
+							{
+								belowArrowGrp.remove(jumpScare2);
+		
+								var randomNumber3:Int = FlxG.random.int(0, 100);
+								var randomSprite3:Int = FlxG.random.int(0, 3);
+								if (randomNumber3 == 0) randomSprite3 == 4;
+								var jumpScare3:FlxSprite = new FlxSprite().loadGraphic(Paths.image('monochrome/${monochromeSprites[randomSprite3]}'));
+								jumpScare3.setGraphicSize(Std.int(FlxG.width));
+								jumpScare3.updateHitbox();
+								jumpScare3.cameras = [camHUD];
+								belowArrowGrp.add(jumpScare3);
+								new FlxTimer().start(0.15, function(timer:FlxTimer)
+									{
+										belowArrowGrp.remove(jumpScare3);
+									});
+							});
+					});
+
 
 			case 'spawn image':
 				var jumpScare:FlxSprite = new FlxSprite().loadGraphic(Paths.image('endless/${value1}'));
@@ -5069,11 +5111,11 @@ class PlayState extends MusicBeatState
 					if(winterHorrorlandNext) {
 						new FlxTimer().start(1.5, function(tmr:FlxTimer) {
 							cancelMusicFadeTween();
-							LoadingState.loadAndSwitchState(new DebugPlaystate());
+							LoadingState.loadAndSwitchState(new PlayState());
 						});
 					} else {
 						cancelMusicFadeTween();
-						LoadingState.loadAndSwitchState(new DebugPlaystate());
+						LoadingState.loadAndSwitchState(new PlayState());
 					}
 				}
 			}

@@ -66,6 +66,10 @@ class BebAwardsState extends MusicBeatState
     var achieveName:FlxText;
     var achieveDesc:FlxText;
 
+    var fatHint:FlxSprite;
+    var fatHintSound:FlxSound;
+    var tweening:Bool = false;
+
     override function create(){
         #if desktop
 		DiscordClient.changePresence("In Sir Topham Hatt's Office (Awards Menu)", null);
@@ -80,8 +84,11 @@ class BebAwardsState extends MusicBeatState
             }
             else
             {
-                achieves.push('awardempty');
-                achieveDescs.push([Achievements.achievementsStuff[i][0], '????']);
+                if (Achievements.achievementsStuff[i][2] != 'awardloathed')
+                {
+                    achieves.push('awardempty');
+                    achieveDescs.push([Achievements.achievementsStuff[i][0], '????']);
+                }
             }
         }
         trace(achieves);
@@ -205,6 +212,15 @@ class BebAwardsState extends MusicBeatState
 		achieveDesc.alpha = 0;
 		achieveDesc.borderSize = 2;
 
+        fatHint = new FlxSprite().loadGraphic(Paths.image('awards/hint_button','menu'));
+        fatHint.setGraphicSize(Std.int(fatHint.width * 0.6));
+        fatHint.updateHitbox();
+        fatHint.y = FlxG.height / 2 - fatHint.height/2;
+        fatHint.x = FlxG.width / 8*7 - fatHint.width/2 - 50;
+        fatHint.alpha = 0;
+        fatHint.visible = false;
+        add(fatHint);
+
         add(achieveName);
         add(achieveDesc);
 
@@ -257,7 +273,14 @@ class BebAwardsState extends MusicBeatState
                                 achieveDesc.text = achieveDescs[i][1];
                                 achieveDesc.x = FlxG.width/2 - achieveDesc.width /2;
                                 achieveDesc.y = FlxG.height - achieveDesc.height - 5;
-                                FlxTween.tween(photoZoom, {alpha: 1}, 0.25);
+                                tweening = true;
+                                if(!Achievements.isAchievementUnlocked(Achievements.achievementsStuff[i][2]))
+                                    {
+                                        fatHintSound = new FlxSound().loadEmbedded(Paths.whistleHidden('${Achievements.achievementsStuff[i][2]}hint'));
+                                        fatHint.visible = true;
+                                        FlxTween.tween(fatHint, {alpha: 0.6}, 0.25);
+                                    }
+                                FlxTween.tween(photoZoom, {alpha: 1}, 0.25, {onComplete: function(lol:FlxTween){tweening = false;}});
                                 FlxTween.tween(photoBG, {alpha: 0.75}, 0.25);
                                 FlxTween.tween(achieveName, {alpha: 1}, 0.25);
                                 FlxTween.tween(achieveDesc, {alpha: 1}, 0.25);
@@ -337,11 +360,27 @@ class BebAwardsState extends MusicBeatState
             {
                 if (FlxG.mouse.justPressed)
                     {
-                        FlxTween.tween(photoZoom, {alpha: 0}, 0.25);
-                        FlxTween.tween(photoBG, {alpha: 0}, 0.25, {onComplete: function(lol:FlxTween){inPhoto = false; }});
-                        FlxTween.tween(achieveName, {alpha: 0}, 0.25);
-                        FlxTween.tween(achieveDesc, {alpha: 0}, 0.25);
+                        if (FlxG.mouse.overlaps(fatHint) && !tweening && fatHint.visible)
+                        {
+                            fatHintSound.play();
+                        }
+                        
+                        else
+                        {
+
+                            FlxTween.tween(fatHint, {alpha: 0}, 0.25, {onComplete: function(lol:FlxTween){fatHint.visible = false;}});
+                            FlxTween.tween(photoZoom, {alpha: 0}, 0.25);
+                            FlxTween.tween(photoBG, {alpha: 0}, 0.25, {onComplete: function(lol:FlxTween){inPhoto = false; tweening = false;}});
+                            FlxTween.tween(achieveName, {alpha: 0}, 0.25);
+                            FlxTween.tween(achieveDesc, {alpha: 0}, 0.25);
+                        }
                     }
+                if (FlxG.mouse.overlaps(fatHint) && !tweening)
+                        
+                    fatHint.alpha = 1;
+                        
+                else if (!FlxG.mouse.overlaps(fatHint) && !tweening)
+                    fatHint.alpha = 0.6;
             }
         
 
@@ -384,7 +423,7 @@ class BebAwardsState extends MusicBeatState
                 PlayState.storyDifficulty = ClientPrefs.difficulty;
     
                 //trace('CURRENT WEEK: ' + WeekData.getWeekFileName());
-                LoadingState.loadAndSwitchState(new DebugPlaystate());
+                LoadingState.loadAndSwitchState(new PlayState());
     
                 FlxG.sound.music.volume = 0;
                         

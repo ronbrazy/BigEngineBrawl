@@ -75,7 +75,7 @@ class ThomasState extends MusicBeatState
 			trace('CURRENT WEEK: ' + WeekData.getWeekFileName());
 			
 
-			LoadingState.loadAndSwitchState(new DebugPlaystate());
+			LoadingState.loadAndSwitchState(new PlayState());
 			
 
 			FlxG.sound.music.volume = 0;
