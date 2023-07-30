@@ -610,15 +610,15 @@ class PlayState extends MusicBeatState
 		{ //Stage couldn't be found, create a dummy stage for preventing a crash
 			stageData = {
 				directory: "",
-				defaultZoom: 1.4,
+				defaultZoom: 2,
 				isPixelStage: false,
 
-				boyfriend: [400, -500],
+				boyfriend: [300, -400],
 				girlfriend: [400, -230],
 				opponent: [100, 100],
 				hide_girlfriend: true,
 
-				camera_boyfriend: [0, 0],
+				camera_boyfriend: [150, 100],
 				camera_opponent: [0, 0],
 				camera_girlfriend: [0, 0],
 				camera_speed: 1
