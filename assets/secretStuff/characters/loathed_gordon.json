@@ -9,7 +9,7 @@
 			"fps": 24,
 			"anim": "idle",
 			"loop": false,
-			"name": "G_idle"
+			"name": "idle instancia"
 		},
 		{
 			"offsets": [
@@ -20,84 +20,84 @@
 			"fps": 24,
 			"anim": "singLEFT",
 			"loop": false,
-			"name": "G_left"
+			"name": "left instancia"
 		},
 		{
 			"offsets": [
-				0,
-				-4
+				1,
+				-9
 			],
 			"indices": [],
 			"fps": 24,
 			"anim": "singDOWN",
 			"loop": false,
-			"name": "G_down"
+			"name": "down instancia"
 		},
 		{
 			"offsets": [
-				-6,
-				13
+				-9,
+				17
 			],
 			"indices": [],
 			"fps": 24,
 			"anim": "singUP",
 			"loop": false,
-			"name": "G_up"
+			"name": "up instancia"
 		},
 		{
 			"offsets": [
 				-7,
-				4
+				2
 			],
 			"indices": [],
 			"fps": 24,
 			"anim": "singRIGHT",
 			"loop": false,
-			"name": "G_right"
+			"name": "right instancia"
 		},
 		{
 			"offsets": [
-				1,
+				2,
 				3
 			],
 			"indices": [],
 			"fps": 24,
 			"anim": "singLEFTmiss",
 			"loop": false,
-			"name": "G_LMiss"
+			"name": "mleft instancia"
 		},
 		{
 			"offsets": [
-				0,
-				-8
+				2,
+				-10
 			],
 			"indices": [],
 			"fps": 24,
 			"anim": "singDOWNmiss",
 			"loop": false,
-			"name": "G_dMiss"
+			"name": "mdown instancia"
 		},
 		{
 			"offsets": [
-				-7,
-				14
+				-9,
+				16
 			],
 			"indices": [],
 			"fps": 24,
 			"anim": "singUPmiss",
 			"loop": false,
-			"name": "G_uMiss"
+			"name": "mup instancia"
 		},
 		{
 			"offsets": [
-				-7,
+				-5,
 				4
 			],
 			"indices": [],
 			"fps": 24,
 			"anim": "singRIGHTmiss",
 			"loop": false,
-			"name": "G_rMiss"
+			"name": "mright instancia"
 		}
 	],
 	"no_antialiasing": false,
