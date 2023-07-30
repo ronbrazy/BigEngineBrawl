@@ -284,9 +284,10 @@ class TitleState extends MusicBeatState
 			trace(filepath);
 			video.canUseSound = false;
 			video.playVideo(filepath);
+			video.canUseSound = false;
 			video.openingCallback = function()
 				{
-					video.stop();	
+					//video.stop();	
 					video.dispose();
 					if (name == videos[videos.length-1])
 						{
