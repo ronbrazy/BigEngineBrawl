@@ -104,7 +104,7 @@ class PlayState extends MusicBeatState
 	];
 
 	public static var hiddenSongs:Array<String> = ['loathed', "old reliable"];
-	public static var hiddenChars:Array<String> = ['alfred', 'edward', 'loathed_gordon', 'reliablebf'];
+	public static var hiddenChars:Array<String> = ['alfred', 'edward', 'loathed_gordon', 'reliablebf', 'alfred-2', 'loathed-gordon2'];
 
 	//event variables
 	private var isCameraOnForcedPos:Bool = false;
@@ -309,7 +309,9 @@ class PlayState extends MusicBeatState
 		'gordon-rage' => 'gordon',
 		'sadhenry' => 'henry',
 		'madjames' => 'james',
-		'james-fire' => 'james'
+		'james-fire' => 'james',
+		'alfred-2' => 'alfred',
+		'loathed-gordon2' => 'gordon'
 	];
 
 	var checkNoteSplash:Map<String, String> = [
@@ -1205,6 +1207,7 @@ class PlayState extends MusicBeatState
 					ob2.antialiasing = ClientPrefs.globalAntialiasing;
 					ob2.setGraphicSize(Std.int(2160));
 					ob2.updateHitbox();
+					ob2.scrollFactor.set(0.5, 0.5);
 					ob2.x = -539; ob2.y = -685;
 					add(ob2);
 
@@ -1243,6 +1246,8 @@ class PlayState extends MusicBeatState
 					ob6.antialiasing = ClientPrefs.globalAntialiasing;
 					ob6.setGraphicSize(Std.int(2160));
 					ob6.updateHitbox();
+					
+					ob6.scrollFactor.set(0.5, 0.5);
 					ob6.x = -539; ob6.y = -685;
 					ob6.alpha = 0;
 					add(ob6);
@@ -1698,7 +1703,7 @@ class PlayState extends MusicBeatState
 		add(gameBlackLayer);
 
 		gameBlackLayer.alpha = 0;
-		gameBlackLayer.cameras = [camHUD];
+		gameBlackLayer.cameras = [camOther];
 
 		if(curStage == 'indignation')
 		{
@@ -3786,12 +3791,6 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		if (FlxG.keys.anyJustPressed(debugKeysChart) && !endingSong && !inCutscene)
-		{
-			if (oreoWindow)
-				resetWindow();
-			openChartEditor();
-		}
 
 		// FlxG.watch.addQuick('VOL', vocals.amplitudeLeft);
 		// FlxG.watch.addQuick('VOLRight', vocals.amplitudeRight);
@@ -3853,12 +3852,6 @@ class PlayState extends MusicBeatState
 
 			}
 
-		if (FlxG.keys.anyJustPressed(debugKeysCharacter) && !endingSong && !inCutscene) {
-			persistentUpdate = false;
-			paused = true;
-			cancelMusicFadeTween();
-			MusicBeatState.switchState(new CharacterEditorState(SONG.player2));
-		}
 		
 		if (startedCountdown)
 		{
@@ -5040,13 +5033,6 @@ class PlayState extends MusicBeatState
 			}
 			playbackRate = 1;
 
-			if (chartingMode)
-			{
-				if (oreoWindow)
-					resetWindow();
-				openChartEditor();
-				return;
-			}
 
 			if (isStoryMode)
 			{

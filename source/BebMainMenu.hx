@@ -209,11 +209,7 @@ class BebMainMenu extends MusicBeatState
                 {
                     selectedSomething();
                 }
-            if (FlxG.keys.anyJustPressed(debugKeys))
-            {
-                selectedSomethin = true;
-                MusicBeatState.switchState(new MasterEditorMenu());
-            }
+
         }
         super.update(elapsed);
     }

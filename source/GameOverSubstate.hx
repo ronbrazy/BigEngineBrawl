@@ -104,7 +104,7 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		if (!isLoathed)
 		{
-			camMenu.flash(FlxColor.WHITE, 3);
+			camMenu.flash(FlxColor.WHITE, 10);
 			regenMenu();
 		}
 		else
