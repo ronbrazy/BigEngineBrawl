@@ -2110,6 +2110,8 @@ class PlayState extends MusicBeatState
 		if (name != 'train_standoff')
 		inCutscene = true;
 
+		canReset = false;
+
 		var filepath:String = '';
 			filepath = Paths.video(name);
 			if (TitleState.hiddenVideos.contains(name))
@@ -2136,12 +2138,15 @@ class PlayState extends MusicBeatState
 		video.finishCallback = function()
 		{
 			if (name != 'train_standoff')
+			{
 				startAndEnd();
+			}
 			else
 			{
 				canPause = true;
 				if (ob16 != null) remove(ob16);
 			}
+			canReset = true;
 			return;
 		}
 		#else

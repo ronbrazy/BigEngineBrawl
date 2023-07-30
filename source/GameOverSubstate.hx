@@ -44,6 +44,10 @@ class GameOverSubstate extends MusicBeatSubstate
 	var screenShader:Screen = new Screen();
 	var shaderTime:Float = 0;
 
+	var isLoathed:Bool = false;
+	var loathedIntro:FlxSprite;
+	var loathedLoop:FlxSprite;
+
 	public static var instance:GameOverSubstate;
 
 	public static function resetVariables() {
@@ -64,6 +68,10 @@ class GameOverSubstate extends MusicBeatSubstate
 	public function new(x:Float, y:Float, camX:Float, camY:Float)
 	{
 		super();
+
+		isLoathed = (PlayState.SONG.stage == 'loathed');
+		loathedIntro = new FlxSprite();
+		loathedLoop = new FlxSprite();
 		
 		tvFilter = new ShaderFilter(screenShader);
 		screenShader.noiseIntensity.value = [0.75];
@@ -88,13 +96,35 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		FlxG.cameras.add(camMenu);
 
-		if(ClientPrefs.shaders)
+		if(ClientPrefs.shaders && !isLoathed)
 		{
 			FlxG.camera.setFilters([tvFilter]);
 			camMenu.setFilters([tvFilter]);
 		}
 
-		regenMenu();
+		if (!isLoathed)
+		{
+			camMenu.flash(FlxColor.WHITE, 3);
+			regenMenu();
+		}
+		else
+		{
+			new FlxTimer().start(1, function(tmr:FlxTimer)
+				{
+					camMenu.flash(FlxColor.WHITE, 3);
+					loathedLoop.frames = Paths.getSparrowAtlas('gameover/loathed_gameover_loop', 'secretStuff');
+					loathedLoop.animation.addByPrefix('loop','loathed gameover loop loop',24,true);
+					loathedLoop.setGraphicSize(Std.int(FlxG.width*1.05));
+					loathedLoop.updateHitbox();
+					loathedLoop.screenCenter();
+					loathedLoop.x -= 20;
+					loathedLoop.y -= 80;
+					loathedLoop.animation.play('loop');
+					loathedLoop.cameras = [camMenu];
+					add(loathedLoop);
+				});
+			
+		}
 
 	}
 
@@ -112,7 +142,7 @@ class GameOverSubstate extends MusicBeatSubstate
 		PlayState.instance.callOnLuas('onUpdate', [elapsed]);
 
 
-		if (inMenu && !selectedSomethin)
+		if (inMenu && !selectedSomethin && !isLoathed)
 			{
 				if (controls.UI_UP_P)
 					{
@@ -165,6 +195,33 @@ class GameOverSubstate extends MusicBeatSubstate
 						changeSelection();
 					}
 			}
+
+		else if (isLoathed)
+		{
+			if (controls.ACCEPT)
+				{
+					selectedSomethin = true;
+					FlxG.sound.play(Paths.sound('gameover/gameOverEnd'));
+					FlxG.sound.music.stop();
+					endBullshit();
+				}
+		
+				if (controls.BACK)
+				{
+					FlxG.sound.music.stop();
+					PlayState.deathCounter = 0;
+					PlayState.seenCutscene = false;
+					FlxG.sound.play(Paths.sound('cancelMenu'));
+					FlxG.sound.music.stop();
+			
+					if (PlayState.isStoryMode)
+						MusicBeatState.switchState(new BebMainMenu());
+					else
+						MusicBeatState.switchState(new FreeplayState());
+			
+					FlxG.sound.playMusic(Paths.music('bebmenu'));
+				}
+		}
 
 
 		if (PlayState.SONG.stage == 'confusion' && !playingDeathSound && !FlxG.sound.music.playing && !selectedSomethin)
@@ -295,7 +352,22 @@ class GameOverSubstate extends MusicBeatSubstate
 
 	function coolStartDeath(?volume:Float = 1):Void
 	{
-		FlxG.sound.playMusic(Paths.music(loopSoundName), volume);
+		if (!isLoathed)
+		{
+			FlxG.sound.playMusic(Paths.music('Game_Over_Start'), volume, false);
+			FlxG.sound.music.onComplete = function()
+				{
+					FlxG.sound.playMusic(Paths.music('Game_Over_Loop'), volume, true);
+				}
+		}
+		else
+		{
+			FlxG.sound.playMusic(Paths.music('altgameOver'), volume, false);
+			FlxG.sound.music.onComplete = function()
+				{
+					FlxG.sound.playMusic(Paths.music('altgameOver_loop'), volume, true);
+				}
+		}
 	}
 
 	function endBullshit():Void

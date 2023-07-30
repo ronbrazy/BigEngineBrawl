@@ -120,10 +120,13 @@ class TitleState extends MusicBeatState
 			FlxG.sound.music.fadeIn(1, 0, 0.7);
 		}
 
-		for(i in 0...videos.length)
-			{
-				startVideo(videos[i]);
-			}
+		new FlxTimer().start(2, function(tmr:FlxTimer)
+		{
+			for(i in 0...videos.length)
+				{
+					startVideo(videos[i]);
+				}
+		});
 		
 
 		//trace(path, FileSystem.exists(path));
@@ -279,8 +282,8 @@ class TitleState extends MusicBeatState
 	
 			var video:MP4Handler = new MP4Handler();
 			trace(filepath);
+			video.canUseSound = false;
 			video.playVideo(filepath);
-			video.volume = 0;
 			video.openingCallback = function()
 				{
 					video.stop();	
