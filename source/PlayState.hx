@@ -2128,6 +2128,12 @@ class PlayState extends MusicBeatState
 		if (name != 'train_standoff')
 		inCutscene = true;
 
+		if (name == 'Finale')
+		{ 
+			canPause = false;
+			endingSong = true;
+		}
+
 		canReset = false;
 
 		var filepath:String = '';
@@ -2157,6 +2163,7 @@ class PlayState extends MusicBeatState
 		{
 			if (name != 'train_standoff')
 			{
+				inCutscene = false;
 				startAndEnd();
 			}
 			else
@@ -4896,6 +4903,11 @@ class PlayState extends MusicBeatState
 		FlxG.sound.music.volume = 0;
 		vocals.volume = 0;
 		vocals.pause();
+		if (Paths.formatToSongPath(SONG.song) == 'indignation' && isStoryMode)
+		{
+			startVideo('Finale');
+			return;
+		}
 		if(ClientPrefs.noteOffset <= 0 || ignoreNoteOffset) {
 			finishCallback();
 		} else {
