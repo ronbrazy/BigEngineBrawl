@@ -406,6 +406,8 @@ class PlayState extends MusicBeatState
 	var lpo:Int = 700;
 	var signalTween:FlxTween;
 	var flipFuckingEverything:Bool = false;
+	var curLoathedState:Int = 0;
+	var loathedTrainSound:FlxSound;
 
 	var doMiddleScroll:Bool = false;
 
@@ -438,6 +440,7 @@ class PlayState extends MusicBeatState
     var screenShader:Screen = new Screen();
 	var shaderTime:Float = 0;
 	var grayScale:GrayScale = new GrayScale();
+	var loathedTrains:String = 'loathed_bgengine_';
 
 	
 	public static var oreoWindow:Bool = false;
@@ -1185,6 +1188,7 @@ class PlayState extends MusicBeatState
 				
 				case 'loathed':
 
+					loathedTrainSound = new FlxSound().loadEmbedded(Paths.whistleHidden('loathedtrainpass'));
 					flipFuckingEverything = true;
 					ob16 = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 					ob16.cameras = [camHUD];
@@ -1210,6 +1214,15 @@ class PlayState extends MusicBeatState
 					ob3.updateHitbox();
 					ob3.x = -539; ob3.y = -685;
 					add(ob3);
+
+					ob10 = new FlxSprite();
+					for (i in 1...15)
+					{
+						ob10.loadGraphic(Paths.image('backgrounds/loathed/trains/${loathedTrains}${i}', 'secretStuff'));
+					}
+					ob10.setPosition(1622,50 - ob10.height/2);
+					ob10.antialiasing = ClientPrefs.globalAntialiasing;
+					add(ob10);
 
 					ob4 = new FlxSprite().loadGraphic(Paths.image('backgrounds/loathed/phase1/brickwall', 'secretStuff'));
 					ob4.antialiasing = ClientPrefs.globalAntialiasing;
@@ -1257,6 +1270,8 @@ class PlayState extends MusicBeatState
 					ob9.setGraphicSize(4320);
 					ob9.updateHitbox();
 					overlaySprs.push(ob9);
+
+					
 		}
 
 		switch(Paths.formatToSongPath(SONG.song))
@@ -2146,6 +2161,7 @@ class PlayState extends MusicBeatState
 			}
 			else
 			{
+				curLoathedState = 1;
 				FlxTween.tween(songtitleTxt, {alpha: 1}, 3, {ease: FlxEase.quadInOut, onComplete: function(shit:FlxTween){
 					FlxTween.tween(songtitleTxt, {alpha: 0}, 3, {ease: FlxEase.quadInOut});
 				}});
@@ -3591,6 +3607,15 @@ class PlayState extends MusicBeatState
 		// gameBlackLayer.setGraphicSize(gameBlackLayer.width / defaultCamZoom, gameBlackLayer.height / defaultCamZoom, );
 		switch (curStage)
 		{
+			case 'loathed':
+				if (ob10.x > -2000)
+					ob10.x -= 20;
+				if (ob10.x < -1000 && FlxG.random.int(0,800) == 0 && curLoathedState == 1)
+					{
+						ob10.loadGraphic(Paths.image('backgrounds/loathed/trains/${loathedTrains}${FlxG.random.int(1,15)}', 'secretStuff'));
+						ob10.setPosition(1622,50 - ob10.height/2);
+						loathedTrainSound.play();
+					}
 			case 'splendid':
 				jamessky.x += (elapsed*200) * modifier;
 			case 'ugh':
@@ -4369,6 +4394,7 @@ class PlayState extends MusicBeatState
 						ob5.alpha = 1;
 						ob6.alpha = 1;
 						ob7.alpha = 1;
+						curLoathedState = 2;
 
 					case 'phase1':
 						ob1.alpha = 1;
@@ -4378,6 +4404,7 @@ class PlayState extends MusicBeatState
 						ob5.alpha = 0;
 						ob6.alpha = 0;
 						ob7.alpha = 0;
+						curLoathedState = 1;
 				}
 
 			case 'Add Camera Zoom':
